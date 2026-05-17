@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 2: Variables — Python for Beginners</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">🐍 Python for Beginners</a>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar" id="sidebar"><ul class="sidebar-nav"><li><a href="index.html" class="">🏠 Home</a></li><li><a href="module-0.html" class="">⚙️ M0: Setup</a></li><li><a href="module-1.html" class="">📝 M1: Strings</a></li><li><a href="module-2.html" class="active">📦 M2: Variables</a></li><li><a href="module-3.html" class="">🔢 M3: Data Types</a></li><li><a href="module-4.html" class="">➕ M4: Operators</a></li><li><a href="module-5.html" class="">🔀 M5: Control Flow</a></li><li><a href="module-6.html" class="">🔧 M6: Functions</a></li><li><a href="module-7.html" class="">📋 M7: Lists</a></li><li><a href="module-8.html" class="">🛡️ M8: Error Handling</a></li><li><a href="module-9.html" class="">💾 M9: File I/O</a></li><li><a href="module-10.html" class="">🚀 M10: Projects</a></li></ul></aside>
+  <main class="main-content">
+
+    <div class="module-header">
+      <span class="module-icon">📦</span>
+      <div>
+        <p class="module-label">Module 2</p>
+        <h1>Variables</h1>
+      </div>
+    </div>
+
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="lessons">📚 Lessons</button>
+      <button class="tab-btn" data-tab="notes">📋 Teacher Notes</button>
+      <button class="tab-btn" data-tab="practice">✏️ Practice Sheet</button>
+      <button class="tab-btn" data-tab="assessment">📊 Assessment</button>
+    </div>
+
+    <div class="tab-panes">
+
+      <div id="tab-lessons" class="tab-pane active">
+        
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 2_1_variables_introduction.py</span>
+        <span class="badge badge-lesson">Lesson</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 2 - Lesson 1: Introduction to Variables
+# ================================================
+# Learn: What is a variable, how to create one,
+#        how to use it in print()
+# ================================================
+
+# ------------------------------------------------
+# What is a Variable?
+# ------------------------------------------------
+# A variable is a named box that stores a value.
+# You give it a name, then put something inside.
+# Later you can use that name to get the value back.
+
+# Think of it like this:
+# A student&#x27;s bag has a name tag.
+# You can put books inside the bag.
+# You find the bag by reading the name tag.
+
+# ------------------------------------------------
+# Creating a Variable
+# ------------------------------------------------
+# variable_name = value
+# The = sign means &quot;store this value in this name&quot;
+
+greeting = &quot;Assalamu Alaikum&quot;
+student_name = &quot;Ahmed&quot;
+city = &quot;Lahore&quot;
+school = &quot;Jamia Islamia&quot;
+
+# ------------------------------------------------
+# Using a Variable
+# ------------------------------------------------
+# Just write the variable name - no quotes needed!
+
+print(greeting)
+print(student_name)
+print(city)
+print(school)
+
+# ------------------------------------------------
+# Variables in Concatenation
+# ------------------------------------------------
+# Variables can be joined with + just like strings
+
+print(&quot;Hello, &quot; + student_name)
+print(student_name + &quot; is from &quot; + city)
+print(&quot;Welcome to &quot; + school + &quot;!&quot;)
+
+# ------------------------------------------------
+# Changing a Variable
+# ------------------------------------------------
+# You can update a variable at any time.
+# The new value replaces the old one.
+
+subject = &quot;Quran&quot;
+print(&quot;Today&#x27;s subject: &quot; + subject)
+
+subject = &quot;Hadith&quot;
+print(&quot;Now the subject is: &quot; + subject)
+
+# ------------------------------------------------
+# Multiple Variables Together
+# ------------------------------------------------
+
+first_name = &quot;Fatima&quot;
+last_name = &quot;Khan&quot;
+age = &quot;15&quot;
+city = &quot;Karachi&quot;
+
+print(&quot;Name : &quot; + first_name + &quot; &quot; + last_name)
+print(&quot;Age  : &quot; + age)
+print(&quot;City : &quot; + city)
+
+# ------------------------------------------------
+# Summary
+# ------------------------------------------------
+# variable_name = value       creates a variable
+# print(variable_name)        shows its value
+# Variables make code cleaner and reusable
+
+print()
+print(&quot;You now understand variables. Excellent work!&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 2_2_input_string_variables.py</span>
+        <span class="badge badge-lesson">Lesson</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 2 - Lesson 2: Input &amp; String Variables
+# ================================================
+# Learn: Storing input() in a variable, reusing it
+# ================================================
+
+# ------------------------------------------------
+# Why store input() in a variable?
+# ------------------------------------------------
+# In Module 1 we used input() directly in print().
+# That works, but you can only use the answer once.
+# If you store it in a variable, you can use it many times.
+
+# Without variable (can only use once):
+print(&quot;Hello, &quot; + input(&quot;Your name? &quot;))
+
+print()
+
+# With variable (can use multiple times):
+name = input(&quot;Your name? &quot;)
+print(&quot;Assalamu Alaikum, &quot; + name + &quot;!&quot;)
+print(&quot;May Allah bless you, &quot; + name + &quot;.&quot;)
+print(name + &quot;, welcome to today&#x27;s Python lesson.&quot;)
+
+# ------------------------------------------------
+# More Examples
+# ------------------------------------------------
+
+favorite_book = input(&quot;What is your favorite Islamic book? &quot;)
+print(&quot;Ma sha Allah! &quot; + favorite_book + &quot; is a wonderful book.&quot;)
+print(&quot;May Allah help you understand &quot; + favorite_book + &quot; deeply.&quot;)
+
+madrasa = input(&quot;What is the name of your madrasa? &quot;)
+print(&quot;Barakallah fi &quot; + madrasa + &quot;!&quot;)
+print(&quot;May Allah give success to &quot; + madrasa + &quot; and all its students.&quot;)
+
+surah = input(&quot;What is your favorite Surah? &quot;)
+print(&quot;Surah &quot; + surah + &quot; is indeed beautiful.&quot;)
+print(&quot;May Allah give you tawfiq to memorize Surah &quot; + surah + &quot;.&quot;)
+
+# ------------------------------------------------
+# Asking multiple things and using all together
+# ------------------------------------------------
+print()
+print(&quot;Let us build your profile:&quot;)
+print()
+
+student_name = input(&quot;Your name: &quot;)
+student_city = input(&quot;Your city: &quot;)
+student_class = input(&quot;Your class/level: &quot;)
+
+print()
+print(&quot;--- Student Profile ---&quot;)
+print(&quot;Name  : &quot; + student_name)
+print(&quot;City  : &quot; + student_city)
+print(&quot;Class : &quot; + student_class)
+print(&quot;Assalamu Alaikum, &quot; + student_name + &quot; from &quot; + student_city + &quot;!&quot;)
+
+print()
+print(&quot;Well done! Storing input in variables is very useful.&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 2_3_string_length.py</span>
+        <span class="badge badge-lesson">Lesson</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 2 - Lesson 3: String Length with len()
+# ================================================
+# Learn: len() function, counting characters in a string
+# ================================================
+
+# ------------------------------------------------
+# What is len()?
+# ------------------------------------------------
+# len() counts the number of characters in a string.
+# Characters include: letters, spaces, punctuation, numbers.
+# It returns a number (integer).
+
+# ------------------------------------------------
+# Basic Examples
+# ------------------------------------------------
+
+print(len(&quot;Ahmed&quot;))             # 5 letters
+print(len(&quot;Assalamu Alaikum&quot;)) # 16 (includes the space)
+print(len(&quot;Pakistan&quot;))         # 8
+print(len(&quot;&quot;))                 # 0 - empty string has length zero
+
+# ------------------------------------------------
+# Using len() with a variable
+# ------------------------------------------------
+
+name = &quot;Muhammad&quot;
+print(len(name))               # 8
+
+city = &quot;Islamabad&quot;
+print(len(city))               # 9
+
+surah = &quot;Al-Fatiha&quot;
+print(len(surah))              # 9
+
+# ------------------------------------------------
+# Printing len() in a sentence
+# ------------------------------------------------
+# len() returns a number, not a string.
+# To join it with text using +, wrap it in str().
+# OR use a comma in print() (easier for beginners).
+
+name = &quot;Abdullah&quot;
+
+# Using comma (recommended for beginners):
+print(&quot;The name&quot;, name, &quot;has&quot;, len(name), &quot;letters.&quot;)
+
+# Using str() and +:
+print(&quot;The name &quot; + name + &quot; has &quot; + str(len(name)) + &quot; letters.&quot;)
+
+# ------------------------------------------------
+# Counting from user input
+# ------------------------------------------------
+
+word = input(&quot;Type any word: &quot;)
+print(&quot;You typed:&quot;, word)
+print(&quot;It has&quot;, len(word), &quot;characters.&quot;)
+
+surah_name = input(&quot;Enter a Surah name: &quot;)
+print(&quot;Surah &quot; + surah_name + &quot; has&quot;, len(surah_name), &quot;characters in its name.&quot;)
+
+# ------------------------------------------------
+# Interesting Facts using len()
+# ------------------------------------------------
+
+bismillah = &quot;Bismillahirrahmanirrahim&quot;
+print(&quot;Bismillah has&quot;, len(bismillah), &quot;characters (no spaces)&quot;)
+
+kalima = &quot;La ilaha illallah Muhammadur Rasulullah&quot;
+print(&quot;The Kalima has&quot;, len(kalima), &quot;characters including spaces&quot;)
+
+print()
+print(&quot;Great! You can now measure the length of any string.&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 2_4_variable_naming_rules.py</span>
+        <span class="badge badge-lesson">Lesson</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 2 - Lesson 4: Variable Naming Rules &amp; Errors
+# ================================================
+# Learn: Rules for naming variables, common mistakes
+# ================================================
+
+# ------------------------------------------------
+# Rules for Naming Variables
+# ------------------------------------------------
+# 1. Use only letters, numbers, and underscores (_)
+# 2. Must START with a letter or underscore (not a number)
+# 3. No spaces allowed - use underscore instead
+# 4. Cannot use Python reserved words (if, for, print, etc.)
+# 5. Python is case-sensitive: name and Name are different
+
+# ------------------------------------------------
+# CORRECT Variable Names
+# ------------------------------------------------
+
+student_name = &quot;Ahmed&quot;
+city1 = &quot;Lahore&quot;
+_my_var = &quot;test&quot;
+firstName = &quot;Fatima&quot;
+SCHOOL = &quot;Jamia Islamia&quot;
+total_students = &quot;50&quot;
+
+print(student_name)
+print(city1)
+print(firstName)
+print(SCHOOL)
+
+# ------------------------------------------------
+# WRONG Variable Names (these cause errors)
+# ------------------------------------------------
+
+# Spaces in name:
+# student name = &quot;Ahmed&quot;       # SyntaxError
+
+# Starts with a number:
+# 1city = &quot;Lahore&quot;             # SyntaxError
+
+# Special character:
+# student-name = &quot;Ahmed&quot;       # SyntaxError (hyphen not allowed)
+# student@name = &quot;Ahmed&quot;       # SyntaxError
+
+# Python reserved word:
+# print = &quot;something&quot;          # This breaks the print function!
+# for = &quot;loop&quot;                 # SyntaxError
+
+# ------------------------------------------------
+# Python is Case-Sensitive
+# ------------------------------------------------
+
+name = &quot;Ahmed&quot;
+Name = &quot;Ali&quot;
+NAME = &quot;Hassan&quot;
+
+print(name)     # Ahmed
+print(Name)     # Ali
+print(NAME)     # Hassan
+
+# These are THREE different variables!
+
+# ------------------------------------------------
+# Good Naming Habits
+# ------------------------------------------------
+
+# Bad - unclear what it stores:
+x = &quot;Lahore&quot;
+y = &quot;Ahmed&quot;
+
+# Good - name tells you what it stores:
+student_city = &quot;Lahore&quot;
+student_name = &quot;Ahmed&quot;
+
+# Bad - too short:
+sn = &quot;Jamia&quot;
+
+# Good - clear and readable:
+school_name = &quot;Jamia Islamia&quot;
+
+# ------------------------------------------------
+# Use underscore for multi-word names
+# ------------------------------------------------
+favorite_surah = &quot;Al-Fatiha&quot;
+prayer_time = &quot;Fajr&quot;
+total_students_in_class = &quot;35&quot;
+
+print(&quot;Favorite Surah : &quot; + favorite_surah)
+print(&quot;Prayer time   : &quot; + prayer_time)
+print(&quot;Total students: &quot; + total_students_in_class)
+
+print()
+print(&quot;Remember: good variable names make your code easy to read!&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 2_5_string_methods.py</span>
+        <span class="badge badge-lesson">Lesson</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 2 - Lesson 5: String Methods
+# ================================================
+# Learn: .upper(), .lower(), .title(),
+#        .strip(), .lstrip(), .rstrip()
+# ================================================
+
+# ------------------------------------------------
+# What are String Methods?
+# ------------------------------------------------
+# Methods are built-in actions you can perform on a string.
+# You call them by putting a dot (.) after the string or variable.
+# They do NOT change the original variable - they return a new value.
+
+# ------------------------------------------------
+# .upper() - Convert to ALL CAPITALS
+# ------------------------------------------------
+
+name = &quot;ahmed ali&quot;
+print(name.upper())          # AHMED ALI
+
+school = &quot;jamia islamia lahore&quot;
+print(school.upper())        # JAMIA ISLAMIA LAHORE
+
+# Useful for: titles, headings, emphasis
+
+# ------------------------------------------------
+# .lower() - Convert to all lowercase
+# ------------------------------------------------
+
+name = &quot;FATIMA KHAN&quot;
+print(name.lower())          # fatima khan
+
+email = &quot;Student@Madrasa.EDU&quot;
+print(email.lower())         # student@madrasa.edu
+
+# Useful for: comparing inputs without case issues
+
+# ------------------------------------------------
+# .title() - Capitalize First Letter of Each Word
+# ------------------------------------------------
+
+name = &quot;maulana abdur rahman&quot;
+print(name.title())          # Maulana Abdur Rahman
+
+city = &quot;lahore pakistan&quot;
+print(city.title())          # Lahore Pakistan
+
+book = &quot;sahih al-bukhari&quot;
+print(book.title())          # Sahih Al-Bukhari
+
+# ------------------------------------------------
+# Practical Example with input()
+# ------------------------------------------------
+# Students often type in different cases.
+# .title() cleans up their input automatically.
+
+raw_name = input(&quot;Enter your name (any format): &quot;)
+clean_name = raw_name.title()
+print(&quot;Formatted name: &quot; + clean_name)
+
+# ------------------------------------------------
+# .strip() - Remove Extra Spaces from Both Sides
+# ------------------------------------------------
+# Users sometimes type accidental spaces.
+# .strip() removes spaces from the left and right.
+
+messy = &quot;   Ahmed   &quot;
+print(messy.strip())         # &quot;Ahmed&quot;
+
+with_tabs = &quot;\tLahore\t&quot;
+print(with_tabs.strip())     # &quot;Lahore&quot;
+
+# ------------------------------------------------
+# .lstrip() and .rstrip() - One Side Only
+# ------------------------------------------------
+
+left_spaces = &quot;   Karachi&quot;
+print(left_spaces.lstrip())  # &quot;Karachi&quot;   (removed left spaces only)
+
+right_spaces = &quot;Peshawar   &quot;
+print(right_spaces.rstrip()) # &quot;Peshawar&quot;  (removed right spaces only)
+
+# ------------------------------------------------
+# Chaining Methods
+# ------------------------------------------------
+# You can use multiple methods together
+
+raw_input = &quot;   maulana tariq jameel   &quot;
+clean = raw_input.strip().title()
+print(clean)                 # &quot;Maulana Tariq Jameel&quot;
+
+# ------------------------------------------------
+# Whitespace Characters: \t and \n
+# ------------------------------------------------
+# \t  = tab (large space)
+# \n  = newline (go to next line)
+
+print(&quot;Name:\tAhmed&quot;)             # tab between label and value
+print(&quot;City:\tLahore&quot;)
+print()
+print(&quot;Line 1\nLine 2\nLine 3&quot;)   # three lines in one print
+
+# Useful for formatting output neatly
+
+print()
+print(&quot;String methods make your data clean and consistent. Well done!&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 2_6_variable_puzzles.py</span>
+        <span class="badge badge-lesson">Lesson</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 2 - Lesson 6: Variable Logic Puzzles
+# ================================================
+# Learn: Variable swapping, combining, reassigning
+# Think carefully before running - predict the output!
+# ================================================
+
+print(&quot;=== VARIABLE LOGIC PUZZLES ===&quot;)
+print(&quot;Try to predict the output BEFORE running each section.&quot;)
+print()
+
+# ------------------------------------------------
+# Puzzle 1: What gets printed?
+# ------------------------------------------------
+print(&quot;--- Puzzle 1 ---&quot;)
+
+city = &quot;Lahore&quot;
+city = &quot;Karachi&quot;
+city = &quot;Islamabad&quot;
+print(city)
+
+# What do you think prints? Why?
+
+# ------------------------------------------------
+# Puzzle 2: Swapping Two Variables
+# ------------------------------------------------
+print()
+print(&quot;--- Puzzle 2: Swap ---&quot;)
+
+# Problem: We have two variables. We want to swap their values.
+
+first = &quot;Fajr&quot;
+second = &quot;Isha&quot;
+
+print(&quot;Before swap:&quot;)
+print(&quot;first  =&quot;, first)
+print(&quot;second =&quot;, second)
+
+# Swap using a temporary variable
+temp = first
+first = second
+second = temp
+
+print(&quot;After swap:&quot;)
+print(&quot;first  =&quot;, first)
+print(&quot;second =&quot;, second)
+
+# ------------------------------------------------
+# Puzzle 3: Building a Full Name
+# ------------------------------------------------
+print()
+print(&quot;--- Puzzle 3: Build Full Name ---&quot;)
+
+title = &quot;Maulana&quot;
+first_name = &quot;Tariq&quot;
+last_name = &quot;Jameel&quot;
+
+full_name = title + &quot; &quot; + first_name + &quot; &quot; + last_name
+print(full_name)
+
+# Now change first_name and rebuild
+first_name = &quot;Abdur Rahman&quot;
+full_name = title + &quot; &quot; + first_name + &quot; &quot; + last_name
+print(full_name)
+
+# ------------------------------------------------
+# Puzzle 4: Chain Swap
+# ------------------------------------------------
+print()
+print(&quot;--- Puzzle 4: Chain Swap ---&quot;)
+
+a = &quot;Quran&quot;
+b = &quot;Hadith&quot;
+c = &quot;Fiqh&quot;
+
+print(&quot;Before:&quot;, a, b, c)
+
+# Shift: a gets b, b gets c, c gets a
+temp = a
+a = b
+b = c
+c = temp
+
+print(&quot;After :&quot;, a, b, c)
+
+# ------------------------------------------------
+# Puzzle 5: Prediction Challenge
+# ------------------------------------------------
+print()
+print(&quot;--- Puzzle 5: Predict the Output ---&quot;)
+
+x = &quot;Pakistan&quot;
+y = x
+x = &quot;India&quot;
+
+print(x)
+print(y)
+
+# Did y change when x changed? Why or why not?
+
+# ------------------------------------------------
+# Puzzle 6: String Repetition using *
+# ------------------------------------------------
+print()
+print(&quot;--- Puzzle 6: Repetition ---&quot;)
+
+line = &quot;-&quot; * 30
+print(line)
+print(&quot;  WELCOME TO PYTHON CLASS  &quot;)
+print(line)
+
+word = &quot;Al-&quot;
+print(word * 3 + &quot;Hamdulillah&quot;)
+
+print()
+print(&quot;How many did you predict correctly? Keep practicing!&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 2_7_variable_puzzles_solution.py</span>
+        <span class="badge badge-solution">Project Solution</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 2 - Lesson 6: Variable Puzzles - SOLUTIONS
+# ================================================
+
+print(&quot;=== VARIABLE PUZZLES - SOLUTIONS ===&quot;)
+print()
+
+# ------------------------------------------------
+# Puzzle 1 Solution
+# ------------------------------------------------
+print(&quot;--- Puzzle 1 ---&quot;)
+city = &quot;Lahore&quot;
+city = &quot;Karachi&quot;
+city = &quot;Islamabad&quot;
+print(city)
+# Answer: Islamabad
+# Reason: Each assignment overwrites the previous one.
+#         Only the last value stays.
+print()
+
+# ------------------------------------------------
+# Puzzle 2 Solution
+# ------------------------------------------------
+print(&quot;--- Puzzle 2: Swap ---&quot;)
+first = &quot;Fajr&quot;
+second = &quot;Isha&quot;
+temp = first     # temp = &quot;Fajr&quot;
+first = second   # first = &quot;Isha&quot;
+second = temp    # second = &quot;Fajr&quot;
+print(&quot;first  =&quot;, first)    # Isha
+print(&quot;second =&quot;, second)   # Fajr
+# Key: without temp, you would lose one value permanently.
+print()
+
+# ------------------------------------------------
+# Puzzle 3 Solution
+# ------------------------------------------------
+print(&quot;--- Puzzle 3: Build Full Name ---&quot;)
+title = &quot;Maulana&quot;
+first_name = &quot;Tariq&quot;
+last_name = &quot;Jameel&quot;
+full_name = title + &quot; &quot; + first_name + &quot; &quot; + last_name
+print(full_name)                  # Maulana Tariq Jameel
+
+first_name = &quot;Abdur Rahman&quot;
+full_name = title + &quot; &quot; + first_name + &quot; &quot; + last_name
+print(full_name)                  # Maulana Abdur Rahman Jameel
+print()
+
+# ------------------------------------------------
+# Puzzle 4 Solution
+# ------------------------------------------------
+print(&quot;--- Puzzle 4: Chain Swap ---&quot;)
+a = &quot;Quran&quot;
+b = &quot;Hadith&quot;
+c = &quot;Fiqh&quot;
+print(&quot;Before:&quot;, a, b, c)         # Quran Hadith Fiqh
+
+temp = a    # save Quran
+a = b       # a = Hadith
+b = c       # b = Fiqh
+c = temp    # c = Quran
+
+print(&quot;After :&quot;, a, b, c)         # Hadith Fiqh Quran
+print()
+
+# ------------------------------------------------
+# Puzzle 5 Solution
+# ------------------------------------------------
+print(&quot;--- Puzzle 5: Prediction ---&quot;)
+x = &quot;Pakistan&quot;
+y = x           # y now holds &quot;Pakistan&quot;
+x = &quot;India&quot;     # x changes to &quot;India&quot;, but y does NOT change
+
+print(x)        # India
+print(y)        # Pakistan
+# Key: y = x copies the VALUE at that moment.
+#      Changing x later does NOT affect y.
+print()
+
+# ------------------------------------------------
+# Puzzle 6 Solution
+# ------------------------------------------------
+print(&quot;--- Puzzle 6: Repetition ---&quot;)
+line = &quot;-&quot; * 30
+print(line)
+print(&quot;  WELCOME TO PYTHON CLASS  &quot;)
+print(line)
+
+word = &quot;Al-&quot;
+print(word * 3 + &quot;Hamdulillah&quot;)   # Al-Al-Al-Hamdulillah
+print()
+
+print(&quot;End of solutions. How many did you get right?&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 2_8_quiz.py</span>
+        <span class="badge badge-quiz">Quiz</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 2 - Quiz: Variables &amp; String Methods
+# ================================================
+# Covers: variables, input, len(), naming rules,
+#         .upper() .lower() .title() .strip()
+# Difficulty: Easy / Medium / Complex
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;MODULE 2 QUIZ - Variables &amp; String Methods&quot;)
+print(&quot;=&quot; * 50)
+print()
+
+# ------------------------------------------------
+# EASY
+# ------------------------------------------------
+print(&quot;--- EASY ---&quot;)
+print()
+
+# Q1. Create a variable called prayer_name and store &quot;Fajr&quot; in it.
+#     Then print it.
+
+
+# Q2. Create two variables: first_name and last_name.
+#     Store your own name in them and print both on one line.
+
+
+# Q3. Store the string &quot;lahore is beautiful&quot; in a variable.
+#     Print it using .title()
+#     Expected output: Lahore Is Beautiful
+
+
+# Q4. Ask the user for their name using input().
+#     Store it in a variable called student_name.
+#     Print: &quot;Welcome, &lt;student_name&gt;!&quot;
+
+
+# Q5. Store &quot;  Ahmed  &quot; (with spaces) in a variable.
+#     Print it using .strip() to remove the spaces.
+
+
+# ------------------------------------------------
+# MEDIUM
+# ------------------------------------------------
+print()
+print(&quot;--- MEDIUM ---&quot;)
+print()
+
+# Q6. Ask the user for their madrasa name.
+#     Print the name in ALL CAPS using .upper()
+
+
+# Q7. Ask the user to type their name (in any case, e.g. &quot;AHMED ali&quot;).
+#     Clean it up with .strip() and .title() and print the result.
+
+
+# Q8. Store any word in a variable.
+#     Print the word, then print how many letters it has using len().
+#     Example output:
+#       Word: Bismillah
+#       Length: 9
+
+
+# Q9. Which of these variable names are WRONG? Fix the bad ones.
+#     a) student name = &quot;Ahmed&quot;
+#     b) 1city = &quot;Lahore&quot;
+#     c) my_school = &quot;Jamia&quot;
+#     d) for = &quot;loop&quot;
+# Write the corrected versions as working code below:
+
+
+# ------------------------------------------------
+# COMPLEX
+# ------------------------------------------------
+print()
+print(&quot;--- COMPLEX ---&quot;)
+print()
+
+# Q10. Ask the user for: first name, last name, and city.
+#      Use .strip() and .title() on all three inputs to clean them.
+#      Then print a formatted profile:
+#        Full Name : &lt;first&gt; &lt;last&gt;
+#        City      : &lt;city&gt;
+#        Name Length: &lt;number of characters in full name&gt;
+
+
+# Q11. Ask the user for two subjects they study.
+#      Store them in subject1 and subject2.
+#      Swap the two variables (use a temp variable).
+#      Print the values before and after the swap.
+
+
+# Q12. Build a &quot;Madrasa ID Card&quot; program.
+#      Ask for: student name, teacher name, class level, city.
+#      Clean all inputs with .strip().title()
+#      Print the ID card like this:
+#        =============================
+#        MADRASA STUDENT ID CARD
+#        =============================
+#        Student : Ahmed Ali
+#        Teacher : Maulana Imran
+#        Level   : Hifz ul Quran
+#        City    : Lahore
+#        =============================
+
+
+print()
+print(&quot;Quiz done! Check 2_9_quiz_solution.py for answers.&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 2_9_quiz_solution.py</span>
+        <span class="badge badge-solution">Quiz Solution</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 2 - Quiz Solutions
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;MODULE 2 QUIZ - SOLUTIONS&quot;)
+print(&quot;=&quot; * 50)
+print()
+
+# ------------------------------------------------
+# EASY
+# ------------------------------------------------
+print(&quot;--- EASY ---&quot;)
+print()
+
+# Q1.
+prayer_name = &quot;Fajr&quot;
+print(prayer_name)
+
+# Q2.
+first_name = &quot;Ahmed&quot;
+last_name = &quot;Ali&quot;
+print(first_name + &quot; &quot; + last_name)
+
+# Q3.
+city_description = &quot;lahore is beautiful&quot;
+print(city_description.title())
+
+# Q4.
+student_name = input(&quot;What is your name? &quot;)
+print(&quot;Welcome, &quot; + student_name + &quot;!&quot;)
+
+# Q5.
+messy_name = &quot;  Ahmed  &quot;
+print(messy_name.strip())
+
+# ------------------------------------------------
+# MEDIUM
+# ------------------------------------------------
+print()
+print(&quot;--- MEDIUM ---&quot;)
+print()
+
+# Q6.
+madrasa = input(&quot;Enter your madrasa name: &quot;)
+print(madrasa.upper())
+
+# Q7.
+raw_name = input(&quot;Type your name: &quot;)
+clean_name = raw_name.strip().title()
+print(&quot;Cleaned name: &quot; + clean_name)
+
+# Q8.
+word = &quot;Bismillah&quot;
+print(&quot;Word  : &quot; + word)
+print(&quot;Length:&quot;, len(word))
+
+# Q9. Fixed variable names:
+# a) student name = &quot;Ahmed&quot;   -&gt; space not allowed
+student_name = &quot;Ahmed&quot;
+
+# b) 1city = &quot;Lahore&quot;         -&gt; cannot start with number
+city1 = &quot;Lahore&quot;
+
+# c) my_school = &quot;Jamia&quot;      -&gt; this is CORRECT already
+my_school = &quot;Jamia&quot;
+
+# d) for = &quot;loop&quot;             -&gt; &#x27;for&#x27; is a reserved keyword
+for_example = &quot;loop&quot;
+
+# ------------------------------------------------
+# COMPLEX
+# ------------------------------------------------
+print()
+print(&quot;--- COMPLEX ---&quot;)
+print()
+
+# Q10.
+first = input(&quot;First name: &quot;).strip().title()
+last = input(&quot;Last name: &quot;).strip().title()
+city = input(&quot;City: &quot;).strip().title()
+full_name = first + &quot; &quot; + last
+print(&quot;Full Name  : &quot; + full_name)
+print(&quot;City       : &quot; + city)
+print(&quot;Name Length:&quot;, len(full_name))
+
+# Q11.
+subject1 = input(&quot;Subject 1: &quot;)
+subject2 = input(&quot;Subject 2: &quot;)
+print(&quot;Before swap:&quot;, subject1, &quot;and&quot;, subject2)
+temp = subject1
+subject1 = subject2
+subject2 = temp
+print(&quot;After swap :&quot;, subject1, &quot;and&quot;, subject2)
+
+# Q12.
+print()
+name = input(&quot;Student name: &quot;).strip().title()
+teacher = input(&quot;Teacher name: &quot;).strip().title()
+level = input(&quot;Class level: &quot;).strip().title()
+city = input(&quot;City: &quot;).strip().title()
+print(&quot;=============================&quot;)
+print(&quot;MADRASA STUDENT ID CARD&quot;)
+print(&quot;=============================&quot;)
+print(&quot;Student : &quot; + name)
+print(&quot;Teacher : &quot; + teacher)
+print(&quot;Level   : &quot; + level)
+print(&quot;City    : &quot; + city)
+print(&quot;=============================&quot;)
+
+print()
+print(&quot;End of solutions.&quot;)
+</code></pre>
+    </div>
+      </div>
+
+      <div id="tab-notes" class="tab-pane">
+        <div class="markdown-body" id="md-notes"></div>
+        <script type="application/json" id="src-notes">"# Module 2 \u2014 Variables: Teacher Notes\n\n## Duration\n2 classes (45\u201360 minutes each)\n\n## Learning Objectives\nBy end of module, students can:\n1. Create a variable and assign a value\n2. Use variables in print() and f-strings\n3. Follow Python naming rules\n4. Use string methods: upper(), lower(), title(), strip()\n\n## Lesson Flow\n\n### Class 1\n| Time | Activity |\n|------|----------|\n| 0\u201310 min | Revise Module 1 \u2014 string + input() |\n| 10\u201325 min | 2_1_variables_intro.py \u2014 what is a variable? |\n| 25\u201340 min | 2_2_variables_input.py \u2014 storing input in variables |\n| 40\u201355 min | 2_3_len_function.py \u2014 len() with variables |\n\n### Class 2\n| Time | Activity |\n|------|----------|\n| 0\u201315 min | 2_4_naming_rules.py \u2014 valid vs invalid names |\n| 15\u201330 min | 2_5_string_methods.py \u2014 upper/lower/title/strip |\n| 30\u201345 min | 2_6_variable_puzzle.py \u2014 detective puzzle |\n| 45\u201360 min | Quiz + review |\n\n## Key Concept to Emphasize\nA variable is a labelled box \u2014 whatever is in the box changes when you reassign.\nShow: `name = \"Ahmed\"` then `name = \"Fatima\"` \u2014 the box now holds a new value.\n\n## Common Mistakes to Watch\n- `2name = \"Ahmed\"` \u2014 cannot start with a number\n- `my name = \"Ahmed\"` \u2014 no spaces in variable names\n- Forgetting `.strip()` when input has accidental spaces\n- Case matters: `Name` and `name` are different variables\n\n## Tips for Urdu Delivery\n- \"Variable matlab dabba jisme value rakhte hain\"\n- \"Naam dete hain dabbe ko, jaise `age = 15`\"\n- `.upper()` \u2014 \"Sab capital ho jaata hai\"\n- `.title()` \u2014 \"Har lafz ka pehla harf bada ho jaata hai\"\n\n## Files in This Module\n- 2_1_variables_intro.py through 2_9_quiz_solution.py\n"</script>
+      </div>
+
+      <div id="tab-practice" class="tab-pane">
+        <div class="markdown-body print-friendly" id="md-practice"></div>
+        <script type="application/json" id="src-practice">"# Module 2 \u2014 Practice Sheet: Variables\n\n---\n\n**Q1.** Which of these are valid Python variable names? Circle them.\n```\nmy_name    2name    city_1    my name    _score    first-name\n```\n\n---\n\n**Q2.** What does this code print?\n```python\nname = \"ahmed\"\nprint(name.title())\n```\nAnswer: _______________\n\n---\n\n**Q3.** What is the output?\n```python\ncity = \"   lahore   \"\nprint(city.strip())\n```\nAnswer: _______________\n\n---\n\n**Q4.** Write a variable called `subject` that stores your favourite subject:\n```\n_______________\n```\n\n---\n\n**Q5.** Fix the mistake:\n```python\n1student = \"Ahmed\"\nprint(1student)\n```\nFix: _______________\n\n---\n\n**Q6.** What does this print?\n```python\ngreeting = \"Assalamu Alaikum\"\nprint(len(greeting))\n```\nAnswer: _______________\n\n---\n\n**Q7.** Write code to:\n- Ask user for their name\n- Store it in a variable\n- Print the name in ALL CAPITALS\n\n```\n_______________\n_______________\n_______________\n```\n\n---\n\n**Q8.** What is the difference between `name` and `Name` in Python?\nAnswer: _______________\n\n---\n\n**Challenge:**\nWrite a program that:\n1. Asks user for their full name\n2. Prints the name with .title()\n3. Prints the name with .upper()\n4. Prints the number of letters in the name\n5. Prints: \"Ma sha Allah, [name]! Keep learning Python.\"\n"</script>
+        <button class="print-btn no-print" onclick="window.print()">🖨️ Print Practice Sheet</button>
+      </div>
+
+      <div id="tab-assessment" class="tab-pane">
+        <div class="markdown-body" id="md-assessment"></div>
+        <script type="application/json" id="src-assessment">"# Module 2 \u2014 Assessment\n\n## Pass Criteria\nStudent can independently:\n- [ ] Create a variable with a valid name\n- [ ] Store user input in a variable\n- [ ] Use .upper(), .lower(), .title() on a string variable\n- [ ] Explain what a variable is in their own words\n\n## Quick Check Questions (ask orally)\n1. Can a variable name start with a number? (Expected: No)\n2. What does .title() do to \"ahmed khan\"? (Expected: \"Ahmed Khan\")\n3. What does len(name) do if name = \"Ali\"? (Expected: returns 3)\n\n## Quiz Marking (2_8_quiz.py)\n- Easy: 5 marks\n- Medium: 6 marks\n- Complex: 6 marks\n- **Total: 17 marks**\n\n## Grade Scale\n| Marks | Grade |\n|-------|-------|\n| 15\u201317 | Excellent |\n| 11\u201314 | Good |\n| 7\u201310  | Needs revision |\n| 0\u20136   | Revise module |\n\n## Practical Submission\nStudents write a `my_profile.py` that:\n1. Asks for name (apply .title())\n2. Asks for city (apply .upper())\n3. Asks for favourite subject\n4. Prints a formatted profile using all three variables\n5. Prints the length of their name\n"</script>
+      </div>
+
+    </div>
+
+    <div class="module-nav">
+      <a href="module-1.html" class="nav-btn">← Module 1</a>
+      <a href="index.html" class="nav-btn nav-home">🏠 All Modules</a>
+      <a href="module-3.html" class="nav-btn">Module 3 →</a>
+    </div>
+
+  </main>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

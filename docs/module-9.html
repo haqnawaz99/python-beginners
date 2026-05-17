@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 9: File I/O — Python for Beginners</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">🐍 Python for Beginners</a>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar" id="sidebar"><ul class="sidebar-nav"><li><a href="index.html" class="">🏠 Home</a></li><li><a href="module-0.html" class="">⚙️ M0: Setup</a></li><li><a href="module-1.html" class="">📝 M1: Strings</a></li><li><a href="module-2.html" class="">📦 M2: Variables</a></li><li><a href="module-3.html" class="">🔢 M3: Data Types</a></li><li><a href="module-4.html" class="">➕ M4: Operators</a></li><li><a href="module-5.html" class="">🔀 M5: Control Flow</a></li><li><a href="module-6.html" class="">🔧 M6: Functions</a></li><li><a href="module-7.html" class="">📋 M7: Lists</a></li><li><a href="module-8.html" class="">🛡️ M8: Error Handling</a></li><li><a href="module-9.html" class="active">💾 M9: File I/O</a></li><li><a href="module-10.html" class="">🚀 M10: Projects</a></li></ul></aside>
+  <main class="main-content">
+
+    <div class="module-header">
+      <span class="module-icon">💾</span>
+      <div>
+        <p class="module-label">Module 9</p>
+        <h1>File I/O</h1>
+      </div>
+    </div>
+
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="lessons">📚 Lessons</button>
+      <button class="tab-btn" data-tab="notes">📋 Teacher Notes</button>
+      <button class="tab-btn" data-tab="practice">✏️ Practice Sheet</button>
+      <button class="tab-btn" data-tab="assessment">📊 Assessment</button>
+    </div>
+
+    <div class="tab-panes">
+
+      <div id="tab-lessons" class="tab-pane active">
+        
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 9_1_reading_files.py</span>
+        <span class="badge badge-lesson">Lesson</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 9 - Lesson 1: Reading Files
+# ================================================
+# Learn: open(), read(), readline(), readlines(),
+#        with statement, file does not exist error
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;File I/O — Reading Files&quot;)
+print(&quot;=&quot; * 50)
+
+# ------------------------------------------------
+# Why work with files?
+# ------------------------------------------------
+# So far, all our data disappears when the program stops.
+# Files let us SAVE data permanently and READ it back later.
+# This is how real programs work:
+#   - Save student records to a file
+#   - Read a list of names from a file
+#   - Log results to a file
+
+# ------------------------------------------------
+# The with statement — safest way to open files
+# ------------------------------------------------
+# with open(&quot;filename&quot;, &quot;mode&quot;) as file:
+#     do something with file
+#
+# Mode:
+#   &quot;r&quot;  = read   (file must exist)
+#   &quot;w&quot;  = write  (creates or overwrites file)
+#   &quot;a&quot;  = append (adds to end of existing file)
+#
+# with automatically closes the file when done.
+
+# ------------------------------------------------
+# First: create a test file to read from
+# ------------------------------------------------
+# We create this file now so the reading examples work.
+
+with open(&quot;students.txt&quot;, &quot;w&quot;) as f:
+    f.write(&quot;Ahmed Ali\n&quot;)
+    f.write(&quot;Fatima Khan\n&quot;)
+    f.write(&quot;Hassan Raza\n&quot;)
+    f.write(&quot;Zainab Mir\n&quot;)
+    f.write(&quot;Abdullah Shah\n&quot;)
+
+print(&quot;File &#x27;students.txt&#x27; created.&quot;)
+
+# ------------------------------------------------
+# 1. Read the entire file at once
+# ------------------------------------------------
+print(&quot;\n1. read() — entire file:&quot;)
+
+with open(&quot;students.txt&quot;, &quot;r&quot;) as f:
+    content = f.read()
+    print(content)
+
+# ------------------------------------------------
+# 2. Read line by line with a loop
+# ------------------------------------------------
+print(&quot;2. Loop through lines:&quot;)
+
+with open(&quot;students.txt&quot;, &quot;r&quot;) as f:
+    for line in f:
+        print(line.strip())         # .strip() removes the \n at end
+
+# ------------------------------------------------
+# 3. Read all lines into a list
+# ------------------------------------------------
+print(&quot;\n3. readlines() — list of lines:&quot;)
+
+with open(&quot;students.txt&quot;, &quot;r&quot;) as f:
+    lines = f.readlines()
+
+print(f&quot;Total students: {len(lines)}&quot;)
+print(f&quot;First student : {lines[0].strip()}&quot;)
+print(f&quot;Last student  : {lines[-1].strip()}&quot;)
+
+# Process the list
+print(&quot;\nNumbered list:&quot;)
+for i, line in enumerate(lines, 1):
+    print(f&quot;  {i}. {line.strip()}&quot;)
+
+# ------------------------------------------------
+# 4. Handle file not found
+# ------------------------------------------------
+print(&quot;\n4. File not found error:&quot;)
+
+try:
+    with open(&quot;missing_file.txt&quot;, &quot;r&quot;) as f:
+        content = f.read()
+except FileNotFoundError:
+    print(&quot;Error: File not found. Please check the filename.&quot;)
+
+# ------------------------------------------------
+# 5. Check if a file exists before opening
+# ------------------------------------------------
+print(&quot;\n5. Check if file exists:&quot;)
+
+import os
+
+filename = &quot;students.txt&quot;
+if os.path.exists(filename):
+    with open(filename, &quot;r&quot;) as f:
+        lines = f.readlines()
+    print(f&quot;File found — {len(lines)} lines.&quot;)
+else:
+    print(f&quot;File &#x27;{filename}&#x27; does not exist.&quot;)
+
+print()
+print(&quot;Reading files lets you work with saved data. Well done!&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 9_2_writing_files.py</span>
+        <span class="badge badge-lesson">Lesson</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 9 - Lesson 2: Writing Files
+# ================================================
+# Learn: write(), append mode, saving program data,
+#        writing lists and dictionaries to files
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;File I/O — Writing Files&quot;)
+print(&quot;=&quot; * 50)
+
+# ------------------------------------------------
+# 1. Write mode &quot;w&quot; — creates or overwrites
+# ------------------------------------------------
+print(&quot;\n1. Write mode (w):&quot;)
+
+with open(&quot;greetings.txt&quot;, &quot;w&quot;) as f:
+    f.write(&quot;Assalamu Alaikum\n&quot;)
+    f.write(&quot;Welcome to Python\n&quot;)
+    f.write(&quot;Bismillah\n&quot;)
+
+print(&quot;greetings.txt created.&quot;)
+
+# Read it back to verify
+with open(&quot;greetings.txt&quot;, &quot;r&quot;) as f:
+    print(f.read())
+
+# ------------------------------------------------
+# 2. Append mode &quot;a&quot; — adds to existing file
+# ------------------------------------------------
+print(&quot;2. Append mode (a):&quot;)
+
+with open(&quot;greetings.txt&quot;, &quot;a&quot;) as f:
+    f.write(&quot;JazakAllah Khair\n&quot;)
+    f.write(&quot;Assalamu Alaikum wa Rahmatullahi\n&quot;)
+
+print(&quot;Two lines added.&quot;)
+with open(&quot;greetings.txt&quot;, &quot;r&quot;) as f:
+    print(f.read())
+
+# ------------------------------------------------
+# 3. Writing a list to a file
+# ------------------------------------------------
+print(&quot;3. Writing a list:&quot;)
+
+prayers = [&quot;Fajr&quot;, &quot;Dhuhr&quot;, &quot;Asr&quot;, &quot;Maghrib&quot;, &quot;Isha&quot;]
+
+with open(&quot;prayers.txt&quot;, &quot;w&quot;) as f:
+    for prayer in prayers:
+        f.write(prayer + &quot;\n&quot;)
+
+print(&quot;prayers.txt saved.&quot;)
+with open(&quot;prayers.txt&quot;, &quot;r&quot;) as f:
+    print(f.read())
+
+# ------------------------------------------------
+# 4. Saving user input to a file
+# ------------------------------------------------
+print(&quot;4. Save student names to file:&quot;)
+
+filename = &quot;class_list.txt&quot;
+num = int(input(&quot;How many students? &quot;))
+
+with open(filename, &quot;w&quot;) as f:
+    for i in range(num):
+        name = input(f&quot;Student {i+1}: &quot;)
+        f.write(name.strip().title() + &quot;\n&quot;)
+
+print(f&quot;\nSaved to {filename}:&quot;)
+with open(filename, &quot;r&quot;) as f:
+    print(f.read())
+
+# ------------------------------------------------
+# 5. Saving marks — structured data
+# ------------------------------------------------
+print(&quot;5. Save marks report:&quot;)
+
+subjects = [&quot;Quran&quot;, &quot;Hadith&quot;, &quot;Fiqh&quot;]
+student_name = input(&quot;Student name: &quot;)
+marks_data = {}
+
+for subject in subjects:
+    m = int(input(f&quot;{subject} marks: &quot;))
+    marks_data[subject] = m
+
+total = sum(marks_data.values())
+average = total / len(marks_data)
+
+with open(&quot;report.txt&quot;, &quot;w&quot;) as f:
+    f.write(&quot;=&quot; * 30 + &quot;\n&quot;)
+    f.write(&quot;STUDENT REPORT\n&quot;)
+    f.write(&quot;=&quot; * 30 + &quot;\n&quot;)
+    f.write(f&quot;Name: {student_name}\n&quot;)
+    f.write(&quot;-&quot; * 30 + &quot;\n&quot;)
+    for subject, marks in marks_data.items():
+        result = &quot;Pass&quot; if marks &gt;= 50 else &quot;Fail&quot;
+        f.write(f&quot;{subject:&lt;12}: {marks}  ({result})\n&quot;)
+    f.write(&quot;-&quot; * 30 + &quot;\n&quot;)
+    f.write(f&quot;Total  : {total}\n&quot;)
+    f.write(f&quot;Average: {average:.1f}\n&quot;)
+    f.write(&quot;=&quot; * 30 + &quot;\n&quot;)
+
+print(&quot;\nReport saved to report.txt:&quot;)
+with open(&quot;report.txt&quot;, &quot;r&quot;) as f:
+    print(f.read())
+
+print()
+print(&quot;Writing files lets you save your program&#x27;s results forever!&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 9_3_file_applications.py</span>
+        <span class="badge badge-app">Applications</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 9 - Lesson 3: File I/O Applications
+# ================================================
+# Real programs that save and load data from files
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;File I/O — Real Applications&quot;)
+print(&quot;=&quot; * 50)
+
+import os
+
+# ------------------------------------------------
+# Application 1: Student Record System
+# ------------------------------------------------
+# Save student records to a file.
+# Load and display them later.
+
+STUDENTS_FILE = &quot;student_records.txt&quot;
+
+def save_student(name, marks, city):
+    with open(STUDENTS_FILE, &quot;a&quot;) as f:
+        f.write(f&quot;{name},{marks},{city}\n&quot;)
+
+def load_students():
+    students = []
+    if not os.path.exists(STUDENTS_FILE):
+        return students
+    with open(STUDENTS_FILE, &quot;r&quot;) as f:
+        for line in f:
+            line = line.strip()
+            if line:
+                parts = line.split(&quot;,&quot;)
+                students.append({
+                    &quot;name&quot;: parts[0],
+                    &quot;marks&quot;: int(parts[1]),
+                    &quot;city&quot;: parts[2]
+                })
+    return students
+
+def display_students(students):
+    if not students:
+        print(&quot;No records found.&quot;)
+        return
+    print(f&quot;\n{&#x27;Name&#x27;:&lt;20} {&#x27;Marks&#x27;:&gt;6} {&#x27;City&#x27;:&lt;15} {&#x27;Result&#x27;}&quot;)
+    print(&quot;-&quot; * 55)
+    for s in students:
+        result = &quot;Pass&quot; if s[&quot;marks&quot;] &gt;= 50 else &quot;Fail&quot;
+        print(f&quot;{s[&#x27;name&#x27;]:&lt;20} {s[&#x27;marks&#x27;]:&gt;6} {s[&#x27;city&#x27;]:&lt;15} {result}&quot;)
+
+print(&quot;\n--- Application 1: Student Records ---&quot;)
+print(&quot;1. Add student  2. View all  3. Skip&quot;)
+choice = input(&quot;Choice: &quot;).strip()
+
+if choice == &quot;1&quot;:
+    name  = input(&quot;Name: &quot;).strip().title()
+    marks = int(input(&quot;Marks: &quot;))
+    city  = input(&quot;City: &quot;).strip().title()
+    save_student(name, marks, city)
+    print(&quot;Student saved!&quot;)
+
+students = load_students()
+display_students(students)
+
+# ------------------------------------------------
+# Application 2: Daily Notes / Journal
+# ------------------------------------------------
+NOTES_FILE = &quot;daily_notes.txt&quot;
+
+def add_note(note):
+    with open(NOTES_FILE, &quot;a&quot;) as f:
+        f.write(note.strip() + &quot;\n&quot;)
+
+def read_notes():
+    if not os.path.exists(NOTES_FILE):
+        print(&quot;No notes yet.&quot;)
+        return
+    with open(NOTES_FILE, &quot;r&quot;) as f:
+        lines = f.readlines()
+    print(f&quot;\nAll notes ({len(lines)} total):&quot;)
+    for i, line in enumerate(lines, 1):
+        print(f&quot;  {i}. {line.strip()}&quot;)
+
+print(&quot;\n--- Application 2: Daily Notes ---&quot;)
+note = input(&quot;Add a note (or press Enter to skip): &quot;).strip()
+if note:
+    add_note(note)
+    print(&quot;Note saved!&quot;)
+read_notes()
+
+# ------------------------------------------------
+# Application 3: Simple Marks Log
+# ------------------------------------------------
+MARKS_FILE = &quot;marks_log.txt&quot;
+
+def log_marks(subject, marks):
+    with open(MARKS_FILE, &quot;a&quot;) as f:
+        f.write(f&quot;{subject},{marks}\n&quot;)
+
+def show_marks_summary():
+    if not os.path.exists(MARKS_FILE):
+        print(&quot;No marks recorded yet.&quot;)
+        return
+    subjects = []
+    marks_list = []
+    with open(MARKS_FILE, &quot;r&quot;) as f:
+        for line in f:
+            line = line.strip()
+            if &quot;,&quot; in line:
+                subject, marks = line.split(&quot;,&quot;)
+                subjects.append(subject)
+                marks_list.append(int(marks))
+
+    print(f&quot;\nMarks Summary ({len(marks_list)} entries):&quot;)
+    for s, m in zip(subjects, marks_list):
+        print(f&quot;  {s:&lt;15}: {m}&quot;)
+    if marks_list:
+        print(f&quot;Average: {sum(marks_list) / len(marks_list):.1f}&quot;)
+
+print(&quot;\n--- Application 3: Marks Log ---&quot;)
+add_more = input(&quot;Add marks? (yes/no): &quot;).strip().lower()
+if add_more == &quot;yes&quot;:
+    subject = input(&quot;Subject: &quot;)
+    marks = int(input(&quot;Marks: &quot;))
+    log_marks(subject, marks)
+    print(&quot;Marks logged!&quot;)
+
+show_marks_summary()
+
+print()
+print(&quot;File I/O makes your programs remember data between runs!&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 9_4_quiz.py</span>
+        <span class="badge badge-quiz">Quiz</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 9 - Quiz: File I/O
+# ================================================
+# Covers: open(), read/write/append, with statement,
+#         FileNotFoundError, saving/loading data
+# Difficulty: Easy / Medium / Complex
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;MODULE 9 QUIZ - File I/O&quot;)
+print(&quot;=&quot; * 50)
+print()
+
+# ------------------------------------------------
+# EASY
+# ------------------------------------------------
+print(&quot;--- EASY ---&quot;)
+print()
+
+# Q1. Write code that creates a file called &quot;salam.txt&quot;
+#     and writes these 3 lines into it:
+#       Assalamu Alaikum
+#       Bismillah
+#       JazakAllah Khair
+#     Then read the file and print its contents.
+
+
+# Q2. Open &quot;salam.txt&quot; in APPEND mode and add one more line:
+#     &quot;Ma sha Allah&quot;
+#     Then read and print the full file again.
+
+
+# Q3. Write a try/except that handles FileNotFoundError
+#     when trying to open &quot;does_not_exist.txt&quot;
+#     Print a helpful message if the file is not found.
+
+
+# Q4. Create a list of 5 Pakistani cities.
+#     Write each city to &quot;cities.txt&quot; (one per line).
+#     Read the file and print the number of cities saved.
+
+
+# Q5. Ask the user for their name and favourite subject.
+#     Save both to a file called &quot;profile.txt&quot;.
+#     Then read and display the file contents.
+
+
+# ------------------------------------------------
+# MEDIUM
+# ------------------------------------------------
+print()
+print(&quot;--- MEDIUM ---&quot;)
+print()
+
+# Q6. Ask the user for 3 student names in a loop.
+#     Append each name to &quot;class.txt&quot; as you collect them
+#     (don&#x27;t wait — append each one immediately).
+#     After the loop, read the file and display a numbered list.
+
+
+# Q7. Write a function save_score(name, score, filename)
+#     that appends &quot;name,score\n&quot; to the file.
+#     Write another function load_scores(filename) that
+#     reads the file and returns a list of (name, score) tuples.
+#     Test with 3 entries and print all scores.
+
+
+# Q8. Read &quot;students.txt&quot; (created in Lesson 1).
+#     Count how many students are in the file.
+#     Print the total count and list all names.
+#     Handle FileNotFoundError if the file doesn&#x27;t exist.
+
+
+# ------------------------------------------------
+# COMPLEX
+# ------------------------------------------------
+print()
+print(&quot;--- COMPLEX ---&quot;)
+print()
+
+# Q9. Build a persistent contact book:
+#     - File: &quot;contacts.txt&quot; (format: name,phone per line)
+#     - Menu:
+#         1. Add contact (append to file)
+#         2. View all contacts (read file, print neatly)
+#         3. Search by name (read file, find match)
+#         4. Exit
+#     - Handle FileNotFoundError for empty/missing file
+#     - Loop until user chooses 4
+
+
+# Q10. Build a marks tracker that persists across runs:
+#      - File: &quot;all_marks.txt&quot; (format: student,subject,marks)
+#      - Let user add a new record
+#      - Display all records grouped by student
+#      - Show each student&#x27;s average
+
+
+# Q11. Build a &quot;daily dhikr counter&quot;:
+#      - File: &quot;dhikr_log.txt&quot;
+#      - Ask user which dhikr (SubhanAllah / Alhamdulillah / AllahuAkbar)
+#      - Ask how many times they recited
+#      - Append to file with the dhikr name and count
+#      - Read the file and show total count for each type
+#      - Print overall grand total
+
+
+print()
+print(&quot;Quiz done! Check 9_5_quiz_solution.py for answers.&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 9_5_quiz_solution.py</span>
+        <span class="badge badge-solution">Quiz Solution</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 9 - Quiz Solutions
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;MODULE 9 QUIZ - SOLUTIONS&quot;)
+print(&quot;=&quot; * 50)
+print()
+
+import os
+
+# ------------------------------------------------
+# EASY
+# ------------------------------------------------
+print(&quot;--- EASY ---&quot;)
+print()
+
+# Q1.
+with open(&quot;salam.txt&quot;, &quot;w&quot;) as f:
+    f.write(&quot;Assalamu Alaikum\n&quot;)
+    f.write(&quot;Bismillah\n&quot;)
+    f.write(&quot;JazakAllah Khair\n&quot;)
+
+with open(&quot;salam.txt&quot;, &quot;r&quot;) as f:
+    print(f.read())
+
+# Q2.
+with open(&quot;salam.txt&quot;, &quot;a&quot;) as f:
+    f.write(&quot;Ma sha Allah\n&quot;)
+
+with open(&quot;salam.txt&quot;, &quot;r&quot;) as f:
+    print(f.read())
+
+# Q3.
+try:
+    with open(&quot;does_not_exist.txt&quot;, &quot;r&quot;) as f:
+        content = f.read()
+except FileNotFoundError:
+    print(&quot;File not found! Please check the filename.&quot;)
+
+# Q4.
+cities = [&quot;Lahore&quot;, &quot;Karachi&quot;, &quot;Islamabad&quot;, &quot;Peshawar&quot;, &quot;Quetta&quot;]
+with open(&quot;cities.txt&quot;, &quot;w&quot;) as f:
+    for city in cities:
+        f.write(city + &quot;\n&quot;)
+
+with open(&quot;cities.txt&quot;, &quot;r&quot;) as f:
+    lines = f.readlines()
+print(f&quot;Cities saved: {len(lines)}&quot;)
+
+# Q5.
+name = input(&quot;Your name: &quot;)
+subject = input(&quot;Favourite subject: &quot;)
+with open(&quot;profile.txt&quot;, &quot;w&quot;) as f:
+    f.write(f&quot;Name   : {name}\n&quot;)
+    f.write(f&quot;Subject: {subject}\n&quot;)
+
+with open(&quot;profile.txt&quot;, &quot;r&quot;) as f:
+    print(f.read())
+
+# ------------------------------------------------
+# MEDIUM
+# ------------------------------------------------
+print()
+print(&quot;--- MEDIUM ---&quot;)
+print()
+
+# Q6.
+for i in range(3):
+    name = input(f&quot;Student {i+1}: &quot;)
+    with open(&quot;class.txt&quot;, &quot;a&quot;) as f:
+        f.write(name.strip() + &quot;\n&quot;)
+
+with open(&quot;class.txt&quot;, &quot;r&quot;) as f:
+    for i, line in enumerate(f, 1):
+        print(f&quot;  {i}. {line.strip()}&quot;)
+
+# Q7.
+def save_score(name, score, filename):
+    with open(filename, &quot;a&quot;) as f:
+        f.write(f&quot;{name},{score}\n&quot;)
+
+def load_scores(filename):
+    scores = []
+    try:
+        with open(filename, &quot;r&quot;) as f:
+            for line in f:
+                line = line.strip()
+                if &quot;,&quot; in line:
+                    name, score = line.split(&quot;,&quot;)
+                    scores.append((name, int(score)))
+    except FileNotFoundError:
+        pass
+    return scores
+
+save_score(&quot;Ahmed&quot;,  85, &quot;scores.txt&quot;)
+save_score(&quot;Fatima&quot;, 92, &quot;scores.txt&quot;)
+save_score(&quot;Hassan&quot;, 70, &quot;scores.txt&quot;)
+
+scores = load_scores(&quot;scores.txt&quot;)
+for name, score in scores:
+    print(f&quot;  {name}: {score}&quot;)
+
+# Q8.
+try:
+    with open(&quot;students.txt&quot;, &quot;r&quot;) as f:
+        names = [line.strip() for line in f if line.strip()]
+    print(f&quot;Total students: {len(names)}&quot;)
+    for i, name in enumerate(names, 1):
+        print(f&quot;  {i}. {name}&quot;)
+except FileNotFoundError:
+    print(&quot;students.txt not found.&quot;)
+
+# ------------------------------------------------
+# COMPLEX
+# ------------------------------------------------
+print()
+print(&quot;--- COMPLEX ---&quot;)
+print()
+
+# Q9.
+CONTACTS = &quot;contacts.txt&quot;
+
+def add_contact():
+    name = input(&quot;Name: &quot;).strip()
+    phone = input(&quot;Phone: &quot;).strip()
+    with open(CONTACTS, &quot;a&quot;) as f:
+        f.write(f&quot;{name},{phone}\n&quot;)
+    print(&quot;Contact saved!&quot;)
+
+def view_contacts():
+    try:
+        with open(CONTACTS, &quot;r&quot;) as f:
+            lines = [l.strip() for l in f if l.strip()]
+        if not lines:
+            print(&quot;No contacts yet.&quot;)
+            return
+        for line in lines:
+            name, phone = line.split(&quot;,&quot;)
+            print(f&quot;  {name:&lt;20}: {phone}&quot;)
+    except FileNotFoundError:
+        print(&quot;No contacts file yet.&quot;)
+
+def search_contact(query):
+    try:
+        with open(CONTACTS, &quot;r&quot;) as f:
+            for line in f:
+                name, phone = line.strip().split(&quot;,&quot;)
+                if query.lower() in name.lower():
+                    print(f&quot;Found: {name} — {phone}&quot;)
+                    return
+        print(&quot;Not found.&quot;)
+    except FileNotFoundError:
+        print(&quot;No contacts file yet.&quot;)
+
+while True:
+    print(&quot;\n1.Add  2.View  3.Search  4.Exit&quot;)
+    c = input(&quot;Choice: &quot;).strip()
+    if c == &quot;1&quot;:
+        add_contact()
+    elif c == &quot;2&quot;:
+        view_contacts()
+    elif c == &quot;3&quot;:
+        q = input(&quot;Search name: &quot;)
+        search_contact(q)
+    elif c == &quot;4&quot;:
+        break
+
+# Q10.
+MARKS_FILE = &quot;all_marks.txt&quot;
+
+student = input(&quot;Student name: &quot;)
+subject = input(&quot;Subject: &quot;)
+marks = int(input(&quot;Marks: &quot;))
+with open(MARKS_FILE, &quot;a&quot;) as f:
+    f.write(f&quot;{student},{subject},{marks}\n&quot;)
+
+data = {}
+try:
+    with open(MARKS_FILE, &quot;r&quot;) as f:
+        for line in f:
+            line = line.strip()
+            if &quot;,&quot; in line:
+                s, sub, m = line.split(&quot;,&quot;)
+                if s not in data:
+                    data[s] = []
+                data[s].append((sub, int(m)))
+except FileNotFoundError:
+    pass
+
+for name, records in data.items():
+    total = sum(m for _, m in records)
+    avg = total / len(records)
+    print(f&quot;\n{name} (avg: {avg:.1f})&quot;)
+    for sub, m in records:
+        print(f&quot;  {sub}: {m}&quot;)
+
+# Q11.
+DHIKR_FILE = &quot;dhikr_log.txt&quot;
+dhikr = input(&quot;Which dhikr (SubhanAllah/Alhamdulillah/AllahuAkbar): &quot;).strip()
+count = int(input(&quot;How many times: &quot;))
+with open(DHIKR_FILE, &quot;a&quot;) as f:
+    f.write(f&quot;{dhikr},{count}\n&quot;)
+
+totals = {}
+grand_total = 0
+try:
+    with open(DHIKR_FILE, &quot;r&quot;) as f:
+        for line in f:
+            line = line.strip()
+            if &quot;,&quot; in line:
+                d, c = line.split(&quot;,&quot;)
+                totals[d] = totals.get(d, 0) + int(c)
+                grand_total += int(c)
+except FileNotFoundError:
+    pass
+
+print(&quot;\nDhikr Summary:&quot;)
+for d, c in totals.items():
+    print(f&quot;  {d}: {c}&quot;)
+print(f&quot;Grand Total: {grand_total}&quot;)
+
+print()
+print(&quot;End of solutions.&quot;)
+</code></pre>
+    </div>
+      </div>
+
+      <div id="tab-notes" class="tab-pane">
+        <div class="markdown-body" id="md-notes"></div>
+        <script type="application/json" id="src-notes">"# Module 9 \u2014 File I/O: Teacher Notes\n\n## Duration\n2 classes\n\n---\n\n## Learning Objectives\n\nBy the end of this module, students will be able to:\n\n- Open a file in **read**, **write**, and **append** modes\n- Use the `with` statement to safely handle files\n- Read file contents using `read()` and `readlines()`\n- Write data to a file\n- Handle `FileNotFoundError` gracefully\n\n---\n\n## Lesson Flow\n\n### Class 1\n\n| File | Topic |\n|------|-------|\n| `9_1_reading_files.py` | `open()`, `read()`, `readlines()`, the `with` statement |\n| `9_2_writing_files.py` | Write mode `\"w\"`, append mode `\"a\"` |\n\n**Class 1 plan:**\n1. Start with the analogy \u2014 a file is like a physical notebook (\u06a9\u0627\u067e\u06cc). You open it, read or write, then close it.\n2. Show `open()` without `with` first, then show why `with` is better (automatic close).\n3. Demonstrate `read()` vs `readlines()` on the same file \u2014 show the difference in output.\n4. Move to writing \u2014 **live demo the \"w\" mode danger** (see WARNING below).\n\n### Class 2\n\n| File | Topic |\n|------|-------|\n| `9_3_applications.py` | Real examples: saving student scores, reading them back |\n| `9_4_quiz.py` | Quiz on File I/O concepts |\n| Review | Common mistakes, Q&A |\n\n**Class 2 plan:**\n1. Open with a quick recap \u2014 ask students: what are the three modes? what does `with` do?\n2. Walk through `9_3_applications.py` step by step \u2014 this is where concepts connect to real use.\n3. Run the quiz (`9_4_quiz.py`) as a class activity.\n4. End with review of common mistakes (listed below).\n\n---\n\n## Key Concepts\n\n### The `with` Statement \u2014 Always Use This\n\n```python\n# CORRECT \u2014 file closes automatically\nwith open(\"scores.txt\", \"r\") as f:\n    data = f.read()\n\n# AVOID \u2014 easy to forget to close\nf = open(\"scores.txt\", \"r\")\ndata = f.read()\nf.close()\n```\n\n> **Tell students:** `with open() as f:` matlab \u2014 file kholo, kaam karo, phir automatically band ho jaati hai. Yeh best practice hai.\n\n### File Modes\n\n| Mode | Meaning | Urdu |\n|------|---------|------|\n| `\"r\"` | Read only | Sirf parhna |\n| `\"w\"` | Write (overwrites!) | Likhna \u2014 purana data mitata hai |\n| `\"a\"` | Append (adds to end) | Aakhir mein add karna |\n\n### Reading Methods\n\n```python\nwith open(\"data.txt\", \"r\") as f:\n    content = f.read()        # Poora file ek string mein\n    lines = f.readlines()     # Har line ek list item mein\n```\n\n---\n\n## WARNING \u2014 \"w\" Mode Deletes Existing Content\n\n> **Show this LIVE in class.** Create a file with some content, then open it with `\"w\"` mode and write something new. Show students the original content is gone.\n\nThis is one of the most common mistakes beginners make \u2014 using `\"w\"` when they mean `\"a\"`.\n\n**Demonstration script:**\n```python\n# Step 1 \u2014 create a file with content\nwith open(\"test.txt\", \"w\") as f:\n    f.write(\"Bismillah\\nAssalamu Alaikum\\n\")\n\n# Step 2 \u2014 open with \"w\" again (DANGER!)\nwith open(\"test.txt\", \"w\") as f:\n    f.write(\"Yeh naya content hai\")\n\n# Step 3 \u2014 read it back \u2014 old content is GONE\nwith open(\"test.txt\", \"r\") as f:\n    print(f.read())\n```\n\n---\n\n## Handling FileNotFoundError\n\n```python\ntry:\n    with open(\"scores.txt\", \"r\") as f:\n        print(f.read())\nexcept FileNotFoundError:\n    print(\"File nahi mili! Pehle data save karein.\")\n```\n\nTell students: jab file exist nahi karti aur aap `\"r\"` mode use karte hain, Python `FileNotFoundError` deta hai. Hamesha handle karo.\n\n---\n\n## Common Mistakes to Watch For\n\n1. **Forgetting the mode parameter** \u2014 default is `\"r\"`, but it is better to always write it explicitly.\n2. **Using `\"w\"` when they mean `\"a\"`** \u2014 very common! Remind students before every writing exercise.\n3. **Not handling `FileNotFoundError`** \u2014 program crashes if the file does not exist.\n4. **Forgetting to read after writing** \u2014 students sometimes write to a file then try to read in the same `with` block without re-opening.\n5. **Wrong indentation inside `with` block** \u2014 reading/writing code must be indented under `with`.\n\n---\n\n## Urdu Teaching Tips\n\n- **File kya hai?** \"File matlab dastaawez \u2014 computer pe sacha hua data. Jaise aap ek copy mein notes likhte hain, waise Python file mein data save karta hai.\"\n- **`with open()` samjhaein:** \"with open() matlab \u2014 file kholo, apna kaam karo, phir file band karo. Python yeh kaam khud karta hai.\"\n- **`\"w\"` mode alert:** \"'w' mode alert: purana data mit jaata hai! Agar sirf add karna ho, 'a' use karo.\"\n- **Analogy:** \"Mode waise hai jaise copy kholne ka tarika \u2014 sirf parhne ke liye kholna alag hai, likhne ke liye kholna alag hai.\"\n\n---\n\n## Files in This Module\n\n| File | Description |\n|------|-------------|\n| `9_1_reading_files.py` | Opening and reading files |\n| `9_2_writing_files.py` | Writing and appending to files |\n| `9_3_applications.py` | Real-world examples with scores |\n| `9_4_quiz.py` | Module quiz |\n| `9_5_challenge.py` | Extension/challenge task |\n\n---\n\n## Quick Reference Card (for the board)\n\n```\n\"r\"  \u2192 Read   (file must exist)\n\"w\"  \u2192 Write  (creates new OR deletes old!)\n\"a\"  \u2192 Append (adds to end, safe)\n\nwith open(\"file.txt\", \"r\") as f:\n    data = f.read()\n```\n"</script>
+      </div>
+
+      <div id="tab-practice" class="tab-pane">
+        <div class="markdown-body print-friendly" id="md-practice"></div>
+        <script type="application/json" id="src-practice">"# Module 9 \u2014 File I/O: Practice Sheet\n\n**Naam / Name:** _______________________  \n**Taareekh / Date:** _______________________  \n**Class:** _______________________\n\n---\n\n> **Yaad rakhein:** File modes \u2014 `\"r\"` (read), `\"w\"` (write, overwrites!), `\"a\"` (append)  \n> **Remember:** Always use `with open(...) as f:` \u2014 it closes the file automatically.\n\n---\n\n## Section A \u2014 Short Questions\n\n**Q1.** File ko sirf parhne (reading only) ke liye kaunsa mode use hota hai?\n\n```\nJawab: _______________________\n```\n\n---\n\n**Q2.** `\"w\"` aur `\"a\"` mode mein kya farq hai? Urdu ya English mein likho.\n\n```\nJawab:\n_______________________________________________\n_______________________________________________\n```\n\n---\n\n**Q3.** Yeh code likho: ek file `\"salam.txt\"` banao aur usme `\"Assalamu Alaikum\"` likho.\n\n```python\n# Yahan apna code likho:\n\n\n\n\n```\n\n---\n\n**Q4.** Yeh code likho: `\"salam.txt\"` file paro aur uska content print karo.\n\n```python\n# Yahan apna code likho:\n\n\n\n\n```\n\n---\n\n**Q5.** `with open()` use kyun karna chahiye sirf `open()` ki jagah? Ek wajah batao.\n\n```\nJawab:\n_______________________________________________\n```\n\n---\n\n**Q6.** Kya error aata hai agar aap aisi file read karne ki koshish karo jo exist nahi karti?\n\n```\nJawab: _______________________\n```\n\n---\n\n## Section B \u2014 Code Writing\n\n**Q7.** Yeh code likho: ek existing file `\"dua.txt\"` ke end mein `\"JazakAllah Khair\"` add karo (purana content na mithe).\n\n```python\n# Yahan apna code likho:\n\n\n\n\n```\n\n---\n\n**Q8.** Neeche wala code galat hai. Galtiyan dhundo aur theek karo:\n\n```python\n# GALAT CODE:\nf = open(\"data.txt\")\ndata = f.read()\nprint(data)\n```\n\n**Galtiyan (mistakes):**\n1. _______________________________________________\n2. _______________________________________________\n\n**Theek kiya hua code:**\n\n```python\n# THEEK CODE:\n\n\n\n\n```\n\n---\n\n**Q9.** Yeh code likho: teen Pakistani shehar (cities) ki list bana ke file mein save karo \u2014 har shehar ek alag line mein.\n\n```python\n# Hint: cities = [\"Karachi\", \"Lahore\", \"Islamabad\"]\n# Yahan apna code likho:\n\n\n\n\n```\n\n---\n\n## Section C \u2014 Challenge Question\n\n**Challenge:** Ek **persistent naam collector** banao.\n\nProgram ke rules:\n- Har baar run hone par, user se ek naam maango\n- Woh naam file `\"names.txt\"` mein **add** karo (purane naam na mitten)\n- Phir file ke **saare naam** numbered list mein print karo\n\n**Expected output (2nd run ke baad):**\n\n```\nApna naam darj karein: Fatima\n\n--- Ab tak ke saare naam ---\n1. Ali\n2. Fatima\n```\n\n```python\n# Yahan apna code likho:\n\n\n\n\n```\n\n---\n\n## Mutaliq Maloomat (Quick Reference)\n\n```python\n# File likhna (naya banao)\nwith open(\"file.txt\", \"w\") as f:\n    f.write(\"Bismillah\\n\")\n\n# File parhna\nwith open(\"file.txt\", \"r\") as f:\n    content = f.read()\n\n# File mein add karna\nwith open(\"file.txt\", \"a\") as f:\n    f.write(\"Naya data\\n\")\n\n# Error handle karna\ntry:\n    with open(\"file.txt\", \"r\") as f:\n        print(f.read())\nexcept FileNotFoundError:\n    print(\"File nahi mili!\")\n```\n\n---\n\n*Module 9 \u2014 File I/O | ISDP Python Course*\n"</script>
+        <button class="print-btn no-print" onclick="window.print()">🖨️ Print Practice Sheet</button>
+      </div>
+
+      <div id="tab-assessment" class="tab-pane">
+        <div class="markdown-body" id="md-assessment"></div>
+        <script type="application/json" id="src-assessment">"# Module 9 \u2014 File I/O: Assessment\n\n## Pass Criteria\n\nA student passes this module when they can:\n\n- [ ] Create a file and write text to it using `\"w\"` mode\n- [ ] Read a file and print its contents using `\"r\"` mode\n- [ ] Append to an existing file without losing old data using `\"a\"` mode\n- [ ] Handle `FileNotFoundError` with a `try/except` block\n\n---\n\n## Oral Questions\n\nAsk these during the practical assessment or as a class check. Accept answers in Urdu or English.\n\n| # | Question | Expected Answer |\n|---|----------|-----------------|\n| 1 | `\"w\"` aur `\"a\"` mode mein kya farq hai? | `\"w\"` purana data delete karta hai, `\"a\"` end mein add karta hai |\n| 2 | `with open()` kya karta hai? | File kholta hai, kaam ke baad automatically band karta hai |\n| 3 | Agar file exist nahi kare aur aap read karein toh kya error aata hai? | `FileNotFoundError` |\n| 4 | `read()` aur `readlines()` mein kya farq hai? | `read()` poora file ek string mein, `readlines()` list of lines deta hai |\n| 5 | Hamesha `with` use kyun karna chahiye? | File automatically close hoti hai, resource leak nahi hota |\n\n---\n\n## Quiz Marking Scheme\n\n**Total: 17 marks**\n\n| Section | Questions | Marks Each | Total |\n|---------|-----------|------------|-------|\n| Easy | 5 questions | 1 mark | 5 |\n| Medium | 3 questions | 2 marks | 6 |\n| Complex | 2 questions | 3 marks | 6 |\n\n---\n\n## Grade Scale\n\n| Marks | Grade | Urdu Feedback |\n|-------|-------|---------------|\n| 15 \u2013 17 | Excellent | Mashallah! Bahut achi tarah samjha |\n| 11 \u2013 14 | Good | Wah! Acha kaam kiya |\n| 7 \u2013 10 | Pass | Theek hai, thodi aur practice karo |\n| 0 \u2013 6 | Needs more work | Koi baat nahi, dobara karte hain |\n\n---\n\n## Practical Assessment Task\n\n### Task: Student Name File Manager\n\nWrite a complete Python program that does the following:\n\n1. **Save names** \u2014 ask the user to enter student names one by one (until they type `\"done\"`), and save each name to a file called `students.txt`, one name per line\n2. **Read and display** \u2014 read `students.txt` and print all names with numbers (1, 2, 3 ...)\n3. **Handle missing file** \u2014 if `students.txt` does not exist when reading, print a helpful message instead of crashing\n\n**Sample output:**\n\n```\nNaam darj karein (done likhein jab khatam ho): Ali\nNaam darj karein (done likhein jab khatam ho): Sara\nNaam darj karein (done likhein jab khatam ho): Bilal\nNaam darj karein (done likhein jab khatam ho): done\n\n--- Saare Students ---\n1. Ali\n2. Sara\n3. Bilal\n```\n\n### Marking Rubric \u2014 Practical Task\n\n| Criterion | Marks |\n|-----------|-------|\n| File is created and names are written correctly | 3 |\n| Names are read back and printed with numbers | 3 |\n| Loop runs until user types \"done\" | 2 |\n| `FileNotFoundError` is handled | 2 |\n| **Total** | **10** |\n\n---\n\n## Suggested Timeline\n\n| Activity | Time |\n|----------|------|\n| Quiz (written) | 15 minutes |\n| Practical task | 20 minutes |\n| Oral questions (spot-check 3\u20134 students) | 10 minutes |\n| Review and feedback | 5 minutes |\n\n---\n\n## Notes for Teacher\n\n- For the practical, allow students to have the practice sheet open as a reference.\n- If a student cannot write the code from scratch, ask them to **explain** what the code should do \u2014 partial credit for understanding is valid.\n- Students who finish early: ask them to add an **append** feature (add more names without losing old ones).\n"</script>
+      </div>
+
+    </div>
+
+    <div class="module-nav">
+      <a href="module-8.html" class="nav-btn">← Module 8</a>
+      <a href="index.html" class="nav-btn nav-home">🏠 All Modules</a>
+      <a href="module-10.html" class="nav-btn">Module 10 →</a>
+    </div>
+
+  </main>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

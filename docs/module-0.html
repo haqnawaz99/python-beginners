@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 0: Setup — Python for Beginners</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">🐍 Python for Beginners</a>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar" id="sidebar"><ul class="sidebar-nav"><li><a href="index.html" class="">🏠 Home</a></li><li><a href="module-0.html" class="active">⚙️ M0: Setup</a></li><li><a href="module-1.html" class="">📝 M1: Strings</a></li><li><a href="module-2.html" class="">📦 M2: Variables</a></li><li><a href="module-3.html" class="">🔢 M3: Data Types</a></li><li><a href="module-4.html" class="">➕ M4: Operators</a></li><li><a href="module-5.html" class="">🔀 M5: Control Flow</a></li><li><a href="module-6.html" class="">🔧 M6: Functions</a></li><li><a href="module-7.html" class="">📋 M7: Lists</a></li><li><a href="module-8.html" class="">🛡️ M8: Error Handling</a></li><li><a href="module-9.html" class="">💾 M9: File I/O</a></li><li><a href="module-10.html" class="">🚀 M10: Projects</a></li></ul></aside>
+  <main class="main-content">
+
+    <div class="module-header">
+      <span class="module-icon">⚙️</span>
+      <div>
+        <p class="module-label">Module 0</p>
+        <h1>Setup</h1>
+      </div>
+    </div>
+
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="lessons">📚 Lessons</button>
+      <button class="tab-btn" data-tab="notes">📋 Teacher Notes</button>
+      <button class="tab-btn" data-tab="practice">✏️ Practice Sheet</button>
+      <button class="tab-btn" data-tab="assessment">📊 Assessment</button>
+    </div>
+
+    <div class="tab-panes">
+
+      <div id="tab-lessons" class="tab-pane active">
+        
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 0_1_what_is_python.py</span>
+        <span class="badge badge-lesson">Lesson</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 0 - Lesson 1: What is Python?
+# ================================================
+# Course: Learn Python Step by Step
+# Audience: Ages 10-16, Zero prior experience
+# ================================================
+
+# Python is a programming language.
+# A programming language lets us give instructions to a computer.
+# Just like we use Urdu or English to talk to people,
+# we use Python to talk to computers.
+
+# Why Python?
+# - Easy to read and write (almost like English)
+# - Free to download and use
+# - Used all over the world
+# - Used in websites, games, science, AI, and more
+
+# Who uses Python?
+# - NASA (space research)
+# - Google, YouTube, Instagram
+# - Scientists, doctors, teachers
+# - Students like YOU!
+
+# ------------------------------------------------
+# What can we do with Python?
+# ------------------------------------------------
+
+# 1. Show a message on screen
+print(&quot;Assalamu Alaikum! Welcome to Python.&quot;)
+
+# 2. Do calculations
+print(&quot;5 + 3 =&quot;, 5 + 3)
+
+# 3. Ask the user for information
+# (We will learn this soon)
+
+# 4. Make decisions
+# (We will learn this too)
+
+# ------------------------------------------------
+# How does Python work?
+# ------------------------------------------------
+# We write instructions in a file ending with .py
+# Python reads our instructions from top to bottom
+# Each line is one instruction
+# Python follows our instructions one by one
+
+print(&quot;Python reads this line first.&quot;)
+print(&quot;Then this line.&quot;)
+print(&quot;Then this line last.&quot;)
+
+# ------------------------------------------------
+# Your First Look at Python Code
+# ------------------------------------------------
+# The word   print   tells Python: show this on screen
+# The text inside &quot; &quot;  is what gets shown
+# Every print statement shows one line
+
+print(&quot;My name is Ahmed.&quot;)
+print(&quot;I am learning Python.&quot;)
+print(&quot;Bismillah - let us begin!&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 0_2_your_first_program.py</span>
+        <span class="badge badge-lesson">Lesson</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 0 - Lesson 2: Your First Program
+# ================================================
+# Learn: print(), running a Python file
+# ================================================
+
+# ------------------------------------------------
+# The print() function
+# ------------------------------------------------
+# print() is the most basic Python command.
+# It shows text or numbers on the screen.
+# Whatever you put inside the brackets gets printed.
+
+print(&quot;Hello, World!&quot;)
+print(&quot;Assalamu Alaikum!&quot;)
+print(&quot;I am a Python programmer now.&quot;)
+
+# ------------------------------------------------
+# Printing numbers
+# ------------------------------------------------
+# Numbers do NOT need quotation marks
+
+print(10)
+print(100)
+print(2025)
+
+# ------------------------------------------------
+# Printing calculations
+# ------------------------------------------------
+# Python can calculate and print the answer
+
+print(5 + 3)        # Addition
+print(10 - 4)       # Subtraction
+print(3 * 4)        # Multiplication
+print(10 / 2)       # Division
+
+# ------------------------------------------------
+# Printing text AND numbers together
+# ------------------------------------------------
+# Use a comma to combine text and numbers in print()
+
+print(&quot;My age is&quot;, 14)
+print(&quot;Pakistan has&quot;, 220000000, &quot;people&quot;)
+print(&quot;There are&quot;, 5, &quot;prayers in a day&quot;)
+
+# ------------------------------------------------
+# Multiple print statements
+# ------------------------------------------------
+# Each print() starts on a new line
+
+print(&quot;Fajr&quot;)
+print(&quot;Dhuhr&quot;)
+print(&quot;Asr&quot;)
+print(&quot;Maghrib&quot;)
+print(&quot;Isha&quot;)
+
+# ------------------------------------------------
+# Empty print() adds a blank line
+# ------------------------------------------------
+print(&quot;First section&quot;)
+print()
+print(&quot;Second section after blank line&quot;)
+
+# ------------------------------------------------
+# How to RUN this file
+# ------------------------------------------------
+# Option 1 - In VS Code:
+#   Open this file, press the green Play button (top right)
+
+# Option 2 - In Terminal / Command Prompt:
+#   Type:  python 0_2_your_first_program.py
+#   Press Enter
+
+# Option 3 - In IDLE:
+#   Press F5
+
+print()
+print(&quot;Congratulations! You ran your first Python program.&quot;)
+print(&quot;Ma sha Allah!&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 0_3_comments.py</span>
+        <span class="badge badge-lesson">Lesson</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 0 - Lesson 3: Comments
+# ================================================
+# Learn: What are comments, how to write them
+# ================================================
+
+# ------------------------------------------------
+# What is a comment?
+# ------------------------------------------------
+# A comment is a note for the programmer.
+# Python IGNORES comments completely.
+# Comments start with the # symbol.
+# Use comments to explain your code.
+
+# This is a comment. Python will not run this line.
+print(&quot;Python runs this line.&quot;)   # This comment is after code - also ignored
+
+# ------------------------------------------------
+# Why write comments?
+# ------------------------------------------------
+# 1. To explain what your code does
+# 2. To remind yourself later
+# 3. To help other people understand your code
+# 4. To temporarily turn off a line of code
+
+# ------------------------------------------------
+# Examples of useful comments
+# ------------------------------------------------
+
+# Print the Islamic greeting
+print(&quot;Assalamu Alaikum wa Rahmatullahi wa Barakatuh&quot;)
+
+# Show the number of Surahs in the Quran
+print(&quot;The Quran has&quot;, 114, &quot;Surahs&quot;)
+
+# Show Pakistan&#x27;s independence year
+print(&quot;Pakistan was created in&quot;, 1947)
+
+# ------------------------------------------------
+# Turning off code with a comment
+# ------------------------------------------------
+# Sometimes we want to stop a line from running.
+# Just put # in front of it.
+
+print(&quot;This line runs.&quot;)
+# print(&quot;This line is turned off - Python ignores it.&quot;)
+print(&quot;This line runs too.&quot;)
+
+# ------------------------------------------------
+# Good commenting habit
+# ------------------------------------------------
+# Write comments that explain WHY, not just WHAT.
+
+# Bad comment (obvious - no need to say this):
+# print the word hello
+print(&quot;Hello&quot;)
+
+# Good comment (explains something non-obvious):
+# Greet the student by name before starting the lesson
+print(&quot;Welcome, Ahmed! Let us learn Python today.&quot;)
+
+# ------------------------------------------------
+# Summary
+# ------------------------------------------------
+# # starts a comment
+# Python ignores all comments
+# Comments are for humans, not computers
+# Good programmers write helpful comments
+
+print()
+print(&quot;You now know about comments. Well done!&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 0_4_common_errors.py</span>
+        <span class="badge badge-lesson">Lesson</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 0 - Lesson 4: Common Errors
+# ================================================
+# Learn: What errors look like, how to read them,
+#        and how to fix the 3 most common ones
+# ================================================
+
+# ------------------------------------------------
+# Errors are NORMAL - do not be afraid!
+# ------------------------------------------------
+# Every programmer sees errors. Even experts.
+# An error means Python found something it cannot understand.
+# Python tells you WHAT went wrong and WHERE.
+# Read the error message - it is helping you!
+
+# ------------------------------------------------
+# Error Type 1: SyntaxError
+# ------------------------------------------------
+# Syntax means the rules of writing Python.
+# A SyntaxError means you broke a rule.
+# Most common cause: missing bracket, missing quote.
+
+# WRONG - missing closing quote:
+# print(&quot;Assalamu Alaikum)
+# Error: SyntaxError: EOL while scanning string literal
+
+# WRONG - missing closing bracket:
+# print(&quot;Hello&quot;
+# Error: SyntaxError: unexpected EOF while parsing
+
+# CORRECT:
+print(&quot;Assalamu Alaikum&quot;)
+print(&quot;Hello&quot;)
+
+# ------------------------------------------------
+# Error Type 2: NameError
+# ------------------------------------------------
+# A NameError means you used a word Python does not know.
+# Most common cause: typo in a function name.
+
+# WRONG - typo: &#x27;Print&#x27; should be &#x27;print&#x27; (lowercase p)
+# Print(&quot;Hello&quot;)
+# Error: NameError: name &#x27;Print&#x27; is not defined
+
+# WRONG - typo in function name
+# priint(&quot;Hello&quot;)
+# Error: NameError: name &#x27;priint&#x27; is not defined
+
+# CORRECT - Python is case sensitive, always lowercase &#x27;print&#x27;
+print(&quot;No errors here!&quot;)
+
+# ------------------------------------------------
+# Error Type 3: IndentationError
+# ------------------------------------------------
+# Python uses spaces/indentation to organize code.
+# We will see this more when we learn if/loops.
+# For now: do NOT add extra spaces at the start of a line.
+
+# WRONG - unexpected indent:
+# print(&quot;Hello&quot;)
+#     print(&quot;Indented by mistake&quot;)
+# Error: IndentationError: unexpected indent
+
+# CORRECT - all basic statements start at the left edge
+print(&quot;Line 1&quot;)
+print(&quot;Line 2&quot;)
+
+# ------------------------------------------------
+# How to READ an error message
+# ------------------------------------------------
+# When you see an error, look for:
+# 1. The FILE name - which file has the error
+# 2. The LINE number - which line caused it
+# 3. The ERROR TYPE - SyntaxError, NameError, etc.
+# 4. The MESSAGE - description of the problem
+
+# Example error message:
+#   File &quot;0_4_common_errors.py&quot;, line 45, in &lt;module&gt;
+#     Print(&quot;Hello&quot;)
+#   NameError: name &#x27;Print&#x27; is not defined
+#
+# This tells us: line 45, we wrote &#x27;Print&#x27; but it should be &#x27;print&#x27;
+
+# ------------------------------------------------
+# Golden Rule
+# ------------------------------------------------
+# When you see an error:
+# Step 1 - Do NOT panic
+# Step 2 - Read the error message carefully
+# Step 3 - Find the line number it mentions
+# Step 4 - Fix the mistake
+# Step 5 - Run again
+
+print()
+print(&quot;Errors are your teacher - they show you exactly what to fix!&quot;)
+print(&quot;Every expert programmer fixes errors every single day.&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 0_5_quiz.py</span>
+        <span class="badge badge-quiz">Quiz</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 0 - Quiz: Setup &amp; First Program
+# ================================================
+# Covers: print(), comments, common errors
+# Difficulty: Easy / Medium / Complex
+# ================================================
+# Instructions: Write your answer below each question.
+# Run the file to check your output.
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;MODULE 0 QUIZ - Setup &amp; First Program&quot;)
+print(&quot;=&quot; * 50)
+print()
+
+# ------------------------------------------------
+# EASY - Direct use of what you learned
+# ------------------------------------------------
+print(&quot;--- EASY ---&quot;)
+print()
+
+# Q1. Print your own name on the screen.
+# Expected output: (your name)
+# Write your answer below:
+
+
+# Q2. Print the name of your city.
+# Expected output: (your city name, e.g. Lahore)
+# Write your answer below:
+
+
+# Q3. Print the number 786.
+# Expected output: 786
+# Write your answer below:
+
+
+# Q4. Print this calculation: 25 + 75
+# Expected output: 100
+# Write your answer below:
+
+
+# Q5. Add a comment above this line that says: &quot;This prints the Kalima&quot;
+print(&quot;La ilaha illallah Muhammadur Rasulullah&quot;)
+
+
+# ------------------------------------------------
+# MEDIUM - Combine two concepts
+# ------------------------------------------------
+print()
+print(&quot;--- MEDIUM ---&quot;)
+print()
+
+# Q6. Print three lines in this exact order:
+#     Line 1: Bismillah
+#     Line 2: (a blank line)
+#     Line 3: Let us begin learning Python
+# Write your answer below:
+
+
+# Q7. Print your school name AND the year it was founded on the same line.
+# Use a comma inside print() to combine text and number.
+# Example output: My school is Jamia Islamia, founded in 1980
+# Write your answer below:
+
+
+# Q8. The line below has an error. Fix it and make it run correctly.
+# print(&quot;Pakistan Zindabad)
+
+
+# Q9. Write TWO lines of code:
+#     Line 1: a comment explaining what the next line does
+#     Line 2: print the total number of players in a cricket team (11)
+# Write your answer below:
+
+
+# ------------------------------------------------
+# COMPLEX - Think creatively, minimal hints
+# ------------------------------------------------
+print()
+print(&quot;--- COMPLEX ---&quot;)
+print()
+
+# Q10. Print a simple name card for yourself using 5 print() statements.
+#      Include: your name, your city, your school, your age, a greeting.
+#      Example:
+#        Name  : Ahmed Ali
+#        City  : Karachi
+#        School: Jamia Islamia
+#        Age   : 14
+#        Hello from Ahmed!
+# Write your answer below:
+
+
+# Q11. A student wrote this code. It has 2 errors. Find and fix both.
+#      priint(&quot;Assalamu Alaikum&quot;)
+#      print(&quot;Welcome to Python&quot;
+# Write the corrected code below:
+
+
+# Q12. Print a small scoreboard for a cricket match between
+#      Pakistan and India. Show team names and their scores.
+#      Use only print() statements. Make it look neat.
+#      Example:
+#        === Cricket Match ===
+#        Pakistan : 320
+#        India    : 285
+#        Winner   : Pakistan
+# Write your answer below:
+
+
+print()
+print(&quot;Quiz complete! Check 0_6_quiz_solution.py for answers.&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 0_6_quiz_solution.py</span>
+        <span class="badge badge-solution">Quiz Solution</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 0 - Quiz Solutions
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;MODULE 0 QUIZ - SOLUTIONS&quot;)
+print(&quot;=&quot; * 50)
+print()
+
+# ------------------------------------------------
+# EASY
+# ------------------------------------------------
+print(&quot;--- EASY ---&quot;)
+print()
+
+# Q1. Print your own name
+print(&quot;Ahmed Ali&quot;)
+
+# Q2. Print the name of your city
+print(&quot;Lahore&quot;)
+
+# Q3. Print the number 786
+print(786)
+
+# Q4. Print this calculation: 25 + 75
+print(25 + 75)
+
+# Q5. Add a comment and print the Kalima
+# This prints the Kalima
+print(&quot;La ilaha illallah Muhammadur Rasulullah&quot;)
+
+# ------------------------------------------------
+# MEDIUM
+# ------------------------------------------------
+print()
+print(&quot;--- MEDIUM ---&quot;)
+print()
+
+# Q6. Three lines with a blank line in the middle
+print(&quot;Bismillah&quot;)
+print()
+print(&quot;Let us begin learning Python&quot;)
+
+# Q7. School name and year on same line
+print(&quot;My school is Jamia Islamia, founded in&quot;, 1980)
+
+# Q8. Fixed code (was missing closing quote)
+print(&quot;Pakistan Zindabad&quot;)
+
+# Q9. Comment + print number of cricket players
+# Print the number of players in a cricket team
+print(11)
+
+# ------------------------------------------------
+# COMPLEX
+# ------------------------------------------------
+print()
+print(&quot;--- COMPLEX ---&quot;)
+print()
+
+# Q10. Name card
+print(&quot;Name  : Ahmed Ali&quot;)
+print(&quot;City  : Karachi&quot;)
+print(&quot;School: Jamia Islamia&quot;)
+print(&quot;Age   : 14&quot;)
+print(&quot;Hello from Ahmed!&quot;)
+
+# Q11. Two errors fixed:
+#   Error 1: &#x27;priint&#x27; -&gt; &#x27;print&#x27;  (NameError)
+#   Error 2: missing closing bracket -&gt; added )  (SyntaxError)
+print(&quot;Assalamu Alaikum&quot;)
+print(&quot;Welcome to Python&quot;)
+
+# Q12. Cricket scoreboard
+print(&quot;=== Cricket Match ===&quot;)
+print(&quot;Pakistan :&quot;, 320)
+print(&quot;India    :&quot;, 285)
+print(&quot;Winner   : Pakistan&quot;)
+
+print()
+print(&quot;End of solutions.&quot;)
+</code></pre>
+    </div>
+      </div>
+
+      <div id="tab-notes" class="tab-pane">
+        <div class="markdown-body" id="md-notes"></div>
+        <script type="application/json" id="src-notes">"# Module 0 \u2014 Setup: Teacher Notes\n\n## Duration\n1 class (45\u201360 minutes)\n\n## Learning Objectives\nBy end of class, students can:\n1. Open VS Code and run a Python file\n2. Write and run a print() statement\n3. Add comments to code\n4. Read a basic error message and find the line number\n\n## Lesson Flow\n\n| Time | Activity |\n|------|----------|\n| 0\u201310 min | Install Python + VS Code together (or pre-installed) |\n| 10\u201320 min | 0_1_what_is_python.py \u2014 What is Python? Why learn it? |\n| 20\u201330 min | 0_2_your_first_program.py \u2014 First print(), run it live |\n| 30\u201340 min | 0_3_comments.py \u2014 Comments with # |\n| 40\u201350 min | 0_4_common_errors.py \u2014 Show errors, read the message |\n| 50\u201360 min | Quiz + wrap up |\n\n## Common Mistakes to Watch\n- Students forget closing quote or bracket \u2192 SyntaxError\n- Students type `Print()` with capital P \u2192 NameError\n- Mixing single and double quotes on same string\n- Not saving the file before running (Ctrl+S first!)\n\n## Tips for Urdu Delivery\n- Say: \"print() matlab computer ko bolna \u2014 yeh line screen pe dikhao\"\n- Show errors deliberately \u2014 \"galti se darna nahin, error message helper hai\"\n- Let students type the first program themselves \u2014 muscle memory matters\n\n## Files in This Module\n- 0_1_what_is_python.py\n- 0_2_your_first_program.py\n- 0_3_comments.py\n- 0_4_common_errors.py\n- 0_5_quiz.py\n- 0_6_quiz_solution.py\n"</script>
+      </div>
+
+      <div id="tab-practice" class="tab-pane">
+        <div class="markdown-body print-friendly" id="md-practice"></div>
+        <script type="application/json" id="src-practice">"# Module 0 \u2014 Practice Sheet\n### Print it out or work in your notebook\n\n---\n\n**Q1.** What will this code print?\n```python\nprint(\"Bismillah\")\nprint(\"Ahmed\")\n```\nYour answer: _______________\n\n---\n\n**Q2.** Fix the mistake in this code:\n```python\nprint(\"Assalamu Alaikum)\n```\nCorrected code: _______________\n\n---\n\n**Q3.** Write code that prints your name:\n```\n_______________\n```\n\n---\n\n**Q4.** Add a comment to this code explaining what it does:\n```python\nprint(\"Welcome to Python!\")\n```\nYour answer: _______________\n\n---\n\n**Q5.** What type of error appears when you have a missing bracket?\n```\n_______________\n```\n\n---\n\n**Q6.** Write a Python program with 3 lines that each print something about Pakistan:\n```\nLine 1: _______________\nLine 2: _______________\nLine 3: _______________\n```\n\n---\n\n**Q7.** What does this line do?\n```python\n# This calculates the total\n```\nAnswer: _______________\n\n---\n\n**Challenge:** Write a program that prints a greeting in the format:\n```\nAssalamu Alaikum!\nMy name is [your name].\nI am learning Python.\nAlhamdulillah!\n```\n"</script>
+        <button class="print-btn no-print" onclick="window.print()">🖨️ Print Practice Sheet</button>
+      </div>
+
+      <div id="tab-assessment" class="tab-pane">
+        <div class="markdown-body" id="md-assessment"></div>
+        <script type="application/json" id="src-assessment">"# Module 0 \u2014 Assessment\n\n## Pass Criteria\nStudent can independently:\n- [ ] Run a Python file in VS Code\n- [ ] Write a print() statement with their name\n- [ ] Add at least one comment to code\n- [ ] Identify the line number from an error message\n\n## Quick Check Questions (ask orally)\n1. What does print() do? (Expected: shows text on screen)\n2. How do you write a comment in Python? (Expected: start with #)\n3. If you see \"SyntaxError on line 3\", what does that tell you? (Expected: mistake on line 3)\n\n## Quiz Marking (0_5_quiz.py)\n- Easy (Q1\u2013Q5): 1 mark each = 5 marks\n- Medium (Q6\u2013Q8): 2 marks each = 6 marks\n- Complex (Q9\u2013Q10): 3 marks each = 6 marks\n- **Total: 17 marks**\n\n## Grade Scale\n| Marks | Grade |\n|-------|-------|\n| 15\u201317 | Excellent \u2014 Ma sha Allah |\n| 11\u201314 | Good \u2014 keep practising |\n| 7\u201310  | Needs revision |\n| 0\u20136   | Revise module before moving on |\n\n## Practical Submission\nAsk students to create a file `about_me.py` that:\n1. Prints their name\n2. Prints their city\n3. Prints their favourite subject\n4. Has at least 2 comments\n"</script>
+      </div>
+
+    </div>
+
+    <div class="module-nav">
+      <span></span>
+      <a href="index.html" class="nav-btn nav-home">🏠 All Modules</a>
+      <a href="module-1.html" class="nav-btn">Module 1 →</a>
+    </div>
+
+  </main>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

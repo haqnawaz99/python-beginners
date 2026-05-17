@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 7: Lists — Python for Beginners</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">🐍 Python for Beginners</a>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar" id="sidebar"><ul class="sidebar-nav"><li><a href="index.html" class="">🏠 Home</a></li><li><a href="module-0.html" class="">⚙️ M0: Setup</a></li><li><a href="module-1.html" class="">📝 M1: Strings</a></li><li><a href="module-2.html" class="">📦 M2: Variables</a></li><li><a href="module-3.html" class="">🔢 M3: Data Types</a></li><li><a href="module-4.html" class="">➕ M4: Operators</a></li><li><a href="module-5.html" class="">🔀 M5: Control Flow</a></li><li><a href="module-6.html" class="">🔧 M6: Functions</a></li><li><a href="module-7.html" class="active">📋 M7: Lists</a></li><li><a href="module-8.html" class="">🛡️ M8: Error Handling</a></li><li><a href="module-9.html" class="">💾 M9: File I/O</a></li><li><a href="module-10.html" class="">🚀 M10: Projects</a></li></ul></aside>
+  <main class="main-content">
+
+    <div class="module-header">
+      <span class="module-icon">📋</span>
+      <div>
+        <p class="module-label">Module 7</p>
+        <h1>Lists</h1>
+      </div>
+    </div>
+
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="lessons">📚 Lessons</button>
+      <button class="tab-btn" data-tab="notes">📋 Teacher Notes</button>
+      <button class="tab-btn" data-tab="practice">✏️ Practice Sheet</button>
+      <button class="tab-btn" data-tab="assessment">📊 Assessment</button>
+    </div>
+
+    <div class="tab-panes">
+
+      <div id="tab-lessons" class="tab-pane active">
+        
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 7_1_lists.py</span>
+        <span class="badge badge-lesson">Lesson</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 7 - Lesson 1: Lists
+# ================================================
+# Learn: Creating lists, accessing items, modifying,
+#        common list methods, looping over lists
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;Lists — Storing Multiple Values&quot;)
+print(&quot;=&quot; * 50)
+
+# ------------------------------------------------
+# What is a List?
+# ------------------------------------------------
+# A list stores multiple values in one variable.
+# Values are inside square brackets [ ] separated by commas.
+# Each item has a position number called an index.
+# Index starts at 0 (not 1).
+
+# ------------------------------------------------
+# 1. Creating a list
+# ------------------------------------------------
+print(&quot;\n1. Creating lists:&quot;)
+
+prayers = [&quot;Fajr&quot;, &quot;Dhuhr&quot;, &quot;Asr&quot;, &quot;Maghrib&quot;, &quot;Isha&quot;]
+marks = [85, 92, 78, 90, 88]
+cities = [&quot;Lahore&quot;, &quot;Karachi&quot;, &quot;Islamabad&quot;, &quot;Peshawar&quot;]
+mixed = [&quot;Ahmed&quot;, 15, &quot;Lahore&quot;, True]       # lists can mix types
+
+print(prayers)
+print(marks)
+print(cities)
+
+# ------------------------------------------------
+# 2. Accessing items — index starts at 0
+# ------------------------------------------------
+print(&quot;\n2. Accessing items:&quot;)
+
+print(prayers[0])       # Fajr  (first item)
+print(prayers[1])       # Dhuhr (second item)
+print(prayers[4])       # Isha  (fifth item)
+print(prayers[-1])      # Isha  (last item — negative index)
+print(prayers[-2])      # Maghrib (second from last)
+
+# Length of a list
+print(&quot;Number of prayers:&quot;, len(prayers))
+
+# ------------------------------------------------
+# 3. Slicing — getting a portion of a list
+# ------------------------------------------------
+print(&quot;\n3. Slicing:&quot;)
+
+print(prayers[0:3])     # first 3 items: Fajr, Dhuhr, Asr
+print(prayers[2:])      # from index 2 to end
+print(marks[:3])        # first 3 marks
+
+# ------------------------------------------------
+# 4. Modifying items
+# ------------------------------------------------
+print(&quot;\n4. Modifying:&quot;)
+
+subjects = [&quot;Quran&quot;, &quot;Hadith&quot;, &quot;Fiqh&quot;]
+print(&quot;Before:&quot;, subjects)
+subjects[1] = &quot;Tafseer&quot;             # change index 1
+print(&quot;After:&quot;, subjects)
+
+# ------------------------------------------------
+# 5. Adding items
+# ------------------------------------------------
+print(&quot;\n5. Adding items:&quot;)
+
+students = [&quot;Ahmed&quot;, &quot;Fatima&quot;]
+students.append(&quot;Hassan&quot;)           # add to end
+print(students)
+
+students.insert(1, &quot;Zainab&quot;)        # insert at position 1
+print(students)
+
+# ------------------------------------------------
+# 6. Removing items
+# ------------------------------------------------
+print(&quot;\n6. Removing items:&quot;)
+
+fruits = [&quot;mango&quot;, &quot;apple&quot;, &quot;banana&quot;, &quot;guava&quot;]
+fruits.remove(&quot;apple&quot;)              # remove by value
+print(fruits)
+
+fruits.pop()                        # remove last item
+print(fruits)
+
+fruits.pop(0)                       # remove by index
+print(fruits)
+
+# ------------------------------------------------
+# 7. Common list methods
+# ------------------------------------------------
+print(&quot;\n7. List methods:&quot;)
+
+marks = [85, 42, 90, 55, 78]
+print(&quot;Original :&quot;, marks)
+print(&quot;Sorted   :&quot;, sorted(marks))          # sorted() returns new list
+print(&quot;Max      :&quot;, max(marks))
+print(&quot;Min      :&quot;, min(marks))
+print(&quot;Sum      :&quot;, sum(marks))
+print(&quot;Count    :&quot;, len(marks))
+print(&quot;Average  :&quot;, sum(marks) / len(marks))
+
+# Check if item exists
+print(&quot;90 in marks:&quot;, 90 in marks)
+print(&quot;100 in marks:&quot;, 100 in marks)
+
+# ------------------------------------------------
+# 8. Looping over a list
+# ------------------------------------------------
+print(&quot;\n8. Looping:&quot;)
+
+for prayer in prayers:
+    print(f&quot;  - {prayer}&quot;)
+
+print()
+# Loop with index using enumerate
+for i, prayer in enumerate(prayers, start=1):
+    print(f&quot;  {i}. {prayer}&quot;)
+
+# ------------------------------------------------
+# 9. Building a list from input
+# ------------------------------------------------
+print(&quot;\n9. Building from input:&quot;)
+
+num = int(input(&quot;How many students? &quot;))
+student_names = []
+for i in range(num):
+    name = input(f&quot;Student {i+1} name: &quot;)
+    student_names.append(name)
+
+print(&quot;Class list:&quot;)
+for i, name in enumerate(student_names, 1):
+    print(f&quot;  {i}. {name}&quot;)
+
+print()
+print(&quot;Lists are one of Python&#x27;s most useful tools. Ma sha Allah!&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 7_2_tuples.py</span>
+        <span class="badge badge-lesson">Lesson</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 7 - Lesson 2: Tuples
+# ================================================
+# Learn: What tuples are, how they differ from lists,
+#        when to use them, tuple unpacking
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;Tuples — Unchangeable Lists&quot;)
+print(&quot;=&quot; * 50)
+
+# ------------------------------------------------
+# What is a Tuple?
+# ------------------------------------------------
+# A tuple is like a list but IMMUTABLE — cannot be changed.
+# Values are inside round brackets ( ) separated by commas.
+# Use tuples for data that should never change:
+#   - Prayer times, days of week, compass directions
+#   - Coordinates, fixed settings, constants
+
+# ------------------------------------------------
+# 1. Creating a tuple
+# ------------------------------------------------
+print(&quot;\n1. Creating tuples:&quot;)
+
+prayers = (&quot;Fajr&quot;, &quot;Dhuhr&quot;, &quot;Asr&quot;, &quot;Maghrib&quot;, &quot;Isha&quot;)
+days = (&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;,
+        &quot;Saturday&quot;, &quot;Sunday&quot;)
+coordinates = (31.5204, 74.3587)        # Lahore coordinates
+
+print(prayers)
+print(days)
+print(coordinates)
+
+# ------------------------------------------------
+# 2. Accessing items — same as lists
+# ------------------------------------------------
+print(&quot;\n2. Accessing:&quot;)
+
+print(prayers[0])       # Fajr
+print(prayers[-1])      # Isha
+print(days[4])          # Friday
+print(&quot;Length:&quot;, len(prayers))
+
+# ------------------------------------------------
+# 3. Tuples cannot be changed
+# ------------------------------------------------
+print(&quot;\n3. Tuples are immutable:&quot;)
+
+# This would cause a TypeError — commented out to avoid crash:
+# prayers[0] = &quot;Tahajjud&quot;    # TypeError: &#x27;tuple&#x27; object does not support item assignment
+
+# This is WHY we use tuples — protect fixed data from accidental changes
+print(&quot;Prayer names are fixed — tuples protect them.&quot;)
+
+# ------------------------------------------------
+# 4. Tuple unpacking — assign items to variables
+# ------------------------------------------------
+print(&quot;\n4. Tuple unpacking:&quot;)
+
+# Assign each item in the tuple to a separate variable
+first, second, third, fourth, fifth = prayers
+print(f&quot;First prayer : {first}&quot;)
+print(f&quot;Last prayer  : {fifth}&quot;)
+
+# Swap two variables using tuple unpacking
+a = &quot;Lahore&quot;
+b = &quot;Karachi&quot;
+a, b = b, a             # elegant swap — no temp variable needed!
+print(f&quot;After swap: a={a}, b={b}&quot;)
+
+# Return multiple values from a function using tuple
+def get_min_max(numbers):
+    return min(numbers), max(numbers)       # returns a tuple
+
+marks = [85, 42, 90, 55, 78]
+lowest, highest = get_min_max(marks)
+print(f&quot;Lowest: {lowest}, Highest: {highest}&quot;)
+
+# ------------------------------------------------
+# 5. Looping over a tuple
+# ------------------------------------------------
+print(&quot;\n5. Looping:&quot;)
+
+for i, prayer in enumerate(prayers, 1):
+    print(f&quot;  {i}. {prayer}&quot;)
+
+# ------------------------------------------------
+# 6. List vs Tuple — when to use which
+# ------------------------------------------------
+print(&quot;\n6. List vs Tuple:&quot;)
+
+# Use LIST when data will change:
+student_list = [&quot;Ahmed&quot;, &quot;Fatima&quot;]          # students join/leave
+student_list.append(&quot;Hassan&quot;)
+
+# Use TUPLE when data is fixed:
+prayer_tuple = (&quot;Fajr&quot;, &quot;Dhuhr&quot;, &quot;Asr&quot;, &quot;Maghrib&quot;, &quot;Isha&quot;)
+
+print(&quot;List (changes allowed):&quot;, student_list)
+print(&quot;Tuple (fixed forever) :&quot;, prayer_tuple)
+
+# ------------------------------------------------
+# 7. Practical example
+# ------------------------------------------------
+print(&quot;\n7. City coordinates:&quot;)
+
+cities = [
+    (&quot;Lahore&quot;,    31.52, 74.36),
+    (&quot;Karachi&quot;,   24.86, 67.01),
+    (&quot;Islamabad&quot;, 33.72, 73.06),
+    (&quot;Peshawar&quot;,  34.01, 71.57),
+]
+
+for city, lat, lon in cities:
+    print(f&quot;{city:&lt;12}: Lat {lat}, Lon {lon}&quot;)
+
+print()
+print(&quot;Tuples protect data that should never change. Well done!&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 7_3_dictionaries.py</span>
+        <span class="badge badge-lesson">Lesson</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 7 - Lesson 3: Dictionaries
+# ================================================
+# Learn: Creating dictionaries, accessing/modifying values,
+#        looping, common methods
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;Dictionaries — Key-Value Pairs&quot;)
+print(&quot;=&quot; * 50)
+
+# ------------------------------------------------
+# What is a Dictionary?
+# ------------------------------------------------
+# A dictionary stores data as key: value pairs.
+# Think of it like a real dictionary:
+#   word (key) → definition (value)
+# Or a student record:
+#   &quot;name&quot; → &quot;Ahmed&quot;, &quot;marks&quot; → 85
+#
+# Keys must be unique. Values can be anything.
+# Use { } curly brackets.
+
+# ------------------------------------------------
+# 1. Creating a dictionary
+# ------------------------------------------------
+print(&quot;\n1. Creating dictionaries:&quot;)
+
+student = {
+    &quot;name&quot;: &quot;Ahmed Ali&quot;,
+    &quot;age&quot;: 15,
+    &quot;city&quot;: &quot;Lahore&quot;,
+    &quot;marks&quot;: 87
+}
+
+prayer_times = {
+    &quot;Fajr&quot;: &quot;5:00 AM&quot;,
+    &quot;Dhuhr&quot;: &quot;1:00 PM&quot;,
+    &quot;Asr&quot;: &quot;4:30 PM&quot;,
+    &quot;Maghrib&quot;: &quot;7:00 PM&quot;,
+    &quot;Isha&quot;: &quot;9:00 PM&quot;
+}
+
+print(student)
+print(prayer_times)
+
+# ------------------------------------------------
+# 2. Accessing values
+# ------------------------------------------------
+print(&quot;\n2. Accessing values:&quot;)
+
+print(student[&quot;name&quot;])          # Ahmed Ali
+print(student[&quot;marks&quot;])         # 87
+print(prayer_times[&quot;Fajr&quot;])     # 5:00 AM
+
+# .get() is safer — returns None if key not found
+print(student.get(&quot;city&quot;))      # Lahore
+print(student.get(&quot;grade&quot;))     # None — no error
+
+# ------------------------------------------------
+# 3. Modifying values
+# ------------------------------------------------
+print(&quot;\n3. Modifying:&quot;)
+
+student[&quot;marks&quot;] = 92           # update existing key
+student[&quot;grade&quot;] = &quot;A&quot;          # add new key
+print(student)
+
+# Remove a key
+del student[&quot;age&quot;]
+print(student)
+
+# ------------------------------------------------
+# 4. Checking if a key exists
+# ------------------------------------------------
+print(&quot;\n4. Checking keys:&quot;)
+
+print(&quot;name&quot; in student)        # True
+print(&quot;phone&quot; in student)       # False
+
+if &quot;city&quot; in student:
+    print(f&quot;City is: {student[&#x27;city&#x27;]}&quot;)
+
+# ------------------------------------------------
+# 5. Looping over a dictionary
+# ------------------------------------------------
+print(&quot;\n5. Looping:&quot;)
+
+# Loop over keys only
+print(&quot;Keys:&quot;)
+for key in prayer_times:
+    print(f&quot;  {key}&quot;)
+
+# Loop over values only
+print(&quot;Times:&quot;)
+for time in prayer_times.values():
+    print(f&quot;  {time}&quot;)
+
+# Loop over both key and value
+print(&quot;Prayer schedule:&quot;)
+for prayer, time in prayer_times.items():
+    print(f&quot;  {prayer:&lt;10}: {time}&quot;)
+
+# ------------------------------------------------
+# 6. Dictionary with list values
+# ------------------------------------------------
+print(&quot;\n6. Dictionary with lists:&quot;)
+
+class_marks = {
+    &quot;Ahmed&quot;:  [85, 90, 78],
+    &quot;Fatima&quot;: [92, 88, 95],
+    &quot;Hassan&quot;: [70, 65, 80]
+}
+
+for name, marks in class_marks.items():
+    avg = sum(marks) / len(marks)
+    print(f&quot;{name:&lt;10}: {marks}  avg = {avg:.1f}&quot;)
+
+# ------------------------------------------------
+# 7. Building a dictionary from input
+# ------------------------------------------------
+print(&quot;\n7. Building from input:&quot;)
+
+num = int(input(&quot;How many students to register? &quot;))
+registry = {}
+
+for i in range(num):
+    name = input(f&quot;Student {i+1} name: &quot;)
+    marks = int(input(f&quot;Marks for {name}: &quot;))
+    registry[name] = marks
+
+print(&quot;\nClass registry:&quot;)
+for name, marks in registry.items():
+    result = &quot;Pass&quot; if marks &gt;= 50 else &quot;Fail&quot;
+    print(f&quot;  {name:&lt;15}: {marks}  ({result})&quot;)
+
+# ------------------------------------------------
+# 8. Nested dictionary — dictionary inside dictionary
+# ------------------------------------------------
+print(&quot;\n8. Nested dictionary:&quot;)
+
+madrasa = {
+    &quot;Jamia Islamia&quot;: {
+        &quot;city&quot;: &quot;Lahore&quot;,
+        &quot;students&quot;: 450,
+        &quot;founded&quot;: 1965
+    },
+    &quot;Darul Uloom&quot;: {
+        &quot;city&quot;: &quot;Karachi&quot;,
+        &quot;students&quot;: 800,
+        &quot;founded&quot;: 1947
+    }
+}
+
+for name, info in madrasa.items():
+    print(f&quot;{name}: {info[&#x27;city&#x27;]}, {info[&#x27;students&#x27;]} students&quot;)
+
+print()
+print(&quot;Dictionaries are perfect for structured data. Excellent!&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 7_4_islamic_applications.py</span>
+        <span class="badge badge-app">Applications</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 7 - Lesson 4: Data Structure Applications
+# ================================================
+# Real programs using lists, tuples, and dictionaries
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;Data Structures — Real Applications&quot;)
+print(&quot;=&quot; * 50)
+
+# ------------------------------------------------
+# Application 1: Student Marks Manager
+# ------------------------------------------------
+print(&quot;\n--- Application 1: Marks Manager ---&quot;)
+
+def collect_marks(subjects):
+    marks = {}
+    for subject in subjects:
+        m = int(input(f&quot;{subject} marks: &quot;))
+        marks[subject] = m
+    return marks
+
+def analyse_marks(name, marks_dict):
+    marks_list = list(marks_dict.values())
+    total = sum(marks_list)
+    average = total / len(marks_list)
+    highest_subject = max(marks_dict, key=marks_dict.get)
+    lowest_subject = min(marks_dict, key=marks_dict.get)
+
+    print(f&quot;\n=== Report for {name} ===&quot;)
+    for subject, marks in marks_dict.items():
+        grade = &quot;Pass&quot; if marks &gt;= 50 else &quot;Fail&quot;
+        print(f&quot;  {subject:&lt;12}: {marks:&gt;3}  ({grade})&quot;)
+    print(f&quot;  {&#x27;Total&#x27;:&lt;12}: {total}&quot;)
+    print(f&quot;  {&#x27;Average&#x27;:&lt;12}: {average:.1f}&quot;)
+    print(f&quot;  Best subject : {highest_subject}&quot;)
+    print(f&quot;  Weak subject : {lowest_subject}&quot;)
+
+subjects = [&quot;Quran&quot;, &quot;Hadith&quot;, &quot;Fiqh&quot;, &quot;Arabic&quot;]
+name = input(&quot;Student name: &quot;)
+marks = collect_marks(subjects)
+analyse_marks(name, marks)
+
+# ------------------------------------------------
+# Application 2: Prayer Time Tracker
+# ------------------------------------------------
+print(&quot;\n--- Application 2: Prayer Tracker ---&quot;)
+
+prayer_times = {
+    &quot;Fajr&quot;   : &quot;05:00&quot;,
+    &quot;Dhuhr&quot;  : &quot;13:00&quot;,
+    &quot;Asr&quot;    : &quot;16:30&quot;,
+    &quot;Maghrib&quot;: &quot;19:00&quot;,
+    &quot;Isha&quot;   : &quot;21:00&quot;
+}
+
+offered = []
+missed = []
+
+print(&quot;Mark your prayers (yes/no):&quot;)
+for prayer, time in prayer_times.items():
+    status = input(f&quot;  {prayer} ({time}) — offered? &quot;).strip().lower()
+    if status == &quot;yes&quot;:
+        offered.append(prayer)
+    else:
+        missed.append(prayer)
+
+print(f&quot;\nPrayers offered ({len(offered)}/5): {&#x27;, &#x27;.join(offered) if offered else &#x27;None&#x27;}&quot;)
+print(f&quot;Prayers missed  ({len(missed)}/5): {&#x27;, &#x27;.join(missed) if missed else &#x27;None&#x27;}&quot;)
+
+if len(missed) == 0:
+    print(&quot;Ma sha Allah! All 5 prayers offered today!&quot;)
+elif len(offered) &gt;= 3:
+    print(&quot;Good effort. Try to complete all 5 tomorrow.&quot;)
+else:
+    print(&quot;Please try to offer all prayers. May Allah help you.&quot;)
+
+# ------------------------------------------------
+# Application 3: Madrasa Library System
+# ------------------------------------------------
+print(&quot;\n--- Application 3: Library System ---&quot;)
+
+library = {
+    &quot;Sahih Bukhari&quot;  : {&quot;author&quot;: &quot;Imam Bukhari&quot;, &quot;copies&quot;: 5},
+    &quot;Sahih Muslim&quot;   : {&quot;author&quot;: &quot;Imam Muslim&quot;,  &quot;copies&quot;: 3},
+    &quot;Riyad us Salihin&quot;: {&quot;author&quot;: &quot;Imam Nawawi&quot;,  &quot;copies&quot;: 7},
+    &quot;Al-Quran&quot;       : {&quot;author&quot;: &quot;Allah (SWT)&quot;,   &quot;copies&quot;: 20},
+}
+
+print(&quot;Available books:&quot;)
+print(f&quot;{&#x27;Title&#x27;:&lt;25} {&#x27;Author&#x27;:&lt;20} {&#x27;Copies&#x27;}&quot;)
+print(&quot;-&quot; * 55)
+for title, info in library.items():
+    print(f&quot;{title:&lt;25} {info[&#x27;author&#x27;]:&lt;20} {info[&#x27;copies&#x27;]}&quot;)
+
+search = input(&quot;\nSearch for a book: &quot;).strip()
+if search in library:
+    book = library[search]
+    print(f&quot;Found: {search}&quot;)
+    print(f&quot;Author : {book[&#x27;author&#x27;]}&quot;)
+    print(f&quot;Copies : {book[&#x27;copies&#x27;]}&quot;)
+else:
+    print(f&quot;&#x27;{search}&#x27; not found in library.&quot;)
+
+# ------------------------------------------------
+# Application 4: Pakistani Cities Quiz
+# ------------------------------------------------
+print(&quot;\n--- Application 4: Cities Quiz ---&quot;)
+
+city_facts = {
+    &quot;Lahore&quot;    : &quot;capital of Punjab&quot;,
+    &quot;Karachi&quot;   : &quot;largest city of Pakistan&quot;,
+    &quot;Islamabad&quot; : &quot;capital of Pakistan&quot;,
+    &quot;Peshawar&quot;  : &quot;capital of KPK&quot;,
+    &quot;Quetta&quot;    : &quot;capital of Balochistan&quot;
+}
+
+score = 0
+cities = list(city_facts.keys())
+
+for city in cities:
+    answer = input(f&quot;What is {city} known as? &quot;).strip().lower()
+    correct = city_facts[city].lower()
+    if answer == correct:
+        print(&quot;Correct!&quot;)
+        score += 1
+    else:
+        print(f&quot;Wrong. It is the {city_facts[city]}.&quot;)
+
+print(f&quot;\nFinal score: {score}/{len(cities)}&quot;)
+
+print()
+print(&quot;These are real programs — you are now a Python programmer!&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 7_5_quiz.py</span>
+        <span class="badge badge-quiz">Quiz</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 7 - Quiz: Lists, Tuples, Dictionaries
+# ================================================
+# Covers: list creation/access/modify/methods,
+#         tuples, dictionaries, looping over all three
+# Difficulty: Easy / Medium / Complex
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;MODULE 7 QUIZ - Data Structures&quot;)
+print(&quot;=&quot; * 50)
+print()
+
+# ------------------------------------------------
+# EASY
+# ------------------------------------------------
+print(&quot;--- EASY ---&quot;)
+print()
+
+# Q1. Create a list of 5 Pakistani cities and print it.
+#     Then print only the first and last city.
+
+
+# Q2. Create this list: subjects = [&quot;Quran&quot;, &quot;Hadith&quot;, &quot;Fiqh&quot;]
+#     Add &quot;Arabic&quot; to the end.
+#     Change &quot;Hadith&quot; to &quot;Tafseer&quot;.
+#     Print the final list.
+
+
+# Q3. Create a tuple of the 5 daily prayers.
+#     Print the 3rd prayer (index 2).
+#     Print the total number of prayers using len().
+
+
+# Q4. Create a dictionary for a student with keys:
+#     name, city, marks
+#     Print each value using the key.
+
+
+# Q5. Loop over this list and print each item on its own line:
+#     fruits = [&quot;mango&quot;, &quot;apple&quot;, &quot;banana&quot;, &quot;guava&quot;, &quot;date&quot;]
+
+
+# ------------------------------------------------
+# MEDIUM
+# ------------------------------------------------
+print()
+print(&quot;--- MEDIUM ---&quot;)
+print()
+
+# Q6. Create a list of 5 marks.
+#     Print: total, average, highest, lowest.
+#     Use sum(), len(), max(), min().
+
+
+# Q7. Create a dictionary of prayer times:
+#     Fajr: 5:00 AM, Dhuhr: 1:00 PM, Asr: 4:30 PM
+#     Loop over it and print each prayer and its time.
+#     Then ask the user for a prayer name and print its time.
+
+
+# Q8. Ask the user for 4 student names using input() in a loop.
+#     Store them in a list.
+#     Print the list sorted alphabetically using sorted().
+
+
+# Q9. Use tuple unpacking to do this in one line:
+#     Swap the values of two variables:
+#     a = &quot;Lahore&quot;
+#     b = &quot;Karachi&quot;
+#     After the swap, print both variables.
+
+
+# ------------------------------------------------
+# COMPLEX
+# ------------------------------------------------
+print()
+print(&quot;--- COMPLEX ---&quot;)
+print()
+
+# Q10. Ask the user how many students to register (int).
+#      For each student ask for name and marks.
+#      Store as a dictionary {name: marks}.
+#      At the end print:
+#        - All students and their marks
+#        - The student with the highest marks
+#        - How many passed (marks &gt;= 50)
+
+
+# Q11. Create a dictionary where each key is a subject
+#      and each value is a list of 3 marks.
+#      subjects: Quran, Hadith, Fiqh
+#      Ask the user for 3 marks per subject.
+#      Print each subject with its average.
+
+
+# Q12. Build a contact book program:
+#      - Start with an empty dictionary
+#      - Loop 3 times asking for: person name and phone number
+#      - Store each as contact_book[name] = phone
+#      - After all entries, ask the user to search for a name
+#      - Print the phone number if found, or &quot;Not found&quot; if not
+#      - Print all contacts at the end
+
+
+print()
+print(&quot;Quiz done! Check 7_6_quiz_solution.py for answers.&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 7_6_quiz_solution.py</span>
+        <span class="badge badge-solution">Quiz Solution</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 7 - Quiz Solutions
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;MODULE 7 QUIZ - SOLUTIONS&quot;)
+print(&quot;=&quot; * 50)
+print()
+
+# ------------------------------------------------
+# EASY
+# ------------------------------------------------
+print(&quot;--- EASY ---&quot;)
+print()
+
+# Q1.
+cities = [&quot;Lahore&quot;, &quot;Karachi&quot;, &quot;Islamabad&quot;, &quot;Peshawar&quot;, &quot;Quetta&quot;]
+print(cities)
+print(&quot;First:&quot;, cities[0])
+print(&quot;Last :&quot;, cities[-1])
+
+# Q2.
+subjects = [&quot;Quran&quot;, &quot;Hadith&quot;, &quot;Fiqh&quot;]
+subjects.append(&quot;Arabic&quot;)
+subjects[1] = &quot;Tafseer&quot;
+print(subjects)
+
+# Q3.
+prayers = (&quot;Fajr&quot;, &quot;Dhuhr&quot;, &quot;Asr&quot;, &quot;Maghrib&quot;, &quot;Isha&quot;)
+print(&quot;3rd prayer:&quot;, prayers[2])
+print(&quot;Total     :&quot;, len(prayers))
+
+# Q4.
+student = {&quot;name&quot;: &quot;Ahmed&quot;, &quot;city&quot;: &quot;Lahore&quot;, &quot;marks&quot;: 87}
+print(student[&quot;name&quot;])
+print(student[&quot;city&quot;])
+print(student[&quot;marks&quot;])
+
+# Q5.
+fruits = [&quot;mango&quot;, &quot;apple&quot;, &quot;banana&quot;, &quot;guava&quot;, &quot;date&quot;]
+for fruit in fruits:
+    print(fruit)
+
+# ------------------------------------------------
+# MEDIUM
+# ------------------------------------------------
+print()
+print(&quot;--- MEDIUM ---&quot;)
+print()
+
+# Q6.
+marks = [85, 42, 90, 55, 78]
+print(&quot;Total  :&quot;, sum(marks))
+print(&quot;Average:&quot;, sum(marks) / len(marks))
+print(&quot;Highest:&quot;, max(marks))
+print(&quot;Lowest :&quot;, min(marks))
+
+# Q7.
+prayer_times = {&quot;Fajr&quot;: &quot;5:00 AM&quot;, &quot;Dhuhr&quot;: &quot;1:00 PM&quot;, &quot;Asr&quot;: &quot;4:30 PM&quot;}
+for prayer, time in prayer_times.items():
+    print(f&quot;{prayer}: {time}&quot;)
+
+name = input(&quot;Enter prayer name: &quot;)
+if name in prayer_times:
+    print(f&quot;{name} time: {prayer_times[name]}&quot;)
+else:
+    print(&quot;Prayer not found.&quot;)
+
+# Q8.
+student_names = []
+for i in range(4):
+    name = input(f&quot;Student {i+1}: &quot;)
+    student_names.append(name)
+print(&quot;Sorted:&quot;, sorted(student_names))
+
+# Q9.
+a = &quot;Lahore&quot;
+b = &quot;Karachi&quot;
+a, b = b, a
+print(f&quot;a = {a}, b = {b}&quot;)
+
+# ------------------------------------------------
+# COMPLEX
+# ------------------------------------------------
+print()
+print(&quot;--- COMPLEX ---&quot;)
+print()
+
+# Q10.
+num = int(input(&quot;Number of students: &quot;))
+registry = {}
+for i in range(num):
+    name = input(f&quot;Student {i+1} name: &quot;)
+    marks = int(input(f&quot;Marks for {name}: &quot;))
+    registry[name] = marks
+
+print(&quot;\nAll students:&quot;)
+pass_count = 0
+for name, marks in registry.items():
+    result = &quot;Pass&quot; if marks &gt;= 50 else &quot;Fail&quot;
+    print(f&quot;  {name}: {marks} ({result})&quot;)
+    if marks &gt;= 50:
+        pass_count += 1
+
+top_student = max(registry, key=registry.get)
+print(f&quot;Top student : {top_student} ({registry[top_student]})&quot;)
+print(f&quot;Passed      : {pass_count}/{num}&quot;)
+
+# Q11.
+subjects = [&quot;Quran&quot;, &quot;Hadith&quot;, &quot;Fiqh&quot;]
+marks_by_subject = {}
+for subject in subjects:
+    marks = []
+    for i in range(3):
+        m = int(input(f&quot;{subject} mark {i+1}: &quot;))
+        marks.append(m)
+    marks_by_subject[subject] = marks
+
+print(&quot;\nSubject averages:&quot;)
+for subject, marks in marks_by_subject.items():
+    avg = sum(marks) / len(marks)
+    print(f&quot;  {subject}: {avg:.1f}&quot;)
+
+# Q12.
+contact_book = {}
+for i in range(3):
+    name = input(f&quot;Contact {i+1} name: &quot;)
+    phone = input(f&quot;Phone for {name}: &quot;)
+    contact_book[name] = phone
+
+search = input(&quot;Search for: &quot;)
+if search in contact_book:
+    print(f&quot;Phone: {contact_book[search]}&quot;)
+else:
+    print(&quot;Not found.&quot;)
+
+print(&quot;\nAll contacts:&quot;)
+for name, phone in contact_book.items():
+    print(f&quot;  {name}: {phone}&quot;)
+
+print()
+print(&quot;End of solutions.&quot;)
+</code></pre>
+    </div>
+      </div>
+
+      <div id="tab-notes" class="tab-pane">
+        <div class="markdown-body" id="md-notes"></div>
+        <script type="application/json" id="src-notes">"# Module 7: Lists, Tuples & Dictionaries \u2014 Teacher Notes\n\n## Duration\n2 classes\n\n---\n\n## Learning Objectives\n\nBy the end of this module, students will be able to:\n\n1. Create and use **lists** with square brackets `[]`\n2. Access list items by **index** (including negative index)\n3. Use `append()`, `remove()`, and `len()` on lists\n4. Loop through a list using `for`\n5. Create and use **tuples** (immutable ordered collections)\n6. Create and use **dictionaries** with key-value pairs\n7. Access, add, and update dictionary entries by key\n\n---\n\n## Lesson Flow\n\n### Class 1\n\n| File | Topic |\n|------|-------|\n| `7_1_lists.py` | Create lists, access by index, `append`, `remove`, `len`, loop through list |\n| `7_2_tuples.py` | Same as list but **cannot be changed** \u2014 ordered and fixed |\n\n### Class 2\n\n| File | Topic |\n|------|-------|\n| `7_3_dictionaries.py` | Key-value pairs, accessing by key, adding new keys |\n| `7_4_applications.py` | Real-world applied examples |\n| Quiz | End-of-module assessment |\n\n---\n\n## Key Concepts Summary\n\n| Type | Syntax | Ordered? | Changeable? | Access by |\n|------|--------|----------|-------------|-----------|\n| **List** | `[1, 2, 3]` | Yes | Yes | Index |\n| **Tuple** | `(1, 2, 3)` | Yes | No | Index |\n| **Dictionary** | `{\"key\": value}` | Yes (Python 3.7+) | Yes | Key |\n\n---\n\n## Index Starts at 0 \u2014 Teach This Carefully\n\nThis always surprises beginners. Spend time here.\n\n```python\nnames = [\"Ahmed\", \"Fatima\", \"Usman\"]\n#         [0]       [1]       [2]\n\nprint(names[0])   # Ahmed   \u2190 first item\nprint(names[1])   # Fatima\nprint(names[-1])  # Usman   \u2190 last item (negative index)\n```\n\n> Tell students: \"Python 0 se shuru karta hai, 1 se nahi. Jaise computer ka zihn alag hota hai!\"\n> *(Python starts from 0, not 1. It is like a computer thinks differently!)*\n\nShow on the whiteboard: draw boxes with numbers 0, 1, 2 under each item.\n\n---\n\n## Urdu Teaching Tips\n\n- **\"List matlab fehrist \u2014 jaise shopping list ya class ki hazri list\"**\n  *(List means a list \u2014 like a shopping list or a class attendance list)*\n\n- **\"Dictionary matlab koi cheez dhundna \u2014 key se value milti hai, jaise asli dictionary mein word dhundna\"**\n  *(Dictionary means finding something \u2014 key gives you the value, like looking up a word in a real dictionary)*\n\n- **\"Tuple matlab pakka \u2014 change nahi ho sakta. Jaise taareekh-e-wiladat \u2014 badal nahi sakti!\"**\n  *(Tuple means fixed \u2014 cannot be changed. Like a date of birth \u2014 it cannot change!)*\n\n---\n\n## Common Mistakes to Watch For\n\n| Mistake | Example | Error | Fix |\n|---------|---------|-------|-----|\n| Index out of range | `names[5]` on a 3-item list | `IndexError` | Check `len()` first |\n| Using `[]` with missing dict key | `student[\"phone\"]` when key doesn't exist | `KeyError` | Use `.get(\"phone\")` or check first |\n| Confusing `[]` list with `{}` dict | Writing `{1, 2, 3}` thinking it's a list | Wrong type | Lists use `[]`, dicts use `{}` |\n| Trying to change a tuple | `months[0] = \"Jan\"` on a tuple | `TypeError` | Tuples cannot be modified |\n| Forgetting quotes around dict keys | `student[name]` | `NameError` | `student[\"name\"]` |\n\n---\n\n## Demonstration Ideas\n\n**List \u2014 Class Attendance:**\n```python\nstudents = [\"Ahmed\", \"Bilal\", \"Fatima\", \"Zainab\", \"Usman\"]\nprint(f\"Total students: {len(students)}\")\nstudents.append(\"Hassan\")   # new student joined\nstudents.remove(\"Bilal\")    # student left\n```\n\n**Dictionary \u2014 Student Record:**\n```python\nstudent = {\n    \"name\": \"Ahmed\",\n    \"class\": \"7th\",\n    \"city\": \"Lahore\",\n    \"marks\": 85\n}\nprint(f\"Naam: {student['name']}\")\nprint(f\"Marks: {student['marks']}\")\n```\n\n**Surah Dictionary (Islamic Context):**\n```python\nsurahs = {\n    \"Al-Fatiha\": 7,\n    \"Al-Baqarah\": 286,\n    \"Al-Ikhlas\": 4\n}\nfor surah, ayaat in surahs.items():\n    print(f\"{surah}: {ayaat} ayaat\")\n```\n\n---\n\n## Files in This Module\n\n| File | Description |\n|------|-------------|\n| `7_1_lists.py` | List creation, indexing, methods, loops |\n| `7_2_tuples.py` | Tuples \u2014 immutable sequences |\n| `7_3_dictionaries.py` | Dictionary creation and access |\n| `7_4_applications.py` | Applied real-world examples |\n| `7_5_quiz.py` | Quiz code |\n| `7_6_solutions.py` | Quiz solutions |\n"</script>
+      </div>
+
+      <div id="tab-practice" class="tab-pane">
+        <div class="markdown-body print-friendly" id="md-practice"></div>
+        <script type="application/json" id="src-practice">"# Module 7: Lists, Tuples & Dictionaries \u2014 Practice Sheet\n\n**Naam / Name:** ___________________________  \n**Tareeq / Date:** ___________________________  \n**Class:** ___________________________\n\n---\n\n## Q1 \u2014 Easy\n\nGiven this list:\n\n```python\ncities = [\"Lahore\", \"Karachi\", \"Islamabad\"]\n```\n\nWhat does `cities[0]` return?\n\n**Answer:** ___________________________\n\n---\n\n## Q2 \u2014 Easy\n\nHow do you **add** `\"Peshawar\"` to the `cities` list above?\n\n```python\n# Write the code:\n\n```\n\n---\n\n## Q3 \u2014 Easy\n\nWhat is the output of this code?\n\n```python\nprint(len([\"a\", \"b\", \"c\"]))\n```\n\n**Answer:** ___________________________\n\n---\n\n## Q4 \u2014 Easy\n\nWrite code to create a **list** of 5 Pakistani cities.\n\n```python\n# Write your list here:\n\n\n```\n\n---\n\n## Q5 \u2014 Medium\n\nWhat is a **tuple**? How is it different from a list?\n\n**Answer:** ___________________________\n\nWrite an example of a tuple containing 3 months:\n\n```python\n# Write your tuple here:\n\n```\n\n---\n\n## Q6 \u2014 Medium\n\nCreate a **dictionary** for a madrasa student with three keys: `name`, `class_level`, and `marks`.\n\n```python\n# Write your dictionary here:\n\n\n\n\n```\n\n---\n\n## Q7 \u2014 Medium\n\nGiven this dictionary:\n\n```python\nstudent = {\"name\": \"Fatima\", \"marks\": 92}\n```\n\nHow do you access the value for the key `\"name\"`?\n\n```python\n# Write the code:\n\n```\n\n**What will it print?** ___________________________\n\n---\n\n## Q8 \u2014 Medium\n\nWhat **error** occurs if you try to access index `5` in a list that only has `3` items?\n\n**Answer:** ___________________________\n\n---\n\n## Q9 \u2014 Complex\n\nWrite a `for` loop that prints each subject from this list on a new line:\n\n```python\nsubjects = [\"Quran\", \"Urdu\", \"Maths\"]\n```\n\n```python\n# Write your loop here:\n\n\n\n```\n\n**Expected output:**\n\n```\nQuran\nUrdu\nMaths\n```\n\n---\n\n## Challenge \u2014 Surah Ayaat Counter\n\n> *\"The Quran has 114 Surahs, each with a different number of ayaat.\"*\n\nCreate a **dictionary** of **5 Surahs** with their number of ayaat:\n\n| Surah | Ayaat |\n|-------|-------|\n| Al-Fatiha | 7 |\n| Al-Baqarah | 286 |\n| Al-Imran | 200 |\n| Al-Ikhlas | 4 |\n| Al-Kawthar | 3 |\n\nThen write a loop to **print each Surah name and its ayat count** clearly.\n\n```python\n# Create the dictionary:\n\n\n\n\n# Print each surah:\n\n\n\n\n```\n\n**Expected output:**\n\n```\nAl-Fatiha: 7 ayaat\nAl-Baqarah: 286 ayaat\nAl-Imran: 200 ayaat\nAl-Ikhlas: 4 ayaat\nAl-Kawthar: 3 ayaat\n```\n\n---\n\n## Answers (Teacher Section)\n\n| Q | Answer |\n|---|--------|\n| Q1 | `\"Lahore\"` |\n| Q2 | `cities.append(\"Peshawar\")` |\n| Q3 | `3` |\n| Q4 | e.g. `cities = [\"Lahore\", \"Karachi\", \"Islamabad\", \"Peshawar\", \"Quetta\"]` |\n| Q5 | A tuple is like a list but cannot be changed. e.g. `months = (\"January\", \"February\", \"March\")` |\n| Q6 | `student = {\"name\": \"Ahmed\", \"class_level\": \"7th\", \"marks\": 85}` |\n| Q7 | `print(student[\"name\"])` \u2192 `Fatima` |\n| Q8 | `IndexError` |\n| Q9 | `for subject in subjects: print(subject)` |\n| Challenge | `for surah, ayaat in surahs.items(): print(f\"{surah}: {ayaat} ayaat\")` |\n"</script>
+        <button class="print-btn no-print" onclick="window.print()">🖨️ Print Practice Sheet</button>
+      </div>
+
+      <div id="tab-assessment" class="tab-pane">
+        <div class="markdown-body" id="md-assessment"></div>
+        <script type="application/json" id="src-assessment">"# Module 7: Lists, Tuples & Dictionaries \u2014 Assessment\n\n## Pass Criteria\n\nA student passes this module if they can:\n\n- [ ] Create a list and access items by index\n- [ ] Use `append()` to add an item to a list\n- [ ] Create a dictionary with at least 3 keys\n- [ ] Access a dictionary value using its key\n- [ ] Explain the difference between a list and a dictionary\n\n---\n\n## Oral Questions\n\nAsk these questions to check understanding:\n\n1. What index number is the **first** item in a list?\n2. How do you **add** a new item to a list?\n3. What is the difference between a **list** and a **dictionary**?\n4. What is a **tuple** and how is it different from a list?\n5. If `student = {\"name\": \"Ahmed\"}`, how do you get the value `\"Ahmed\"`?\n\n---\n\n## Quiz Marking\n\n| Section | Marks |\n|---------|-------|\n| Easy questions | 5 |\n| Medium questions | 6 |\n| Complex questions | 6 |\n| **Total** | **17** |\n\n---\n\n## Grade Scale\n\n| Marks | Grade | Remarks |\n|-------|-------|---------|\n| 15 \u2013 17 | A | Mashallah \u2014 Excellent |\n| 12 \u2013 14 | B | Very Good |\n| 9 \u2013 11 | C | Good \u2014 Review mistakes |\n| 6 \u2013 8 | D | Needs Revision |\n| 0 \u2013 5 | F | Repeat module before moving on |\n\n---\n\n## Practical Assessment\n\nAsk each student to complete the following task at the computer:\n\n### Task\n\nCreate a **dictionary** for a madrasa student with the following keys and appropriate values:\n\n| Key | Example Value |\n|-----|---------------|\n| `name` | `\"Ahmed\"` |\n| `age` | `14` |\n| `city` | `\"Lahore\"` |\n| `subject` | `\"Hifz\"` |\n| `marks` | `88` |\n\nThen **print each value** with a clear label, like:\n\n```\nNaam: Ahmed\nUmar: 14\nShehar: Lahore\nSubject: Hifz\nMarks: 88\n```\n\n### Sample Solution\n\n```python\nstudent = {\n    \"name\": \"Ahmed\",\n    \"age\": 14,\n    \"city\": \"Lahore\",\n    \"subject\": \"Hifz\",\n    \"marks\": 88\n}\n\nprint(f\"Naam: {student['name']}\")\nprint(f\"Umar: {student['age']}\")\nprint(f\"Shehar: {student['city']}\")\nprint(f\"Subject: {student['subject']}\")\nprint(f\"Marks: {student['marks']}\")\n```\n\n---\n\n## Teacher Observation Checklist\n\n| Student Name | Created list? | Index access? | Used append? | Created dict (3+ keys)? | Dict value access? | Pass/Fail |\n|--------------|:-------------:|:-------------:|:------------:|:-----------------------:|:-----------------:|:---------:|\n|              | \u2610 | \u2610 | \u2610 | \u2610 | \u2610 | |\n|              | \u2610 | \u2610 | \u2610 | \u2610 | \u2610 | |\n|              | \u2610 | \u2610 | \u2610 | \u2610 | \u2610 | |\n|              | \u2610 | \u2610 | \u2610 | \u2610 | \u2610 | |\n|              | \u2610 | \u2610 | \u2610 | \u2610 | \u2610 | |\n"</script>
+      </div>
+
+    </div>
+
+    <div class="module-nav">
+      <a href="module-6.html" class="nav-btn">← Module 6</a>
+      <a href="index.html" class="nav-btn nav-home">🏠 All Modules</a>
+      <a href="module-8.html" class="nav-btn">Module 8 →</a>
+    </div>
+
+  </main>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

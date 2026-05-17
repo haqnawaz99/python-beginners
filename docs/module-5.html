@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 5: Control Flow — Python for Beginners</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">🐍 Python for Beginners</a>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar" id="sidebar"><ul class="sidebar-nav"><li><a href="index.html" class="">🏠 Home</a></li><li><a href="module-0.html" class="">⚙️ M0: Setup</a></li><li><a href="module-1.html" class="">📝 M1: Strings</a></li><li><a href="module-2.html" class="">📦 M2: Variables</a></li><li><a href="module-3.html" class="">🔢 M3: Data Types</a></li><li><a href="module-4.html" class="">➕ M4: Operators</a></li><li><a href="module-5.html" class="active">🔀 M5: Control Flow</a></li><li><a href="module-6.html" class="">🔧 M6: Functions</a></li><li><a href="module-7.html" class="">📋 M7: Lists</a></li><li><a href="module-8.html" class="">🛡️ M8: Error Handling</a></li><li><a href="module-9.html" class="">💾 M9: File I/O</a></li><li><a href="module-10.html" class="">🚀 M10: Projects</a></li></ul></aside>
+  <main class="main-content">
+
+    <div class="module-header">
+      <span class="module-icon">🔀</span>
+      <div>
+        <p class="module-label">Module 5</p>
+        <h1>Control Flow</h1>
+      </div>
+    </div>
+
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="lessons">📚 Lessons</button>
+      <button class="tab-btn" data-tab="notes">📋 Teacher Notes</button>
+      <button class="tab-btn" data-tab="practice">✏️ Practice Sheet</button>
+      <button class="tab-btn" data-tab="assessment">📊 Assessment</button>
+    </div>
+
+    <div class="tab-panes">
+
+      <div id="tab-lessons" class="tab-pane active">
+        
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 5_1_if_statements.py</span>
+        <span class="badge badge-lesson">Lesson</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 5 - Lesson 1: If Statements
+# ================================================
+# Learn: if, if-else, elif
+#        Making decisions in code
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;If Statements — Making Decisions&quot;)
+print(&quot;=&quot; * 50)
+
+# ------------------------------------------------
+# What is an if statement?
+# ------------------------------------------------
+# An if statement runs code ONLY when a condition is True.
+# If the condition is False, Python skips that block.
+# Indentation (4 spaces) marks which code belongs to the if.
+
+# ------------------------------------------------
+# 1. Basic if
+# ------------------------------------------------
+print(&quot;\n1. Basic if:&quot;)
+
+marks = 75
+if marks &gt;= 50:
+    print(&quot;Congratulations! You passed.&quot;)
+
+age = 8
+if age &gt;= 7:
+    print(&quot;Old enough to start Quran classes.&quot;)
+
+is_fasting = True
+if is_fasting:
+    print(&quot;May Allah accept your fast.&quot;)
+
+# ------------------------------------------------
+# 2. if-else — two paths
+# ------------------------------------------------
+print(&quot;\n2. if-else:&quot;)
+
+marks = 45
+if marks &gt;= 50:
+    print(&quot;Result: Pass&quot;)
+else:
+    print(&quot;Result: Fail — keep trying!&quot;)
+
+prayer_offered = False
+if prayer_offered:
+    print(&quot;JazakAllah Khair for praying.&quot;)
+else:
+    print(&quot;Do not forget your prayer!&quot;)
+
+temperature = 42
+if temperature &gt; 40:
+    print(&quot;Very hot today — drink water and stay inside.&quot;)
+else:
+    print(&quot;Weather is fine today.&quot;)
+
+# ------------------------------------------------
+# 3. elif — multiple choices
+# ------------------------------------------------
+print(&quot;\n3. elif — multiple choices:&quot;)
+
+marks = 88
+if marks &gt;= 90:
+    grade = &quot;A+&quot;
+elif marks &gt;= 80:
+    grade = &quot;A&quot;
+elif marks &gt;= 70:
+    grade = &quot;B&quot;
+elif marks &gt;= 60:
+    grade = &quot;C&quot;
+elif marks &gt;= 50:
+    grade = &quot;D&quot;
+else:
+    grade = &quot;Fail&quot;
+
+print(f&quot;Marks: {marks} — Grade: {grade}&quot;)
+
+# Prayer time selector
+hour = 6
+if hour &lt; 6:
+    print(&quot;Time for Tahajjud&quot;)
+elif hour &lt; 8:
+    print(&quot;Fajr prayer time&quot;)
+elif hour &lt; 13:
+    print(&quot;Morning study time&quot;)
+elif hour &lt; 15:
+    print(&quot;Dhuhr prayer time&quot;)
+elif hour &lt; 18:
+    print(&quot;Asr prayer time&quot;)
+elif hour &lt; 20:
+    print(&quot;Maghrib prayer time&quot;)
+else:
+    print(&quot;Isha prayer time&quot;)
+
+# ------------------------------------------------
+# 4. if with input()
+# ------------------------------------------------
+print(&quot;\n4. With user input:&quot;)
+
+name = input(&quot;Enter your name: &quot;)
+marks = int(input(f&quot;Enter {name}&#x27;s marks (out of 100): &quot;))
+
+if marks &gt;= 90:
+    print(f&quot;Ma sha Allah {name}! Excellent result.&quot;)
+elif marks &gt;= 70:
+    print(f&quot;Well done {name}! Good result.&quot;)
+elif marks &gt;= 50:
+    print(f&quot;Passed {name}. Work harder next time.&quot;)
+else:
+    print(f&quot;Failed {name}. Do not give up — try again!&quot;)
+
+# ------------------------------------------------
+# 5. Nested if — if inside if
+# ------------------------------------------------
+print(&quot;\n5. Nested if:&quot;)
+
+age = int(input(&quot;Enter age: &quot;))
+has_permission = True
+
+if age &gt;= 10:
+    if has_permission:
+        print(&quot;Welcome to the advanced Quran class!&quot;)
+    else:
+        print(&quot;Age is fine but you need parent permission.&quot;)
+else:
+    print(&quot;Too young for this class. Join the beginner class.&quot;)
+
+print()
+print(&quot;If statements let your program think and decide. Excellent!&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 5_2_while_loops.py</span>
+        <span class="badge badge-lesson">Lesson</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 5 - Lesson 2: While Loops
+# ================================================
+# Learn: while loop, break, continue
+#        Repeating code while a condition is True
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;While Loops — Repeating with a Condition&quot;)
+print(&quot;=&quot; * 50)
+
+# ------------------------------------------------
+# What is a while loop?
+# ------------------------------------------------
+# A while loop repeats a block of code AS LONG AS
+# a condition remains True.
+# When the condition becomes False, the loop stops.
+#
+# WARNING: If the condition never becomes False,
+# the loop runs forever (infinite loop)!
+# Always make sure the condition will eventually be False.
+
+# ------------------------------------------------
+# 1. Basic while loop
+# ------------------------------------------------
+print(&quot;\n1. Basic while loop:&quot;)
+
+count = 1
+while count &lt;= 5:
+    print(f&quot;Count: {count}&quot;)
+    count = count + 1    # this changes count so loop will end
+
+print(&quot;Loop finished!&quot;)
+
+# ------------------------------------------------
+# 2. Counting prayers
+# ------------------------------------------------
+print(&quot;\n2. Prayer counter:&quot;)
+
+prayer = 1
+prayer_names = [&quot;Fajr&quot;, &quot;Dhuhr&quot;, &quot;Asr&quot;, &quot;Maghrib&quot;, &quot;Isha&quot;]
+while prayer &lt;= 5:
+    print(f&quot;Prayer {prayer}: {prayer_names[prayer - 1]}&quot;)
+    prayer += 1     # += 1 is shortcut for prayer = prayer + 1
+
+# ------------------------------------------------
+# 3. Countdown
+# ------------------------------------------------
+print(&quot;\n3. Countdown:&quot;)
+
+countdown = 5
+while countdown &gt; 0:
+    print(countdown)
+    countdown -= 1
+print(&quot;Bismillah — let us begin!&quot;)
+
+# ------------------------------------------------
+# 4. while with user input — repeat until correct
+# ------------------------------------------------
+print(&quot;\n4. Repeat until correct answer:&quot;)
+
+correct_answer = &quot;786&quot;
+answer = input(&quot;What is 700 + 86? &quot;)
+while answer != correct_answer:
+    print(&quot;Wrong! Try again.&quot;)
+    answer = input(&quot;What is 700 + 86? &quot;)
+print(&quot;Correct! Well done.&quot;)
+
+# ------------------------------------------------
+# 5. break — exit the loop early
+# ------------------------------------------------
+print(&quot;\n5. break — stop loop early:&quot;)
+
+# Stop counting when we find the number 3
+number = 1
+while number &lt;= 10:
+    if number == 3:
+        print(&quot;Found 3 — stopping!&quot;)
+        break
+    print(number)
+    number += 1
+
+# ------------------------------------------------
+# 6. continue — skip current step, go to next
+# ------------------------------------------------
+print(&quot;\n6. continue — skip a step:&quot;)
+
+# Print 1 to 7 but skip 4
+number = 0
+while number &lt; 7:
+    number += 1
+    if number == 4:
+        continue        # skip printing 4
+    print(number)
+
+# ------------------------------------------------
+# 7. Tasbeeh counter
+# ------------------------------------------------
+print(&quot;\n7. Tasbeeh counter:&quot;)
+
+target = int(input(&quot;How many tasbeeh do you want to count? &quot;))
+count = 0
+while count &lt; target:
+    count += 1
+print(f&quot;Alhamdulillah! You completed {count} tasbeeh.&quot;)
+
+# ------------------------------------------------
+# 8. Running total with while
+# ------------------------------------------------
+print(&quot;\n8. Running total (enter 0 to stop):&quot;)
+
+total = 0
+while True:                      # runs forever until break
+    amount = int(input(&quot;Enter amount (0 to stop): &quot;))
+    if amount == 0:
+        break
+    total += amount
+    print(f&quot;Running total: {total} rupees&quot;)
+
+print(f&quot;Final total: {total} rupees&quot;)
+
+print()
+print(&quot;While loops are powerful — use them carefully. Great work!&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 5_3_for_loops.py</span>
+        <span class="badge badge-lesson">Lesson</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 5 - Lesson 3: For Loops
+# ================================================
+# Learn: for loop, range(), looping over lists,
+#        enumerate(), break, continue, nested loops
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;For Loops — Repeating a Fixed Number of Times&quot;)
+print(&quot;=&quot; * 50)
+
+# ------------------------------------------------
+# What is a for loop?
+# ------------------------------------------------
+# A for loop repeats code a specific number of times,
+# or once for each item in a collection.
+# Use for loops when you KNOW how many times to repeat.
+# Use while loops when you DON&#x27;T know in advance.
+
+# ------------------------------------------------
+# 1. for with range()
+# ------------------------------------------------
+print(&quot;\n1. for with range():&quot;)
+
+# range(5) gives: 0, 1, 2, 3, 4
+for i in range(5):
+    print(f&quot;Step {i}&quot;)
+
+# range(1, 6) gives: 1, 2, 3, 4, 5
+print()
+for i in range(1, 6):
+    print(f&quot;Count: {i}&quot;)
+
+# range(1, 11, 2) gives: 1, 3, 5, 7, 9  (step of 2)
+print()
+print(&quot;Odd numbers:&quot;)
+for i in range(1, 11, 2):
+    print(i)
+
+# ------------------------------------------------
+# 2. Looping over a list
+# ------------------------------------------------
+print(&quot;\n2. Looping over a list:&quot;)
+
+prayers = [&quot;Fajr&quot;, &quot;Dhuhr&quot;, &quot;Asr&quot;, &quot;Maghrib&quot;, &quot;Isha&quot;]
+for prayer in prayers:
+    print(f&quot;Prayer: {prayer}&quot;)
+
+print()
+subjects = [&quot;Quran&quot;, &quot;Hadith&quot;, &quot;Fiqh&quot;, &quot;Arabic&quot;, &quot;Seerah&quot;]
+for subject in subjects:
+    print(f&quot;Today we study: {subject}&quot;)
+
+# ------------------------------------------------
+# 3. Looping over a string
+# ------------------------------------------------
+print(&quot;\n3. Looping over a string:&quot;)
+
+word = &quot;PAKISTAN&quot;
+for letter in word:
+    print(letter)
+
+# Count a specific letter
+count = 0
+name = &quot;Muhammad&quot;
+for letter in name:
+    if letter == &quot;a&quot; or letter == &quot;A&quot;:
+        count += 1
+print(f&quot;Letter &#x27;a&#x27; appears {count} times in &#x27;{name}&#x27;&quot;)
+
+# ------------------------------------------------
+# 4. enumerate() — get index AND value
+# ------------------------------------------------
+print(&quot;\n4. enumerate():&quot;)
+
+prayers = [&quot;Fajr&quot;, &quot;Dhuhr&quot;, &quot;Asr&quot;, &quot;Maghrib&quot;, &quot;Isha&quot;]
+for number, prayer in enumerate(prayers, start=1):
+    print(f&quot;{number}. {prayer}&quot;)
+
+# ------------------------------------------------
+# 5. for with if — conditional logic inside loop
+# ------------------------------------------------
+print(&quot;\n5. for with if:&quot;)
+
+marks_list = [85, 42, 90, 55, 38, 78, 61]
+for marks in marks_list:
+    if marks &gt;= 50:
+        print(f&quot;{marks} — Pass&quot;)
+    else:
+        print(f&quot;{marks} — Fail&quot;)
+
+# ------------------------------------------------
+# 6. break and continue in for loops
+# ------------------------------------------------
+print(&quot;\n6. break and continue:&quot;)
+
+# Stop when we find the first failing mark
+print(&quot;Search for first failure:&quot;)
+for marks in [80, 75, 90, 43, 88]:
+    if marks &lt; 50:
+        print(f&quot;First failure found: {marks}&quot;)
+        break
+    print(f&quot;{marks} — Pass&quot;)
+
+# Skip absent students (marked as 0)
+print(&quot;\nSkip absent students:&quot;)
+scores = [85, 0, 72, 0, 91, 68]
+for score in scores:
+    if score == 0:
+        continue    # skip absent
+    print(f&quot;Score: {score}&quot;)
+
+# ------------------------------------------------
+# 7. Nested for loops — loop inside a loop
+# ------------------------------------------------
+print(&quot;\n7. Nested loops:&quot;)
+
+# Multiplication table for 2 and 3
+for table in [2, 3]:
+    print(f&quot;\nTable of {table}:&quot;)
+    for i in range(1, 6):
+        print(f&quot;  {table} x {i} = {table * i}&quot;)
+
+# ------------------------------------------------
+# 8. Calculating total and average with for
+# ------------------------------------------------
+print(&quot;\n8. Total and average:&quot;)
+
+marks = [85, 92, 78, 90, 88]
+subjects = [&quot;Quran&quot;, &quot;Hadith&quot;, &quot;Fiqh&quot;, &quot;Arabic&quot;, &quot;Seerah&quot;]
+total = 0
+
+for i in range(len(marks)):
+    print(f&quot;{subjects[i]}: {marks[i]}&quot;)
+    total += marks[i]
+
+average = total / len(marks)
+print(f&quot;\nTotal  : {total}&quot;)
+print(f&quot;Average: {average}&quot;)
+
+print()
+print(&quot;For loops are one of the most useful tools in Python. Excellent!&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 5_4_islamic_applications.py</span>
+        <span class="badge badge-app">Applications</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 5 - Lesson 4: Control Flow Applications
+# ================================================
+# Real programs using if, while, and for loops
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;Control Flow — Real Applications&quot;)
+print(&quot;=&quot; * 50)
+
+# ------------------------------------------------
+# Application 1: Grade Calculator
+# ------------------------------------------------
+print(&quot;\n--- Application 1: Grade Calculator ---&quot;)
+
+subjects = [&quot;Quran&quot;, &quot;Hadith&quot;, &quot;Fiqh&quot;, &quot;Arabic&quot;, &quot;Seerah&quot;]
+total = 0
+passed_count = 0
+
+for subject in subjects:
+    marks = int(input(f&quot;{subject} marks (out of 100): &quot;))
+    total += marks
+    if marks &gt;= 50:
+        passed_count += 1
+
+average = total / len(subjects)
+print(f&quot;\nTotal marks    : {total} / {len(subjects) * 100}&quot;)
+print(f&quot;Average        : {average:.1f}%&quot;)
+print(f&quot;Subjects passed: {passed_count} / {len(subjects)}&quot;)
+
+if average &gt;= 80:
+    print(&quot;Result: Excellent — First Division!&quot;)
+elif average &gt;= 60:
+    print(&quot;Result: Good — Second Division&quot;)
+elif average &gt;= 50:
+    print(&quot;Result: Pass — Third Division&quot;)
+else:
+    print(&quot;Result: Fail — Please study harder&quot;)
+
+# ------------------------------------------------
+# Application 2: Simple Quiz Game
+# ------------------------------------------------
+print(&quot;\n--- Application 2: Islamic Quiz ---&quot;)
+
+questions = [
+    (&quot;How many Surahs are in the Quran?&quot;, &quot;114&quot;),
+    (&quot;How many daily prayers are there?&quot;, &quot;5&quot;),
+    (&quot;In which month was the Quran revealed?&quot;, &quot;ramadan&quot;),
+    (&quot;How many Paras are in the Quran?&quot;, &quot;30&quot;),
+]
+
+score = 0
+for number, (question, answer) in enumerate(questions, start=1):
+    user_answer = input(f&quot;Q{number}: {question} &quot;).strip().lower()
+    if user_answer == answer.lower():
+        print(&quot;Correct! Ma sha Allah.&quot;)
+        score += 1
+    else:
+        print(f&quot;Wrong. The answer is: {answer}&quot;)
+
+print(f&quot;\nYour score: {score} out of {len(questions)}&quot;)
+if score == len(questions):
+    print(&quot;Perfect score! Alhamdulillah!&quot;)
+elif score &gt;= len(questions) // 2:
+    print(&quot;Good effort! Keep learning.&quot;)
+else:
+    print(&quot;Keep studying — you will do better next time!&quot;)
+
+# ------------------------------------------------
+# Application 3: Attendance Tracker
+# ------------------------------------------------
+print(&quot;\n--- Application 3: Attendance Tracker ---&quot;)
+
+num_students = int(input(&quot;How many students to check? &quot;))
+present_count = 0
+absent_students = []
+
+for i in range(1, num_students + 1):
+    name = input(f&quot;Student {i} name: &quot;)
+    status = input(f&quot;Is {name} present? (yes/no): &quot;).strip().lower()
+    if status == &quot;yes&quot;:
+        present_count += 1
+    else:
+        absent_students.append(name)
+
+absent_count = num_students - present_count
+attendance_pct = present_count / num_students * 100
+
+print(f&quot;\nTotal students : {num_students}&quot;)
+print(f&quot;Present        : {present_count}&quot;)
+print(f&quot;Absent         : {absent_count}&quot;)
+print(f&quot;Attendance     : {attendance_pct:.1f}%&quot;)
+
+if absent_students:
+    print(&quot;Absent students:&quot;)
+    for name in absent_students:
+        print(f&quot;  - {name}&quot;)
+
+# ------------------------------------------------
+# Application 4: Prayer Time Reminder
+# ------------------------------------------------
+print(&quot;\n--- Application 4: Prayer Reminder ---&quot;)
+
+prayer_times = {
+    &quot;Fajr&quot;: 5,
+    &quot;Dhuhr&quot;: 13,
+    &quot;Asr&quot;: 16,
+    &quot;Maghrib&quot;: 19,
+    &quot;Isha&quot;: 21
+}
+
+current_hour = int(input(&quot;Enter current hour (0-23): &quot;))
+reminder_shown = False
+
+for prayer, hour in prayer_times.items():
+    if current_hour == hour:
+        print(f&quot;Time for {prayer} prayer! Please stop and pray.&quot;)
+        reminder_shown = True
+        break
+    elif current_hour == hour - 1:
+        print(f&quot;{prayer} prayer is in 1 hour. Please prepare.&quot;)
+        reminder_shown = True
+        break
+
+if not reminder_shown:
+    print(&quot;No prayer due at this hour. Continue your work.&quot;)
+
+print()
+print(&quot;These are real programs you can build with control flow. Excellent!&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 5_5_quiz.py</span>
+        <span class="badge badge-quiz">Quiz</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 5 - Quiz: Control Flow
+# ================================================
+# Covers: if, if-else, elif, while, for, range(),
+#         break, continue, enumerate()
+# Difficulty: Easy / Medium / Complex
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;MODULE 5 QUIZ - Control Flow&quot;)
+print(&quot;=&quot; * 50)
+print()
+
+# ------------------------------------------------
+# EASY
+# ------------------------------------------------
+print(&quot;--- EASY ---&quot;)
+print()
+
+# Q1. Ask the user for their marks (int).
+#     If marks &gt;= 50, print &quot;Pass&quot;. Otherwise print &quot;Fail&quot;.
+
+
+# Q2. Use a for loop with range() to print numbers 1 to 10.
+
+
+# Q3. Loop over this list and print each item:
+#     prayers = [&quot;Fajr&quot;, &quot;Dhuhr&quot;, &quot;Asr&quot;, &quot;Maghrib&quot;, &quot;Isha&quot;]
+
+
+# Q4. Use a while loop to count from 1 to 5 and print each number.
+
+
+# Q5. Ask the user for a number.
+#     Print whether it is even or odd.
+#     Hint: use %
+
+
+# ------------------------------------------------
+# MEDIUM
+# ------------------------------------------------
+print()
+print(&quot;--- MEDIUM ---&quot;)
+print()
+
+# Q6. Ask the user for their age.
+#     Print:
+#       - &quot;Child&quot;    if age &lt; 13
+#       - &quot;Teenager&quot; if age is 13 to 17
+#       - &quot;Adult&quot;    if age &gt;= 18
+
+
+# Q7. Use a for loop to print the multiplication table of
+#     a number entered by the user (from 1 to 10).
+#     Example for 3:
+#       3 x 1 = 3
+#       3 x 2 = 6  ... and so on
+
+
+# Q8. Use a while loop that keeps asking the user to guess
+#     the secret number (42) until they get it right.
+#     Print &quot;Too high&quot; or &quot;Too low&quot; as hints each time.
+
+
+# Q9. Loop over this list of marks and count how many students
+#     passed (marks &gt;= 50) and how many failed:
+#     marks_list = [85, 42, 90, 55, 38, 78, 61, 29, 95, 48]
+#     Print the pass count and fail count at the end.
+
+
+# ------------------------------------------------
+# COMPLEX
+# ------------------------------------------------
+print()
+print(&quot;--- COMPLEX ---&quot;)
+print()
+
+# Q10. Ask the user how many students are in a class (int).
+#      Then loop to ask for each student&#x27;s name and marks.
+#      At the end print:
+#        - Total marks
+#        - Class average
+#        - Highest marks
+#        - How many passed (&gt;= 50)
+
+
+# Q11. Write a program that prints a pattern like this
+#      (for 5 rows):
+#        *
+#        * *
+#        * * *
+#        * * * *
+#        * * * * *
+#      Use nested for loops.
+
+
+# Q12. Build a number guessing game:
+#      - Set a secret number (e.g. 7)
+#      - Give the user 3 chances to guess
+#      - After each wrong guess say &quot;Too high&quot; or &quot;Too low&quot;
+#      - If they guess correctly print &quot;Correct! You win!&quot;
+#      - If all 3 chances are used print &quot;Game over! Number was 7&quot;
+#      Use a for loop with break.
+
+
+print()
+print(&quot;Quiz done! Check 5_6_quiz_solution.py for answers.&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 5_6_quiz_solution.py</span>
+        <span class="badge badge-solution">Quiz Solution</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 5 - Quiz Solutions
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;MODULE 5 QUIZ - SOLUTIONS&quot;)
+print(&quot;=&quot; * 50)
+print()
+
+# ------------------------------------------------
+# EASY
+# ------------------------------------------------
+print(&quot;--- EASY ---&quot;)
+print()
+
+# Q1.
+marks = int(input(&quot;Enter your marks: &quot;))
+if marks &gt;= 50:
+    print(&quot;Pass&quot;)
+else:
+    print(&quot;Fail&quot;)
+
+# Q2.
+for i in range(1, 11):
+    print(i)
+
+# Q3.
+prayers = [&quot;Fajr&quot;, &quot;Dhuhr&quot;, &quot;Asr&quot;, &quot;Maghrib&quot;, &quot;Isha&quot;]
+for prayer in prayers:
+    print(prayer)
+
+# Q4.
+count = 1
+while count &lt;= 5:
+    print(count)
+    count += 1
+
+# Q5.
+number = int(input(&quot;Enter a number: &quot;))
+if number % 2 == 0:
+    print(&quot;Even&quot;)
+else:
+    print(&quot;Odd&quot;)
+
+# ------------------------------------------------
+# MEDIUM
+# ------------------------------------------------
+print()
+print(&quot;--- MEDIUM ---&quot;)
+print()
+
+# Q6.
+age = int(input(&quot;Enter your age: &quot;))
+if age &lt; 13:
+    print(&quot;Child&quot;)
+elif age &lt;= 17:
+    print(&quot;Teenager&quot;)
+else:
+    print(&quot;Adult&quot;)
+
+# Q7.
+num = int(input(&quot;Enter a number for its table: &quot;))
+for i in range(1, 11):
+    print(f&quot;{num} x {i} = {num * i}&quot;)
+
+# Q8.
+secret = 42
+while True:
+    guess = int(input(&quot;Guess the number: &quot;))
+    if guess == secret:
+        print(&quot;Correct! Well done!&quot;)
+        break
+    elif guess &gt; secret:
+        print(&quot;Too high! Try again.&quot;)
+    else:
+        print(&quot;Too low! Try again.&quot;)
+
+# Q9.
+marks_list = [85, 42, 90, 55, 38, 78, 61, 29, 95, 48]
+passed = 0
+failed = 0
+for m in marks_list:
+    if m &gt;= 50:
+        passed += 1
+    else:
+        failed += 1
+print(f&quot;Passed: {passed}&quot;)
+print(f&quot;Failed: {failed}&quot;)
+
+# ------------------------------------------------
+# COMPLEX
+# ------------------------------------------------
+print()
+print(&quot;--- COMPLEX ---&quot;)
+print()
+
+# Q10.
+num_students = int(input(&quot;Number of students: &quot;))
+total = 0
+highest = 0
+pass_count = 0
+
+for i in range(1, num_students + 1):
+    name = input(f&quot;Student {i} name: &quot;)
+    marks = int(input(f&quot;Marks for {name}: &quot;))
+    total += marks
+    if marks &gt; highest:
+        highest = marks
+    if marks &gt;= 50:
+        pass_count += 1
+
+print(f&quot;Total marks  : {total}&quot;)
+print(f&quot;Class average: {total / num_students:.1f}&quot;)
+print(f&quot;Highest marks: {highest}&quot;)
+print(f&quot;Passed       : {pass_count} out of {num_students}&quot;)
+
+# Q11.
+for row in range(1, 6):
+    print(&quot;* &quot; * row)
+
+# Q12.
+secret = 7
+won = False
+for attempt in range(1, 4):
+    guess = int(input(f&quot;Attempt {attempt} — Guess the number: &quot;))
+    if guess == secret:
+        print(&quot;Correct! You win!&quot;)
+        won = True
+        break
+    elif guess &gt; secret:
+        print(&quot;Too high!&quot;)
+    else:
+        print(&quot;Too low!&quot;)
+
+if not won:
+    print(f&quot;Game over! The number was {secret}&quot;)
+
+print()
+print(&quot;End of solutions.&quot;)
+</code></pre>
+    </div>
+      </div>
+
+      <div id="tab-notes" class="tab-pane">
+        <div class="markdown-body" id="md-notes"></div>
+        <script type="application/json" id="src-notes">"# Module 5 \u2014 Control Flow: Teacher Notes\n\n## Overview\n\n| Item | Detail |\n|------|--------|\n| Module | 5 \u2014 Control Flow |\n| Duration | 3 classes (yeh module bara hai) |\n| Level | Beginner to Intermediate |\n| Age Group | 10\u201316 years |\n| Language | Urdu (with English terms) |\n\n---\n\n## Learning Objectives\n\nBy the end of this module, students will be able to:\n\n1. Write `if`, `elif`, `else` blocks with correct indentation\n2. Build grade checkers and pass/fail programs\n3. Write `while` loops that terminate correctly\n4. Use `break` to exit a loop early\n5. Write `for` loops using `range()` and lists\n6. Use the `while True: ... break` pattern for menus\n\n---\n\n## Lesson Flow\n\n### Class 1 \u2014 if / elif / else (55 minutes)\n\n| Time | Activity | File |\n|------|----------|------|\n| 0\u201315 min | Introduce `if` \u2014 single condition, real examples | `5_1_if_else.py` |\n| 15\u201330 min | Add `elif` \u2014 multiple conditions | `5_1_if_else.py` |\n| 30\u201345 min | Grade calculator \u2014 full if/elif/else chain | `5_2_grade_checker.py` |\n| 45\u201355 min | Pass/fail checker \u2014 practice | `5_2_grade_checker.py` |\n\n### Class 2 \u2014 while loops (55 minutes)\n\n| Time | Activity | File |\n|------|----------|------|\n| 0\u201315 min | Introduce `while` \u2014 countdown example | `5_3_while_loop.py` |\n| 15\u201330 min | Infinite loop danger \u2014 show and fix | `5_3_while_loop.py` |\n| 30\u201345 min | Input validation loop \u2014 keep asking until valid | `5_4_while_input.py` |\n| 45\u201355 min | `while True: ... break` menu pattern | `5_4_while_input.py` |\n\n### Class 3 \u2014 for loops + Applications (55 minutes)\n\n| Time | Activity | File |\n|------|----------|------|\n| 0\u201315 min | Introduce `for` with `range()` | `5_5_for_loop.py` |\n| 15\u201330 min | `for` with lists \u2014 student names, cities | `5_5_for_loop.py` |\n| 30\u201345 min | Combined application \u2014 mini project | `5_6_applications.py` |\n| 45\u201355 min | Quiz | \u2014 |\n\n---\n\n## Key Concepts to Emphasise\n\n### 1. Indentation Is Not Optional\n\n> **This is the #1 thing to teach in this module. Python uses indentation as structure \u2014 not just style.**\n\n```python\n# SAHI (Correct):\nmarks = 85\nif marks >= 50:\n    print(\"Pass ho gaye!\")    # 4 spaces andar\n    print(\"Mubarak ho!\")      # same level\n\n# GALAT (Wrong \u2014 IndentationError):\nmarks = 85\nif marks >= 50:\nprint(\"Pass ho gaye!\")        # ERROR! indent nahin hai\n```\n\n**Whiteboard demonstration:** Draw a box around indented code. \"Yeh sab ek group hai. Agar indent nahin, toh Python nahin samjhega.\"\n\n### 2. The Colon After if / elif / else / while / for\n\n```python\nif marks >= 50:        # colon zaroori hai \u2190 yahan\n    print(\"Pass\")\n\nwhile count > 0:       # yahan bhi \u2190 colon\n    count -= 1\n\nfor i in range(5):     # yahan bhi \u2190 colon\n    print(i)\n```\n\nTell students: \"Jab bhi Python se kaho 'shuru karo', aakhir mein colon lagao.\"\n\n### 3. if / elif / else Structure\n\n```python\nmarks = int(input(\"Marks likhein (0-100): \"))\n\nif marks >= 90:\n    print(\"Grade: A+  \u2014 Masha'Allah!\")\nelif marks >= 80:\n    print(\"Grade: A   \u2014 Bohat achha!\")\nelif marks >= 70:\n    print(\"Grade: B   \u2014 Achha!\")\nelif marks >= 60:\n    print(\"Grade: C   \u2014 Theek hai.\")\nelif marks >= 50:\n    print(\"Grade: D   \u2014 Koshish karo.\")\nelse:\n    print(\"Grade: Fail \u2014 Mehnat karo, Allah madad karega.\")\n```\n\n**Key point:** Python checks conditions **in order, top to bottom**. As soon as one is True, it runs that block and skips the rest.\n\n### 4. while Loop \u2014 Must Have an Exit\n\n```python\n# KHATARNAAK \u2014 Infinite loop!\ncount = 5\nwhile count > 0:\n    print(count)\n    # count update nahin hua \u2014 loop kabhi khatam nahin hoga!\n\n# SAHI:\ncount = 5\nwhile count > 0:\n    print(count)\n    count -= 1          # har baar count kam karo\nprint(\"Khatam!\")\n```\n\n### 5. The `while True: break` Menu Pattern\n\n> **This pattern is used in all future projects. Teach it explicitly.**\n\n```python\nwhile True:\n    print(\"\\n=== Main Menu ===\")\n    print(\"1. Marks check karo\")\n    print(\"2. Calculator\")\n    print(\"3. Baahir jao\")\n\n    choice = input(\"Apna choice likhein: \")\n\n    if choice == \"1\":\n        print(\"Marks checking...\")\n    elif choice == \"2\":\n        print(\"Calculator...\")\n    elif choice == \"3\":\n        print(\"Allah Hafiz!\")\n        break           # Loop se baahir\n    else:\n        print(\"Galat choice \u2014 dobara likhein.\")\n```\n\n### 6. for Loop with range()\n\n```python\n# range(5) \u2192 0, 1, 2, 3, 4\nfor i in range(5):\n    print(i)\n\n# range(1, 6) \u2192 1, 2, 3, 4, 5\nfor i in range(1, 6):\n    print(i)\n\n# range(1, 11, 2) \u2192 1, 3, 5, 7, 9  (step 2)\nfor i in range(1, 11, 2):\n    print(i)\n```\n\n### 7. for Loop with Lists\n\n```python\ntalibaan = [\"Ahmed\", \"Fatima\", \"Hassan\", \"Zainab\"]\n\nfor naam in talibaan:\n    print(f\"Assalamu Alaikum, {naam}!\")\n```\n\n---\n\n## Common Mistakes\n\n| Mistake | What Happens | Correction |\n|---------|-------------|------------|\n| Missing colon (`:`) after `if`/`while`/`for` | `SyntaxError` | Always end with `:` |\n| Wrong indentation | `IndentationError` or wrong logic | 4 spaces, consistent |\n| `while` loop without updating counter | Infinite loop \u2014 program freezes | Always update the variable |\n| Using `=` instead of `==` in `if` | `SyntaxError` | Use `==` for comparison |\n| `for i in range(5)` \u2192 expects 1 to 5 but gets 0 to 4 | Off-by-one error | Use `range(1, 6)` for 1 to 5 |\n\n---\n\n## Urdu Teaching Tips\n\n| Keyword | Urdu Explanation |\n|---------|-----------------|\n| `if` | \"agar\" \u2014 agar yeh sach hai toh |\n| `elif` | \"warna agar\" \u2014 agar pehli shart poori nahin, toh yeh check karo |\n| `else` | \"baaki sab\" \u2014 agar koi shart poori nahin hui |\n| `while` | \"jab tak\" \u2014 jab tak yeh sach hai, karte raho |\n| `for` | \"har ek ke liye\" \u2014 is list ya range ki har value ke liye |\n| `break` | \"ruk jao\" \u2014 loop se baahir nikal jao |\n| `range()` | \"girohband\" \u2014 numbers ki ek qataar |\n\n---\n\n## Classroom Activity Ideas\n\n**Activity 1 \u2014 Human Robot:**\nTeacher calls out: \"Agar tumhara naam A se shuru hota hai, khade ho jao. Warna baitho.\" Students act as if/else.\n\n**Activity 2 \u2014 Countdown Together:**\nWhole class counts down from 10 together (like a while loop). Stop at 0 (like the condition).\n\n**Activity 3 \u2014 Grade Calculator Race:**\nGive students marks on a slip of paper. First student to correctly tell their grade using the if/elif/else chain wins.\n\n**Activity 4 \u2014 Name Loop:**\nWrite 5 student names on board. Students write a `for` loop that prints \"Assalamu Alaikum\" to each.\n\n---\n\n## Module Files\n\n| File | Topic |\n|------|-------|\n| `5_1_if_else.py` | if, elif, else \u2014 introduction |\n| `5_2_grade_checker.py` | Grade calculator application |\n| `5_3_while_loop.py` | while loops \u2014 countdown, validation |\n| `5_4_while_input.py` | while True + break menu pattern |\n| `5_5_for_loop.py` | for loops with range() and lists |\n| `5_6_applications.py` | Combined applications and mini-project |\n\n---\n\n## Important Note for Teacher\n\nThis module is **the foundation of all programming logic**. Students who master this module will be able to build real projects. Take extra time here \u2014 do not rush. If the class needs 4 sessions instead of 3, that is completely fine.\n\nThe `while True: ... break` pattern alone will appear in every project from Module 6 onwards.\n"</script>
+      </div>
+
+      <div id="tab-practice" class="tab-pane">
+        <div class="markdown-body print-friendly" id="md-practice"></div>
+        <script type="application/json" id="src-practice">"# Module 5 \u2014 Control Flow: Practice Sheet\n\n**Naam (Name): ___________________________**\n**Taareekh (Date): ________________________**\n**Class: _________________________________**\n\n---\n\nBismillah ir-Rahman ir-Raheem\n\nControl Flow ka yeh practice sheet Module 5 ke liye hai. Loops aur conditions \u2014 programming ka dil!\n\n---\n\n## Section A \u2014 Concepts (Tasawwuraat)\n\n**Q1.** `elif` ka matlab kya hai? Apni zaban mein likhein.\n\n```\n_____________________________________________\n_____________________________________________\n```\n\n---\n\n**Q2.** Neeche wale code mein indentation ki galti hai. Theek karo.\n\n```python\n# Galat code:\nmarks = 75\nif marks >= 50:\nprint(\"Pass ho gaye!\")\nprint(\"Mubarak ho!\")\n```\n\n**Sahi code:**\n\n```python\nmarks = 75\nif marks >= 50:\n    ___________________________________\n    ___________________________________\n```\n\n---\n\n**Q3.** Yeh code kya print karega?\n\n```python\nfor i in range(3):\n    print(i)\n```\n\n**Output:**\n\n```\n___\n___\n___\n```\n\n---\n\n## Section B \u2014 if / elif / else\n\n**Q4.** Ek if/elif/else likhein jo check kare ke koi number positive hai, negative hai, ya zero.\n\n```python\nnumber = int(input(\"Koi number likhein: \"))\n\nif ___________________________________________:\n    print(\"Yeh positive number hai.\")\nelif ___________________________________________:\n    print(\"Yeh negative number hai.\")\nelse:\n    print(\"Yeh zero hai.\")\n```\n\n---\n\n**Q5.** Hassan ka grade kya hoga agar uske marks 73 hain? Neeche ke chart mein dekho:\n\n| Marks | Grade |\n|-------|-------|\n| 90\u2013100 | A+ |\n| 80\u201389 | A |\n| 70\u201379 | B |\n| 60\u201369 | C |\n| 50\u201359 | D |\n| Below 50 | Fail |\n\n**Hassan ka grade: _______________**\n\n---\n\n## Section C \u2014 while Loops\n\n**Q6.** Loop se jaldi baahir nikalne ke liye kaunsa keyword use karte hain?\n\n```\na) stop\nb) exit\nc) break\nd) end\n```\n\n**Jawab: _______________**\n\n---\n\n**Q7.** Yeh code kya galat hai?\n\n```python\nwhile True:\n    print(\"Assalamu Alaikum!\")\n```\n\n**Galti: _______________________________________________**\n\n**Theek karo:**\n\n```python\nginti = 3\nwhile ginti > 0:\n    print(\"Assalamu Alaikum!\")\n    ___________________________________\n```\n\n---\n\n**Q8.** 5 se 1 tak countdown karne ke liye while loop likhein:\n\n**Expected output:**\n```\n5\n4\n3\n2\n1\nAllah Hafiz!\n```\n\n```python\n# Yahan apna code likhein:\nginti = ___\n\nwhile ___________________________________________:\n    print(ginti)\n    ___________________________________\n\nprint(\"Allah Hafiz!\")\n```\n\n---\n\n## Section D \u2014 for Loops\n\n**Q9.** 1 se 5 tak numbers print karne ke liye for loop likhein:\n\n```python\nfor i in ___________________________________________:\n    print(i)\n```\n\n---\n\n**Q10.** Neeche wala Grade Checker complete karo. Marks ke mutabiq grade print karo:\n\n```python\nmarks = int(input(\"Marks likhein: \"))\n\nif marks >= 90:\n    print(\"Grade: A+\")\nelif marks >= ___:\n    print(\"Grade: A\")\nelif marks >= ___:\n    print(\"Grade: B\")\nelif marks >= ___:\n    print(\"Grade: C\")\nelif marks >= ___:\n    print(\"Grade: D\")\nelse:\n    print(\"Grade: Fail\")\n```\n\n---\n\n## Section E \u2014 Mixed Practice\n\n**Q11.** Islamabad mein Zainab ke school ki class mein 5 talibaat hain. Unke naam hain: Ahmed, Fatima, Hassan, Zainab, Ibrahim. Ek for loop likhein jo har naam ke saath \"Assalamu Alaikum\" print kare.\n\n```python\ntalibaat = [\"Ahmed\", \"Fatima\", \"Hassan\", \"Zainab\", \"Ibrahim\"]\n\nfor ___ in ___________________________________________:\n    print(f\"___________________________________________\")\n```\n\n**Expected output:**\n```\nAssalamu Alaikum, Ahmed!\nAssalamu Alaikum, Fatima!\nAssalamu Alaikum, Hassan!\nAssalamu Alaikum, Zainab!\nAssalamu Alaikum, Ibrahim!\n```\n\n---\n\n## Challenge \u2014 Number Guessing Game\n\nAhmed ne ek secret number socha: **7**. Tumhara program user ko guess karne dega jab tak woh sahi number na de.\n\n`while True` aur `break` use karke yeh game banao:\n\n**Requirements:**\n- Computer ka number 7 hai (hard-code karo)\n- User guess karta hai\n- Agar guess sahi hai: \"Masha'Allah! Sahi jawab!\" print karo aur loop tod do\n- Agar guess kam hai: \"Aur bada socho\" print karo\n- Agar guess zyada hai: \"Thoda kam socho\" print karo\n\n```python\nsecret = 7\n\nprint(\"=== Number Guessing Game ===\")\nprint(\"Main ne 1-10 ke beech ek number socha hai. Guess karo!\")\n\nwhile True:\n    guess = int(input(\"Tumhara guess: \"))\n\n    if guess == secret:\n        print(\"___________________________________\")\n        _______________\n    elif guess < secret:\n        print(\"___________________________________\")\n    else:\n        print(\"___________________________________\")\n```\n\n---\n\n## Answer Key (Sirf Teacher ke liye)\n\n| Sawaal | Jawab |\n|--------|-------|\n| Q1 | \"warna agar\" \u2014 ek aur condition check karo agar pehli poori nahin hui |\n| Q2 | `print(...)` statements ko 4 spaces indent karo |\n| Q3 | `0`, `1`, `2` (teen alag lines mein) |\n| Q4 | `if number > 0:` / `elif number < 0:` / `else:` |\n| Q5 | B (73 is between 70\u201379) |\n| Q6 | `c) break` |\n| Q7 | `break` nahin hai \u2014 infinite loop. Fix: counter add karo |\n| Q8 | `ginti = 5`, `while ginti > 0:`, `ginti -= 1` |\n| Q9 | `for i in range(1, 6):` |\n| Q10 | `>= 80`, `>= 70`, `>= 60`, `>= 50` |\n| Q11 | `for naam in talibaat:` / `print(f\"Assalamu Alaikum, {naam}!\")` |\n| Challenge | `if guess == secret: print(\"Masha'Allah!\"); break` / elif/else with messages |\n"</script>
+        <button class="print-btn no-print" onclick="window.print()">🖨️ Print Practice Sheet</button>
+      </div>
+
+      <div id="tab-assessment" class="tab-pane">
+        <div class="markdown-body" id="md-assessment"></div>
+        <script type="application/json" id="src-assessment">"# Module 5 \u2014 Control Flow: Assessment Guide\n\n## Pass Criteria\n\nA student passes Module 5 if they can do ALL of the following:\n\n- [ ] Write an `if/elif/else` block with correct indentation and colons\n- [ ] Write a `while` loop that terminates (does not run forever)\n- [ ] Write a `for` loop using `range()`\n- [ ] Use `break` to exit a loop\n- [ ] Explain what indentation means and why it matters in Python\n\n---\n\n## Oral Questions\n\nAsk these questions one-on-one or to the class.\n\n| Question | Expected Answer |\n|----------|----------------|\n| `elif` ka matlab kya hai? | \"warna agar\" \u2014 else if \u2014 ek aur condition check karo |\n| Agar `if` ke baad colon (`:`  ) bhool jao toh kya hoga? | `SyntaxError` \u2014 program run nahin hoga |\n| `while` loop kaise rokein? | Counter update karo, ya `break` use karo |\n| `range(5)` mein kaunse numbers hain? | 0, 1, 2, 3, 4 |\n| `range(1, 6)` mein kaunse numbers hain? | 1, 2, 3, 4, 5 |\n| Indentation kyun zaroori hai Python mein? | Python indentation se pata karta hai ke kaunsa code kis block mein hai |\n| `break` kab use karte hain? | Jab loop se pehle baahir nikalna ho |\n\n---\n\n## Quiz Marking Scheme\n\n**Total Marks: 17**\n\n| Section | Questions | Marks Each | Total |\n|---------|-----------|-----------|-------|\n| Easy | 5 questions | 1 mark | 5 marks |\n| Medium | 3 questions | 2 marks | 6 marks |\n| Complex | 2 questions | 3 marks | 6 marks |\n\n### Grade Scale\n\n| Marks | Grade | Message |\n|-------|-------|---------|\n| 15\u201317 | A+ | Masha'Allah! Bohat zabardast! |\n| 12\u201314 | A | Bohat achha! Loops aur conditions mein strong ho. |\n| 9\u201311 | B | Theek hai \u2014 thodi aur practice karo. |\n| 6\u20138 | C | Dobara review karo \u2014 teacher se madad lo. |\n| 0\u20135 | Needs Support | Module 5 dobara parho. Pehle Module 3 aur 4 confirm karo. |\n\n---\n\n## Practical Assessment\n\n### Task Description\n\nStudents write a **Grade Checker** program that:\n\n1. Asks the user for their **marks** (0\u2013100)\n2. Validates input \u2014 marks must be between 0 and 100 (use `while` loop)\n3. Prints the **grade** using if/elif/else:\n   - 90\u2013100 \u2192 A+\n   - 80\u201389 \u2192 A\n   - 70\u201379 \u2192 B\n   - 60\u201369 \u2192 C\n   - 50\u201359 \u2192 D\n   - Below 50 \u2192 Fail\n4. Prints a **personalised message** with each grade using an f-string\n\n### Sample Solution\n\n```python\n# Module 5 Practical \u2014 Grade Checker\n# Bismillah\n\nprint(\"=== Islamia School Grade Checker ===\\n\")\n\nnaam = input(\"Apna naam likhein: \")\n\n# Input validation using while loop\nwhile True:\n    marks = int(input(\"Apne marks likhein (0-100): \"))\n    if 0 <= marks <= 100:\n        break\n    else:\n        print(\"Galat marks! 0 aur 100 ke beech mein likhein.\")\n\n# Grade checking using if/elif/else\nif marks >= 90:\n    grade = \"A+\"\n    message = \"Masha'Allah! Bohat aala performance!\"\nelif marks >= 80:\n    grade = \"A\"\n    message = \"Bohat achha! Allah ne aap ko ilm diya hai.\"\nelif marks >= 70:\n    grade = \"B\"\n    message = \"Achha kaam \u2014 aur mehnat karo.\"\nelif marks >= 60:\n    grade = \"C\"\n    message = \"Theek hai \u2014 koshish jaari rakho.\"\nelif marks >= 50:\n    grade = \"D\"\n    message = \"Pass ho gaye, lekin mehnat aur karo.\"\nelse:\n    grade = \"Fail\"\n    message = \"Ghabrao mat \u2014 Allah ke sath mehnat se sab mumkin hai.\"\n\nprint(f\"\\n{naam} ka grade: {grade}\")\nprint(f\"Marks: {marks}/100\")\nprint(f\"Paigham: {message}\")\n```\n\n### Sample Output\n\n```\n=== Islamia School Grade Checker ===\n\nApna naam likhein: Fatima\nApne marks likhein (0-100): 150\nGalat marks! 0 aur 100 ke beech mein likhein.\nApne marks likhein (0-100): 87\n\nFatima ka grade: A\nMarks: 87/100\nPaigham: Bohat achha! Allah ne aap ko ilm diya hai.\n```\n\n### Marking Rubric\n\n| Criterion | Marks |\n|-----------|-------|\n| `int(input())` used for marks | 1 |\n| `while` loop used for input validation | 2 |\n| if/elif/else for all 6 grades correct | 3 |\n| Correct grade assigned for each range | 2 |\n| f-string used for output | 1 |\n| Program runs without errors | 1 |\n| **Total** | **10** |\n\n---\n\n## Extension Task (For Advanced Students)\n\nAdd a feature: Ask marks for 3 subjects (e.g., Urdu, Maths, Islamiat) and calculate the average, then give an overall grade.\n\n```python\nurdu    = int(input(\"Urdu ke marks: \"))\nmaths   = int(input(\"Maths ke marks: \"))\ndin     = int(input(\"Islamiat ke marks: \"))\n\naverage = (urdu + maths + din) / 3\nprint(f\"Average marks: {average:.1f}\")\n\n# Then apply grade check on average\n```\n\n---\n\n## Remediation\n\n**Cannot write correct indentation:**\nUse a ruler or finger on the screen. \"Yeh sab 4 spaces andar hai \u2014 ek group hai.\" Demonstrate IndentationError deliberately then fix it together.\n\n**while loop runs forever:**\nShow the infinite loop deliberately (print \"Hello\" forever) then Ctrl+C to stop. Explain: \"Counter ko update karna bhool gaye. Har baar loop chalte waqt count kam karo.\"\n\n**Forgets colon:**\nMake a rhyme: \"if, elif, else, while, for \u2014 in ke baad colon zaroori, yaad rakho har bor.\"\n\n**Off-by-one error in range:**\n- `range(5)` \u2192 0 to 4\n- `range(1, 6)` \u2192 1 to 5\nDraw a number line on the board.\n\n---\n\n## Notes for Teacher\n\n- This is the **most important module** in the course. Nearly everything after this builds on if/elif/else and loops.\n- If students cannot write a correct `while` loop, they cannot build interactive programs. Spend extra time.\n- The `while True: break` menu pattern should be **memorised** \u2014 write it on the wall of the classroom if possible.\n- For madrasa students: link `if/elif/else` to Islamic decision-making \u2014 agar fajr ka waqt hai, namaz parhein; warna agar zuhr ka waqt hai, zuhr parhein, etc.\n"</script>
+      </div>
+
+    </div>
+
+    <div class="module-nav">
+      <a href="module-4.html" class="nav-btn">← Module 4</a>
+      <a href="index.html" class="nav-btn nav-home">🏠 All Modules</a>
+      <a href="module-6.html" class="nav-btn">Module 6 →</a>
+    </div>
+
+  </main>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

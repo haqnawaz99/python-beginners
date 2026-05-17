@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 8: Error Handling — Python for Beginners</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">🐍 Python for Beginners</a>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar" id="sidebar"><ul class="sidebar-nav"><li><a href="index.html" class="">🏠 Home</a></li><li><a href="module-0.html" class="">⚙️ M0: Setup</a></li><li><a href="module-1.html" class="">📝 M1: Strings</a></li><li><a href="module-2.html" class="">📦 M2: Variables</a></li><li><a href="module-3.html" class="">🔢 M3: Data Types</a></li><li><a href="module-4.html" class="">➕ M4: Operators</a></li><li><a href="module-5.html" class="">🔀 M5: Control Flow</a></li><li><a href="module-6.html" class="">🔧 M6: Functions</a></li><li><a href="module-7.html" class="">📋 M7: Lists</a></li><li><a href="module-8.html" class="active">🛡️ M8: Error Handling</a></li><li><a href="module-9.html" class="">💾 M9: File I/O</a></li><li><a href="module-10.html" class="">🚀 M10: Projects</a></li></ul></aside>
+  <main class="main-content">
+
+    <div class="module-header">
+      <span class="module-icon">🛡️</span>
+      <div>
+        <p class="module-label">Module 8</p>
+        <h1>Error Handling</h1>
+      </div>
+    </div>
+
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="lessons">📚 Lessons</button>
+      <button class="tab-btn" data-tab="notes">📋 Teacher Notes</button>
+      <button class="tab-btn" data-tab="practice">✏️ Practice Sheet</button>
+      <button class="tab-btn" data-tab="assessment">📊 Assessment</button>
+    </div>
+
+    <div class="tab-panes">
+
+      <div id="tab-lessons" class="tab-pane active">
+        
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 8_1_what_are_errors.py</span>
+        <span class="badge badge-lesson">Lesson</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 8 - Lesson 1: What Are Errors?
+# ================================================
+# Learn: Types of errors, how to read error messages,
+#        the difference between syntax and runtime errors
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;Error Handling — Dealing with Problems&quot;)
+print(&quot;=&quot; * 50)
+
+# ------------------------------------------------
+# Why learn Error Handling?
+# ------------------------------------------------
+# Programs crash when something unexpected happens.
+# A user types &quot;abc&quot; when you expected a number.
+# A file does not exist when you try to open it.
+# Error handling lets your program respond gracefully
+# instead of crashing with an ugly error message.
+
+# ------------------------------------------------
+# Type 1: SyntaxError — before the program runs
+# ------------------------------------------------
+# Python cannot even start because the code is written wrong.
+# These must be FIXED before running.
+
+# Examples (commented out to prevent crash):
+# print(&quot;Hello&quot;          # SyntaxError: missing )
+# if x = 5:              # SyntaxError: use == not =
+# def greet)             # SyntaxError: wrong brackets
+
+print(&quot;SyntaxErrors must be fixed in the code — they stop Python from starting.&quot;)
+
+# ------------------------------------------------
+# Type 2: RuntimeError — while the program is running
+# ------------------------------------------------
+# The code looks fine but something goes wrong during execution.
+# These CAN be caught and handled with try/except.
+
+print(&quot;\nCommon Runtime Errors:&quot;)
+
+# ValueError — wrong type of value
+# int(&quot;abc&quot;)     # ValueError: invalid literal for int()
+
+# TypeError — wrong type used in operation
+# &quot;Age: &quot; + 25   # TypeError: can only concatenate str to str
+
+# ZeroDivisionError — dividing by zero
+# 10 / 0         # ZeroDivisionError: division by zero
+
+# IndexError — accessing list index that does not exist
+# prayers = [&quot;Fajr&quot;, &quot;Dhuhr&quot;]
+# print(prayers[5])    # IndexError: list index out of range
+
+# KeyError — accessing dictionary key that does not exist
+# student = {&quot;name&quot;: &quot;Ahmed&quot;}
+# print(student[&quot;marks&quot;])    # KeyError: &#x27;marks&#x27;
+
+# NameError — using a variable that was never created
+# print(undefined_var)   # NameError: name &#x27;undefined_var&#x27; is not defined
+
+print(&quot;ValueError      — wrong value (e.g. int(&#x27;abc&#x27;))&quot;)
+print(&quot;TypeError       — wrong type (e.g. &#x27;text&#x27; + 5)&quot;)
+print(&quot;ZeroDivisionError — dividing by zero&quot;)
+print(&quot;IndexError      — list index out of range&quot;)
+print(&quot;KeyError        — dictionary key not found&quot;)
+print(&quot;NameError       — variable not defined&quot;)
+
+# ------------------------------------------------
+# How to read an error message
+# ------------------------------------------------
+print(&quot;\nHow to read an error:&quot;)
+print(&quot;  File: which file caused it&quot;)
+print(&quot;  Line: which line number&quot;)
+print(&quot;  Type: what kind of error (ValueError, TypeError...)&quot;)
+print(&quot;  Message: description of what went wrong&quot;)
+print()
+print(&quot;Example:&quot;)
+print(&quot;  File &#x27;8_1_what_are_errors.py&#x27;, line 45&quot;)
+print(&quot;  ValueError: invalid literal for int() with base 10: &#x27;abc&#x27;&quot;)
+print()
+print(&quot;This tells us: line 45, we tried int(&#x27;abc&#x27;) which is invalid.&quot;)
+
+# ------------------------------------------------
+# The most common beginner error
+# ------------------------------------------------
+print(&quot;\nMost common beginner error:&quot;)
+print(&quot;Forgetting int(input()) when you need a number.&quot;)
+print(&quot;input() ALWAYS gives a string — you must convert it!&quot;)
+
+# WRONG:
+# number = input(&quot;Enter a number: &quot;)
+# print(number * 2)    # &quot;55&quot; instead of 10 — string * 2 repeats!
+
+# CORRECT:
+number = int(input(&quot;Enter a number: &quot;))
+print(&quot;Doubled:&quot;, number * 2)
+
+print()
+print(&quot;Understanding errors is the first step to fixing them. Well done!&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 8_2_try_except.py</span>
+        <span class="badge badge-lesson">Lesson</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 8 - Lesson 2: try / except
+# ================================================
+# Learn: try, except, else, finally
+#        Catching and handling errors gracefully
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;try / except — Catching Errors&quot;)
+print(&quot;=&quot; * 50)
+
+# ------------------------------------------------
+# The try / except structure
+# ------------------------------------------------
+# try:
+#     code that might cause an error
+# except:
+#     code that runs IF an error occurs
+#
+# If no error: except block is skipped.
+# If error occurs: Python jumps to except block.
+# The program does NOT crash!
+
+# ------------------------------------------------
+# 1. Basic try / except
+# ------------------------------------------------
+print(&quot;\n1. Basic try/except:&quot;)
+
+try:
+    number = int(input(&quot;Enter a number: &quot;))
+    print(f&quot;You entered: {number}&quot;)
+    print(f&quot;Doubled: {number * 2}&quot;)
+except:
+    print(&quot;That was not a valid number. Please try again.&quot;)
+
+print(&quot;Program continues after error handling.&quot;)
+
+# ------------------------------------------------
+# 2. Catching specific errors
+# ------------------------------------------------
+print(&quot;\n2. Catching specific errors:&quot;)
+
+try:
+    number = int(input(&quot;Enter a number to divide 100 by: &quot;))
+    result = 100 / number
+    print(f&quot;100 / {number} = {result}&quot;)
+except ValueError:
+    print(&quot;Error: Please enter a whole number, not text.&quot;)
+except ZeroDivisionError:
+    print(&quot;Error: Cannot divide by zero!&quot;)
+
+# ------------------------------------------------
+# 3. else — runs only when NO error occurred
+# ------------------------------------------------
+print(&quot;\n3. try / except / else:&quot;)
+
+try:
+    marks = int(input(&quot;Enter marks (0-100): &quot;))
+except ValueError:
+    print(&quot;Invalid input — please enter a number.&quot;)
+else:
+    # This only runs if no error happened
+    if marks &gt;= 50:
+        print(f&quot;{marks} — Pass. Alhamdulillah!&quot;)
+    else:
+        print(f&quot;{marks} — Fail. Work harder next time.&quot;)
+
+# ------------------------------------------------
+# 4. finally — ALWAYS runs, error or not
+# ------------------------------------------------
+print(&quot;\n4. try / except / finally:&quot;)
+
+try:
+    age = int(input(&quot;Enter your age: &quot;))
+    print(f&quot;You are {age} years old.&quot;)
+except ValueError:
+    print(&quot;Invalid age entered.&quot;)
+finally:
+    print(&quot;Thank you for using this program.&quot;)  # always runs
+
+# ------------------------------------------------
+# 5. Keeping asking until valid input
+# ------------------------------------------------
+print(&quot;\n5. Loop until valid input:&quot;)
+
+while True:
+    try:
+        price = float(input(&quot;Enter price (rupees): &quot;))
+        if price &lt; 0:
+            print(&quot;Price cannot be negative. Try again.&quot;)
+            continue
+        break           # valid input — exit the loop
+    except ValueError:
+        print(&quot;Please enter a valid number.&quot;)
+
+print(f&quot;Price entered: {price} rupees&quot;)
+
+# ------------------------------------------------
+# 6. Practical example — safe calculator
+# ------------------------------------------------
+print(&quot;\n6. Safe calculator:&quot;)
+
+def safe_divide(a, b):
+    try:
+        result = a / b
+        return result
+    except ZeroDivisionError:
+        return &quot;Cannot divide by zero&quot;
+
+print(safe_divide(100, 4))      # 25.0
+print(safe_divide(100, 0))      # Cannot divide by zero
+
+# ------------------------------------------------
+# 7. Handling missing dictionary keys
+# ------------------------------------------------
+print(&quot;\n7. Safe dictionary access:&quot;)
+
+students = {&quot;Ahmed&quot;: 85, &quot;Fatima&quot;: 92}
+
+name = input(&quot;Enter student name to look up: &quot;)
+try:
+    marks = students[name]
+    print(f&quot;{name}&#x27;s marks: {marks}&quot;)
+except KeyError:
+    print(f&quot;&#x27;{name}&#x27; not found in records.&quot;)
+
+print()
+print(&quot;try/except makes your programs professional and user-friendly!&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 8_3_input_validation.py</span>
+        <span class="badge badge-lesson">Lesson</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 8 - Lesson 3: Input Validation
+# ================================================
+# Learn: Validating user input, reusable validation
+#        functions, building robust programs
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;Input Validation — Trusted User Input&quot;)
+print(&quot;=&quot; * 50)
+
+# ------------------------------------------------
+# What is Input Validation?
+# ------------------------------------------------
+# Input validation means checking that user input
+# is correct BEFORE using it in the program.
+# Never trust user input — always validate it!
+# This prevents crashes and incorrect results.
+
+# ------------------------------------------------
+# 1. Reusable: get a valid integer
+# ------------------------------------------------
+
+def get_integer(prompt):
+    while True:
+        try:
+            return int(input(prompt))
+        except ValueError:
+            print(&quot;  Invalid! Please enter a whole number.&quot;)
+
+def get_float(prompt):
+    while True:
+        try:
+            return float(input(prompt))
+        except ValueError:
+            print(&quot;  Invalid! Please enter a number.&quot;)
+
+def get_integer_in_range(prompt, minimum, maximum):
+    while True:
+        try:
+            value = int(input(prompt))
+            if minimum &lt;= value &lt;= maximum:
+                return value
+            else:
+                print(f&quot;  Must be between {minimum} and {maximum}.&quot;)
+        except ValueError:
+            print(&quot;  Invalid! Please enter a whole number.&quot;)
+
+# ------------------------------------------------
+# 2. Using validation functions
+# ------------------------------------------------
+print(&quot;\n1. Safe integer input:&quot;)
+age = get_integer(&quot;Enter your age: &quot;)
+print(f&quot;Age: {age}&quot;)
+
+print(&quot;\n2. Integer in range:&quot;)
+marks = get_integer_in_range(&quot;Enter marks (0-100): &quot;, 0, 100)
+print(f&quot;Marks: {marks}&quot;)
+
+print(&quot;\n3. Safe float input:&quot;)
+price = get_float(&quot;Enter price (rupees): &quot;)
+print(f&quot;Price: {price}&quot;)
+
+# ------------------------------------------------
+# 3. Validating string input
+# ------------------------------------------------
+print(&quot;\n4. String validation:&quot;)
+
+def get_non_empty(prompt):
+    while True:
+        value = input(prompt).strip()
+        if value:
+            return value
+        print(&quot;  Cannot be empty. Please try again.&quot;)
+
+def get_yes_no(prompt):
+    while True:
+        answer = input(prompt).strip().lower()
+        if answer in (&quot;yes&quot;, &quot;no&quot;, &quot;y&quot;, &quot;n&quot;):
+            return answer in (&quot;yes&quot;, &quot;y&quot;)
+        print(&quot;  Please enter yes or no.&quot;)
+
+name = get_non_empty(&quot;Enter your name: &quot;)
+print(f&quot;Name: {name}&quot;)
+
+is_present = get_yes_no(&quot;Are you present today? (yes/no): &quot;)
+print(f&quot;Present: {is_present}&quot;)
+
+# ------------------------------------------------
+# 4. Building a validated form
+# ------------------------------------------------
+print(&quot;\n5. Student registration form:&quot;)
+
+print(&quot;\nPlease fill in your details:&quot;)
+student_name = get_non_empty(&quot;Full name: &quot;)
+student_age  = get_integer_in_range(&quot;Age (5-25): &quot;, 5, 25)
+student_marks = get_integer_in_range(&quot;Marks (0-100): &quot;, 0, 100)
+student_city = get_non_empty(&quot;City: &quot;)
+
+print(&quot;\n=== Registration Confirmed ===&quot;)
+print(f&quot;Name  : {student_name.title()}&quot;)
+print(f&quot;Age   : {student_age}&quot;)
+print(f&quot;Marks : {student_marks}&quot;)
+print(f&quot;City  : {student_city.title()}&quot;)
+print(f&quot;Result: {&#x27;Pass&#x27; if student_marks &gt;= 50 else &#x27;Fail&#x27;}&quot;)
+print(&quot;==============================&quot;)
+
+# ------------------------------------------------
+# 5. Validating a menu choice
+# ------------------------------------------------
+print(&quot;\n6. Menu with validation:&quot;)
+
+def show_menu():
+    print(&quot;\nSelect an option:&quot;)
+    print(&quot;  1. View prayers&quot;)
+    print(&quot;  2. Check marks&quot;)
+    print(&quot;  3. Exit&quot;)
+
+def get_menu_choice():
+    return get_integer_in_range(&quot;Enter choice (1-3): &quot;, 1, 3)
+
+prayers = [&quot;Fajr&quot;, &quot;Dhuhr&quot;, &quot;Asr&quot;, &quot;Maghrib&quot;, &quot;Isha&quot;]
+
+while True:
+    show_menu()
+    choice = get_menu_choice()
+
+    if choice == 1:
+        for i, p in enumerate(prayers, 1):
+            print(f&quot;  {i}. {p}&quot;)
+    elif choice == 2:
+        m = get_integer_in_range(&quot;Enter marks: &quot;, 0, 100)
+        print(f&quot;Result: {&#x27;Pass&#x27; if m &gt;= 50 else &#x27;Fail&#x27;}&quot;)
+    elif choice == 3:
+        print(&quot;Assalamu Alaikum! Goodbye.&quot;)
+        break
+
+print()
+print(&quot;Validated input makes programs safe and professional!&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 8_4_quiz.py</span>
+        <span class="badge badge-quiz">Quiz</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 8 - Quiz: Error Handling
+# ================================================
+# Covers: error types, try/except, else, finally,
+#         input validation functions
+# Difficulty: Easy / Medium / Complex
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;MODULE 8 QUIZ - Error Handling&quot;)
+print(&quot;=&quot; * 50)
+print()
+
+# ------------------------------------------------
+# EASY
+# ------------------------------------------------
+print(&quot;--- EASY ---&quot;)
+print()
+
+# Q1. What type of error does each of these cause?
+#     Write the error type as a comment next to each.
+#     a) int(&quot;hello&quot;)
+#     b) 10 / 0
+#     c) [&quot;Fajr&quot;, &quot;Dhuhr&quot;][5]
+#     d) {&quot;name&quot;: &quot;Ahmed&quot;}[&quot;marks&quot;]
+
+
+# Q2. Wrap this code in a try/except so it does not crash
+#     when the user types text instead of a number:
+#     number = int(input(&quot;Enter a number: &quot;))
+#     print(number * 2)
+
+
+# Q3. Add an else block to Q2&#x27;s try/except that prints
+#     &quot;Valid number entered!&quot; only when no error occurs.
+
+
+# Q4. Add a finally block to Q3 that always prints
+#     &quot;Program complete.&quot; whether or not an error occurred.
+
+
+# Q5. Write a try/except that catches BOTH
+#     ValueError AND ZeroDivisionError separately,
+#     with a different message for each.
+#     Code to wrap:
+#       a = int(input(&quot;Enter number: &quot;))
+#       print(100 / a)
+
+
+# ------------------------------------------------
+# MEDIUM
+# ------------------------------------------------
+print()
+print(&quot;--- MEDIUM ---&quot;)
+print()
+
+# Q6. Write a function get_positive_int(prompt) that:
+#     - Keeps asking until the user enters a valid positive integer
+#     - Uses try/except for ValueError
+#     - Checks the number is &gt; 0
+#     Test it by calling it once.
+
+
+# Q7. Write a function safe_list_access(my_list, index) that:
+#     - Tries to return my_list[index]
+#     - Returns &quot;Index out of range&quot; if IndexError occurs
+#     Test with prayers = [&quot;Fajr&quot;,&quot;Dhuhr&quot;,&quot;Asr&quot;] and index 10.
+
+
+# Q8. Write a safe calculator function safe_calc(a, b, operation)
+#     where operation is &quot;+&quot;, &quot;-&quot;, &quot;*&quot;, or &quot;/&quot;.
+#     Handle ZeroDivisionError for division.
+#     Return &quot;Unknown operation&quot; for anything else.
+#     Test all four operations including dividing by zero.
+
+
+# ------------------------------------------------
+# COMPLEX
+# ------------------------------------------------
+print()
+print(&quot;--- COMPLEX ---&quot;)
+print()
+
+# Q9. Build a validated student registration program using functions:
+#     - get_integer_in_range(prompt, min, max) — validated int input
+#     - get_non_empty(prompt) — validated string input
+#     - register_student() — calls the above to collect:
+#         name, age (5-25), marks (0-100), city
+#       and prints a formatted registration card.
+
+
+# Q10. Build a simple menu-driven program with error handling:
+#      Menu options:
+#        1. Calculate total (ask price and qty, multiply)
+#        2. Check pass/fail (ask marks)
+#        3. Exit
+#      Validate all inputs. Loop until user chooses 3.
+
+
+# Q11. Write a marks input system:
+#      - Ask how many subjects (validated 1-10)
+#      - For each subject ask name and marks (0-100, validated)
+#      - Store in a dictionary
+#      - Print each subject, marks, and pass/fail
+#      - Print the class average
+#      - Wrap the whole thing in a try/except as a safety net
+
+
+print()
+print(&quot;Quiz done! Check 8_5_quiz_solution.py for answers.&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 8_5_quiz_solution.py</span>
+        <span class="badge badge-solution">Quiz Solution</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 8 - Quiz Solutions
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;MODULE 8 QUIZ - SOLUTIONS&quot;)
+print(&quot;=&quot; * 50)
+print()
+
+# ------------------------------------------------
+# EASY
+# ------------------------------------------------
+print(&quot;--- EASY ---&quot;)
+print()
+
+# Q1. Error types:
+# a) int(&quot;hello&quot;)    -&gt; ValueError
+# b) 10 / 0          -&gt; ZeroDivisionError
+# c) list[5]         -&gt; IndexError
+# d) dict[&quot;marks&quot;]   -&gt; KeyError
+print(&quot;Q1: ValueError, ZeroDivisionError, IndexError, KeyError&quot;)
+
+# Q2.
+try:
+    number = int(input(&quot;Enter a number: &quot;))
+    print(number * 2)
+except ValueError:
+    print(&quot;Invalid! Please enter a number.&quot;)
+
+# Q3.
+try:
+    number = int(input(&quot;Enter a number: &quot;))
+    print(number * 2)
+except ValueError:
+    print(&quot;Invalid! Please enter a number.&quot;)
+else:
+    print(&quot;Valid number entered!&quot;)
+
+# Q4.
+try:
+    number = int(input(&quot;Enter a number: &quot;))
+    print(number * 2)
+except ValueError:
+    print(&quot;Invalid! Please enter a number.&quot;)
+else:
+    print(&quot;Valid number entered!&quot;)
+finally:
+    print(&quot;Program complete.&quot;)
+
+# Q5.
+try:
+    a = int(input(&quot;Enter a number: &quot;))
+    print(100 / a)
+except ValueError:
+    print(&quot;Error: Please enter a whole number, not text.&quot;)
+except ZeroDivisionError:
+    print(&quot;Error: Cannot divide by zero!&quot;)
+
+# ------------------------------------------------
+# MEDIUM
+# ------------------------------------------------
+print()
+print(&quot;--- MEDIUM ---&quot;)
+print()
+
+# Q6.
+def get_positive_int(prompt):
+    while True:
+        try:
+            value = int(input(prompt))
+            if value &gt; 0:
+                return value
+            else:
+                print(&quot;  Must be a positive number.&quot;)
+        except ValueError:
+            print(&quot;  Invalid! Enter a whole number.&quot;)
+
+result = get_positive_int(&quot;Enter a positive number: &quot;)
+print(f&quot;You entered: {result}&quot;)
+
+# Q7.
+def safe_list_access(my_list, index):
+    try:
+        return my_list[index]
+    except IndexError:
+        return &quot;Index out of range&quot;
+
+prayers = [&quot;Fajr&quot;, &quot;Dhuhr&quot;, &quot;Asr&quot;]
+print(safe_list_access(prayers, 1))     # Dhuhr
+print(safe_list_access(prayers, 10))    # Index out of range
+
+# Q8.
+def safe_calc(a, b, operation):
+    if operation == &quot;+&quot;:
+        return a + b
+    elif operation == &quot;-&quot;:
+        return a - b
+    elif operation == &quot;*&quot;:
+        return a * b
+    elif operation == &quot;/&quot;:
+        try:
+            return a / b
+        except ZeroDivisionError:
+            return &quot;Cannot divide by zero&quot;
+    else:
+        return &quot;Unknown operation&quot;
+
+print(safe_calc(10, 5, &quot;+&quot;))    # 15
+print(safe_calc(10, 5, &quot;-&quot;))    # 5
+print(safe_calc(10, 5, &quot;*&quot;))    # 50
+print(safe_calc(10, 0, &quot;/&quot;))    # Cannot divide by zero
+print(safe_calc(10, 5, &quot;^&quot;))    # Unknown operation
+
+# ------------------------------------------------
+# COMPLEX
+# ------------------------------------------------
+print()
+print(&quot;--- COMPLEX ---&quot;)
+print()
+
+# Q9.
+def get_integer_in_range(prompt, minimum, maximum):
+    while True:
+        try:
+            value = int(input(prompt))
+            if minimum &lt;= value &lt;= maximum:
+                return value
+            print(f&quot;  Must be between {minimum} and {maximum}.&quot;)
+        except ValueError:
+            print(&quot;  Invalid! Enter a whole number.&quot;)
+
+def get_non_empty(prompt):
+    while True:
+        value = input(prompt).strip()
+        if value:
+            return value
+        print(&quot;  Cannot be empty.&quot;)
+
+def register_student():
+    print(&quot;\nStudent Registration:&quot;)
+    name  = get_non_empty(&quot;Full name: &quot;)
+    age   = get_integer_in_range(&quot;Age (5-25): &quot;, 5, 25)
+    marks = get_integer_in_range(&quot;Marks (0-100): &quot;, 0, 100)
+    city  = get_non_empty(&quot;City: &quot;)
+    print(&quot;\n=== Registration Card ===&quot;)
+    print(f&quot;Name  : {name.title()}&quot;)
+    print(f&quot;Age   : {age}&quot;)
+    print(f&quot;Marks : {marks}&quot;)
+    print(f&quot;City  : {city.title()}&quot;)
+    print(f&quot;Result: {&#x27;Pass&#x27; if marks &gt;= 50 else &#x27;Fail&#x27;}&quot;)
+    print(&quot;=========================&quot;)
+
+register_student()
+
+# Q10.
+def show_menu():
+    print(&quot;\n1. Calculate total&quot;)
+    print(&quot;2. Check pass/fail&quot;)
+    print(&quot;3. Exit&quot;)
+
+while True:
+    show_menu()
+    choice = get_integer_in_range(&quot;Choice (1-3): &quot;, 1, 3)
+    if choice == 1:
+        price = get_integer_in_range(&quot;Price: &quot;, 1, 100000)
+        qty   = get_integer_in_range(&quot;Quantity: &quot;, 1, 1000)
+        print(f&quot;Total: {price * qty} rupees&quot;)
+    elif choice == 2:
+        marks = get_integer_in_range(&quot;Marks (0-100): &quot;, 0, 100)
+        print(&quot;Pass&quot; if marks &gt;= 50 else &quot;Fail&quot;)
+    else:
+        print(&quot;Goodbye!&quot;)
+        break
+
+# Q11.
+try:
+    num_subjects = get_integer_in_range(&quot;How many subjects (1-10)? &quot;, 1, 10)
+    subject_marks = {}
+    for i in range(num_subjects):
+        subject = get_non_empty(f&quot;Subject {i+1} name: &quot;)
+        marks = get_integer_in_range(f&quot;Marks for {subject} (0-100): &quot;, 0, 100)
+        subject_marks[subject] = marks
+
+    print(&quot;\nResults:&quot;)
+    total = 0
+    for subject, marks in subject_marks.items():
+        result = &quot;Pass&quot; if marks &gt;= 50 else &quot;Fail&quot;
+        print(f&quot;  {subject:&lt;15}: {marks}  ({result})&quot;)
+        total += marks
+    print(f&quot;Average: {total / len(subject_marks):.1f}&quot;)
+except Exception as e:
+    print(f&quot;Unexpected error: {e}&quot;)
+
+print()
+print(&quot;End of solutions.&quot;)
+</code></pre>
+    </div>
+      </div>
+
+      <div id="tab-notes" class="tab-pane">
+        <div class="markdown-body" id="md-notes"></div>
+        <script type="application/json" id="src-notes">"# Module 8: Error Handling \u2014 Teacher Notes\n\n## Duration\n2 classes\n\n---\n\n## Learning Objectives\n\nBy the end of this module, students will be able to:\n\n1. Understand what **exceptions** are and why they happen\n2. Use `try/except` to catch `ValueError` and `FileNotFoundError`\n3. Write **input validation loops** that keep asking until valid input is given\n4. Use `try/except/else/finally` \u2014 all four clauses\n\n---\n\n## Lesson Flow\n\n### Class 1\n\n| File | Topic |\n|------|-------|\n| `8_1_what_are_errors.py` | Types of errors: `SyntaxError`, `NameError`, `TypeError`, `ValueError`, `IndexError`, `KeyError` |\n| `8_2_try_except.py` | Catching errors gracefully with `try/except` \u2014 program continues instead of crashing |\n\n### Class 2\n\n| File | Topic |\n|------|-------|\n| `8_3_input_validation.py` | Validate user input with a `while` loop + `try/except` |\n| `8_4_quiz.py` | End-of-module quiz |\n| Review | Go over common mistakes, reinforce the pattern |\n\n---\n\n## Key Concept\n\n> **`try/except` lets the program continue instead of crashing.**\n> The `except` block only runs **IF** an error occurs.\n\nThis is not just a module \u2014 it is a **skill that every future project depends on.**\n\nDraw this on the board:\n\n```\nWithout try/except:\nUser types \"abc\" \u2192 int(\"abc\") \u2192 CRASH \u274c\n\nWith try/except:\nUser types \"abc\" \u2192 int(\"abc\") \u2192 except catches it \u2192 friendly message \u2713\n```\n\n---\n\n## Error Types \u2014 Quick Reference Table\n\n| Error Type | When does it happen? | Example |\n|------------|---------------------|---------|\n| `SyntaxError` | Code is written incorrectly | `if x = 5:` (should be `==`) |\n| `NameError` | Using a variable that doesn't exist | `print(score)` before assigning `score` |\n| `TypeError` | Wrong type in operation | `\"5\" + 5` (string + integer) |\n| `ValueError` | Right type, wrong value | `int(\"Ahmed\")` |\n| `IndexError` | List index out of range | `names[10]` on a 3-item list |\n| `KeyError` | Dictionary key not found | `student[\"phone\"]` when key doesn't exist |\n\n---\n\n## The Four Clauses \u2014 Teach in Order\n\n```python\ntry:\n    # koshish karo (attempt this)\n    number = int(input(\"Number daalein: \"))\nexcept ValueError:\n    # agar galti ho to (if this specific error happens)\n    print(\"Sirf number chahiye!\")\nelse:\n    # agar koi galti nahi (if NO error occurred)\n    print(f\"Aap ne daala: {number}\")\nfinally:\n    # hamesha chalta hai (always runs \u2014 error or not)\n    print(\"Program khatam.\")\n```\n\n---\n\n## Urdu Teaching Tips\n\n- **\"try matlab koshish karo\"** *(try means attempt)*\n\n- **\"except matlab agar galti ho to\"** *(except means if there is a mistake)*\n\n- **\"Program crash karna door hai \u2014 user ko message dikhao\"**\n  *(Crashing the program is far away \u2014 show the user a message)*\n\n- **\"else matlab sab theek tha\"** *(else means everything was fine)*\n\n- **\"finally matlab hamesha \u2014 galti ho ya na ho\"** *(finally means always \u2014 error or not)*\n\n---\n\n## Common Mistakes to Watch For\n\n| Mistake | Problem | Fix |\n|---------|---------|-----|\n| Bare `except:` | Catches ALL errors \u2014 even ones you don't expect, hides bugs | Always catch specific errors: `except ValueError:` |\n| Not re-asking for input after catching error | Loop exits after one bad input | Use `while True` with `continue` or `break` |\n| Catching error but not telling user | Silent failure \u2014 user doesn't know what went wrong | Always `print()` a helpful message in `except` |\n| Using `try/except` without a loop | Validates once only \u2014 user can still give wrong input next time | Wrap in `while True:` loop |\n\n---\n\n## Why This Module Matters\n\nEmphasise to students:\n\n> \"Yeh module Module 9 (File I/O) ke liye aur aap ke tamam bade projects ke liye zaroori hai. Agar user ne galat input diya aur program crash ho gaya \u2014 project fail. Is liye hum ab se yeh pattern seekhte hain.\"\n\n*(This module is essential for Module 9 (File I/O) and all your big projects. If a user enters wrong input and the program crashes \u2014 the project fails. That is why we learn this pattern now.)*\n\n---\n\n## The Reusable Validation Function \u2014 Show This\n\n```python\ndef get_integer_in_range(prompt, minimum, maximum):\n    \"\"\"\n    User se integer input leta hai, validate karta hai aur return karta hai.\n    Gets an integer from the user, validates it, and returns it.\n    \"\"\"\n    while True:\n        try:\n            value = int(input(prompt))\n            if minimum <= value <= maximum:\n                return value\n            else:\n                print(f\"Meherbani karke {minimum} aur {maximum} ke darmiyan number daalein.\")\n        except ValueError:\n            print(\"Sirf number daalein, haroof nahi.\")\n\n# Example use:\nmarks = get_integer_in_range(\"Marks daalein (0-100): \", 0, 100)\nprint(f\"Marks: {marks}\")\n```\n\nTell students: \"Yeh ek complete, professional validation function hai. Aap ise har jagah use kar sakte hain.\"\n*(This is a complete, professional validation function. You can use it everywhere.)*\n\n---\n\n## Files in This Module\n\n| File | Description |\n|------|-------------|\n| `8_1_what_are_errors.py` | Types of Python errors with examples |\n| `8_2_try_except.py` | Basic `try/except` and `try/except/else/finally` |\n| `8_3_input_validation.py` | Input validation loop pattern |\n| `8_4_quiz.py` | Quiz code |\n| `8_5_solutions.py` | Quiz solutions |\n"</script>
+      </div>
+
+      <div id="tab-practice" class="tab-pane">
+        <div class="markdown-body print-friendly" id="md-practice"></div>
+        <script type="application/json" id="src-practice">"# Module 8: Error Handling \u2014 Practice Sheet\n\n**Naam / Name:** ___________________________  \n**Tareeq / Date:** ___________________________  \n**Class:** ___________________________\n\n---\n\n## Q1 \u2014 Easy\n\nWhat **type of error** occurs when you run this code?\n\n```python\nnumber = int(\"Ahmed\")\n```\n\n**Answer:** ___________________________\n\n---\n\n## Q2 \u2014 Easy\n\nWrite a `try/except` block that safely converts user input to an integer. If the user types text, print `\"Sirf number daalein!\"`.\n\n```python\n# Write your code here:\n\n\n\n\n```\n\n---\n\n## Q3 \u2014 Easy\n\nWhat is the purpose of the **`else`** clause in a `try/except/else` block?\n\n**Answer:** ___________________________\n\n---\n\n## Q4 \u2014 Easy\n\nThis code will **crash** if the user types text. Fix it so it does not crash:\n\n```python\nmarks = int(input(\"Enter marks: \"))\nprint(f\"Marks: {marks}\")\n```\n\n```python\n# Fixed code:\n\n\n\n\n```\n\n---\n\n## Q5 \u2014 Medium\n\nWhat does **`finally`** do? When does it run?\n\n**Answer:** ___________________________\n\nWrite an example:\n\n```python\n# Example with finally:\n\n\n\n\n```\n\n---\n\n## Q6 \u2014 Medium\n\nWrite a `while` loop that **keeps asking** for a number until the user enters a valid integer (not text).\n\n```python\n# Write your loop here:\n\n\n\n\n```\n\n---\n\n## Q7 \u2014 Medium\n\nWhat is the difference between a **`SyntaxError`** and a **`ValueError`**?\n\n| | SyntaxError | ValueError |\n|-|-------------|------------|\n| When does it happen? | | |\n| Example | | |\n\n---\n\n## Q8 \u2014 Complex\n\nWrite code to open a file called `\"marks.txt\"` safely. If the file does not exist, print `\"File nahi mili!\"` instead of crashing.\n\n```python\n# Write your code here:\n\n\n\n\n```\n\n---\n\n## Q9 \u2014 Complex\n\nWhy is **bare `except:`** (without specifying an error type) considered bad practice?\n\n**Answer:** ___________________________\n\nWrite the **better** version of this code:\n\n```python\n# Bad practice:\ntry:\n    number = int(input(\"Number: \"))\nexcept:\n    print(\"Kuch galat hua.\")\n```\n\n```python\n# Better version:\n\n\n\n\n```\n\n---\n\n## Challenge \u2014 Reusable Validation Function\n\nWrite a function called `get_integer_in_range(prompt, min_val, max_val)` that:\n\n1. Shows the `prompt` to the user\n2. Keeps asking until the user enters a valid **integer**\n3. Keeps asking until the number is **between `min_val` and `max_val`** (inclusive)\n4. Handles `ValueError` with a helpful message\n5. Handles out-of-range with a helpful message\n6. **Returns** the valid number\n\nThis function should be **reusable for any situation** \u2014 marks, age, menu choices, etc.\n\n```python\n# Write your function here:\n\n\n\n\n```\n\nTest it with two different calls:\n\n```python\n# Test 1 \u2014 marks between 0 and 100:\nmarks = get_integer_in_range(\"Marks daalein (0-100): \", 0, 100)\nprint(f\"Marks: {marks}\")\n\n# Test 2 \u2014 menu choice between 1 and 5:\nchoice = get_integer_in_range(\"Choice karein (1-5): \", 1, 5)\nprint(f\"Aap ne choose kiya: {choice}\")\n```\n\n---\n\n## Answers (Teacher Section)\n\n| Q | Answer |\n|---|--------|\n| Q1 | `ValueError` |\n| Q2 | `try: n = int(input(\"...\")) except ValueError: print(\"Sirf number daalein!\")` |\n| Q3 | The `else` block runs only if **no error** occurred in the `try` block |\n| Q4 | Wrap in `try/except ValueError` |\n| Q5 | `finally` always runs \u2014 whether there was an error or not. Used for cleanup. |\n| Q6 | `while True: try: n = int(input(...)); break  except ValueError: print(...)` |\n| Q7 | `SyntaxError` = code is written wrong (caught before running). `ValueError` = code runs but value is wrong type/format. |\n| Q8 | `try: f = open(\"marks.txt\")  except FileNotFoundError: print(\"File nahi mili!\")` |\n| Q9 | Bare `except` catches all errors including unexpected ones, hides bugs. Better: `except ValueError:` |\n| Challenge | Full `get_integer_in_range` function with `while True`, `try/except ValueError`, range check, and `return` |\n"</script>
+        <button class="print-btn no-print" onclick="window.print()">🖨️ Print Practice Sheet</button>
+      </div>
+
+      <div id="tab-assessment" class="tab-pane">
+        <div class="markdown-body" id="md-assessment"></div>
+        <script type="application/json" id="src-assessment">"# Module 8: Error Handling \u2014 Assessment\n\n## Pass Criteria\n\nA student passes this module if they can:\n\n- [ ] Write a `try/except` block that catches `ValueError`\n- [ ] Write an input validation loop that **keeps asking** until valid input is given\n- [ ] Explain in their own words what `try/except` does and why it is useful\n- [ ] Name at least 3 types of Python errors\n\n---\n\n## Oral Questions\n\nAsk these questions to check understanding:\n\n1. What happens **without** `try/except` when the user types text instead of a number?\n2. What does the `except` block **catch**?\n3. When does the `else` clause run in `try/except/else`?\n4. When does `finally` run \u2014 only when there is an error, or always?\n5. Why is `except:` (bare except, catching everything) considered **bad practice**?\n\n---\n\n## Quiz Marking\n\n| Section | Marks |\n|---------|-------|\n| Easy questions | 5 |\n| Medium questions | 6 |\n| Complex questions | 6 |\n| **Total** | **17** |\n\n---\n\n## Grade Scale\n\n| Marks | Grade | Remarks |\n|-------|-------|---------|\n| 15 \u2013 17 | A | Mashallah \u2014 Excellent |\n| 12 \u2013 14 | B | Very Good |\n| 9 \u2013 11 | C | Good \u2014 Review mistakes |\n| 6 \u2013 8 | D | Needs Revision |\n| 0 \u2013 5 | F | Repeat module before moving on |\n\n---\n\n## Practical Assessment\n\nAsk each student to complete the following task at the computer:\n\n### Task\n\nWrite a function called `get_marks()` that:\n\n1. **Keeps asking** the user to enter marks\n2. Handles **`ValueError`** \u2014 if the user types text instead of a number, show a friendly message and ask again\n3. Handles **out-of-range** \u2014 if the number is not between 0 and 100, show a message and ask again\n4. **Returns** the valid marks only when input is correct\n\n### Expected Behaviour\n\n```\nMarks daalein (0-100): abc\nSirf number daalein.\nMarks daalein (0-100): 150\nMarks 0 aur 100 ke darmiyan honi chahiye.\nMarks daalein (0-100): 85\n```\n*(Function returns 85)*\n\n### Sample Solution\n\n```python\ndef get_marks():\n    while True:\n        try:\n            marks = int(input(\"Marks daalein (0-100): \"))\n            if 0 <= marks <= 100:\n                return marks\n            else:\n                print(\"Marks 0 aur 100 ke darmiyan honi chahiye.\")\n        except ValueError:\n            print(\"Sirf number daalein.\")\n\nresult = get_marks()\nprint(f\"Valid marks: {result}\")\n```\n\n---\n\n## Teacher Observation Checklist\n\n| Student Name | try/except written? | ValueError caught? | Loop re-asks? | Range check? | Returns value? | Pass/Fail |\n|--------------|:-------------------:|:------------------:|:-------------:|:------------:|:--------------:|:---------:|\n|              | \u2610 | \u2610 | \u2610 | \u2610 | \u2610 | |\n|              | \u2610 | \u2610 | \u2610 | \u2610 | \u2610 | |\n|              | \u2610 | \u2610 | \u2610 | \u2610 | \u2610 | |\n|              | \u2610 | \u2610 | \u2610 | \u2610 | \u2610 | |\n|              | \u2610 | \u2610 | \u2610 | \u2610 | \u2610 | |\n"</script>
+      </div>
+
+    </div>
+
+    <div class="module-nav">
+      <a href="module-7.html" class="nav-btn">← Module 7</a>
+      <a href="index.html" class="nav-btn nav-home">🏠 All Modules</a>
+      <a href="module-9.html" class="nav-btn">Module 9 →</a>
+    </div>
+
+  </main>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

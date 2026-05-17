@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 4: Operators — Python for Beginners</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">🐍 Python for Beginners</a>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar" id="sidebar"><ul class="sidebar-nav"><li><a href="index.html" class="">🏠 Home</a></li><li><a href="module-0.html" class="">⚙️ M0: Setup</a></li><li><a href="module-1.html" class="">📝 M1: Strings</a></li><li><a href="module-2.html" class="">📦 M2: Variables</a></li><li><a href="module-3.html" class="">🔢 M3: Data Types</a></li><li><a href="module-4.html" class="active">➕ M4: Operators</a></li><li><a href="module-5.html" class="">🔀 M5: Control Flow</a></li><li><a href="module-6.html" class="">🔧 M6: Functions</a></li><li><a href="module-7.html" class="">📋 M7: Lists</a></li><li><a href="module-8.html" class="">🛡️ M8: Error Handling</a></li><li><a href="module-9.html" class="">💾 M9: File I/O</a></li><li><a href="module-10.html" class="">🚀 M10: Projects</a></li></ul></aside>
+  <main class="main-content">
+
+    <div class="module-header">
+      <span class="module-icon">➕</span>
+      <div>
+        <p class="module-label">Module 4</p>
+        <h1>Operators</h1>
+      </div>
+    </div>
+
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="lessons">📚 Lessons</button>
+      <button class="tab-btn" data-tab="notes">📋 Teacher Notes</button>
+      <button class="tab-btn" data-tab="practice">✏️ Practice Sheet</button>
+      <button class="tab-btn" data-tab="assessment">📊 Assessment</button>
+    </div>
+
+    <div class="tab-panes">
+
+      <div id="tab-lessons" class="tab-pane active">
+        
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 4_1_mathematical_operators.py</span>
+        <span class="badge badge-lesson">Lesson</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 4 - Lesson 1: Mathematical Operators
+# ================================================
+# Learn: +  -  *  /  //  %  **
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;Mathematical Operators&quot;)
+print(&quot;=&quot; * 50)
+
+# ------------------------------------------------
+# 1. Addition (+)
+# ------------------------------------------------
+print(&quot;\n1. Addition (+)&quot;)
+
+tafsir_books = 40
+hadith_books = 30
+total_books = tafsir_books + hadith_books
+print(&quot;Islamic books in library:&quot;, total_books)
+
+fajr_students = 15
+dhuhr_students = 22
+print(&quot;Students in two sessions:&quot;, fajr_students + dhuhr_students)
+
+# ------------------------------------------------
+# 2. Subtraction (-)
+# ------------------------------------------------
+print(&quot;\n2. Subtraction (-)&quot;)
+
+total_students = 35
+absent = 3
+present = total_students - absent
+print(&quot;Present students:&quot;, present)
+
+budget = 5000
+spent = 1350
+remaining = budget - spent
+print(&quot;Remaining budget:&quot;, remaining, &quot;rupees&quot;)
+
+# ------------------------------------------------
+# 3. Multiplication (*)
+# ------------------------------------------------
+print(&quot;\n3. Multiplication (*)&quot;)
+
+price_per_kg = 170
+kg = 5
+total_cost = price_per_kg * kg
+print(&quot;Cost of sugar:&quot;, total_cost, &quot;rupees&quot;)
+
+students = 12
+ayat_each = 5
+total_ayat = students * ayat_each
+print(&quot;Total ayat memorized:&quot;, total_ayat)
+
+# ------------------------------------------------
+# 4. Division (/)
+# ------------------------------------------------
+# Always gives a float result (decimal number)
+print(&quot;\n4. Division (/)&quot;)
+
+zakat_money = 10000
+people = 4
+share = zakat_money / people
+print(&quot;Each person&#x27;s share:&quot;, share, &quot;rupees&quot;)
+
+pages = 600
+days = 30
+pages_per_day = pages / days
+print(&quot;Pages to read per day:&quot;, pages_per_day)
+
+# ------------------------------------------------
+# 5. Floor Division (//)
+# ------------------------------------------------
+# Divides and removes the decimal — whole number only
+print(&quot;\n5. Floor Division (//)&quot;)
+
+qurans = 25
+rows = 3
+per_row = qurans // rows
+print(&quot;Qurans per row:&quot;, per_row)     # 8 (not 8.33)
+
+rupees = 1000
+per_child = rupees // 7
+print(&quot;Rupees per child:&quot;, per_child)
+
+# ------------------------------------------------
+# 6. Modulus (%) — Remainder
+# ------------------------------------------------
+print(&quot;\n6. Modulus (%) — Remainder&quot;)
+
+leftover_qurans = 25 % 3
+print(&quot;Leftover Qurans:&quot;, leftover_qurans)    # 1
+
+leftover_rupees = 1000 % 7
+print(&quot;Leftover rupees:&quot;, leftover_rupees)
+
+# Check if a number is even or odd
+students = 35
+print(&quot;Is class size even?&quot;, students % 2 == 0)   # False
+
+# ------------------------------------------------
+# 7. Exponent (**) — Power
+# ------------------------------------------------
+print(&quot;\n7. Exponent (**)&quot;)
+
+print(&quot;2 ** 3 =&quot;, 2 ** 3)    # 8
+print(&quot;3 ** 2 =&quot;, 3 ** 2)    # 9
+print(&quot;10 ** 2 =&quot;, 10 ** 2)  # 100
+
+# ------------------------------------------------
+# Using with input()
+# ------------------------------------------------
+print()
+price = int(input(&quot;Enter price per item (rupees): &quot;))
+qty = int(input(&quot;Enter quantity: &quot;))
+print(f&quot;Total cost: {price * qty} rupees&quot;)
+print(f&quot;Each item costs {price} rupees — {qty} items = {price * qty} rupees&quot;)
+
+print()
+print(&quot;All 7 mathematical operators covered. Well done!&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 4_2_operator_precedence_bodmas.py</span>
+        <span class="badge badge-lesson">Lesson</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 4 - Lesson 2: Operator Precedence (BODMAS)
+# ================================================
+# Learn: Order Python follows when calculating
+#        Brackets, Orders, Division/Multiplication,
+#        Addition/Subtraction
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;Operator Precedence — BODMAS&quot;)
+print(&quot;=&quot; * 50)
+
+# ------------------------------------------------
+# What is BODMAS?
+# ------------------------------------------------
+# When a calculation has multiple operators,
+# Python follows a specific order — just like maths class.
+#
+# B — Brackets        ( )
+# O — Orders          **  (powers)
+# D — Division        /  //  %
+# M — Multiplication  *
+# A — Addition        +
+# S — Subtraction     -
+#
+# Division and Multiplication have equal priority (left to right)
+# Addition and Subtraction have equal priority (left to right)
+
+# ------------------------------------------------
+# 1. Without Brackets — Python decides the order
+# ------------------------------------------------
+print(&quot;\n1. Without Brackets:&quot;)
+print(&quot;5 + 3 * 2  =&quot;, 5 + 3 * 2)      # 11 not 16 — * before +
+print(&quot;10 - 4 * 2 =&quot;, 10 - 4 * 2)     # 2  not 12
+print(&quot;6 + 8 / 4  =&quot;, 6 + 8 / 4)      # 8.0 not 3.5
+
+# ------------------------------------------------
+# 2. With Brackets — YOU control the order
+# ------------------------------------------------
+print(&quot;\n2. With Brackets:&quot;)
+print(&quot;(5 + 3) * 2  =&quot;, (5 + 3) * 2)      # 16
+print(&quot;(10 - 4) * 2 =&quot;, (10 - 4) * 2)     # 12
+print(&quot;(6 + 8) / 4  =&quot;, (6 + 8) / 4)      # 3.5
+
+# ------------------------------------------------
+# 3. Powers before Multiplication
+# ------------------------------------------------
+print(&quot;\n3. Power before Multiplication:&quot;)
+print(&quot;2 * 3 ** 2  =&quot;, 2 * 3 ** 2)    # 18 (3**2=9, then 2*9)
+print(&quot;5 + 2 ** 3  =&quot;, 5 + 2 ** 3)    # 13 (2**3=8, then 5+8)
+print(&quot;(2 + 1) ** 3 =&quot;, (2 + 1) ** 3) # 27 (bracket first: 3**3)
+
+# ------------------------------------------------
+# 4. Division and Multiplication — left to right
+# ------------------------------------------------
+print(&quot;\n4. Division and Multiplication (left to right):&quot;)
+print(&quot;12 / 3 * 2 =&quot;, 12 / 3 * 2)    # 8.0 (12/3=4, then 4*2)
+print(&quot;20 / 4 * 5 =&quot;, 20 / 4 * 5)    # 25.0
+
+# ------------------------------------------------
+# 5. Islamic / Pakistani context examples
+# ------------------------------------------------
+print(&quot;\n5. Real Examples:&quot;)
+
+# Tasbeeh: 33 times per prayer × 5 prayers, done by 3 people
+total_tasbeeh = 33 * 5 * 3
+print(f&quot;Total tasbeeh (3 people, 5 prayers): {total_tasbeeh}&quot;)
+
+# 30 paras × 20 pages each, minus 10 pages already done
+remaining_pages = (30 * 20) - 10
+print(f&quot;Remaining Quran pages to read: {remaining_pages}&quot;)
+
+# Cricket: Pakistan scores in 3 innings, average per over
+runs = (150 + 180 + 210) / 3
+print(f&quot;Average innings score: {runs}&quot;)
+
+# Bill split: 3 items at 250 each, split among 5 friends
+bill = (3 * 250) / 5
+print(f&quot;Each friend pays: {bill} rupees&quot;)
+
+# ------------------------------------------------
+# 6. Prediction Challenge
+# ------------------------------------------------
+print(&quot;\n6. Predict before running:&quot;)
+print(&quot;10 + 5 * 3       =&quot;, 10 + 5 * 3)
+print(&quot;(10 + 5) * 3     =&quot;, (10 + 5) * 3)
+print(&quot;2 ** 3 + 4 * 2   =&quot;, 2 ** 3 + 4 * 2)
+print(&quot;(2 ** 3 + 4) * 2 =&quot;, (2 ** 3 + 4) * 2)
+
+print()
+print(&quot;When in doubt — use brackets! They make your intention clear.&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 4_3_comparison_operators.py</span>
+        <span class="badge badge-lesson">Lesson</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 4 - Lesson 3: Comparison Operators
+# ================================================
+# Learn: ==  !=  &gt;  &lt;  &gt;=  &lt;=
+#        These always return True or False
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;Comparison Operators&quot;)
+print(&quot;=&quot; * 50)
+
+# ------------------------------------------------
+# What are Comparison Operators?
+# ------------------------------------------------
+# Comparison operators compare two values.
+# The result is ALWAYS a Boolean: True or False.
+# These are the foundation of decision-making in Python.
+
+# ------------------------------------------------
+# 1. Equal to (==)
+# ------------------------------------------------
+# Checks if two values are exactly the same.
+# Note: = assigns a value,  == checks equality
+print(&quot;\n1. Equal to (==):&quot;)
+print(&quot;&#x27;Fajr&#x27; == &#x27;Fajr&#x27;     -&gt;&quot;, &quot;Fajr&quot; == &quot;Fajr&quot;)        # True
+print(&quot;&#x27;Maghrib&#x27; == &#x27;Isha&#x27;  -&gt;&quot;, &quot;Maghrib&quot; == &quot;Isha&quot;)      # False
+print(&quot;5 == 5               -&gt;&quot;, 5 == 5)                    # True
+print(&quot;5 == 6               -&gt;&quot;, 5 == 6)                    # False
+
+# ------------------------------------------------
+# 2. Not equal to (!=)
+# ------------------------------------------------
+print(&quot;\n2. Not equal to (!=):&quot;)
+print(&quot;&#x27;Ramadan&#x27; != &#x27;Shawwal&#x27; -&gt;&quot;, &quot;Ramadan&quot; != &quot;Shawwal&quot;) # True
+print(&quot;&#x27;Friday&#x27; != &#x27;Friday&#x27;   -&gt;&quot;, &quot;Friday&quot; != &quot;Friday&quot;)   # False
+print(&quot;10 != 5                -&gt;&quot;, 10 != 5)                 # True
+
+# ------------------------------------------------
+# 3. Greater than (&gt;)
+# ------------------------------------------------
+print(&quot;\n3. Greater than (&gt;):&quot;)
+print(&quot;4 &gt; 2  -&gt;&quot;, 4 &gt; 2)       # True
+print(&quot;8 &gt; 10 -&gt;&quot;, 8 &gt; 10)      # False
+
+study_hours = 4
+print(&quot;Study hours &gt; 2:&quot;, study_hours &gt; 2)
+
+# ------------------------------------------------
+# 4. Less than (&lt;)
+# ------------------------------------------------
+print(&quot;\n4. Less than (&lt;):&quot;)
+print(&quot;5 &lt; 10  -&gt;&quot;, 5 &lt; 10)     # True
+print(&quot;65 &lt; 50 -&gt;&quot;, 65 &lt; 50)    # False
+
+marks = 65
+passing = 50
+print(&quot;Marks less than passing:&quot;, marks &lt; passing)
+
+# ------------------------------------------------
+# 5. Greater than or equal to (&gt;=)
+# ------------------------------------------------
+print(&quot;\n5. Greater than or equal to (&gt;=):&quot;)
+score = 70
+passing_score = 70
+print(&quot;Score &gt;= passing score:&quot;, score &gt;= passing_score)    # True
+
+age = 9
+print(&quot;Age &gt;= 10:&quot;, age &gt;= 10)                              # False
+
+# ------------------------------------------------
+# 6. Less than or equal to (&lt;=)
+# ------------------------------------------------
+print(&quot;\n6. Less than or equal to (&lt;=):&quot;)
+quran_level = 3
+print(&quot;Level &lt;= 5:&quot;, quran_level &lt;= 5)     # True
+print(&quot;12 &lt;= 6:&quot;, 12 &lt;= 6)                 # False
+
+# ------------------------------------------------
+# Using with variables from input()
+# ------------------------------------------------
+print()
+student_marks = int(input(&quot;Enter student marks (out of 100): &quot;))
+passing_marks = 50
+
+print(f&quot;Marks entered      : {student_marks}&quot;)
+print(f&quot;Did student pass?  : {student_marks &gt;= passing_marks}&quot;)
+print(f&quot;Did student fail?  : {student_marks &lt; passing_marks}&quot;)
+print(f&quot;Full marks?        : {student_marks == 100}&quot;)
+
+print()
+print(&quot;Comparison operators always give True or False. Great work!&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 4_4_logical_operators.py</span>
+        <span class="badge badge-lesson">Lesson</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 4 - Lesson 4: Logical Operators
+# ================================================
+# Learn: and, or, not
+#        Combining multiple True/False conditions
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;Logical Operators — and, or, not&quot;)
+print(&quot;=&quot; * 50)
+
+# ------------------------------------------------
+# What are Logical Operators?
+# ------------------------------------------------
+# Logical operators combine two or more conditions.
+# The result is always True or False.
+# They are the building blocks of complex decisions.
+
+# ------------------------------------------------
+# 1. AND — both conditions must be True
+# ------------------------------------------------
+# True  and True  -&gt; True
+# True  and False -&gt; False
+# False and True  -&gt; False
+# False and False -&gt; False
+
+print(&quot;\n1. AND — both must be True:&quot;)
+
+has_attended = True
+has_done_homework = True
+print(&quot;Attended AND homework done:&quot;, has_attended and has_done_homework)  # True
+
+has_attended = True
+has_done_homework = False
+print(&quot;Attended AND homework done:&quot;, has_attended and has_done_homework)  # False
+
+# Real example: student gets certificate only if attended AND passed
+attended = True
+passed = True
+gets_certificate = attended and passed
+print(&quot;Gets certificate:&quot;, gets_certificate)
+
+# ------------------------------------------------
+# 2. OR — at least one condition must be True
+# ------------------------------------------------
+# True  or True  -&gt; True
+# True  or False -&gt; True
+# False or True  -&gt; True
+# False or False -&gt; False
+
+print(&quot;\n2. OR — at least one must be True:&quot;)
+
+is_reading_quran = True
+is_listening_lecture = False
+print(&quot;Reading OR listening:&quot;, is_reading_quran or is_listening_lecture)  # True
+
+is_reading_quran = False
+is_listening_lecture = False
+print(&quot;Reading OR listening:&quot;, is_reading_quran or is_listening_lecture)  # False
+
+# Real example: student gets extra time if sick OR has valid excuse
+is_sick = False
+has_valid_excuse = True
+gets_extra_time = is_sick or has_valid_excuse
+print(&quot;Gets extra time:&quot;, gets_extra_time)
+
+# ------------------------------------------------
+# 3. NOT — reverses the condition
+# ------------------------------------------------
+# not True  -&gt; False
+# not False -&gt; True
+
+print(&quot;\n3. NOT — reverses True/False:&quot;)
+
+is_fasting = False
+print(&quot;not is_fasting:&quot;, not is_fasting)    # True
+
+is_weekend = True
+print(&quot;not is_weekend:&quot;, not is_weekend)    # False
+
+is_absent = False
+print(&quot;Is present:&quot;, not is_absent)         # True (not absent = present)
+
+# ------------------------------------------------
+# 4. Combining operators
+# ------------------------------------------------
+print(&quot;\n4. Combined Logic:&quot;)
+
+age = 15
+has_basic_knowledge = True
+is_weekend = False
+
+eligible = age &gt;= 12 and has_basic_knowledge and not is_weekend
+print(&quot;Eligible for advanced class:&quot;, eligible)
+
+# Madrasa admission: age between 8 and 16, AND has memorized at least 5 surahs
+student_age = 12
+surahs_memorized = 8
+can_join = (student_age &gt;= 8 and student_age &lt;= 16) and surahs_memorized &gt;= 5
+print(&quot;Can join Hifz program:&quot;, can_join)
+
+# ------------------------------------------------
+# Using with input()
+# ------------------------------------------------
+print()
+age = int(input(&quot;Student age: &quot;))
+marks = int(input(&quot;Student marks (out of 100): &quot;))
+
+passed = marks &gt;= 50
+correct_age = age &gt;= 10 and age &lt;= 16
+promoted = passed and correct_age
+
+print(f&quot;\nAge in range (10-16)  : {correct_age}&quot;)
+print(f&quot;Passed exam (50+)     : {passed}&quot;)
+print(f&quot;Eligible for promotion: {promoted}&quot;)
+
+print()
+print(&quot;Logical operators let you make complex decisions. Excellent!&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 4_5_quiz.py</span>
+        <span class="badge badge-quiz">Quiz</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 4 - Quiz: Operators
+# ================================================
+# Covers: + - * / // % **  BODMAS
+#         ==  !=  &gt;  &lt;  &gt;=  &lt;=
+#         and, or, not
+# Difficulty: Easy / Medium / Complex
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;MODULE 4 QUIZ - Operators&quot;)
+print(&quot;=&quot; * 50)
+print()
+
+# ------------------------------------------------
+# EASY
+# ------------------------------------------------
+print(&quot;--- EASY ---&quot;)
+print()
+
+# Q1. A madrasa has 55 Tafsir books and 45 Hadith books.
+#     Print the total number of books.
+
+
+# Q2. One kurta costs 850 rupees. A teacher buys 3.
+#     Print the total cost.
+
+
+# Q3. Distribute 28 Qurans equally on 5 shelves.
+#     Print: how many per shelf, and how many are left over.
+
+
+# Q4. Print the result of: 10 + 5 * 2
+#     Then print the result of: (10 + 5) * 2
+#     Are they the same? Why?
+
+
+# Q5. Create a variable marks = 75.
+#     Print whether marks is greater than or equal to 50.
+#     Expected output: True
+
+
+# ------------------------------------------------
+# MEDIUM
+# ------------------------------------------------
+print()
+print(&quot;--- MEDIUM ---&quot;)
+print()
+
+# Q6. Ask the user for price and quantity using int(input()).
+#     Calculate and print the total bill using an f-string.
+
+
+# Q7. Ask the user for their marks (int).
+#     Print three things using comparison operators:
+#     - Did they pass? (marks &gt;= 50)
+#     - Did they get distinction? (marks &gt;= 80)
+#     - Did they get full marks? (marks == 100)
+
+
+# Q8. A student can join the Hifz class only if:
+#     age is between 8 and 15 (inclusive) AND
+#     has memorized at least 3 surahs.
+#     Create variables for age and surahs_memorized.
+#     Print whether the student is eligible.
+
+
+# Q9. Predict the output of these BEFORE running:
+#     a) print(2 + 3 * 4)
+#     b) print((2 + 3) * 4)
+#     c) print(2 ** 3 + 1)
+#     d) print(10 // 3, 10 % 3)
+#     Write your predictions as comments, then run to check.
+
+
+# ------------------------------------------------
+# COMPLEX
+# ------------------------------------------------
+print()
+print(&quot;--- COMPLEX ---&quot;)
+print()
+
+# Q10. Ask the user for:
+#      - Number of students (int)
+#      - Number of absent students (int)
+#      - Passing marks (int)
+#      - One student&#x27;s marks (int)
+#      Calculate and print using f-strings:
+#      - Present students
+#      - Attendance percentage
+#      - Whether that student passed
+#      - Whether attendance is above 80%
+
+
+# Q11. Build a simple zakat calculator.
+#      Ask the user for their total savings in rupees (int).
+#      Zakat rate is 2.5% (divide by 100 then multiply by 2.5).
+#      Print:
+#      - Whether they owe zakat (savings &gt;= 50000)
+#      - The zakat amount (if applicable)
+#      - Use f-strings for all output.
+
+
+# Q12. A cricket match scoring system.
+#      Ask for:
+#        - Pakistan&#x27;s score (int)
+#        - India&#x27;s score (int)
+#        - Target to win (int)
+#      Print:
+#        - Who scored more
+#        - Did Pakistan reach the target? (True/False)
+#        - Run difference between the teams
+#        - Average of both scores
+#      Use f-strings and all operator types.
+
+
+print()
+print(&quot;Quiz done! Check 4_6_quiz_solution.py for answers.&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 4_6_quiz_solution.py</span>
+        <span class="badge badge-solution">Quiz Solution</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 4 - Quiz Solutions
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;MODULE 4 QUIZ - SOLUTIONS&quot;)
+print(&quot;=&quot; * 50)
+print()
+
+# ------------------------------------------------
+# EASY
+# ------------------------------------------------
+print(&quot;--- EASY ---&quot;)
+print()
+
+# Q1.
+tafsir = 55
+hadith = 45
+print(&quot;Total books:&quot;, tafsir + hadith)
+
+# Q2.
+price = 850
+quantity = 3
+print(&quot;Total cost:&quot;, price * quantity, &quot;rupees&quot;)
+
+# Q3.
+qurans = 28
+shelves = 5
+print(&quot;Per shelf:&quot;, qurans // shelves)
+print(&quot;Leftover:&quot;, qurans % shelves)
+
+# Q4.
+print(&quot;10 + 5 * 2  =&quot;, 10 + 5 * 2)      # 20 — * runs first
+print(&quot;(10 + 5) * 2 =&quot;, (10 + 5) * 2)   # 30 — brackets first
+# They are different because BODMAS applies without brackets.
+
+# Q5.
+marks = 75
+print(&quot;Marks &gt;= 50:&quot;, marks &gt;= 50)
+
+# ------------------------------------------------
+# MEDIUM
+# ------------------------------------------------
+print()
+print(&quot;--- MEDIUM ---&quot;)
+print()
+
+# Q6.
+price = int(input(&quot;Price per item: &quot;))
+qty = int(input(&quot;Quantity: &quot;))
+print(f&quot;Total bill: {price * qty} rupees&quot;)
+
+# Q7.
+marks = int(input(&quot;Your marks (out of 100): &quot;))
+print(f&quot;Passed (&gt;=50)      : {marks &gt;= 50}&quot;)
+print(f&quot;Distinction (&gt;=80) : {marks &gt;= 80}&quot;)
+print(f&quot;Full marks (==100) : {marks == 100}&quot;)
+
+# Q8.
+age = 12
+surahs_memorized = 5
+eligible = (age &gt;= 8 and age &lt;= 15) and surahs_memorized &gt;= 3
+print(f&quot;Eligible for Hifz class: {eligible}&quot;)
+
+# Q9. Predictions and results:
+# a) 2 + 3 * 4 = 14  (3*4=12, then +2)
+print(&quot;2 + 3 * 4  =&quot;, 2 + 3 * 4)        # 14
+
+# b) (2 + 3) * 4 = 20  (bracket first: 5*4)
+print(&quot;(2 + 3) * 4 =&quot;, (2 + 3) * 4)     # 20
+
+# c) 2 ** 3 + 1 = 9  (2**3=8, then +1)
+print(&quot;2 ** 3 + 1  =&quot;, 2 ** 3 + 1)      # 9
+
+# d) floor div and modulus
+print(&quot;10 // 3, 10 % 3 =&quot;, 10 // 3, 10 % 3)   # 3  1
+
+# ------------------------------------------------
+# COMPLEX
+# ------------------------------------------------
+print()
+print(&quot;--- COMPLEX ---&quot;)
+print()
+
+# Q10.
+total = int(input(&quot;Total students: &quot;))
+absent = int(input(&quot;Absent students: &quot;))
+passing = int(input(&quot;Passing marks: &quot;))
+student_marks = int(input(&quot;Student&#x27;s marks: &quot;))
+
+present = total - absent
+attendance_pct = present / total * 100
+passed = student_marks &gt;= passing
+good_attendance = attendance_pct &gt;= 80
+
+print(f&quot;Present students    : {present}&quot;)
+print(f&quot;Attendance          : {attendance_pct}%&quot;)
+print(f&quot;Student passed      : {passed}&quot;)
+print(f&quot;Attendance above 80%: {good_attendance}&quot;)
+
+# Q11.
+savings = int(input(&quot;Your total savings (rupees): &quot;))
+owes_zakat = savings &gt;= 50000
+zakat_amount = savings * 2.5 / 100
+print(f&quot;Savings     : {savings} rupees&quot;)
+print(f&quot;Owes zakat  : {owes_zakat}&quot;)
+if owes_zakat:
+    print(f&quot;Zakat due   : {zakat_amount} rupees&quot;)
+
+# Q12.
+pak_score = int(input(&quot;Pakistan score: &quot;))
+ind_score = int(input(&quot;India score: &quot;))
+target = int(input(&quot;Target to win: &quot;))
+
+print(f&quot;Pakistan score      : {pak_score}&quot;)
+print(f&quot;India score         : {ind_score}&quot;)
+print(f&quot;Pakistan wins       : {pak_score &gt; ind_score}&quot;)
+print(f&quot;Pakistan hit target : {pak_score &gt;= target}&quot;)
+print(f&quot;Run difference      : {abs(pak_score - ind_score)}&quot;)
+print(f&quot;Average score       : {(pak_score + ind_score) / 2}&quot;)
+
+print()
+print(&quot;End of solutions.&quot;)
+</code></pre>
+    </div>
+      </div>
+
+      <div id="tab-notes" class="tab-pane">
+        <div class="markdown-body" id="md-notes"></div>
+        <script type="application/json" id="src-notes">"# Module 4 \u2014 Operators: Teacher Notes\n\n## Overview\n\n| Item | Detail |\n|------|--------|\n| Module | 4 \u2014 Operators |\n| Duration | 2 classes |\n| Level | Beginner |\n| Age Group | 10\u201316 years |\n| Language | Urdu (with English terms) |\n\n---\n\n## Learning Objectives\n\nBy the end of this module, students will be able to:\n\n1. Use all six math operators: `+`, `-`, `*`, `/`, `//`, `%`, `**`\n2. Understand and apply BODMAS order of operations\n3. Use comparison operators: `==`, `!=`, `<`, `>`, `<=`, `>=`\n4. Use logical operators: `and`, `or`, `not`\n5. Combine operators to solve real problems\n\n---\n\n## Lesson Flow\n\n### Class 1 (55 minutes)\n\n| Time | Activity | File |\n|------|----------|------|\n| 0\u201325 min | Math operators \u2014 all 6 with Pakistani examples | `4_1_math_operators.py` |\n| 25\u201345 min | BODMAS \u2014 order of operations with Python | `4_2_bodmas.py` |\n| 45\u201355 min | Quick practice and questions | \u2014 |\n\n### Class 2 (55 minutes)\n\n| Time | Activity | File |\n|------|----------|------|\n| 0\u201320 min | Comparison operators \u2014 equal, not equal, greater, less | `4_3_comparison_operators.py` |\n| 20\u201340 min | Logical operators \u2014 and, or, not | `4_4_logical_operators.py` |\n| 40\u201355 min | Quiz | \u2014 |\n\n---\n\n## Key Concepts to Emphasise\n\n### The Six Math Operators\n\n```python\n# Pakistani classroom example\ntotal_marks  = 450 + 90       # + jama\nremaining    = 500 - 450      # - minus\nrakat_total  = 5 * 17         # * zarb (multiplication)\navg          = 450 / 5        # / taqseem (division \u2014 gives decimal)\nfull_sections = 35 // 6       # // poora hissa (integer division)\nextra_students = 35 % 6       # % baaqi (remainder)\npower_of      = 2 ** 10       # ** ghunaah (exponent/power)\n```\n\n### Integer Division `//` vs Regular Division `/`\n\nThis is the operator students confuse most. Use a real example:\n\n> \"Islami school mein 35 talibaan hain. Hum unhe 6-6 ke groups mein baantna chahte hain. Kitne poore groups banenge?\"\n\n```python\ntalibaan = 35\ngroup_size = 6\n\npoore_groups = talibaan // group_size   # 5 \u2014 sirf poora hissa\nbaaqi = talibaan % group_size           # 5 \u2014 jo baaqi rahe\n\nprint(f\"Poore groups: {poore_groups}\")\nprint(f\"Baaqi talibaan: {baaqi}\")\n```\n\n### Remainder `%` \u2014 Real Uses\n\nStudents should understand `%` is not just maths \u2014 it has practical uses:\n\n```python\n# Kya number even hai?\nnumber = 14\nif number % 2 == 0:\n    print(\"Even number hai\")\n\n# Har teesri cheez highlight karo (e.g., every 3rd student)\nstudent_number = 9\nif student_number % 3 == 0:\n    print(\"Yeh student leader hai!\")\n```\n\n### `=` vs `==` \u2014 Critical Distinction\n\nWrite BOTH on the board in large text:\n\n```\n=    \u2192   Assign karna (dena)       naam = \"Ahmed\"\n==   \u2192   Compare karna (dekhna)    naam == \"Ahmed\"  \u2192 True ya False\n```\n\nCommon student error:\n```python\n# WRONG \u2014 yeh code kaam nahin karega\nif umar = 15:\n    print(\"Sahi hai\")\n\n# CORRECT\nif umar == 15:\n    print(\"Sahi hai\")\n```\n\n### BODMAS in Python\n\n```python\n# Yeh do cheezein alag results deti hain:\nresult1 = 2 + 3 * 4      # 14 \u2014 pehle * hoti hai\nresult2 = (2 + 3) * 4    # 20 \u2014 brackets pehle\n\n# Pakistani context:\n# Ahmed ne 3 packets khareed, har packet mein 5 toffees.\n# Fatima ne 4 alag toffees deen.\n# Total: 3 * 5 + 4 = 19  (brackets ki zaroorat nahin)\n# Lekin agar hum pehle Ahmad aur Fatima ki total lein phir multiply karein:\n# (3 + 4) * 5 = 35\n```\n\n---\n\n## Common Mistakes\n\n| Mistake | What Happens | Correction |\n|---------|-------------|------------|\n| `=` instead of `==` in conditions | `SyntaxError` or wrong logic | Use `==` for comparison |\n| Confusing `//` and `/` | Gets decimal when expecting whole number | `//` for integer result, `/` for decimal |\n| BODMAS ignored | Wrong calculation result | Add brackets where needed |\n| `not` used on wrong type | Unexpected result | Only use `not` on booleans or conditions |\n\n---\n\n## Urdu Teaching Tips\n\nWrite these on the board during lessons:\n\n- **`//`** \u2014 \"double slash matlab sirf poora number chahiye \u2014 decimal cut ho jaata hai\"\n- **`%`** \u2014 \"percent sign matlab baaqi kya bachta hai (remainder) \u2014 jaise 17 divide by 5, baaqi 2\"\n- **`==`** \u2014 \"do equal matlab \u0628\u0631\u0627\u0628\u0631 \u06c1\u06d2 \u06a9\u06cc\u0627? \u2014 sawal poochh raha hoon, dena nahin\"\n- **`**`** \u2014 \"do star matlab power ya ghunaah \u2014 2 ki power 3 = 2 \\*\\* 3 = 8\"\n- **`and`** \u2014 \"aur \u2014 dono shart poori honi chahiyen\"\n- **`or`** \u2014 \"ya \u2014 koi bhi ek shart poori ho\"\n- **`not`** \u2014 \"nahi \u2014 ulta kar do\"\n\n---\n\n## Classroom Activity Ideas\n\n**Activity 1 \u2014 Operator Matching:**\nWrite operators on one side and descriptions on the other. Students match:\n- `+` \u2192 Jama\n- `%` \u2192 Baaqi\n- `//` \u2192 Poora hissa\n- `**` \u2192 Taaqat / Power\n\n**Activity 2 \u2014 Madrasa Problem:**\n> \"Madrasa mein 100 talibaan hain. Ek class mein 12 talibaan hain. Kitni classes banegi aur kitne talibaan baahir rahenge?\"\n\n```python\ntalibaan = 100\nclass_size = 12\nclasses = talibaan // class_size    # 8\nbaaqi = talibaan % class_size       # 4\nprint(f\"{classes} poori classes aur {baaqi} baaqi talibaan\")\n```\n\n**Activity 3 \u2014 True or False Game:**\nCall out expressions, students shout True or False:\n- `10 > 5` \u2192 True\n- `3 == 4` \u2192 False\n- `not False` \u2192 True\n- `5 >= 5` \u2192 True\n\n---\n\n## Module Files\n\n| File | Topic |\n|------|-------|\n| `4_1_math_operators.py` | +, -, *, /, //, %, ** |\n| `4_2_bodmas.py` | Order of operations |\n| `4_3_comparison_operators.py` | ==, !=, <, >, <=, >= |\n| `4_4_logical_operators.py` | and, or, not |\n| `4_5_practice.py` | Combined practice |\n| `4_6_quiz.py` | Module quiz |\n\n---\n\n## Connection to Next Module\n\nModule 5 (Control Flow) uses operators constantly:\n\n```python\n# Students will write this kind of code in Module 5:\nmarks = int(input(\"Marks likhein: \"))\nif marks >= 90:\n    print(\"Grade A+\")\nelif marks >= 80:\n    print(\"Grade A\")\n```\n\nStudents must be confident with `==`, `>=`, `<=`, `and`, `or` before Module 5.\n"</script>
+      </div>
+
+      <div id="tab-practice" class="tab-pane">
+        <div class="markdown-body print-friendly" id="md-practice"></div>
+        <script type="application/json" id="src-practice">"# Module 4 \u2014 Operators: Practice Sheet\n\n**Naam (Name): ___________________________**\n**Taareekh (Date): ________________________**\n**Class: _________________________________**\n\n---\n\nBismillah ir-Rahman ir-Raheem\n\nOperators ka yeh practice sheet dhyan se complete karo. Har sawaal mein socho pehle, phir likho.\n\n---\n\n## Section A \u2014 Hisaab (Calculations)\n\n**Q1.** `15 % 4` kya hai?\n\nSocho: 15 ko 4 se divide karo. Baaqi kya bachega?\n\n**Jawab: _______________**\n\n---\n\n**Q2.** `2 ** 8` kya hai? (2 ki power 8)\n\n**Jawab: _______________**\n\nHint: 2, 4, 8, 16, 32, 64, 128, ___\n\n---\n\n**Q3.** `10 // 3` kya dega?\n\nCircle the correct answer:\n\n```\na) 3.33\nb) 3\nc) 4\nd) 1\n```\n\n**Jawab: _______________**\n\n---\n\n**Q4.** Kya `5 == 5.0` True hai ya False?\n\n```\na) True\nb) False\n```\n\n**Jawab: _______________**\n\n**Kyun? (Explain karo): _______________________________________**\n\n---\n\n**Q5.** `not True` kya evaluate hoga?\n\n**Jawab: _______________**\n\n---\n\n## Section B \u2014 Code Likhna\n\n**Q6.** Ek condition likhein jo check kare ke ek number 1 aur 100 ke beech mein hai (`and` use karo):\n\n```python\nnumber = 55\n\n# Yahan apni condition likhein:\nif ___________________________________________:\n    print(\"Number sahi range mein hai!\")\n```\n\n---\n\n**Q7.** Neeche wale code mein galti hai. Galti dhoondho aur theek karo.\n\n```python\numar = 15\nif umar = 18:\n    print(\"Vote de sakte ho!\")\n```\n\n**Galti: _______________________________________________**\n\n**Sahi code:**\n\n```python\numar = 15\nif ___________________________________________:\n    print(\"Vote de sakte ho!\")\n```\n\n---\n\n**Q8.** BODMAS ke mutabiq `2 + 3 * 4` ka result kya hoga?\n\nShow your working:\n\n```\nStep 1 (pehle * karo): 3 * 4 = ___\nStep 2 (phir + karo):  2 + ___ = ___\n```\n\n**Jawab: _______________**\n\n---\n\n**Q9.** Hassan school mein hai. Woh pass hoga agar:\n- Marks 50 ya zyada hon **AUR**\n- Attendance 75 ya zyada ho\n\nYeh condition code mein likhein:\n\n```python\nmarks = int(input(\"Marks likhein: \"))\nattendance = int(input(\"Attendance % likhein: \"))\n\nif ___________________________________________:\n    print(\"Hassan pass ho gaya! Masha'Allah!\")\nelse:\n    print(\"Hassan fail ho gaya. Mehnat karo.\")\n```\n\n---\n\n## Section C \u2014 Even/Odd Challenge\n\n**Q10.** Ahmed ne ek number socha. Woh jaanna chahta hai ke yeh number even hai ya odd. `%` operator use karke yeh check karo.\n\n**Reminder:** Even numbers ka remainder zero hota hai jab 2 se divide karo.\n\n```python\nnumber = int(input(\"Koi number likhein: \"))\n\n# % use karke check karo:\nif ___________________________________________:\n    print(f\"{number} even number hai.\")\nelse:\n    print(f\"{number} odd number hai.\")\n```\n\n---\n\n## Section D \u2014 Mixed Problems\n\n**Q11.** Neeche wale expressions ke answers likhein:\n\n| Expression | Answer |\n|-----------|--------|\n| `100 // 7` | |\n| `100 % 7` | |\n| `3 ** 4` | |\n| `15 / 4` | |\n| `15 // 4` | |\n| `not (5 > 3)` | |\n| `(3 > 2) and (10 < 5)` | |\n| `(3 > 2) or (10 < 5)` | |\n\n---\n\n## Challenge \u2014 Mushkil Sawaal\n\nKarachi mein Fatima ke school mein 127 talibaat hain. School mein buses hain jo 12 talibaat le ja sakti hain.\n\nYeh program likhein jo calculate kare:\n1. Kitni poori buses chahiyen?\n2. Kitni talibaat baaqi rahengi (extra)?\n3. Kya extra bus ki zaroorat hogi? (agar koi bhi baaqi hain toh haan)\n\n```python\ntalibaat = 127\nbus_capacity = 12\n\npoori_buses = ___________________________\nbaaqi = ___________________________\n\nprint(f\"Poori buses: {poori_buses}\")\nprint(f\"Baaqi talibaat: {baaqi}\")\n\nif baaqi _____ 0:\n    print(\"Ek aur bus chahiye!\")\nelse:\n    print(\"Sab buses mein fit ho gayin.\")\n```\n\n---\n\n## Answer Key (Sirf Teacher ke liye)\n\n| Sawaal | Jawab |\n|--------|-------|\n| Q1 | `3` (15 = 4\u00d73 + 3) |\n| Q2 | `256` |\n| Q3 | `b) 3` |\n| Q4 | `True` \u2014 Python int aur float compare kar sakta hai |\n| Q5 | `False` |\n| Q6 | `if 1 <= number <= 100:` ya `if number >= 1 and number <= 100:` |\n| Q7 | `=` ko `==` se replace karo: `if umar == 18:` |\n| Q8 | Step 1: 12, Step 2: 14 |\n| Q9 | `if marks >= 50 and attendance >= 75:` |\n| Q10 | `if number % 2 == 0:` |\n| Q11 | 14, 2, 81, 3.75, 3, False, False, True |\n| Challenge | `poori_buses = 127 // 12` (=10), `baaqi = 127 % 12` (=7), `if baaqi > 0:` |\n"</script>
+        <button class="print-btn no-print" onclick="window.print()">🖨️ Print Practice Sheet</button>
+      </div>
+
+      <div id="tab-assessment" class="tab-pane">
+        <div class="markdown-body" id="md-assessment"></div>
+        <script type="application/json" id="src-assessment">"# Module 4 \u2014 Operators: Assessment Guide\n\n## Pass Criteria\n\nA student passes Module 4 if they can do ALL of the following:\n\n- [ ] Correctly calculate using all six math operators (`+`, `-`, `*`, `/`, `//`, `%`, `**`)\n- [ ] Explain the difference between `/` and `//`\n- [ ] Compare two values using `==`, `!=`, `<`, `>`, `<=`, `>=`\n- [ ] Use `and`, `or`, `not` to combine conditions\n- [ ] Identify the difference between `=` (assignment) and `==` (comparison)\n\n---\n\n## Oral Questions\n\nAsk these questions individually or to the class. Students should answer quickly and confidently.\n\n| Question | Expected Answer |\n|----------|----------------|\n| `17 % 5` kya hai? | `2` (remainder when 17 is divided by 5) |\n| `==` aur `=` mein kya farq hai? | `=` assign karta hai, `==` compare karta hai |\n| `2 ** 3` kya hai? | `8` |\n| `10 // 3` kya dega? | `3` (sirf poora hissa) |\n| `10 / 3` kya dega? | `3.333...` (decimal) |\n| `True and False` kya hai? | `False` |\n| `True or False` kya hai? | `True` |\n| `not True` kya hai? | `False` |\n| BODMAS mein kya pehle calculate hota hai? | Brackets, phir power, phir * aur /, phir + aur - |\n\n---\n\n## Quiz Marking Scheme\n\n**Total Marks: 17**\n\n| Section | Questions | Marks Each | Total |\n|---------|-----------|-----------|-------|\n| Easy | 5 questions | 1 mark | 5 marks |\n| Medium | 3 questions | 2 marks | 6 marks |\n| Complex | 2 questions | 3 marks | 6 marks |\n\n### Grade Scale\n\n| Marks | Grade | Message |\n|-------|-------|---------|\n| 15\u201317 | A+ | Masha'Allah! Kamaal kar diya! |\n| 12\u201314 | A | Bohat achha \u2014 thoda aur practice karo. |\n| 9\u201311 | B | Achha \u2014 operators dobara review karo. |\n| 6\u20138 | C | Teacher se madad lo aur practice karo. |\n| 0\u20135 | Needs Support | Module dobara parho \u2014 teacher se milein. |\n\n---\n\n## Practical Assessment\n\n### Task Description\n\nStudents write a **simple calculator** that:\n\n1. Asks the user for **two numbers**\n2. Calculates and displays **all six results**: `+`, `-`, `*`, `/`, `//`, `%`\n3. Uses f-strings for clear output\n4. Runs without any errors\n\n### Sample Solution\n\n```python\n# Module 4 Practical \u2014 Calculator\n# Bismillah\n\nprint(\"=== Hisab Kitab Calculator ===\")\n\npehla  = int(input(\"Pehla number likhein: \"))\ndoosra = int(input(\"Doosra number likhein: \"))\n\nprint(f\"\\nNataaij (Results):\")\nprint(f\"{pehla} + {doosra}  = {pehla + doosra}\")\nprint(f\"{pehla} - {doosra}  = {pehla - doosra}\")\nprint(f\"{pehla} * {doosra}  = {pehla * doosra}\")\nprint(f\"{pehla} / {doosra}  = {pehla / doosra:.2f}\")\nprint(f\"{pehla} // {doosra} = {pehla // doosra}\")\nprint(f\"{pehla} % {doosra}  = {pehla % doosra}\")\n```\n\n### Sample Output\n\n```\n=== Hisab Kitab Calculator ===\nPehla number likhein: 17\nDoosra number likhein: 5\n\nNataaij (Results):\n17 + 5  = 22\n17 - 5  = 12\n17 * 5  = 85\n17 / 5  = 3.40\n17 // 5 = 3\n17 % 5  = 2\n```\n\n### Marking Rubric\n\n| Criterion | Marks |\n|-----------|-------|\n| `int(input())` used for both numbers | 2 |\n| Addition and subtraction correct | 1 |\n| Multiplication and division correct | 1 |\n| `//` (integer division) correct | 2 |\n| `%` (remainder) correct | 2 |\n| f-strings used for output | 1 |\n| Program runs without errors | 1 |\n| **Total** | **10** |\n\n---\n\n## Extension Task (For Advanced Students)\n\nAsk students to **add a bonus feature**: check if the first number is greater than, equal to, or less than the second, and print a message.\n\n```python\nif pehla > doosra:\n    print(f\"{pehla} bada hai {doosra} se.\")\nelif pehla == doosra:\n    print(f\"Dono numbers baraabar hain!\")\nelse:\n    print(f\"{doosra} bada hai {pehla} se.\")\n```\n\n---\n\n## Remediation\n\n**Cannot distinguish `//` from `/`:**\nUse the madrasa example: \"35 talibaan, 6 per group. Kitne poore groups?\" Answer is `35 // 6 = 5`, not `5.83...`.\n\n**Confuses `=` with `==`:**\nExplain: \"`=` deta hai (assignment), `==` poochta hai (question).\" Write on board:\n- `naam = \"Ahmed\"` \u2192 Ahmed ko naam diya\n- `naam == \"Ahmed\"` \u2192 Kya naam Ahmed hai? True ya False?\n\n**Cannot use `and`/`or`:**\nUse this real-world example: \"Scholarship ke liye: marks >= 80 AND attendance >= 75. Dono zaroori hain.\"\n\n---\n\n## Notes for Teacher\n\n- The `=` vs `==` mistake is the #1 bug students will write in Module 5. Catch it now.\n- Make sure students understand `%` conceptually (remainder) \u2014 not just as a symbol.\n- BODMAS matters \u2014 test it with: `2 + 3 * 4` (should get 14, not 20).\n"</script>
+      </div>
+
+    </div>
+
+    <div class="module-nav">
+      <a href="module-3.html" class="nav-btn">← Module 3</a>
+      <a href="index.html" class="nav-btn nav-home">🏠 All Modules</a>
+      <a href="module-5.html" class="nav-btn">Module 5 →</a>
+    </div>
+
+  </main>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

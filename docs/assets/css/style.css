@@ -1,0 +1,451 @@
+/* ============================================================
+   Python for Beginners — Course Website
+   haqnawaz.org
+   ============================================================ */
+
+:root {
+  --green:        #1a7a4a;
+  --green-dark:   #145e38;
+  --green-mid:    #2d9e5e;
+  --green-light:  #e8f5ee;
+  --green-pale:   #f4fbf7;
+  --accent:       #f0a500;
+  --accent-light: #fff8e6;
+  --text:         #1a1a1a;
+  --text-light:   #555;
+  --bg:           #f6f8fa;
+  --white:        #ffffff;
+  --border:       #dde3e9;
+  --sidebar-w:    260px;
+  --radius:       8px;
+  --shadow:       0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+a { color: var(--green); text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; }
+
+/* ── Header ── */
+.site-header {
+  background: var(--green-dark);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.25rem;
+  height: 56px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.site-logo {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 0.01em;
+}
+.site-logo:hover { text-decoration: none; opacity: 0.9; }
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+}
+
+/* ── Layout ── */
+.layout {
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: calc(100vh - 56px);
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  width: var(--sidebar-w);
+  flex-shrink: 0;
+  background: var(--white);
+  border-right: 1px solid var(--border);
+  padding: 1rem 0;
+  position: sticky;
+  top: 56px;
+  height: calc(100vh - 56px);
+  overflow-y: auto;
+}
+.sidebar-nav { list-style: none; }
+.sidebar-nav li a {
+  display: block;
+  padding: 0.55rem 1.25rem;
+  color: var(--text-light);
+  font-size: 0.875rem;
+  border-left: 3px solid transparent;
+  transition: all 0.15s;
+}
+.sidebar-nav li a:hover {
+  background: var(--green-pale);
+  color: var(--green);
+  text-decoration: none;
+  border-left-color: var(--green-mid);
+}
+.sidebar-nav li a.active {
+  background: var(--green-light);
+  color: var(--green-dark);
+  font-weight: 600;
+  border-left-color: var(--green);
+}
+
+/* ── Main Content ── */
+.main-content {
+  flex: 1;
+  min-width: 0;
+  padding: 2rem 2.5rem;
+}
+
+/* ── Module Header ── */
+.module-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 2px solid var(--green-light);
+}
+.module-icon { font-size: 2.5rem; line-height: 1; }
+.module-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--green-mid);
+  margin-bottom: 0.2rem;
+}
+.module-header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* ── Tabs ── */
+.tab-bar {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+.tab-btn {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  color: var(--text-light);
+  padding: 0.5rem 1.1rem;
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.tab-btn:hover {
+  border-color: var(--green-mid);
+  color: var(--green);
+  background: var(--green-pale);
+}
+.tab-btn.active {
+  background: var(--green);
+  border-color: var(--green);
+  color: white;
+  font-weight: 600;
+}
+.tab-pane { display: none; }
+.tab-pane.active { display: block; }
+
+/* ── Code Files ── */
+.code-file {
+  margin-bottom: 1.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.code-file-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #2b3a2b;
+  padding: 0.6rem 1rem;
+}
+.file-name {
+  color: #a8d8a8;
+  font-family: "Cascadia Code", "Fira Code", "Consolas", monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 2rem;
+}
+.badge-lesson    { background: #1a5276; color: #aed6f1; }
+.badge-quiz      { background: #6e2f8a; color: #d7bde2; }
+.badge-solution  { background: #145e38; color: #a9dfbf; }
+.badge-app       { background: #784212; color: #f0d9b5; }
+.badge-starter   { background: #7d6608; color: #f9e79f; }
+
+.code-file pre {
+  margin: 0;
+  max-height: 480px;
+  overflow-y: auto;
+}
+.code-file pre code {
+  font-family: "Cascadia Code", "Fira Code", "Consolas", monospace;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  padding: 1rem 1.25rem !important;
+  display: block;
+}
+
+/* ── Markdown Content ── */
+.markdown-body {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem 2rem;
+  box-shadow: var(--shadow);
+  max-width: 860px;
+}
+.markdown-body h1 { font-size: 1.5rem; margin: 0 0 1rem; color: var(--green-dark); }
+.markdown-body h2 {
+  font-size: 1.15rem;
+  margin: 1.75rem 0 0.75rem;
+  color: var(--green-dark);
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--green-light);
+}
+.markdown-body h3 { font-size: 1rem; margin: 1.25rem 0 0.5rem; color: var(--text); }
+.markdown-body p { margin: 0.7rem 0; }
+.markdown-body ul, .markdown-body ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+.markdown-body li { margin: 0.3rem 0; }
+.markdown-body strong { color: var(--text); }
+.markdown-body code {
+  background: var(--green-light);
+  color: var(--green-dark);
+  padding: 0.15em 0.45em;
+  border-radius: 4px;
+  font-family: "Cascadia Code", "Fira Code", "Consolas", monospace;
+  font-size: 0.87em;
+}
+.markdown-body pre {
+  background: #1e2a1e;
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  margin: 0.75rem 0;
+}
+.markdown-body pre code {
+  background: none;
+  color: #a8d8a8;
+  padding: 0;
+  font-size: 0.85rem;
+}
+.markdown-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+.markdown-body th {
+  background: var(--green-light);
+  color: var(--green-dark);
+  font-weight: 600;
+  padding: 0.55rem 0.85rem;
+  text-align: left;
+  border: 1px solid var(--border);
+}
+.markdown-body td {
+  padding: 0.5rem 0.85rem;
+  border: 1px solid var(--border);
+}
+.markdown-body tr:nth-child(even) td { background: var(--bg); }
+.markdown-body blockquote {
+  border-left: 4px solid var(--green-mid);
+  background: var(--green-pale);
+  padding: 0.75rem 1rem;
+  margin: 0.75rem 0;
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+.markdown-body hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 1.5rem 0;
+}
+/* Checkboxes in assessment */
+.markdown-body input[type="checkbox"] { margin-right: 0.4rem; }
+
+/* ── Print Button ── */
+.print-btn {
+  margin-top: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--green);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.print-btn:hover { background: var(--green-dark); }
+
+/* ── Module Navigation ── */
+.module-nav {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+.nav-btn {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  color: var(--green);
+  padding: 0.55rem 1.25rem;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all 0.15s;
+}
+.nav-btn:hover {
+  background: var(--green);
+  color: white;
+  border-color: var(--green);
+  text-decoration: none;
+}
+.nav-home { color: var(--text-light); }
+
+/* ── Index Page ── */
+.index-hero {
+  background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 100%);
+  color: white;
+  padding: 3rem 2.5rem;
+  border-radius: var(--radius);
+  margin-bottom: 2.5rem;
+}
+.index-hero h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+.index-hero p  { font-size: 1.05rem; opacity: 0.9; max-width: 600px; }
+.index-hero .hero-meta {
+  margin-top: 1.25rem;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.hero-badge {
+  background: rgba(255,255,255,0.15);
+  padding: 0.35rem 0.85rem;
+  border-radius: 2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+.module-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  transition: all 0.2s;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.module-card:hover {
+  border-color: var(--green-mid);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(26,122,74,0.12);
+  text-decoration: none;
+}
+.card-num {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--green-mid);
+}
+.card-icon { font-size: 1.75rem; line-height: 1; }
+.card-title { font-size: 1rem; font-weight: 700; color: var(--text); }
+.card-desc  { font-size: 0.83rem; color: var(--text-light); }
+.card-files {
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  color: var(--green-mid);
+  font-weight: 600;
+}
+
+.index-footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-light);
+  font-size: 0.875rem;
+  border-top: 1px solid var(--border);
+  margin-top: 2.5rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .menu-toggle { display: block; }
+  .sidebar {
+    position: fixed;
+    top: 56px;
+    left: -100%;
+    height: calc(100vh - 56px);
+    z-index: 200;
+    transition: left 0.25s ease;
+    box-shadow: 4px 0 16px rgba(0,0,0,0.15);
+  }
+  .sidebar.open { left: 0; }
+  .main-content { padding: 1.25rem 1rem; }
+  .module-header h1 { font-size: 1.35rem; }
+  .tab-btn { font-size: 0.8rem; padding: 0.45rem 0.85rem; }
+  .markdown-body { padding: 1.25rem; }
+  .index-hero { padding: 2rem 1.25rem; }
+  .index-hero h1 { font-size: 1.5rem; }
+}
+
+/* ── Print Styles ── */
+@media print {
+  .site-header, .sidebar, .tab-bar, .module-nav, .no-print { display: none !important; }
+  .tab-pane { display: block !important; }
+  #tab-lessons, #tab-notes, #tab-assessment { display: none !important; }
+  #tab-practice { display: block !important; }
+  .main-content { padding: 0; }
+  .markdown-body { border: none; box-shadow: none; padding: 0; }
+  body { background: white; }
+}

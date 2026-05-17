@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 3: Data Types — Python for Beginners</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">🐍 Python for Beginners</a>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar" id="sidebar"><ul class="sidebar-nav"><li><a href="index.html" class="">🏠 Home</a></li><li><a href="module-0.html" class="">⚙️ M0: Setup</a></li><li><a href="module-1.html" class="">📝 M1: Strings</a></li><li><a href="module-2.html" class="">📦 M2: Variables</a></li><li><a href="module-3.html" class="active">🔢 M3: Data Types</a></li><li><a href="module-4.html" class="">➕ M4: Operators</a></li><li><a href="module-5.html" class="">🔀 M5: Control Flow</a></li><li><a href="module-6.html" class="">🔧 M6: Functions</a></li><li><a href="module-7.html" class="">📋 M7: Lists</a></li><li><a href="module-8.html" class="">🛡️ M8: Error Handling</a></li><li><a href="module-9.html" class="">💾 M9: File I/O</a></li><li><a href="module-10.html" class="">🚀 M10: Projects</a></li></ul></aside>
+  <main class="main-content">
+
+    <div class="module-header">
+      <span class="module-icon">🔢</span>
+      <div>
+        <p class="module-label">Module 3</p>
+        <h1>Data Types</h1>
+      </div>
+    </div>
+
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="lessons">📚 Lessons</button>
+      <button class="tab-btn" data-tab="notes">📋 Teacher Notes</button>
+      <button class="tab-btn" data-tab="practice">✏️ Practice Sheet</button>
+      <button class="tab-btn" data-tab="assessment">📊 Assessment</button>
+    </div>
+
+    <div class="tab-panes">
+
+      <div id="tab-lessons" class="tab-pane active">
+        
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 3_1_data_types.py</span>
+        <span class="badge badge-lesson">Lesson</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 3 - Lesson 1: Python Data Types
+# ================================================
+# Learn: int, float, str, bool, None and type()
+# ================================================
+
+# ------------------------------------------------
+# What is a Data Type?
+# ------------------------------------------------
+# Every value in Python has a TYPE.
+# The type tells Python what kind of data it is
+# and what can be done with it.
+
+# ------------------------------------------------
+# Type 1: Integer (int)
+# ------------------------------------------------
+# Whole numbers — no decimal point.
+# Used for counting, ages, quantities.
+
+students = 35
+prayers_per_day = 5
+surahs_in_quran = 114
+pakistan_year = 1947
+
+print(&quot;Students:&quot;, students)
+print(&quot;Daily prayers:&quot;, prayers_per_day)
+print(&quot;Surahs in Quran:&quot;, surahs_in_quran)
+print(&quot;Type:&quot;, type(students))           # &lt;class &#x27;int&#x27;&gt;
+print()
+
+# ------------------------------------------------
+# Type 2: Float (float)
+# ------------------------------------------------
+# Numbers WITH a decimal point.
+# Used for prices, measurements, marks percentage.
+
+price_per_kg = 135.50
+temperature = 38.5
+percentage = 87.5
+zakat_rate = 2.5
+
+print(&quot;Price per kg:&quot;, price_per_kg)
+print(&quot;Temperature:&quot;, temperature, &quot;C&quot;)
+print(&quot;Marks percentage:&quot;, percentage)
+print(&quot;Type:&quot;, type(price_per_kg))       # &lt;class &#x27;float&#x27;&gt;
+print()
+
+# ------------------------------------------------
+# Type 3: String (str)
+# ------------------------------------------------
+# Text inside quotes — anything in &quot; &quot; or &#x27; &#x27;.
+# Used for names, messages, labels.
+
+student_name = &quot;Fatima&quot;
+city = &quot;Lahore&quot;
+greeting = &quot;Assalamu Alaikum&quot;
+surah = &quot;Al-Fatiha&quot;
+
+print(&quot;Name:&quot;, student_name)
+print(&quot;City:&quot;, city)
+print(&quot;Greeting:&quot;, greeting)
+print(&quot;Type:&quot;, type(student_name))       # &lt;class &#x27;str&#x27;&gt;
+print()
+
+# ------------------------------------------------
+# Type 4: Boolean (bool)
+# ------------------------------------------------
+# Only two possible values: True or False
+# Capital T and F — Python is case sensitive!
+
+is_student = True
+has_memorized_quran = False
+is_fasting = True
+
+print(&quot;Is student:&quot;, is_student)
+print(&quot;Has memorized Quran:&quot;, has_memorized_quran)
+print(&quot;Is fasting:&quot;, is_fasting)
+print(&quot;Type:&quot;, type(is_student))         # &lt;class &#x27;bool&#x27;&gt;
+print()
+
+# ------------------------------------------------
+# Type 5: None
+# ------------------------------------------------
+# Represents &quot;nothing&quot; or &quot;no value yet&quot;.
+# Used as a placeholder before data is available.
+
+future_score = None
+print(&quot;Future score:&quot;, future_score)
+print(&quot;Type:&quot;, type(future_score))       # &lt;class &#x27;NoneType&#x27;&gt;
+print()
+
+# ------------------------------------------------
+# type() — check the type of any value
+# ------------------------------------------------
+print(type(42))           # &lt;class &#x27;int&#x27;&gt;
+print(type(3.14))         # &lt;class &#x27;float&#x27;&gt;
+print(type(&quot;Ahmed&quot;))      # &lt;class &#x27;str&#x27;&gt;
+print(type(True))         # &lt;class &#x27;bool&#x27;&gt;
+print(type(None))         # &lt;class &#x27;NoneType&#x27;&gt;
+print()
+
+# ------------------------------------------------
+# Important: &quot;5&quot; is NOT the same as 5
+# ------------------------------------------------
+a = &quot;5&quot;     # string
+b = 5       # integer
+
+print(type(a))    # str
+print(type(b))    # int
+print(a + a)      # 55  (joins text)
+print(b + b)      # 10  (adds numbers)
+print()
+
+# ------------------------------------------------
+# Tip: Underscores make large numbers readable
+# ------------------------------------------------
+population = 220_000_000
+print(&quot;Pakistan population:&quot;, population)
+
+print()
+print(&quot;You now know all 4 main data types. Ma sha Allah!&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 3_2_type_conversion.py</span>
+        <span class="badge badge-lesson">Lesson</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 3 - Lesson 2: Type Conversion
+# ================================================
+# Learn: int(), float(), str() — converting types
+#        The critical skill: int(input())
+# ================================================
+
+# ------------------------------------------------
+# Why do we need Type Conversion?
+# ------------------------------------------------
+# Python does NOT mix types automatically.
+# You cannot add a number and a string directly.
+# Type conversion lets you change one type to another.
+
+# ------------------------------------------------
+# str() — Convert number to string
+# ------------------------------------------------
+# Use when you want to join a number with text using +
+
+age = 15
+print(&quot;I am &quot; + str(age) + &quot; years old.&quot;)
+
+ajza = 18
+print(&quot;Hafiz Ahmed memorized &quot; + str(ajza) + &quot; ajza.&quot;)
+
+year = 1947
+print(&quot;Pakistan was created in &quot; + str(year) + &quot;.&quot;)
+
+print()
+
+# ------------------------------------------------
+# int() — Convert string to integer
+# ------------------------------------------------
+# input() ALWAYS gives back a string.
+# Even if the user types 25, Python sees &quot;25&quot; (text).
+# Wrap with int() to turn it into a real number.
+
+num_str = &quot;25&quot;
+print(&quot;String + 5 =&quot;, num_str + &quot;5&quot;)    # 255  (text joins!)
+print(&quot;Integer + 5 =&quot;, int(num_str) + 5) # 30  (math works!)
+
+print()
+
+# ------------------------------------------------
+# The most important skill: int(input())
+# ------------------------------------------------
+
+num = int(input(&quot;Enter a number: &quot;))
+print(&quot;Your number doubled:&quot;, num * 2)
+print(&quot;Your number squared:&quot;, num ** 2)
+
+print()
+
+# ------------------------------------------------
+# float() — Convert string to decimal number
+# ------------------------------------------------
+
+price_str = &quot;135.50&quot;
+price = float(price_str)
+print(&quot;Price with 10% tax:&quot;, price * 1.1)
+
+print()
+
+# float(input()) for decimal numbers
+marks = float(input(&quot;Enter your marks (e.g. 87.5): &quot;))
+print(&quot;Your marks:&quot;, marks)
+print(&quot;Out of 100, you scored:&quot;, marks, &quot;%&quot;)
+
+print()
+
+# ------------------------------------------------
+# Practical Pakistani examples
+# ------------------------------------------------
+
+price = int(input(&quot;Enter price per item (rupees): &quot;))
+quantity = int(input(&quot;How many items? &quot;))
+total = price * quantity
+print(&quot;Total bill:&quot;, total, &quot;rupees&quot;)
+
+print()
+
+students = int(input(&quot;Total students in class: &quot;))
+absent = int(input(&quot;How many absent today? &quot;))
+present = students - absent
+print(&quot;Present:&quot;, present, &quot;out of&quot;, students)
+
+print()
+
+# ------------------------------------------------
+# float to int — decimal part is CUT (not rounded)
+# ------------------------------------------------
+
+marks = 89.9
+print(&quot;As float:&quot;, marks)
+print(&quot;As int:&quot;, int(marks))    # 89 — NOT 90, decimal is removed
+
+print()
+print(&quot;Type conversion is one of the most useful skills. Well done!&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 3_3_conversion_errors.py</span>
+        <span class="badge badge-lesson">Lesson</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 3 - Lesson 3: Conversion Errors
+# ================================================
+# Learn: What goes wrong with int() and float(),
+#        how to read the error, how to fix it
+# ================================================
+
+# ------------------------------------------------
+# Error 1: Converting text to int — ValueError
+# ------------------------------------------------
+# int() only works on strings that look like whole numbers.
+# If the string has letters or symbols, it fails.
+
+# WRONG:
+# number = int(&quot;abc&quot;)       # ValueError
+# number = int(&quot;12 years&quot;)  # ValueError
+# number = int(&quot;12.5&quot;)      # ValueError — use float() first!
+
+# CORRECT:
+number = int(&quot;123&quot;)
+print(&quot;Correct:&quot;, number)
+
+print()
+
+# ------------------------------------------------
+# Error 2: Mixing int and str — TypeError
+# ------------------------------------------------
+# You cannot use + to join a string and a number.
+
+# WRONG:
+# age = 20
+# print(&quot;You are &quot; + age + &quot; years old.&quot;)   # TypeError
+
+# CORRECT option 1 — use str():
+age = 20
+print(&quot;You are &quot; + str(age) + &quot; years old.&quot;)
+
+# CORRECT option 2 — use comma in print():
+print(&quot;You are&quot;, age, &quot;years old.&quot;)
+
+print()
+
+# ------------------------------------------------
+# Error 3: Converting &quot;12.5&quot; to int directly — ValueError
+# ------------------------------------------------
+# &quot;12.5&quot; is a float string. int() cannot handle it.
+# Solution: convert to float first, then to int.
+
+# WRONG:
+# x = int(&quot;45.6&quot;)           # ValueError
+
+# CORRECT — two steps:
+float_val = float(&quot;45.6&quot;)
+int_val = int(float_val)
+print(&quot;Float string to int:&quot;, int_val)   # 45
+
+print()
+
+# ------------------------------------------------
+# Error 4: Forgetting to convert input() — TypeError
+# ------------------------------------------------
+# This is the most common beginner mistake!
+
+# WRONG:
+# num = input(&quot;Enter a number: &quot;)
+# print(num + 5)             # TypeError — &quot;5&quot; + 5 fails
+
+# CORRECT:
+num = int(input(&quot;Enter a number: &quot;))
+print(&quot;Your number + 5 =&quot;, num + 5)
+
+print()
+
+# ------------------------------------------------
+# Error 5: Empty string to int — ValueError
+# ------------------------------------------------
+# If user presses Enter without typing, input() gives &quot;&quot;.
+# int(&quot;&quot;) causes a ValueError.
+
+# For now: just make sure students type a number.
+# We will handle this safely in Module 8 (Error Handling).
+
+# ------------------------------------------------
+# Summary: Common Conversion Rules
+# ------------------------------------------------
+print(&quot;--- Conversion Rules ---&quot;)
+print(int(&quot;25&quot;))          # 25    works
+print(float(&quot;25.5&quot;))      # 25.5  works
+print(str(100))           # 100   works
+print(int(float(&quot;25.5&quot;))) # 25    works (two steps)
+
+print()
+print(&quot;Remember: when in doubt, check the type with type()&quot;)
+x = input(&quot;Type anything: &quot;)
+print(&quot;You typed:&quot;, x)
+print(&quot;Its type is:&quot;, type(x))    # always str from input()
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 3_4_f_strings.py</span>
+        <span class="badge badge-lesson">Lesson</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 3 - Lesson 4: f-strings
+# ================================================
+# Learn: A cleaner way to combine variables with text
+# ================================================
+
+# ------------------------------------------------
+# What is an f-string?
+# ------------------------------------------------
+# An f-string starts with f before the opening quote.
+# You put variable names inside { } curly brackets.
+# Python replaces {variable} with its actual value.
+# Much cleaner than using + and str() everywhere!
+
+# ------------------------------------------------
+# Basic Comparison: + method vs f-string
+# ------------------------------------------------
+
+name = &quot;Ahmed&quot;
+age = 15
+
+# Old way using + (requires str() for numbers):
+print(&quot;My name is &quot; + name + &quot; and I am &quot; + str(age) + &quot; years old.&quot;)
+
+# New way using f-string (cleaner!):
+print(f&quot;My name is {name} and I am {age} years old.&quot;)
+
+print()
+
+# ------------------------------------------------
+# f-string Examples — Islamic Context
+# ------------------------------------------------
+
+student = &quot;Hafiz Usman&quot;
+ajza = 18
+print(f&quot;{student} has memorized {ajza} ajza of the Quran.&quot;)
+
+surah = &quot;Al-Fatiha&quot;
+verses = 7
+print(f&quot;Surah {surah} has {verses} verses.&quot;)
+
+prayers = 5
+print(f&quot;A Muslim prays {prayers} times every day.&quot;)
+
+print()
+
+# ------------------------------------------------
+# f-string Examples — Pakistani Context
+# ------------------------------------------------
+
+city = &quot;Lahore&quot;
+population = 13_000_000
+print(f&quot;{city} has a population of about {population}.&quot;)
+
+item = &quot;rice&quot;
+price = 180
+kg = 5
+print(f&quot;{kg} kg of {item} costs {price * kg} rupees.&quot;)
+
+team = &quot;Pakistan&quot;
+score = 320
+print(f&quot;{team} scored {score} runs in the match.&quot;)
+
+print()
+
+# ------------------------------------------------
+# f-strings can do calculations inside {}
+# ------------------------------------------------
+
+marks = 85
+total = 100
+print(f&quot;Marks: {marks} out of {total}&quot;)
+print(f&quot;Percentage: {marks / total * 100}%&quot;)
+
+tasbeeh = 33
+print(f&quot;Total tasbeeh in 5 prayers: {tasbeeh * 5}&quot;)
+
+print()
+
+# ------------------------------------------------
+# f-strings with input()
+# ------------------------------------------------
+
+your_name = input(&quot;Enter your name: &quot;)
+your_city = input(&quot;Enter your city: &quot;)
+print(f&quot;Assalamu Alaikum {your_name}! Welcome from {your_city}.&quot;)
+
+print()
+
+school = input(&quot;Your school/madrasa name: &quot;)
+teacher = input(&quot;Your teacher&#x27;s name: &quot;)
+print(f&quot;You study at {school} under {teacher}. May Allah bless you both!&quot;)
+
+print()
+
+# ------------------------------------------------
+# f-string vs + — when to use which
+# ------------------------------------------------
+# Use f-string when:  mixing text with variables or calculations
+# Use + when:         simple joining of two strings only
+
+# Both are correct — f-string is just cleaner for complex output
+
+print()
+print(&quot;f-strings make your code much easier to read. Excellent!&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 3_5_quiz.py</span>
+        <span class="badge badge-quiz">Quiz</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 3 - Quiz: Data Types &amp; Type Conversion
+# ================================================
+# Covers: int, float, str, bool, type(),
+#         int(), float(), str(), f-strings
+# Difficulty: Easy / Medium / Complex
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;MODULE 3 QUIZ - Data Types &amp; Type Conversion&quot;)
+print(&quot;=&quot; * 50)
+print()
+
+# ------------------------------------------------
+# EASY
+# ------------------------------------------------
+print(&quot;--- EASY ---&quot;)
+print()
+
+# Q1. What is the data type of each value below?
+#     Write a print(type(...)) for each one.
+#     a) 42
+#     b) 3.14
+#     c) &quot;Lahore&quot;
+#     d) True
+
+
+# Q2. Create these three variables and print each with its type:
+#     student_count = 40       (integer)
+#     price = 99.5             (float)
+#     city = &quot;Karachi&quot;         (string)
+
+
+# Q3. Convert the string &quot;786&quot; to an integer and add 14 to it.
+#     Print the result.
+#     Expected output: 800
+
+
+# Q4. Convert the integer 1947 to a string and join it with
+#     &quot;Pakistan was created in &quot; using +
+#     Expected output: Pakistan was created in 1947
+
+
+# Q5. Rewrite this using an f-string:
+#     name = &quot;Fatima&quot;
+#     print(&quot;Welcome &quot; + name + &quot; to Python class!&quot;)
+
+
+# ------------------------------------------------
+# MEDIUM
+# ------------------------------------------------
+print()
+print(&quot;--- MEDIUM ---&quot;)
+print()
+
+# Q6. Ask the user for two numbers using int(input()).
+#     Print their sum, difference, and product.
+
+
+# Q7. Ask the user for their name and marks (as float).
+#     Print this using an f-string:
+#     &quot;Ahmed scored 87.5 marks. Well done!&quot;
+
+
+# Q8. The code below has a TypeError. Identify why and fix it.
+#     prayers = 5
+#     print(&quot;We pray &quot; + prayers + &quot; times a day.&quot;)
+
+
+# Q9. Ask the user for a price (float) and quantity (int).
+#     Calculate total cost and print using an f-string.
+#     Example: &quot;3 items at 45.5 rupees each = 136.5 rupees total&quot;
+
+
+# ------------------------------------------------
+# COMPLEX
+# ------------------------------------------------
+print()
+print(&quot;--- COMPLEX ---&quot;)
+print()
+
+# Q10. Ask the user for:
+#      - Their name
+#      - Their age (int)
+#      - Their marks out of 100 (float)
+#      Calculate what percentage they scored.
+#      Print a full report using f-strings:
+#        Name    : Ahmed
+#        Age     : 15
+#        Marks   : 87.5 / 100
+#        Result  : 87.5%
+
+
+# Q11. Ask the user for the number of students in a class
+#      and the number of absent students.
+#      Calculate:
+#        - present students
+#        - attendance percentage (present / total * 100)
+#      Print all results using f-strings.
+
+
+# Q12. Build a simple shop bill calculator.
+#      Ask for:
+#        - Item name (string)
+#        - Price per kg (float)
+#        - Quantity in kg (float)
+#        - Discount in rupees (int)
+#      Calculate: total = (price * quantity) - discount
+#      Print a formatted receipt using f-strings:
+#        ==============================
+#        SHOP RECEIPT
+#        ==============================
+#        Item      : Rice
+#        Price/kg  : 180.0 rupees
+#        Quantity  : 5.0 kg
+#        Subtotal  : 900.0 rupees
+#        Discount  : 50 rupees
+#        Total     : 850.0 rupees
+#        ==============================
+#        Jazakallah Khair!
+
+
+print()
+print(&quot;Quiz done! Check 3_6_quiz_solution.py for answers.&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 3_6_quiz_solution.py</span>
+        <span class="badge badge-solution">Quiz Solution</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 3 - Quiz Solutions
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;MODULE 3 QUIZ - SOLUTIONS&quot;)
+print(&quot;=&quot; * 50)
+print()
+
+# ------------------------------------------------
+# EASY
+# ------------------------------------------------
+print(&quot;--- EASY ---&quot;)
+print()
+
+# Q1.
+print(type(42))          # int
+print(type(3.14))        # float
+print(type(&quot;Lahore&quot;))    # str
+print(type(True))        # bool
+
+# Q2.
+student_count = 40
+price = 99.5
+city = &quot;Karachi&quot;
+print(student_count, type(student_count))
+print(price, type(price))
+print(city, type(city))
+
+# Q3.
+result = int(&quot;786&quot;) + 14
+print(result)            # 800
+
+# Q4.
+print(&quot;Pakistan was created in &quot; + str(1947))
+
+# Q5.
+name = &quot;Fatima&quot;
+print(f&quot;Welcome {name} to Python class!&quot;)
+
+# ------------------------------------------------
+# MEDIUM
+# ------------------------------------------------
+print()
+print(&quot;--- MEDIUM ---&quot;)
+print()
+
+# Q6.
+a = int(input(&quot;First number: &quot;))
+b = int(input(&quot;Second number: &quot;))
+print(f&quot;Sum        : {a + b}&quot;)
+print(f&quot;Difference : {a - b}&quot;)
+print(f&quot;Product    : {a * b}&quot;)
+
+# Q7.
+name = input(&quot;Your name: &quot;)
+marks = float(input(&quot;Your marks: &quot;))
+print(f&quot;{name} scored {marks} marks. Well done!&quot;)
+
+# Q8. Fix: prayers is int, cannot use + with string
+# WRONG: print(&quot;We pray &quot; + prayers + &quot; times a day.&quot;)
+prayers = 5
+# FIXED option 1:
+print(&quot;We pray &quot; + str(prayers) + &quot; times a day.&quot;)
+# FIXED option 2:
+print(f&quot;We pray {prayers} times a day.&quot;)
+
+# Q9.
+price = float(input(&quot;Price per item (rupees): &quot;))
+qty = int(input(&quot;Quantity: &quot;))
+total = price * qty
+print(f&quot;{qty} items at {price} rupees each = {total} rupees total&quot;)
+
+# ------------------------------------------------
+# COMPLEX
+# ------------------------------------------------
+print()
+print(&quot;--- COMPLEX ---&quot;)
+print()
+
+# Q10.
+name = input(&quot;Your name: &quot;)
+age = int(input(&quot;Your age: &quot;))
+marks = float(input(&quot;Your marks out of 100: &quot;))
+percentage = marks
+print(f&quot;Name    : {name}&quot;)
+print(f&quot;Age     : {age}&quot;)
+print(f&quot;Marks   : {marks} / 100&quot;)
+print(f&quot;Result  : {percentage}%&quot;)
+
+# Q11.
+total = int(input(&quot;Total students: &quot;))
+absent = int(input(&quot;Absent students: &quot;))
+present = total - absent
+attendance = present / total * 100
+print(f&quot;Present           : {present} out of {total}&quot;)
+print(f&quot;Attendance        : {attendance}%&quot;)
+
+# Q12.
+item = input(&quot;Item name: &quot;)
+price = float(input(&quot;Price per kg: &quot;))
+qty = float(input(&quot;Quantity in kg: &quot;))
+discount = int(input(&quot;Discount (rupees): &quot;))
+subtotal = price * qty
+total = subtotal - discount
+print(&quot;==============================&quot;)
+print(&quot;SHOP RECEIPT&quot;)
+print(&quot;==============================&quot;)
+print(f&quot;Item      : {item}&quot;)
+print(f&quot;Price/kg  : {price} rupees&quot;)
+print(f&quot;Quantity  : {qty} kg&quot;)
+print(f&quot;Subtotal  : {subtotal} rupees&quot;)
+print(f&quot;Discount  : {discount} rupees&quot;)
+print(f&quot;Total     : {total} rupees&quot;)
+print(&quot;==============================&quot;)
+print(&quot;Jazakallah Khair!&quot;)
+
+print()
+print(&quot;End of solutions.&quot;)
+</code></pre>
+    </div>
+      </div>
+
+      <div id="tab-notes" class="tab-pane">
+        <div class="markdown-body" id="md-notes"></div>
+        <script type="application/json" id="src-notes">"# Module 3 \u2014 Data Types: Teacher Notes\n\n## Overview\n\n| Item | Detail |\n|------|--------|\n| Module | 3 \u2014 Data Types |\n| Duration | 2 classes |\n| Level | Beginner |\n| Age Group | 10\u201316 years |\n| Language | Urdu (with English terms) |\n\n---\n\n## Learning Objectives\n\nBy the end of this module, students will be able to:\n\n1. Identify the four basic data types: `int`, `float`, `str`, `bool`\n2. Use `type()` to find the data type of any value\n3. Convert between types using `int()`, `float()`, `str()`\n4. Use the `int(input())` pattern to get numbers from users\n5. Write f-strings to display values inside text\n\n---\n\n## Lesson Flow\n\n### Class 1 (55 minutes)\n\n| Time | Activity | File |\n|------|----------|------|\n| 0\u201310 min | Revise variables \u2014 ask students: \"Ahmed ne ek variable banaya `naam = 'Ahmed'`. Yeh kya hai?\" | Revision |\n| 10\u201330 min | Introduce int, float, str, bool with real examples | `3_1_data_types.py` |\n| 30\u201355 min | Type conversion \u2014 int(), float(), str() with examples | `3_2_type_conversion.py` |\n\n### Class 2 (55 minutes)\n\n| Time | Activity | File |\n|------|----------|------|\n| 0\u201320 min | Conversion errors \u2014 what happens when conversion fails | `3_3_conversion_errors.py` |\n| 20\u201345 min | f-strings \u2014 the fill-in-the-blank method | `3_4_f_strings.py` |\n| 45\u201355 min | Quiz | \u2014 |\n\n---\n\n## Key Concepts to Emphasise\n\n### The `int(input())` Pattern\n\n> **This is the most important pattern in this module. Students will use it in EVERY future module.**\n\n```python\n# Wrong \u2014 input() always returns a string!\numar = input(\"Apni umar likhein: \")\nagli_saal = umar + 1  # ERROR!\n\n# Correct \u2014 convert to int first\numar = int(input(\"Apni umar likhein: \"))\nagli_saal = umar + 1  # Works!\nprint(f\"Agli saal aap ki umar hogi: {agli_saal}\")\n```\n\nExplain clearly: `input()` hamesha **string** return karta hai, chahe user number type kare. Math karne ke liye pehle `int()` mein convert karna padta hai.\n\n### The Four Types\n\n```python\nnaam    = \"Ahmed\"      # str   \u2014 text / matn\numar    = 15           # int   \u2014 poora number\nqad     = 5.7          # float \u2014 decimal number\nMuslim  = True         # bool  \u2014 haan ya na (True/False)\n```\n\n---\n\n## Common Mistakes\n\n| Mistake | What Happens | Correction |\n|---------|-------------|------------|\n| `int(\"Ahmed\")` | `ValueError` crash | Only convert numeric strings like `int(\"25\")` |\n| Forgetting `int()` with `input()` | Wrong result or crash when doing math | Always use `int(input(...))` for numbers |\n| f-string without `f` prefix | Curly braces print literally | Write `f\"...\"` not `\"...\"` |\n| `str + int` | `TypeError` | Convert both to same type first |\n\n---\n\n## Urdu Teaching Tips\n\nUse these Urdu explanations on the whiteboard:\n\n- **int** \u2014 \"int matlab poora number \u2014 jaise 5, 100, -3. Decimal nahin hota.\"\n- **float** \u2014 \"float matlab decimal wala number \u2014 jaise 5.7, 3.14, 99.9.\"\n- **str** \u2014 \"str matlab text \u2014 jo bhi quotes mein likha ho woh string hai.\"\n- **bool** \u2014 \"bool matlab sirf do jawab \u2014 ya True (haan) ya False (na).\"\n- **f-string** \u2014 \"f-string matlab fill-in-the-blank \u2014 curly brackets mein variable ka naam likhein aur Python khud woh value daal deta hai.\"\n\n---\n\n## Classroom Activity Ideas\n\n**Activity 1 \u2014 Type Detective:**\nWrite values on the board. Students call out the data type.\n- `\"Lahore\"` \u2192 str\n- `42` \u2192 int\n- `3.14` \u2192 float\n- `False` \u2192 bool\n\n**Activity 2 \u2014 Fix the Bug:**\nShow broken code. Students find and fix the problem.\n```python\n# Fix karo:\nmarks = input(\"Marks likhein: \")\ntotal = marks + 50\nprint(total)\n```\n\n**Activity 3 \u2014 f-string Story:**\nStudents write one sentence about themselves using an f-string.\n```python\nnaam = \"Fatima\"\ncity = \"Karachi\"\nprint(f\"Mera naam {naam} hai aur main {city} mein rehti hoon.\")\n```\n\n---\n\n## Module Files\n\n| File | Topic |\n|------|-------|\n| `3_1_data_types.py` | int, float, str, bool \u2014 introduction |\n| `3_2_type_conversion.py` | int(), float(), str() conversion |\n| `3_3_conversion_errors.py` | What goes wrong with bad conversions |\n| `3_4_f_strings.py` | f-strings \u2014 formatting output |\n| `3_5_practice.py` | Combined practice |\n| `3_6_quiz.py` | Module quiz |\n\n---\n\n## Next Module Preview\n\nModule 4 (Operators) builds directly on this module. Students must know:\n- The difference between `int` and `float`\n- The `int(input())` pattern\n\nMake sure every student can write `int(input())` confidently before moving on.\n"</script>
+      </div>
+
+      <div id="tab-practice" class="tab-pane">
+        <div class="markdown-body print-friendly" id="md-practice"></div>
+        <script type="application/json" id="src-practice">"# Module 3 \u2014 Data Types: Practice Sheet\n\n**Naam (Name): ___________________________**\n**Taareekh (Date): ________________________**\n**Class: _________________________________**\n\n---\n\nBismillah ir-Rahman ir-Raheem\n\nYeh practice sheet Module 3 ke liye hai. Har sawaal ko dhyan se parho aur jawab likhein.\n\n---\n\n## Section A \u2014 Short Answer (Mukhtasar Jawabaat)\n\n**Q1.** `type(3.14)` kya return karega? Circle the correct answer.\n\n```\na) <class 'int'>\nb) <class 'float'>\nc) <class 'str'>\nd) <class 'bool'>\n```\n\n**Jawab: _______________**\n\n---\n\n**Q2.** Neeche wala code galat hai. Galti dhoondho aur theek karo.\n\n```python\n# Galat code:\nage = int(\"Ahmed\")\nprint(age)\n```\n\n**Galti kya hai?**\n\n```\n_____________________________________________\n_____________________________________________\n```\n\n**Theek code likhein:**\n\n```python\n# Sahi code:\nage = ___________________________________\n```\n\n---\n\n**Q3.** Agar `name = \"Ahmed\"` ho, toh neeche wali f-string ka output kya hoga?\n\n```python\nprint(f\"Assalamu Alaikum {name}\")\n```\n\n**Output: _______________________________________________**\n\n---\n\n**Q4.** User se umar poochho aur use integer ke tor par store karo. Code likhein:\n\n```python\n# Yahan apna code likhein:\numar = ___________________________________\n```\n\n---\n\n**Q5.** Neeche wala calculation kya result dega?\n\n```python\nresult = int(\"25\") + int(\"10\")\nprint(result)\n```\n\n**Result: _______________**\n\n---\n\n**Q6.** `99` ko string mein convert karo `str()` use karke:\n\n```python\nnumber = 99\ntext = ___________________________________\nprint(type(text))  # <class 'str'> aana chahiye\n```\n\n---\n\n## Section B \u2014 Writing Code (Code Likhna)\n\n**Q7.** Ek f-string likhein jo yeh print kare:\n> **Ahmed is 15 years old**\n\n```python\nnaam = \"Ahmed\"\numar = 15\n\nprint(  ________________________________  )\n```\n\n---\n\n**Q8.** Samjhao \u2014 `int(input())` kyun use karte hain jab user se number lena ho? (Apni zaban mein likhein)\n\n```\n_____________________________________________\n_____________________________________________\n_____________________________________________\n```\n\n---\n\n## Section C \u2014 Fix the Bug (Galti Theek Karo)\n\n**Q9.** Neeche ke code mein kya galat hai? Theek karo.\n\n```python\n# Galat:\nnaam = \"Fatima\"\ncity = \"Lahore\"\nprint(\"Main {naam} hoon aur {city} mein rehti hoon.\")\n```\n\n**Galti: _______________________________________________**\n\n**Sahi code:**\n\n```python\nprint(  ________________________________  )\n```\n\n---\n\n**Q10.** Yeh code crash karta hai. Kyun? Aur kaise theek karein?\n\n```python\nsaal = input(\"Paidaishi saal likhein: \")\numar = 2026 - saal\nprint(umar)\n```\n\n**Kyun crash hota hai:**\n\n```\n_____________________________________________\n```\n\n**Theek code:**\n\n```python\nsaal = ___________________________________\numar = 2026 - saal\nprint(f\"Aap ki umar hai: {umar}\")\n```\n\n---\n\n## Challenge \u2014 Mushkil Sawaal\n\nAhmed, Hassan, aur Zainab ne ek program banana chaha jo do numbers user se le aur unka total print kare. Pura program likhein:\n\n**Requirements:**\n- User se pehla number lo (integer)\n- User se doosra number lo (integer)\n- Dono numbers add karo\n- Result f-string se print karo\n- Example output: `Ahmed ki calculation: 25 + 10 = 35`\n\n```python\n# Apna program yahan likhein:\n\n\n\n\n```\n\n---\n\n## Answer Key (Sirf Teacher ke liye)\n\n| Sawaal | Jawab |\n|--------|-------|\n| Q1 | `b) <class 'float'>` |\n| Q2 | `int(\"Ahmed\")` galat hai \u2014 sirf numeric strings convert ho sakti hain. `age = int(\"15\")` ya `age = int(input(...))` |\n| Q3 | `Assalamu Alaikum Ahmed` |\n| Q4 | `umar = int(input(\"Apni umar likhein: \"))` |\n| Q5 | `35` |\n| Q6 | `text = str(99)` |\n| Q7 | `print(f\"{naam} is {umar} years old\")` |\n| Q8 | Kyunki `input()` hamesha string return karta hai, math ke liye `int()` mein convert karna zaroori hai |\n| Q9 | `f` prefix missing hai. Sahi: `print(f\"Main {naam} hoon aur {city} mein rehti hoon.\")` |\n| Q10 | `saal` string hai, integer se subtract nahin ho sakta. `saal = int(input(...))` |\n| Challenge | `n1 = int(input(...))`, `n2 = int(input(...))`, `print(f\"... {n1} + {n2} = {n1+n2}\")` |\n"</script>
+        <button class="print-btn no-print" onclick="window.print()">🖨️ Print Practice Sheet</button>
+      </div>
+
+      <div id="tab-assessment" class="tab-pane">
+        <div class="markdown-body" id="md-assessment"></div>
+        <script type="application/json" id="src-assessment">"# Module 3 \u2014 Data Types: Assessment Guide\n\n## Pass Criteria\n\nA student passes Module 3 if they can do ALL of the following:\n\n- [ ] Use `type()` to find the type of a value\n- [ ] Convert a string to an integer using `int()`\n- [ ] Use the `int(input())` pattern correctly\n- [ ] Write a working f-string that includes a variable\n\n---\n\n## Oral Questions\n\nAsk these questions one-on-one or to the class. Look for confident, correct answers.\n\n| Question | Expected Answer |\n|----------|----------------|\n| `type(5)` kya return karega? | `<class 'int'>` |\n| `type(3.14)` kya return karega? | `<class 'float'>` |\n| `int(\"25\")` ka result kya hoga? | `25` (as integer) |\n| `int(\"Ahmed\")` kya hoga? | Error \u2014 ValueError |\n| Agar name = \"Hassan\" ho, toh f-string kaise likhein? | `f\"Mera naam {name} hai\"` |\n| `input()` hamesha konsa type return karta hai? | String (`str`) |\n| Math karne ke liye input ko kaise convert karein? | `int(input(...))` |\n\n---\n\n## Quiz Marking Scheme\n\n**Total Marks: 17**\n\n| Section | Questions | Marks Each | Total |\n|---------|-----------|-----------|-------|\n| Easy | 5 questions | 1 mark | 5 marks |\n| Medium | 3 questions | 2 marks | 6 marks |\n| Complex | 2 questions | 3 marks | 6 marks |\n\n### Grade Scale\n\n| Marks | Grade | Message |\n|-------|-------|---------|\n| 15\u201317 | A+ | Masha'Allah! Bohat acha kiya! |\n| 12\u201314 | A | Bohat achha! Thodi aur mehnat karo. |\n| 9\u201311 | B | Theek hai \u2014 practice jari rakho. |\n| 6\u20138 | C | Dobara review karo aur teacher se poocho. |\n| 0\u20135 | Needs Support | Teacher se milein \u2014 extra help chahiye. |\n\n---\n\n## Practical Assessment\n\n### Task Description\n\nStudents write a complete program that does the following:\n\n1. Asks the user for their **name**\n2. Asks the user for their **birth year** (as integer)\n3. Calculates their **age** (current year is 2026)\n4. Prints the result using an **f-string**\n\n### Sample Solution\n\n```python\n# Module 3 Practical \u2014 Umar Calculator\nnaam = input(\"Apna naam likhein: \")\npaidaishi_saal = int(input(\"Apna paidaishi saal likhein: \"))\n\numar = 2026 - paidaishi_saal\n\nprint(f\"Assalamu Alaikum {naam}!\")\nprint(f\"Aap ki umar takriban {umar} saal hai.\")\n```\n\n### Sample Output\n\n```\nApna naam likhein: Zainab\nApna paidaishi saal likhein: 2012\nAssalamu Alaikum Zainab!\nAap ki umar takriban 14 saal hai.\n```\n\n### Marking Rubric\n\n| Criterion | Marks |\n|-----------|-------|\n| `input()` used correctly for name | 1 |\n| `int(input())` used for birth year | 2 |\n| Age calculated correctly | 2 |\n| f-string used for output | 2 |\n| Program runs without errors | 1 |\n| Correct output displayed | 2 |\n| **Total** | **10** |\n\n---\n\n## Remediation\n\nIf a student struggles, focus on these specific areas:\n\n**Cannot use `type()`:**\nShow them: `print(type(42))` and `print(type(\"Ahmed\"))` side by side.\n\n**Forgets `int()` with `input()`:**\nAsk: \"Agar Ahmed ne 5 type kiya, toh kya Python ko pata hai yeh number hai?\" Answer: No \u2014 it sees `\"5\"` (a string). So we wrap it: `int(input(...))`.\n\n**f-string problems:**\nCheck: Is the `f` before the opening quote? Are curly braces `{}` used (not round brackets)?\n\n---\n\n## Notes for Teacher\n\n- The `int(input())` pattern is the single most important thing in this module.\n- Do not rush past it \u2014 spend extra time if needed.\n- Every future module (calculators, games, etc.) depends on this pattern.\n- If a student cannot do the practical, they should review Module 3 before proceeding.\n"</script>
+      </div>
+
+    </div>
+
+    <div class="module-nav">
+      <a href="module-2.html" class="nav-btn">← Module 2</a>
+      <a href="index.html" class="nav-btn nav-home">🏠 All Modules</a>
+      <a href="module-4.html" class="nav-btn">Module 4 →</a>
+    </div>
+
+  </main>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

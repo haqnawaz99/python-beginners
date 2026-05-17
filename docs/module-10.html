@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 10: Projects — Python for Beginners</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">🐍 Python for Beginners</a>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar" id="sidebar"><ul class="sidebar-nav"><li><a href="index.html" class="">🏠 Home</a></li><li><a href="module-0.html" class="">⚙️ M0: Setup</a></li><li><a href="module-1.html" class="">📝 M1: Strings</a></li><li><a href="module-2.html" class="">📦 M2: Variables</a></li><li><a href="module-3.html" class="">🔢 M3: Data Types</a></li><li><a href="module-4.html" class="">➕ M4: Operators</a></li><li><a href="module-5.html" class="">🔀 M5: Control Flow</a></li><li><a href="module-6.html" class="">🔧 M6: Functions</a></li><li><a href="module-7.html" class="">📋 M7: Lists</a></li><li><a href="module-8.html" class="">🛡️ M8: Error Handling</a></li><li><a href="module-9.html" class="">💾 M9: File I/O</a></li><li><a href="module-10.html" class="active">🚀 M10: Projects</a></li></ul></aside>
+  <main class="main-content">
+
+    <div class="module-header">
+      <span class="module-icon">🚀</span>
+      <div>
+        <p class="module-label">Module 10</p>
+        <h1>Projects</h1>
+      </div>
+    </div>
+
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="lessons">📚 Lessons</button>
+      <button class="tab-btn" data-tab="notes">📋 Teacher Notes</button>
+      <button class="tab-btn" data-tab="practice">✏️ Practice Sheet</button>
+      <button class="tab-btn" data-tab="assessment">📊 Assessment</button>
+    </div>
+
+    <div class="tab-panes">
+
+      <div id="tab-lessons" class="tab-pane active">
+        
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 10_1_report_card_starter.py</span>
+        <span class="badge badge-starter">Project Starter</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 10 - Capstone Project 1
+# STUDENT REPORT CARD SYSTEM — STARTER FILE
+# ================================================
+# Give this file to students.
+# Full solution: 10_1_report_card_system.py
+# ================================================
+# Skills: variables, lists, dictionaries,
+#   functions, loops, if-else, f-strings,
+#   file I/O, error handling, input validation
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;   STUDENT REPORT CARD SYSTEM&quot;)
+print(&quot;=&quot; * 50)
+
+import os
+
+RECORDS_FILE = &quot;report_cards.txt&quot;
+SUBJECTS = [&quot;Quran&quot;, &quot;Hadith&quot;, &quot;Fiqh&quot;, &quot;Arabic&quot;, &quot;Seerah&quot;]
+PASSING_MARKS = 50
+
+# ------------------------------------------------
+# Helper Functions — already done for you
+# ------------------------------------------------
+
+def get_integer_in_range(prompt, minimum, maximum):
+    while True:
+        try:
+            value = int(input(prompt))
+            if minimum &lt;= value &lt;= maximum:
+                return value
+            print(f&quot;  Enter a number between {minimum} and {maximum}.&quot;)
+        except ValueError:
+            print(&quot;  Invalid! Enter a whole number.&quot;)
+
+def get_non_empty(prompt):
+    while True:
+        value = input(prompt).strip().title()
+        if value:
+            return value
+        print(&quot;  Cannot be empty.&quot;)
+
+# ------------------------------------------------
+# TODO 1: Write get_grade(marks) function
+# Returns: &quot;A+&quot; if marks &gt;= 90
+#          &quot;A&quot;  if marks &gt;= 80
+#          &quot;B&quot;  if marks &gt;= 70
+#          &quot;C&quot;  if marks &gt;= 60
+#          &quot;D&quot;  if marks &gt;= 50
+#          &quot;Fail&quot; otherwise
+# ------------------------------------------------
+
+def get_grade(marks):
+    pass  # replace with your code
+
+
+# ------------------------------------------------
+# TODO 2: Write calculate_average(marks_list)
+# Returns the average of all numbers in the list
+# Hint: use sum() and len()
+# ------------------------------------------------
+
+def calculate_average(marks_list):
+    pass  # replace with your code
+
+
+# ------------------------------------------------
+# TODO 3: Complete add_student()
+# Steps:
+#   1. Get student name using get_non_empty()
+#   2. Loop through SUBJECTS and get marks (0-100) for each
+#   3. Calculate average using calculate_average()
+#   4. Get grade using get_grade()
+#   5. Save to RECORDS_FILE as: name|marks1,marks2,...|avg|grade
+#   6. Print confirmation
+# ------------------------------------------------
+
+def add_student():
+    print(&quot;\n--- Add New Student ---&quot;)
+    pass  # replace with your code
+
+
+# ------------------------------------------------
+# TODO 4: Complete view_all_students()
+# Steps:
+#   1. Check if RECORDS_FILE exists (os.path.exists)
+#   2. Read all lines from the file
+#   3. Print a table with Name, Average, Grade, Pass/Fail
+# ------------------------------------------------
+
+def view_all_students():
+    print(&quot;\n--- All Students ---&quot;)
+    pass  # replace with your code
+
+
+# ------------------------------------------------
+# TODO 5: Complete view_student_detail()
+# Steps:
+#   1. Ask for student name (search)
+#   2. Find the student in the file
+#   3. Print each subject with marks, grade, pass/fail
+#   4. Print average and overall result
+# ------------------------------------------------
+
+def view_student_detail():
+    print(&quot;\n--- Student Detail ---&quot;)
+    pass  # replace with your code
+
+
+# ------------------------------------------------
+# TODO 6: Complete show_class_summary()
+# Steps:
+#   1. Read all averages from the file
+#   2. Print: total students, class average, highest, lowest, pass count
+# ------------------------------------------------
+
+def show_class_summary():
+    print(&quot;\n--- Class Summary ---&quot;)
+    pass  # replace with your code
+
+
+# ------------------------------------------------
+# Main Menu — already done for you
+# ------------------------------------------------
+
+def show_menu():
+    print(&quot;\n&quot; + &quot;=&quot; * 30)
+    print(&quot;  REPORT CARD SYSTEM MENU&quot;)
+    print(&quot;=&quot; * 30)
+    print(&quot;  1. Add student&quot;)
+    print(&quot;  2. View all students&quot;)
+    print(&quot;  3. View student detail&quot;)
+    print(&quot;  4. Class summary&quot;)
+    print(&quot;  5. Exit&quot;)
+    print(&quot;=&quot; * 30)
+
+while True:
+    show_menu()
+    choice = get_integer_in_range(&quot;Choice (1-5): &quot;, 1, 5)
+    if choice == 1:
+        add_student()
+    elif choice == 2:
+        view_all_students()
+    elif choice == 3:
+        view_student_detail()
+    elif choice == 4:
+        show_class_summary()
+    elif choice == 5:
+        print(&quot;\nAssalamu Alaikum! Goodbye.&quot;)
+        break
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 10_1_report_card_system.py</span>
+        <span class="badge badge-lesson">Lesson</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 10 - Capstone Project 1
+# STUDENT REPORT CARD SYSTEM
+# ================================================
+# Skills used: variables, data types, lists,
+#   dictionaries, functions, loops, if-else,
+#   f-strings, file I/O, error handling
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;   STUDENT REPORT CARD SYSTEM&quot;)
+print(&quot;=&quot; * 50)
+
+import os
+
+RECORDS_FILE = &quot;report_cards.txt&quot;
+SUBJECTS = [&quot;Quran&quot;, &quot;Hadith&quot;, &quot;Fiqh&quot;, &quot;Arabic&quot;, &quot;Seerah&quot;]
+PASSING_MARKS = 50
+
+# ------------------------------------------------
+# Helper Functions
+# ------------------------------------------------
+
+def get_integer_in_range(prompt, minimum, maximum):
+    while True:
+        try:
+            value = int(input(prompt))
+            if minimum &lt;= value &lt;= maximum:
+                return value
+            print(f&quot;  Enter a number between {minimum} and {maximum}.&quot;)
+        except ValueError:
+            print(&quot;  Invalid! Enter a whole number.&quot;)
+
+def get_non_empty(prompt):
+    while True:
+        value = input(prompt).strip().title()
+        if value:
+            return value
+        print(&quot;  Cannot be empty.&quot;)
+
+def get_grade(marks):
+    if marks &gt;= 90: return &quot;A+&quot;
+    elif marks &gt;= 80: return &quot;A&quot;
+    elif marks &gt;= 70: return &quot;B&quot;
+    elif marks &gt;= 60: return &quot;C&quot;
+    elif marks &gt;= 50: return &quot;D&quot;
+    else: return &quot;Fail&quot;
+
+def calculate_average(marks_list):
+    return sum(marks_list) / len(marks_list)
+
+# ------------------------------------------------
+# Core Features
+# ------------------------------------------------
+
+def add_student():
+    print(&quot;\n--- Add New Student ---&quot;)
+    name = get_non_empty(&quot;Student name: &quot;)
+    marks_list = []
+    for subject in SUBJECTS:
+        m = get_integer_in_range(f&quot;  {subject} (0-100): &quot;, 0, 100)
+        marks_list.append(m)
+
+    avg = calculate_average(marks_list)
+    grade = get_grade(avg)
+
+    # Save to file
+    with open(RECORDS_FILE, &quot;a&quot;) as f:
+        marks_str = &quot;,&quot;.join(str(m) for m in marks_list)
+        f.write(f&quot;{name}|{marks_str}|{avg:.1f}|{grade}\n&quot;)
+
+    print(f&quot;\n  {name} saved. Average: {avg:.1f}  Grade: {grade}&quot;)
+
+def view_all_students():
+    print(&quot;\n--- All Students ---&quot;)
+    if not os.path.exists(RECORDS_FILE):
+        print(&quot;No records yet.&quot;)
+        return
+
+    with open(RECORDS_FILE, &quot;r&quot;) as f:
+        lines = [l.strip() for l in f if l.strip()]
+
+    if not lines:
+        print(&quot;No records yet.&quot;)
+        return
+
+    print(f&quot;\n{&#x27;Name&#x27;:&lt;20} {&#x27;Avg&#x27;:&gt;6} {&#x27;Grade&#x27;:&lt;6} {&#x27;Result&#x27;}&quot;)
+    print(&quot;-&quot; * 45)
+    for line in lines:
+        parts = line.split(&quot;|&quot;)
+        name, avg, grade = parts[0], parts[2], parts[3]
+        result = &quot;Pass&quot; if float(avg) &gt;= PASSING_MARKS else &quot;Fail&quot;
+        print(f&quot;{name:&lt;20} {avg:&gt;6} {grade:&lt;6} {result}&quot;)
+
+    print(f&quot;\nTotal students: {len(lines)}&quot;)
+
+def view_student_detail():
+    print(&quot;\n--- Student Detail ---&quot;)
+    search = get_non_empty(&quot;Enter student name: &quot;)
+
+    if not os.path.exists(RECORDS_FILE):
+        print(&quot;No records found.&quot;)
+        return
+
+    found = False
+    with open(RECORDS_FILE, &quot;r&quot;) as f:
+        for line in f:
+            parts = line.strip().split(&quot;|&quot;)
+            if parts[0].lower() == search.lower():
+                found = True
+                name = parts[0]
+                marks_list = [int(m) for m in parts[1].split(&quot;,&quot;)]
+                avg = float(parts[2])
+                grade = parts[3]
+
+                print(&quot;\n&quot; + &quot;=&quot; * 40)
+                print(f&quot;  REPORT CARD: {name}&quot;)
+                print(&quot;=&quot; * 40)
+                for i, subject in enumerate(SUBJECTS):
+                    g = get_grade(marks_list[i])
+                    result = &quot;Pass&quot; if marks_list[i] &gt;= PASSING_MARKS else &quot;Fail&quot;
+                    print(f&quot;  {subject:&lt;12}: {marks_list[i]:&gt;3}  {g}  {result}&quot;)
+                print(&quot;-&quot; * 40)
+                print(f&quot;  {&#x27;Average&#x27;:&lt;12}: {avg:.1f}&quot;)
+                print(f&quot;  {&#x27;Grade&#x27;:&lt;12}: {grade}&quot;)
+                print(f&quot;  {&#x27;Result&#x27;:&lt;12}: {&#x27;Pass&#x27; if avg &gt;= PASSING_MARKS else &#x27;FAIL&#x27;}&quot;)
+                print(&quot;=&quot; * 40)
+                break
+
+    if not found:
+        print(f&quot;&#x27;{search}&#x27; not found in records.&quot;)
+
+def show_class_summary():
+    print(&quot;\n--- Class Summary ---&quot;)
+    if not os.path.exists(RECORDS_FILE):
+        print(&quot;No records yet.&quot;)
+        return
+
+    averages = []
+    with open(RECORDS_FILE, &quot;r&quot;) as f:
+        for line in f:
+            parts = line.strip().split(&quot;|&quot;)
+            if len(parts) &gt;= 3:
+                averages.append(float(parts[2]))
+
+    if not averages:
+        print(&quot;No data.&quot;)
+        return
+
+    passed = sum(1 for a in averages if a &gt;= PASSING_MARKS)
+    print(f&quot;Total students : {len(averages)}&quot;)
+    print(f&quot;Class average  : {sum(averages)/len(averages):.1f}&quot;)
+    print(f&quot;Highest average: {max(averages):.1f}&quot;)
+    print(f&quot;Lowest average : {min(averages):.1f}&quot;)
+    print(f&quot;Passed         : {passed}/{len(averages)}&quot;)
+
+# ------------------------------------------------
+# Main Menu
+# ------------------------------------------------
+
+def show_menu():
+    print(&quot;\n&quot; + &quot;=&quot; * 30)
+    print(&quot;  REPORT CARD SYSTEM MENU&quot;)
+    print(&quot;=&quot; * 30)
+    print(&quot;  1. Add student&quot;)
+    print(&quot;  2. View all students&quot;)
+    print(&quot;  3. View student detail&quot;)
+    print(&quot;  4. Class summary&quot;)
+    print(&quot;  5. Exit&quot;)
+    print(&quot;=&quot; * 30)
+
+while True:
+    show_menu()
+    choice = get_integer_in_range(&quot;Choice (1-5): &quot;, 1, 5)
+    if choice == 1:
+        add_student()
+    elif choice == 2:
+        view_all_students()
+    elif choice == 3:
+        view_student_detail()
+    elif choice == 4:
+        show_class_summary()
+    elif choice == 5:
+        print(&quot;\nAssalamu Alaikum! Goodbye.&quot;)
+        break
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 10_2_prayer_reminder.py</span>
+        <span class="badge badge-lesson">Lesson</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 10 - Capstone Project 2
+# PRAYER TIME REMINDER CLI APP
+# ================================================
+# Skills used: dictionaries, lists, functions,
+#   loops, if-else, f-strings, file I/O,
+#   error handling, input validation
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;   PRAYER TIME REMINDER APP&quot;)
+print(&quot;=&quot; * 50)
+
+import os
+
+LOG_FILE = &quot;prayer_log.txt&quot;
+
+PRAYER_SCHEDULE = {
+    &quot;Fajr&quot;   : {&quot;time&quot;: &quot;05:00&quot;, &quot;rakaat&quot;: 2},
+    &quot;Dhuhr&quot;  : {&quot;time&quot;: &quot;13:00&quot;, &quot;rakaat&quot;: 4},
+    &quot;Asr&quot;    : {&quot;time&quot;: &quot;16:30&quot;, &quot;rakaat&quot;: 4},
+    &quot;Maghrib&quot;: {&quot;time&quot;: &quot;19:00&quot;, &quot;rakaat&quot;: 3},
+    &quot;Isha&quot;   : {&quot;time&quot;: &quot;21:00&quot;, &quot;rakaat&quot;: 4},
+}
+
+# ------------------------------------------------
+# Helper Functions
+# ------------------------------------------------
+
+def get_integer_in_range(prompt, minimum, maximum):
+    while True:
+        try:
+            value = int(input(prompt))
+            if minimum &lt;= value &lt;= maximum:
+                return value
+            print(f&quot;  Enter between {minimum} and {maximum}.&quot;)
+        except ValueError:
+            print(&quot;  Invalid! Enter a whole number.&quot;)
+
+def get_yes_no(prompt):
+    while True:
+        ans = input(prompt).strip().lower()
+        if ans in (&quot;yes&quot;, &quot;no&quot;, &quot;y&quot;, &quot;n&quot;):
+            return ans in (&quot;yes&quot;, &quot;y&quot;)
+        print(&quot;  Please enter yes or no.&quot;)
+
+# ------------------------------------------------
+# Feature 1: View today&#x27;s prayer schedule
+# ------------------------------------------------
+
+def show_schedule():
+    print(&quot;\n--- Today&#x27;s Prayer Schedule ---&quot;)
+    print(f&quot;{&#x27;Prayer&#x27;:&lt;10} {&#x27;Time&#x27;:&lt;10} {&#x27;Rakaat&#x27;}&quot;)
+    print(&quot;-&quot; * 30)
+    for prayer, info in PRAYER_SCHEDULE.items():
+        print(f&quot;{prayer:&lt;10} {info[&#x27;time&#x27;]:&lt;10} {info[&#x27;rakaat&#x27;]}&quot;)
+
+# ------------------------------------------------
+# Feature 2: Check current prayer time
+# ------------------------------------------------
+
+def check_current_prayer():
+    print(&quot;\n--- Current Prayer Check ---&quot;)
+    hour = get_integer_in_range(&quot;Enter current hour (0-23): &quot;, 0, 23)
+
+    schedule_hours = {
+        5:  &quot;Fajr&quot;,
+        13: &quot;Dhuhr&quot;,
+        16: &quot;Asr&quot;,
+        19: &quot;Maghrib&quot;,
+        21: &quot;Isha&quot;
+    }
+
+    for h, prayer in schedule_hours.items():
+        if hour == h:
+            print(f&quot;It is {prayer} time! Please perform your prayer.&quot;)
+            print(f&quot;Rakaat: {PRAYER_SCHEDULE[prayer][&#x27;rakaat&#x27;]}&quot;)
+            return
+        elif hour == h - 1:
+            print(f&quot;{prayer} prayer is in 1 hour. Time: {PRAYER_SCHEDULE[prayer][&#x27;time&#x27;]}&quot;)
+            return
+
+    print(&quot;No prayer due right now. Continue your work.&quot;)
+
+# ------------------------------------------------
+# Feature 3: Mark prayers offered today
+# ------------------------------------------------
+
+def mark_prayers():
+    print(&quot;\n--- Mark Today&#x27;s Prayers ---&quot;)
+    offered = []
+    missed = []
+
+    for prayer, info in PRAYER_SCHEDULE.items():
+        status = get_yes_no(f&quot;  {prayer} ({info[&#x27;time&#x27;]}) — offered? (yes/no): &quot;)
+        if status:
+            offered.append(prayer)
+        else:
+            missed.append(prayer)
+
+    # Save to log file
+    with open(LOG_FILE, &quot;a&quot;) as f:
+        offered_str = &quot;,&quot;.join(offered) if offered else &quot;none&quot;
+        missed_str  = &quot;,&quot;.join(missed)  if missed  else &quot;none&quot;
+        f.write(f&quot;Offered: {offered_str} | Missed: {missed_str}\n&quot;)
+
+    print(f&quot;\nOffered ({len(offered)}/5): {&#x27;, &#x27;.join(offered) if offered else &#x27;None&#x27;}&quot;)
+    print(f&quot;Missed  ({len(missed)}/5) : {&#x27;, &#x27;.join(missed)  if missed  else &#x27;None&#x27;}&quot;)
+
+    if len(missed) == 0:
+        print(&quot;Ma sha Allah! All 5 prayers offered. Alhamdulillah!&quot;)
+    elif len(offered) &gt;= 4:
+        print(&quot;Almost there! Try to offer all 5 tomorrow.&quot;)
+    elif len(offered) &gt;= 2:
+        print(&quot;Good start. Keep improving each day.&quot;)
+    else:
+        print(&quot;Please try to offer all prayers. May Allah make it easy.&quot;)
+
+# ------------------------------------------------
+# Feature 4: View prayer history
+# ------------------------------------------------
+
+def view_history():
+    print(&quot;\n--- Prayer History ---&quot;)
+    if not os.path.exists(LOG_FILE):
+        print(&quot;No history yet. Mark your prayers first.&quot;)
+        return
+
+    with open(LOG_FILE, &quot;r&quot;) as f:
+        lines = [l.strip() for l in f if l.strip()]
+
+    if not lines:
+        print(&quot;No history recorded.&quot;)
+        return
+
+    print(f&quot;Total days recorded: {len(lines)}&quot;)
+    print()
+    for i, line in enumerate(lines, 1):
+        print(f&quot;Day {i}: {line}&quot;)
+
+# ------------------------------------------------
+# Feature 5: Prayer statistics
+# ------------------------------------------------
+
+def show_statistics():
+    print(&quot;\n--- Prayer Statistics ---&quot;)
+    if not os.path.exists(LOG_FILE):
+        print(&quot;No data yet.&quot;)
+        return
+
+    prayer_counts = {p: 0 for p in PRAYER_SCHEDULE}
+    days = 0
+
+    with open(LOG_FILE, &quot;r&quot;) as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            days += 1
+            if &quot;Offered:&quot; in line:
+                offered_part = line.split(&quot;|&quot;)[0].replace(&quot;Offered:&quot;, &quot;&quot;).strip()
+                if offered_part != &quot;none&quot;:
+                    for prayer in offered_part.split(&quot;,&quot;):
+                        prayer = prayer.strip()
+                        if prayer in prayer_counts:
+                            prayer_counts[prayer] += 1
+
+    if days == 0:
+        print(&quot;No data recorded.&quot;)
+        return
+
+    print(f&quot;Days tracked: {days}&quot;)
+    print(f&quot;\n{&#x27;Prayer&#x27;:&lt;10} {&#x27;Offered&#x27;:&gt;8} {&#x27;Rate&#x27;:&gt;8}&quot;)
+    print(&quot;-&quot; * 30)
+    for prayer, count in prayer_counts.items():
+        rate = count / days * 100
+        print(f&quot;{prayer:&lt;10} {count:&gt;8} {rate:&gt;7.0f}%&quot;)
+
+# ------------------------------------------------
+# Main Menu
+# ------------------------------------------------
+
+def show_menu():
+    print(&quot;\n&quot; + &quot;=&quot; * 35)
+    print(&quot;   PRAYER REMINDER APP — MENU&quot;)
+    print(&quot;=&quot; * 35)
+    print(&quot;  1. Today&#x27;s prayer schedule&quot;)
+    print(&quot;  2. Check current prayer time&quot;)
+    print(&quot;  3. Mark today&#x27;s prayers&quot;)
+    print(&quot;  4. View prayer history&quot;)
+    print(&quot;  5. Prayer statistics&quot;)
+    print(&quot;  6. Exit&quot;)
+    print(&quot;=&quot; * 35)
+
+while True:
+    show_menu()
+    choice = get_integer_in_range(&quot;Choice (1-6): &quot;, 1, 6)
+    if choice == 1:
+        show_schedule()
+    elif choice == 2:
+        check_current_prayer()
+    elif choice == 3:
+        mark_prayers()
+    elif choice == 4:
+        view_history()
+    elif choice == 5:
+        show_statistics()
+    elif choice == 6:
+        print(&quot;\nAssalamu Alaikum! May Allah accept your prayers. Ameen.&quot;)
+        break
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 10_2_prayer_reminder_starter.py</span>
+        <span class="badge badge-starter">Project Starter</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 10 - Capstone Project 2
+# PRAYER TIME REMINDER — STARTER FILE
+# ================================================
+# Give this file to students.
+# Full solution: 10_2_prayer_reminder.py
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;   PRAYER TIME REMINDER APP&quot;)
+print(&quot;=&quot; * 50)
+
+import os
+
+LOG_FILE = &quot;prayer_log.txt&quot;
+
+# Prayer schedule — already provided
+PRAYER_SCHEDULE = {
+    &quot;Fajr&quot;   : {&quot;time&quot;: &quot;05:00&quot;, &quot;rakaat&quot;: 2},
+    &quot;Dhuhr&quot;  : {&quot;time&quot;: &quot;13:00&quot;, &quot;rakaat&quot;: 4},
+    &quot;Asr&quot;    : {&quot;time&quot;: &quot;16:30&quot;, &quot;rakaat&quot;: 4},
+    &quot;Maghrib&quot;: {&quot;time&quot;: &quot;19:00&quot;, &quot;rakaat&quot;: 3},
+    &quot;Isha&quot;   : {&quot;time&quot;: &quot;21:00&quot;, &quot;rakaat&quot;: 4},
+}
+
+# ------------------------------------------------
+# Helper Functions — already done for you
+# ------------------------------------------------
+
+def get_integer_in_range(prompt, minimum, maximum):
+    while True:
+        try:
+            value = int(input(prompt))
+            if minimum &lt;= value &lt;= maximum:
+                return value
+            print(f&quot;  Enter between {minimum} and {maximum}.&quot;)
+        except ValueError:
+            print(&quot;  Invalid! Enter a whole number.&quot;)
+
+def get_yes_no(prompt):
+    while True:
+        ans = input(prompt).strip().lower()
+        if ans in (&quot;yes&quot;, &quot;no&quot;, &quot;y&quot;, &quot;n&quot;):
+            return ans in (&quot;yes&quot;, &quot;y&quot;)
+        print(&quot;  Please enter yes or no.&quot;)
+
+# ------------------------------------------------
+# TODO 1: Write show_schedule()
+# Print a table with Prayer, Time, Rakaat
+# Use PRAYER_SCHEDULE dictionary
+# ------------------------------------------------
+
+def show_schedule():
+    print(&quot;\n--- Today&#x27;s Prayer Schedule ---&quot;)
+    pass  # replace with your code
+
+
+# ------------------------------------------------
+# TODO 2: Write check_current_prayer()
+# Steps:
+#   1. Ask user for current hour (0-23)
+#   2. Check if it matches a prayer time
+#   3. Print prayer name and rakaat if it&#x27;s prayer time
+#   4. Print upcoming prayer if 1 hour away
+#   5. Print &quot;No prayer due right now&quot; otherwise
+# Hint: Fajr=5, Dhuhr=13, Asr=16, Maghrib=19, Isha=21
+# ------------------------------------------------
+
+def check_current_prayer():
+    print(&quot;\n--- Current Prayer Check ---&quot;)
+    pass  # replace with your code
+
+
+# ------------------------------------------------
+# TODO 3: Write mark_prayers()
+# Steps:
+#   1. Loop through each prayer
+#   2. Ask yes/no if it was offered
+#   3. Keep track of offered and missed lists
+#   4. Save result to LOG_FILE
+#   5. Print summary with encouragement message
+# ------------------------------------------------
+
+def mark_prayers():
+    print(&quot;\n--- Mark Today&#x27;s Prayers ---&quot;)
+    pass  # replace with your code
+
+
+# ------------------------------------------------
+# TODO 4: Write view_history()
+# Steps:
+#   1. Check if LOG_FILE exists
+#   2. Read and print each line numbered as &quot;Day 1:&quot;, &quot;Day 2:&quot;, etc.
+# ------------------------------------------------
+
+def view_history():
+    print(&quot;\n--- Prayer History ---&quot;)
+    pass  # replace with your code
+
+
+# ------------------------------------------------
+# TODO 5: Write show_statistics()
+# Steps:
+#   1. Read LOG_FILE
+#   2. Count how many times each prayer was offered
+#   3. Print a table: Prayer | Offered | Rate%
+# ------------------------------------------------
+
+def show_statistics():
+    print(&quot;\n--- Prayer Statistics ---&quot;)
+    pass  # replace with your code
+
+
+# ------------------------------------------------
+# Main Menu — already done for you
+# ------------------------------------------------
+
+def show_menu():
+    print(&quot;\n&quot; + &quot;=&quot; * 35)
+    print(&quot;   PRAYER REMINDER APP — MENU&quot;)
+    print(&quot;=&quot; * 35)
+    print(&quot;  1. Today&#x27;s prayer schedule&quot;)
+    print(&quot;  2. Check current prayer time&quot;)
+    print(&quot;  3. Mark today&#x27;s prayers&quot;)
+    print(&quot;  4. View prayer history&quot;)
+    print(&quot;  5. Prayer statistics&quot;)
+    print(&quot;  6. Exit&quot;)
+    print(&quot;=&quot; * 35)
+
+while True:
+    show_menu()
+    choice = get_integer_in_range(&quot;Choice (1-6): &quot;, 1, 6)
+    if choice == 1:
+        show_schedule()
+    elif choice == 2:
+        check_current_prayer()
+    elif choice == 3:
+        mark_prayers()
+    elif choice == 4:
+        view_history()
+    elif choice == 5:
+        show_statistics()
+    elif choice == 6:
+        print(&quot;\nAssalamu Alaikum! May Allah accept your prayers. Ameen.&quot;)
+        break
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 10_3_quiz_game.py</span>
+        <span class="badge badge-quiz">Quiz</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 10 - Capstone Project 3
+# QUIZ GAME
+# ================================================
+# Skills used: lists, dictionaries, functions,
+#   loops, if-else, f-strings, file I/O,
+#   error handling, input validation
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;         QUIZ GAME&quot;)
+print(&quot;=&quot; * 50)
+
+import os
+
+SCORES_FILE = &quot;quiz_scores.txt&quot;
+
+# ------------------------------------------------
+# Question Banks — student picks one topic
+# ------------------------------------------------
+
+QUIZ_TOPICS = {
+    &quot;1&quot;: {
+        &quot;name&quot;: &quot;Islamic Knowledge&quot;,
+        &quot;questions&quot;: [
+            {
+                &quot;question&quot;: &quot;How many Surahs are in the Quran?&quot;,
+                &quot;options&quot;: [&quot;a) 99&quot;, &quot;b) 114&quot;, &quot;c) 120&quot;, &quot;d) 108&quot;],
+                &quot;answer&quot;: &quot;b&quot;,
+                &quot;explanation&quot;: &quot;The Quran has 114 Surahs.&quot;
+            },
+            {
+                &quot;question&quot;: &quot;How many daily prayers are obligatory?&quot;,
+                &quot;options&quot;: [&quot;a) 3&quot;, &quot;b) 4&quot;, &quot;c) 5&quot;, &quot;d) 6&quot;],
+                &quot;answer&quot;: &quot;c&quot;,
+                &quot;explanation&quot;: &quot;Five daily prayers: Fajr, Dhuhr, Asr, Maghrib, Isha.&quot;
+            },
+            {
+                &quot;question&quot;: &quot;In which month was the Quran first revealed?&quot;,
+                &quot;options&quot;: [&quot;a) Rajab&quot;, &quot;b) Shawwal&quot;, &quot;c) Muharram&quot;, &quot;d) Ramadan&quot;],
+                &quot;answer&quot;: &quot;d&quot;,
+                &quot;explanation&quot;: &quot;The Quran was revealed in Ramadan.&quot;
+            },
+            {
+                &quot;question&quot;: &quot;How many Paras (Juz) are in the Quran?&quot;,
+                &quot;options&quot;: [&quot;a) 25&quot;, &quot;b) 28&quot;, &quot;c) 30&quot;, &quot;d) 32&quot;],
+                &quot;answer&quot;: &quot;c&quot;,
+                &quot;explanation&quot;: &quot;The Quran has 30 Paras.&quot;
+            },
+            {
+                &quot;question&quot;: &quot;Which Surah is called the &#x27;Heart of the Quran&#x27;?&quot;,
+                &quot;options&quot;: [&quot;a) Al-Fatiha&quot;, &quot;b) Al-Baqara&quot;, &quot;c) Ya-Sin&quot;, &quot;d) Al-Ikhlas&quot;],
+                &quot;answer&quot;: &quot;c&quot;,
+                &quot;explanation&quot;: &quot;Surah Ya-Sin is called the Heart of the Quran.&quot;
+            },
+        ]
+    },
+    &quot;2&quot;: {
+        &quot;name&quot;: &quot;Pakistan Geography&quot;,
+        &quot;questions&quot;: [
+            {
+                &quot;question&quot;: &quot;What is the capital of Pakistan?&quot;,
+                &quot;options&quot;: [&quot;a) Lahore&quot;, &quot;b) Karachi&quot;, &quot;c) Islamabad&quot;, &quot;d) Peshawar&quot;],
+                &quot;answer&quot;: &quot;c&quot;,
+                &quot;explanation&quot;: &quot;Islamabad has been Pakistan&#x27;s capital since 1967.&quot;
+            },
+            {
+                &quot;question&quot;: &quot;Which is the largest city of Pakistan by population?&quot;,
+                &quot;options&quot;: [&quot;a) Lahore&quot;, &quot;b) Karachi&quot;, &quot;c) Islamabad&quot;, &quot;d) Faisalabad&quot;],
+                &quot;answer&quot;: &quot;b&quot;,
+                &quot;explanation&quot;: &quot;Karachi is Pakistan&#x27;s largest city.&quot;
+            },
+            {
+                &quot;question&quot;: &quot;What is the capital of Punjab province?&quot;,
+                &quot;options&quot;: [&quot;a) Multan&quot;, &quot;b) Faisalabad&quot;, &quot;c) Rawalpindi&quot;, &quot;d) Lahore&quot;],
+                &quot;answer&quot;: &quot;d&quot;,
+                &quot;explanation&quot;: &quot;Lahore is the capital of Punjab.&quot;
+            },
+            {
+                &quot;question&quot;: &quot;Which mountain is the highest peak in Pakistan?&quot;,
+                &quot;options&quot;: [&quot;a) Nanga Parbat&quot;, &quot;b) K2&quot;, &quot;c) Tirich Mir&quot;, &quot;d) Rakaposhi&quot;],
+                &quot;answer&quot;: &quot;b&quot;,
+                &quot;explanation&quot;: &quot;K2 is the highest peak in Pakistan and 2nd highest in the world.&quot;
+            },
+            {
+                &quot;question&quot;: &quot;In which year did Pakistan gain independence?&quot;,
+                &quot;options&quot;: [&quot;a) 1945&quot;, &quot;b) 1946&quot;, &quot;c) 1947&quot;, &quot;d) 1948&quot;],
+                &quot;answer&quot;: &quot;c&quot;,
+                &quot;explanation&quot;: &quot;Pakistan became independent on 14 August 1947.&quot;
+            },
+        ]
+    },
+    &quot;3&quot;: {
+        &quot;name&quot;: &quot;Python Programming&quot;,
+        &quot;questions&quot;: [
+            {
+                &quot;question&quot;: &quot;Which function prints output in Python?&quot;,
+                &quot;options&quot;: [&quot;a) show()&quot;, &quot;b) display()&quot;, &quot;c) print()&quot;, &quot;d) output()&quot;],
+                &quot;answer&quot;: &quot;c&quot;,
+                &quot;explanation&quot;: &quot;print() is Python&#x27;s built-in output function.&quot;
+            },
+            {
+                &quot;question&quot;: &quot;What does len(&#x27;Ahmed&#x27;) return?&quot;,
+                &quot;options&quot;: [&quot;a) 4&quot;, &quot;b) 5&quot;, &quot;c) 6&quot;, &quot;d) Error&quot;],
+                &quot;answer&quot;: &quot;b&quot;,
+                &quot;explanation&quot;: &quot;&#x27;Ahmed&#x27; has 5 characters.&quot;
+            },
+            {
+                &quot;question&quot;: &quot;Which symbol starts a comment in Python?&quot;,
+                &quot;options&quot;: [&quot;a) //&quot;, &quot;b) /*&quot;, &quot;c) --&quot;, &quot;d) #&quot;],
+                &quot;answer&quot;: &quot;d&quot;,
+                &quot;explanation&quot;: &quot;# starts a comment in Python.&quot;
+            },
+            {
+                &quot;question&quot;: &quot;What does int(&#x27;25&#x27;) do?&quot;,
+                &quot;options&quot;: [&quot;a) Error&quot;, &quot;b) Returns &#x27;25&#x27;&quot;, &quot;c) Returns 25&quot;, &quot;d) Returns 2.5&quot;],
+                &quot;answer&quot;: &quot;c&quot;,
+                &quot;explanation&quot;: &quot;int() converts a string to an integer.&quot;
+            },
+            {
+                &quot;question&quot;: &quot;What keyword is used to define a function?&quot;,
+                &quot;options&quot;: [&quot;a) func&quot;, &quot;b) define&quot;, &quot;c) function&quot;, &quot;d) def&quot;],
+                &quot;answer&quot;: &quot;d&quot;,
+                &quot;explanation&quot;: &quot;def is used to define functions in Python.&quot;
+            },
+        ]
+    }
+}
+
+# ------------------------------------------------
+# Helper Functions
+# ------------------------------------------------
+
+def get_integer_in_range(prompt, minimum, maximum):
+    while True:
+        try:
+            value = int(input(prompt))
+            if minimum &lt;= value &lt;= maximum:
+                return value
+            print(f&quot;  Enter between {minimum} and {maximum}.&quot;)
+        except ValueError:
+            print(&quot;  Invalid! Enter a number.&quot;)
+
+def get_non_empty(prompt):
+    while True:
+        value = input(prompt).strip()
+        if value:
+            return value
+        print(&quot;  Cannot be empty.&quot;)
+
+# ------------------------------------------------
+# Core Game Functions
+# ------------------------------------------------
+
+def show_topics():
+    print(&quot;\nAvailable topics:&quot;)
+    for key, topic in QUIZ_TOPICS.items():
+        print(f&quot;  {key}. {topic[&#x27;name&#x27;]}&quot;)
+
+def run_quiz(player_name, topic_key):
+    topic = QUIZ_TOPICS[topic_key]
+    questions = topic[&quot;questions&quot;]
+    score = 0
+
+    print(f&quot;\n=== {topic[&#x27;name&#x27;]} Quiz ===&quot;)
+    print(f&quot;Player : {player_name}&quot;)
+    print(f&quot;Questions: {len(questions)}&quot;)
+    print(&quot;Good luck! Bismillah.\n&quot;)
+
+    for i, q in enumerate(questions, 1):
+        print(f&quot;Q{i}: {q[&#x27;question&#x27;]}&quot;)
+        for option in q[&quot;options&quot;]:
+            print(f&quot;  {option}&quot;)
+
+        answer = input(&quot;Your answer (a/b/c/d): &quot;).strip().lower()
+        while answer not in (&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;):
+            answer = input(&quot;  Please enter a, b, c, or d: &quot;).strip().lower()
+
+        if answer == q[&quot;answer&quot;]:
+            print(&quot;  Correct! Ma sha Allah.&quot;)
+            score += 1
+        else:
+            print(f&quot;  Wrong. Correct answer: {q[&#x27;answer&#x27;].upper()}&quot;)
+            print(f&quot;  Explanation: {q[&#x27;explanation&#x27;]}&quot;)
+        print()
+
+    return score
+
+def show_result(player_name, score, total, topic_name):
+    percentage = score / total * 100
+    print(&quot;=&quot; * 40)
+    print(&quot;       QUIZ RESULT&quot;)
+    print(&quot;=&quot; * 40)
+    print(f&quot;Player    : {player_name}&quot;)
+    print(f&quot;Topic     : {topic_name}&quot;)
+    print(f&quot;Score     : {score} / {total}&quot;)
+    print(f&quot;Percentage: {percentage:.0f}%&quot;)
+
+    if score == total:
+        print(&quot;Result    : PERFECT SCORE! Alhamdulillah!&quot;)
+    elif percentage &gt;= 80:
+        print(&quot;Result    : Excellent! Ma sha Allah!&quot;)
+    elif percentage &gt;= 60:
+        print(&quot;Result    : Good effort. Keep learning!&quot;)
+    elif percentage &gt;= 40:
+        print(&quot;Result    : Keep practising. You can do it!&quot;)
+    else:
+        print(&quot;Result    : Study more and try again!&quot;)
+    print(&quot;=&quot; * 40)
+
+def save_score(player_name, topic_name, score, total):
+    with open(SCORES_FILE, &quot;a&quot;) as f:
+        f.write(f&quot;{player_name},{topic_name},{score},{total}\n&quot;)
+
+def view_leaderboard():
+    print(&quot;\n--- Leaderboard ---&quot;)
+    if not os.path.exists(SCORES_FILE):
+        print(&quot;No scores yet. Play a quiz first!&quot;)
+        return
+
+    scores = []
+    with open(SCORES_FILE, &quot;r&quot;) as f:
+        for line in f:
+            parts = line.strip().split(&quot;,&quot;)
+            if len(parts) == 4:
+                name, topic, score, total = parts
+                pct = int(score) / int(total) * 100
+                scores.append((name, topic, int(score), int(total), pct))
+
+    if not scores:
+        print(&quot;No scores yet.&quot;)
+        return
+
+    scores.sort(key=lambda x: x[4], reverse=True)
+
+    print(f&quot;\n{&#x27;#&#x27;:&lt;4} {&#x27;Name&#x27;:&lt;15} {&#x27;Topic&#x27;:&lt;22} {&#x27;Score&#x27;:&lt;8} {&#x27;%&#x27;}&quot;)
+    print(&quot;-&quot; * 55)
+    for i, (name, topic, score, total, pct) in enumerate(scores, 1):
+        print(f&quot;{i:&lt;4} {name:&lt;15} {topic:&lt;22} {score}/{total:&lt;5} {pct:.0f}%&quot;)
+
+# ------------------------------------------------
+# Main Menu
+# ------------------------------------------------
+
+def show_menu():
+    print(&quot;\n&quot; + &quot;=&quot; * 35)
+    print(&quot;       QUIZ GAME — MENU&quot;)
+    print(&quot;=&quot; * 35)
+    print(&quot;  1. Play quiz&quot;)
+    print(&quot;  2. View leaderboard&quot;)
+    print(&quot;  3. Exit&quot;)
+    print(&quot;=&quot; * 35)
+
+while True:
+    show_menu()
+    choice = get_integer_in_range(&quot;Choice (1-3): &quot;, 1, 3)
+
+    if choice == 1:
+        player_name = get_non_empty(&quot;Enter your name: &quot;).title()
+        show_topics()
+        topic_key = input(&quot;Choose topic (1/2/3): &quot;).strip()
+        while topic_key not in QUIZ_TOPICS:
+            topic_key = input(&quot;  Enter 1, 2, or 3: &quot;).strip()
+
+        score = run_quiz(player_name, topic_key)
+        total = len(QUIZ_TOPICS[topic_key][&quot;questions&quot;])
+        topic_name = QUIZ_TOPICS[topic_key][&quot;name&quot;]
+
+        show_result(player_name, score, total, topic_name)
+        save_score(player_name, topic_name, score, total)
+
+    elif choice == 2:
+        view_leaderboard()
+
+    elif choice == 3:
+        print(&quot;\nJazakAllah Khair for playing! Assalamu Alaikum.&quot;)
+        break
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 10_3_quiz_game_starter.py</span>
+        <span class="badge badge-quiz">Quiz</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 10 - Capstone Project 3
+# QUIZ GAME — STARTER FILE
+# ================================================
+# Give this file to students.
+# Full solution: 10_3_quiz_game.py
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;         QUIZ GAME&quot;)
+print(&quot;=&quot; * 50)
+
+import os
+
+SCORES_FILE = &quot;quiz_scores.txt&quot;
+
+# Question banks — already provided, do not change
+QUIZ_TOPICS = {
+    &quot;1&quot;: {
+        &quot;name&quot;: &quot;Islamic Knowledge&quot;,
+        &quot;questions&quot;: [
+            {
+                &quot;question&quot;: &quot;How many Surahs are in the Quran?&quot;,
+                &quot;options&quot;: [&quot;a) 99&quot;, &quot;b) 114&quot;, &quot;c) 120&quot;, &quot;d) 108&quot;],
+                &quot;answer&quot;: &quot;b&quot;,
+                &quot;explanation&quot;: &quot;The Quran has 114 Surahs.&quot;
+            },
+            {
+                &quot;question&quot;: &quot;How many daily prayers are obligatory?&quot;,
+                &quot;options&quot;: [&quot;a) 3&quot;, &quot;b) 4&quot;, &quot;c) 5&quot;, &quot;d) 6&quot;],
+                &quot;answer&quot;: &quot;c&quot;,
+                &quot;explanation&quot;: &quot;Five daily prayers: Fajr, Dhuhr, Asr, Maghrib, Isha.&quot;
+            },
+            {
+                &quot;question&quot;: &quot;In which month was the Quran first revealed?&quot;,
+                &quot;options&quot;: [&quot;a) Rajab&quot;, &quot;b) Shawwal&quot;, &quot;c) Muharram&quot;, &quot;d) Ramadan&quot;],
+                &quot;answer&quot;: &quot;d&quot;,
+                &quot;explanation&quot;: &quot;The Quran was revealed in Ramadan.&quot;
+            },
+            {
+                &quot;question&quot;: &quot;How many Paras (Juz) are in the Quran?&quot;,
+                &quot;options&quot;: [&quot;a) 25&quot;, &quot;b) 28&quot;, &quot;c) 30&quot;, &quot;d) 32&quot;],
+                &quot;answer&quot;: &quot;c&quot;,
+                &quot;explanation&quot;: &quot;The Quran has 30 Paras.&quot;
+            },
+            {
+                &quot;question&quot;: &quot;Which Surah is called the &#x27;Heart of the Quran&#x27;?&quot;,
+                &quot;options&quot;: [&quot;a) Al-Fatiha&quot;, &quot;b) Al-Baqara&quot;, &quot;c) Ya-Sin&quot;, &quot;d) Al-Ikhlas&quot;],
+                &quot;answer&quot;: &quot;c&quot;,
+                &quot;explanation&quot;: &quot;Surah Ya-Sin is called the Heart of the Quran.&quot;
+            },
+        ]
+    },
+    &quot;2&quot;: {
+        &quot;name&quot;: &quot;Pakistan Geography&quot;,
+        &quot;questions&quot;: [
+            {
+                &quot;question&quot;: &quot;What is the capital of Pakistan?&quot;,
+                &quot;options&quot;: [&quot;a) Lahore&quot;, &quot;b) Karachi&quot;, &quot;c) Islamabad&quot;, &quot;d) Peshawar&quot;],
+                &quot;answer&quot;: &quot;c&quot;,
+                &quot;explanation&quot;: &quot;Islamabad has been Pakistan&#x27;s capital since 1967.&quot;
+            },
+            {
+                &quot;question&quot;: &quot;Which is the largest city of Pakistan by population?&quot;,
+                &quot;options&quot;: [&quot;a) Lahore&quot;, &quot;b) Karachi&quot;, &quot;c) Islamabad&quot;, &quot;d) Faisalabad&quot;],
+                &quot;answer&quot;: &quot;b&quot;,
+                &quot;explanation&quot;: &quot;Karachi is Pakistan&#x27;s largest city.&quot;
+            },
+            {
+                &quot;question&quot;: &quot;What is the capital of Punjab province?&quot;,
+                &quot;options&quot;: [&quot;a) Multan&quot;, &quot;b) Faisalabad&quot;, &quot;c) Rawalpindi&quot;, &quot;d) Lahore&quot;],
+                &quot;answer&quot;: &quot;d&quot;,
+                &quot;explanation&quot;: &quot;Lahore is the capital of Punjab.&quot;
+            },
+            {
+                &quot;question&quot;: &quot;Which mountain is the highest peak in Pakistan?&quot;,
+                &quot;options&quot;: [&quot;a) Nanga Parbat&quot;, &quot;b) K2&quot;, &quot;c) Tirich Mir&quot;, &quot;d) Rakaposhi&quot;],
+                &quot;answer&quot;: &quot;b&quot;,
+                &quot;explanation&quot;: &quot;K2 is the highest peak in Pakistan and 2nd highest in the world.&quot;
+            },
+            {
+                &quot;question&quot;: &quot;In which year did Pakistan gain independence?&quot;,
+                &quot;options&quot;: [&quot;a) 1945&quot;, &quot;b) 1946&quot;, &quot;c) 1947&quot;, &quot;d) 1948&quot;],
+                &quot;answer&quot;: &quot;c&quot;,
+                &quot;explanation&quot;: &quot;Pakistan became independent on 14 August 1947.&quot;
+            },
+        ]
+    },
+    &quot;3&quot;: {
+        &quot;name&quot;: &quot;Python Programming&quot;,
+        &quot;questions&quot;: [
+            {
+                &quot;question&quot;: &quot;Which function prints output in Python?&quot;,
+                &quot;options&quot;: [&quot;a) show()&quot;, &quot;b) display()&quot;, &quot;c) print()&quot;, &quot;d) output()&quot;],
+                &quot;answer&quot;: &quot;c&quot;,
+                &quot;explanation&quot;: &quot;print() is Python&#x27;s built-in output function.&quot;
+            },
+            {
+                &quot;question&quot;: &quot;What does len(&#x27;Ahmed&#x27;) return?&quot;,
+                &quot;options&quot;: [&quot;a) 4&quot;, &quot;b) 5&quot;, &quot;c) 6&quot;, &quot;d) Error&quot;],
+                &quot;answer&quot;: &quot;b&quot;,
+                &quot;explanation&quot;: &quot;&#x27;Ahmed&#x27; has 5 characters.&quot;
+            },
+            {
+                &quot;question&quot;: &quot;Which symbol starts a comment in Python?&quot;,
+                &quot;options&quot;: [&quot;a) //&quot;, &quot;b) /*&quot;, &quot;c) --&quot;, &quot;d) #&quot;],
+                &quot;answer&quot;: &quot;d&quot;,
+                &quot;explanation&quot;: &quot;# starts a comment in Python.&quot;
+            },
+            {
+                &quot;question&quot;: &quot;What does int(&#x27;25&#x27;) do?&quot;,
+                &quot;options&quot;: [&quot;a) Error&quot;, &quot;b) Returns &#x27;25&#x27;&quot;, &quot;c) Returns 25&quot;, &quot;d) Returns 2.5&quot;],
+                &quot;answer&quot;: &quot;c&quot;,
+                &quot;explanation&quot;: &quot;int() converts a string to an integer.&quot;
+            },
+            {
+                &quot;question&quot;: &quot;What keyword is used to define a function?&quot;,
+                &quot;options&quot;: [&quot;a) func&quot;, &quot;b) define&quot;, &quot;c) function&quot;, &quot;d) def&quot;],
+                &quot;answer&quot;: &quot;d&quot;,
+                &quot;explanation&quot;: &quot;def is used to define functions in Python.&quot;
+            },
+        ]
+    }
+}
+
+# ------------------------------------------------
+# Helper Functions — already done for you
+# ------------------------------------------------
+
+def get_integer_in_range(prompt, minimum, maximum):
+    while True:
+        try:
+            value = int(input(prompt))
+            if minimum &lt;= value &lt;= maximum:
+                return value
+            print(f&quot;  Enter between {minimum} and {maximum}.&quot;)
+        except ValueError:
+            print(&quot;  Invalid! Enter a number.&quot;)
+
+def get_non_empty(prompt):
+    while True:
+        value = input(prompt).strip()
+        if value:
+            return value
+        print(&quot;  Cannot be empty.&quot;)
+
+# ------------------------------------------------
+# TODO 1: Write show_topics()
+# Print all available topics from QUIZ_TOPICS
+# Format: &quot;  1. Islamic Knowledge&quot;
+# ------------------------------------------------
+
+def show_topics():
+    print(&quot;\nAvailable topics:&quot;)
+    pass  # replace with your code
+
+
+# ------------------------------------------------
+# TODO 2: Write run_quiz(player_name, topic_key)
+# Steps:
+#   1. Get the topic and its questions from QUIZ_TOPICS
+#   2. Print quiz header (topic name, player name, number of questions)
+#   3. Loop through questions:
+#      a. Print question number and text
+#      b. Print all options
+#      c. Get answer (a/b/c/d) — validate it
+#      d. Check if correct — update score
+#      e. Print correct/wrong feedback and explanation
+#   4. Return final score
+# ------------------------------------------------
+
+def run_quiz(player_name, topic_key):
+    topic = QUIZ_TOPICS[topic_key]
+    questions = topic[&quot;questions&quot;]
+    score = 0
+
+    print(f&quot;\n=== {topic[&#x27;name&#x27;]} Quiz ===&quot;)
+    print(f&quot;Player : {player_name}&quot;)
+    print(f&quot;Questions: {len(questions)}&quot;)
+    print(&quot;Good luck! Bismillah.\n&quot;)
+
+    # TODO: loop through questions, ask each one, check answer
+    pass  # replace with your code
+
+    return score
+
+
+# ------------------------------------------------
+# TODO 3: Write show_result(player_name, score, total, topic_name)
+# Print a result box showing:
+#   - Player name, topic, score (x/5), percentage
+#   - Message based on percentage:
+#     100% → &quot;PERFECT SCORE! Alhamdulillah!&quot;
+#     &gt;=80% → &quot;Excellent! Ma sha Allah!&quot;
+#     &gt;=60% → &quot;Good effort. Keep learning!&quot;
+#     &gt;=40% → &quot;Keep practising. You can do it!&quot;
+#     else  → &quot;Study more and try again!&quot;
+# ------------------------------------------------
+
+def show_result(player_name, score, total, topic_name):
+    pass  # replace with your code
+
+
+# ------------------------------------------------
+# TODO 4: Write save_score(player_name, topic_name, score, total)
+# Append to SCORES_FILE in format:
+#   player_name,topic_name,score,total
+# ------------------------------------------------
+
+def save_score(player_name, topic_name, score, total):
+    pass  # replace with your code
+
+
+# ------------------------------------------------
+# TODO 5: Write view_leaderboard()
+# Steps:
+#   1. Check if SCORES_FILE exists
+#   2. Read all scores and calculate percentage
+#   3. Sort by percentage (highest first)
+#   4. Print numbered table: #, Name, Topic, Score, %
+# ------------------------------------------------
+
+def view_leaderboard():
+    print(&quot;\n--- Leaderboard ---&quot;)
+    pass  # replace with your code
+
+
+# ------------------------------------------------
+# Main Menu — already done for you
+# ------------------------------------------------
+
+def show_menu():
+    print(&quot;\n&quot; + &quot;=&quot; * 35)
+    print(&quot;       QUIZ GAME — MENU&quot;)
+    print(&quot;=&quot; * 35)
+    print(&quot;  1. Play quiz&quot;)
+    print(&quot;  2. View leaderboard&quot;)
+    print(&quot;  3. Exit&quot;)
+    print(&quot;=&quot; * 35)
+
+while True:
+    show_menu()
+    choice = get_integer_in_range(&quot;Choice (1-3): &quot;, 1, 3)
+
+    if choice == 1:
+        player_name = get_non_empty(&quot;Enter your name: &quot;).title()
+        show_topics()
+        topic_key = input(&quot;Choose topic (1/2/3): &quot;).strip()
+        while topic_key not in QUIZ_TOPICS:
+            topic_key = input(&quot;  Enter 1, 2, or 3: &quot;).strip()
+
+        score = run_quiz(player_name, topic_key)
+        total = len(QUIZ_TOPICS[topic_key][&quot;questions&quot;])
+        topic_name = QUIZ_TOPICS[topic_key][&quot;name&quot;]
+
+        show_result(player_name, score, total, topic_name)
+        save_score(player_name, topic_name, score, total)
+
+    elif choice == 2:
+        view_leaderboard()
+
+    elif choice == 3:
+        print(&quot;\nJazakAllah Khair for playing! Assalamu Alaikum.&quot;)
+        break
+</code></pre>
+    </div>
+      </div>
+
+      <div id="tab-notes" class="tab-pane">
+        <div class="markdown-body" id="md-notes"></div>
+        <script type="application/json" id="src-notes">"# Module 10 \u2014 Projects: Teacher Notes\n\n## Duration\n3 classes (1 project per class; allow 1.5 classes for slower groups)\n\n---\n\n## Learning Objectives\n\nBy the end of this module, students will be able to:\n\n- Build **3 complete Python applications** that combine all skills from Modules 0\u20139\n- Understand real-world program structure: menus, functions, file I/O, and input validation\n- Read and understand an existing codebase (starter file), then extend it\n- Test their own programs with valid and invalid inputs\n\n---\n\n## Projects Overview\n\n| Class | File | Project |\n|-------|------|---------|\n| Class 1 | `10_1_report_card_system.py` | Report Card System |\n| Class 2 | `10_2_prayer_reminder.py` | Prayer Reminder |\n| Class 3 | `10_3_quiz_game.py` | Quiz Game |\n\n---\n\n## Lesson Flow\n\n### Class 1 \u2014 Report Card System\n\n**`10_1_report_card_system.py`**\n\n1. Open the **solution file** and run it \u2014 let students see the finished product.\n2. Show the **starter file** \u2014 point out the incomplete functions.\n3. Explain the structure: menu loop \u2192 function call \u2192 file I/O.\n4. Students complete the starter file by filling in the functions.\n5. Run and test together \u2014 try adding a student, viewing all, searching by name.\n\n**What to highlight:**\n- How the menu uses a `while True` loop with `if/elif`\n- How each menu option calls a separate function\n- How `FileNotFoundError` is handled when no data file exists yet\n\n---\n\n### Class 2 \u2014 Prayer Reminder\n\n**`10_2_prayer_reminder.py`**\n\nThis project is more complex. Demonstrate it fully before students begin.\n\n1. Run the solution \u2014 explain what each menu option does.\n2. Discuss: why would a Muslim family find this useful?\n3. Show the starter file \u2014 students fill in the statistics and marking functions.\n4. Guide weaker students to complete at least the \"view schedule\" and \"mark prayer\" features.\n5. Stronger students: challenge them to add a feature to view only missed prayers.\n\n**What to highlight:**\n- Using a dictionary to store prayer times\n- Appending records to a file with date and status\n- Calculating percentage from saved data\n\n---\n\n### Class 3 \u2014 Quiz Game\n\n**`10_3_quiz_game.py`**\n\nThe most complex project. Consider a **group activity** option for this class.\n\n1. Run the solution \u2014 let students play the quiz.\n2. Show how questions are stored (list of dictionaries).\n3. Students complete the: score calculation, save-to-leaderboard, and display-leaderboard functions.\n4. **Group option:** pairs of students work together, one reads the code, one types.\n5. End of class: each student plays the finished quiz and sees their name on the leaderboard.\n\n**What to highlight:**\n- Input validation loop (keep asking until a/b/c/d is entered)\n- How the leaderboard file grows with each game\n- How to add a new topic by adding to the questions list\n\n---\n\n## Teaching Approach \u2014 For All Three Projects\n\nFollow this sequence for each project:\n\n```\n1. Show the SOLUTION running       \u2192 \"Yeh hamara target hai\"\n2. Open the STARTER file           \u2192 \"Yahan se shuru karte hain\"\n3. Explain what is missing         \u2192 \"Yeh functions khaali hain\"\n4. Students fill in the blanks     \u2192 Guided practice\n5. Run and test together           \u2192 \"Chalaate hain, dekhte hain\"\n6. Try bad inputs                  \u2192 \"Kya hoga agar galat likhein?\"\n```\n\n---\n\n## Common Mistakes to Watch For\n\n1. **Not passing arguments to functions** \u2014 students define `def add_student():` but call it with data \u2014 show the difference between parameters and no parameters.\n2. **Not calling functions from the menu** \u2014 students write the function but forget to connect it to the menu option.\n3. **File path issues** \u2014 remind students to run the program from the correct folder, or the data file will be created in the wrong place.\n4. **Modifying the solution file instead of the starter** \u2014 keep both files open side by side.\n5. **Skipping input validation** \u2014 students think the program works because they tested it with correct inputs only.\n\n---\n\n## Urdu Teaching Tips\n\n- **Opening motivation:** \"Yeh sab cheezein jo humne seekhi hain \u2014 variables, loops, functions, files \u2014 ab sab milaate hain. Ek real software banaate hain!\"\n- **On starter files:** \"Kuch cheezein maine already likh di hain. Aap ko sirf khaali jagah bharna hai \u2014 jaise imtihan mein fill in the blanks.\"\n- **On testing with bad input:** \"Agar user galat data daale, program toot jaana nahi chahiye. Isliye hum pehle check karte hain.\"\n- **On real-world relevance:** \"Yeh programs ASLI data save karte hain. Jab aap chalaaenge, real .txt files banenge aapke computer pe.\"\n\n---\n\n## Important Reminder for Students\n\n> These programs **save data to files**. Running them creates real `.txt` files in the same folder. Show students where these files appear and how to open them in Notepad to see the saved data.\n\n---\n\n## Files in This Module\n\n| File | Description |\n|------|-------------|\n| `10_1_report_card_system_starter.py` | Starter file \u2014 students complete this |\n| `10_1_report_card_system_solution.py` | Full working solution |\n| `10_2_prayer_reminder_starter.py` | Starter file |\n| `10_2_prayer_reminder_solution.py` | Full working solution |\n| `10_3_quiz_game_starter.py` | Starter file |\n| `10_3_quiz_game_solution.py` | Full working solution |\n\n---\n\n## Differentiation\n\n| Student Level | Approach |\n|---------------|----------|\n| Struggling | Focus on running and understanding the solution; complete only 1\u20132 functions in the starter |\n| On track | Complete all functions in the starter file |\n| Advanced | Extend the project (see Extension Questions in practice_sheet.md) |\n"</script>
+      </div>
+
+      <div id="tab-practice" class="tab-pane">
+        <div class="markdown-body print-friendly" id="md-practice"></div>
+        <script type="application/json" id="src-practice">"# Module 10 \u2014 Project Planning Sheet\n\n**Naam / Name:** _______________________  \n**Taareekh / Date:** _______________________  \n**Class:** _______________________\n\n---\n\n> **Coding shuru karne se pehle, apna plan yahan likho.**  \n> Before you start coding, plan your project here.  \n> Ek acha programmer pehle sochta hai, phir likhta hai.\n\n---\n\n## Project 1: Report Card System\n\n**Yeh program kya karta hai? Apne alfaz mein likho:**  \n(What does this program do? Write in your own words.)\n\n```\n_______________________________________________________________\n_______________________________________________________________\n```\n\n**Is program mein kaun kaun se functions honge?**  \n(What functions will this program need?)\n\n| # | Function ka naam | Yeh kya karega? |\n|---|-----------------|-----------------|\n| 1 | | |\n| 2 | | |\n| 3 | | |\n| 4 | | |\n\n**Yeh program data kis file mein save karega?**  \n(What file will it save data to?)\n\n```\nFile ka naam: _______________________\n```\n\n**Agar file pehle se exist nahi karti toh kya hoga?**  \n(What happens if the file doesn't exist yet?)\n\n```\n_______________________________________________________________\n```\n\n**Menu mein kaun se options honge? List banao:**\n\n```\n1. _______________\n2. _______________\n3. _______________\n4. _______________\n0. _______________  (Exit)\n```\n\n---\n\n## Project 2: Prayer Reminder\n\n**Paanch waqt ki namazein tartib se likho:**  \n(List the 5 daily prayers in order.)\n\n| # | Namaz ka naam | Waqt (Time) |\n|---|---------------|-------------|\n| 1 | | |\n| 2 | | |\n| 3 | | |\n| 4 | | |\n| 5 | | |\n\n**Yeh program kya kya track karega?**  \n(What information will the program track?)\n\n```\n_______________________________________________________________\n_______________________________________________________________\n```\n\n**Statistics feature kya calculate karega?**  \n(What does the statistics feature calculate?)\n\n```\n_______________________________________________________________\n_______________________________________________________________\n```\n\n**Agar user galat namaz ka naam daale toh program kya karega?**  \n(What will the program do if the user enters an invalid prayer name?)\n\n```\n_______________________________________________________________\n```\n\n---\n\n## Project 3: Quiz Game\n\n**Quiz mein kitne topics hain?**  \n(How many topics are in the quiz?)\n\n```\nTopics ki tadaad: _______________________\n```\n\n**Topics ke naam likho:**\n\n```\n1. _______________\n2. _______________\n3. _______________\n```\n\n**Agar user galat jawab daale (a/b/c/d ke ilawa)?**  \n(What happens if the user types an invalid answer \u2014 not a, b, c, or d?)\n\n```\n_______________________________________________________________\n```\n\n**Leaderboard data kahan save hota hai?**  \n(Where is the leaderboard data saved?)\n\n```\nFile ka naam: _______________________\n```\n\n**Ek question ka structure kaisa hoga? Example likho:**\n\n```python\n{\n    \"sawal\": \"_______________\",\n    \"options\": {\n        \"a\": \"_______________\",\n        \"b\": \"_______________\",\n        \"c\": \"_______________\",\n        \"d\": \"_______________\"\n    },\n    \"sahi_jawab\": \"___\"\n}\n```\n\n---\n\n## Testing Plan\n\nCoding ke baad in cheezoon ko zaroor test karo:\n\n### Project 1 \u2014 Checklist\n\n- [ ] Student add kiya aur file mein save hua?\n- [ ] Saare students dekhe aur sahi dikh rahe hain?\n- [ ] Naam se search kiya \u2014 sahi student mila?\n- [ ] Galat input diya \u2014 program crash hua ya nahi?\n\n### Project 2 \u2014 Checklist\n\n- [ ] Schedule dekha \u2014 saari 5 namazein dikhi?\n- [ ] Ek namaz mark ki \u2014 file mein save hua?\n- [ ] History dekhi \u2014 sahi dikh rahi hai?\n- [ ] Statistics sahi hain?\n\n### Project 3 \u2014 Checklist\n\n- [ ] Quiz khela \u2014 questions aaye?\n- [ ] Galat answer (jaise \"x\") diya \u2014 program ne dobara poocha?\n- [ ] Score save hua leaderboard mein?\n- [ ] Leaderboard mein purane aur naye scores dono hain?\n\n---\n\n## Extension Questions\n\nAgar aap jaldi khatam kar lein, yeh socho:\n\n**1.** Quiz Game mein \"score delete karo\" feature kaise add karenge?\n\n```\n_______________________________________________________________\n_______________________________________________________________\n```\n\n**2.** Quiz mein ek naya topic add karna ho (maslan: Pakistan ki Tarikh / Pakistan History) \u2014 code mein kya badlenge?\n\n```\n_______________________________________________________________\n_______________________________________________________________\n```\n\n**3.** Report Card system mein teacher existing student ke marks update karna chahe \u2014 is feature ke liye kya karna hoga?\n\n```\n_______________________________________________________________\n_______________________________________________________________\n```\n\n---\n\n## Yaad rakhein (Remember)\n\n> **\"Ek real software banaate hain \u2014 sirf seekhne ke liye nahi, balke kaam aane ke liye!\"**\n\n- Yeh programs ASLI data save karte hain \u2014 aapke computer pe real `.txt` files banenge\n- Agar program crash ho, ghabrao mat \u2014 error message paro aur samjho\n- Apne saathiyon ki madad karo \u2014 programming mein teamwork zaroori hai\n\n---\n\n*Module 10 \u2014 Projects | ISDP Python Course*\n"</script>
+        <button class="print-btn no-print" onclick="window.print()">🖨️ Print Practice Sheet</button>
+      </div>
+
+      <div id="tab-assessment" class="tab-pane">
+        <div class="markdown-body" id="md-assessment"></div>
+        <script type="application/json" id="src-assessment">"# Module 10 \u2014 Projects: Assessment\n\n## Assessment Approach\n\nAssessment for this module is **practical and observational**. The teacher runs each student's program live and observes whether it works correctly. There is no written quiz \u2014 the code itself is the evidence.\n\n> Run the program. Give it real inputs. Try to break it with bad inputs. Watch what happens.\n\n---\n\n## Pass Criteria \u2014 Per Project\n\n### Project 1: Report Card System\n\nA student passes this project when their program can:\n\n- [ ] Add a student with name, subject marks, and calculate average\n- [ ] View all students and their averages\n- [ ] Search for a student by name and display their record\n- [ ] Show a class summary (highest, lowest, class average)\n\n### Project 2: Prayer Reminder\n\nA student passes this project when their program can:\n\n- [ ] Display the 5 daily prayer schedule with times\n- [ ] Mark a prayer as prayed or missed for today\n- [ ] View the prayer history from file\n- [ ] Show correct statistics (e.g. percentage of prayers completed)\n\n### Project 3: Quiz Game\n\nA student passes this project when their program can:\n\n- [ ] Play a quiz with at least one topic\n- [ ] Validate the answer (only accept a/b/c/d)\n- [ ] Calculate and display the score at the end\n- [ ] Save the score to the leaderboard file\n- [ ] Display the leaderboard with past scores\n\n---\n\n## Marking Rubric\n\n**10 marks per project \u2014 30 marks total**\n\n### Project 1: Report Card System\n\n| Feature | Not Attempted (0) | Partial (1) | Complete (2) |\n|---------|------------------|-------------|--------------|\n| Menu works and all options accessible | | | |\n| Input validation (handles empty/invalid input) | | | |\n| Data saves to file correctly | | | |\n| Output is readable and well formatted | | | |\n| No crash on bad input | | | |\n| **Total / 10** | | | |\n\n---\n\n### Project 2: Prayer Reminder\n\n| Feature | Not Attempted (0) | Partial (1) | Complete (2) |\n|---------|------------------|-------------|--------------|\n| Menu works and all options accessible | | | |\n| Input validation (handles empty/invalid input) | | | |\n| Data saves to file correctly | | | |\n| Output is readable and well formatted | | | |\n| No crash on bad input | | | |\n| **Total / 10** | | | |\n\n---\n\n### Project 3: Quiz Game\n\n| Feature | Not Attempted (0) | Partial (1) | Complete (2) |\n|---------|------------------|-------------|--------------|\n| Menu works and all options accessible | | | |\n| Input validation (handles empty/invalid input) | | | |\n| Data saves to file correctly | | | |\n| Output is readable and well formatted | | | |\n| No crash on bad input | | | |\n| **Total / 10** | | | |\n\n---\n\n## Grade Scale\n\n| Total Marks | Grade | Urdu Feedback |\n|-------------|-------|---------------|\n| 25 \u2013 30 | Excellent | Mashallah! Aap ek real programmer hain |\n| 18 \u2013 24 | Good | Bahut acha kaam \u2014 thodi si aur mehnat |\n| 12 \u2013 17 | Pass | Pass ho gaye, lekin practice jaari rakho |\n| 0 \u2013 11 | Needs more work | Koi baat nahi \u2014 dobara karte hain saath mein |\n\n---\n\n## Portfolio Submission\n\nEach student submits the following:\n\n1. `10_1_report_card_system.py` \u2014 their completed file\n2. `10_2_prayer_reminder.py` \u2014 their completed file\n3. `10_3_quiz_game.py` \u2014 their completed file\n4. A screenshot of **each program running** (3 screenshots total)\n\n> Screenshots can be taken with the Snipping Tool (Win + Shift + S) and saved to the student's folder.\n\n---\n\n## Suggested Assessment Timeline\n\n| Activity | Time |\n|----------|------|\n| Project 1 live demo \u2014 teacher checks | 10 minutes |\n| Project 2 live demo \u2014 teacher checks | 10 minutes |\n| Project 3 live demo \u2014 teacher checks | 10 minutes |\n| Portfolio files check | 5 minutes |\n| Feedback and discussion | 5 minutes |\n| **Total** | **40 minutes** |\n\n---\n\n## Notes for Teacher\n\n- If a student's program crashes, ask them to **explain what the code should do** \u2014 understanding without working code earns partial marks.\n- Students who used the starter file without modification score 0 \u2014 they must have made meaningful additions.\n- Celebrate finishing! Completing 3 real programs is a significant achievement. Make dua together and acknowledge the effort.\n- Consider: for YouTube content, record one strong student's project running as a demonstration.\n"</script>
+      </div>
+
+    </div>
+
+    <div class="module-nav">
+      <a href="module-9.html" class="nav-btn">← Module 9</a>
+      <a href="index.html" class="nav-btn nav-home">🏠 All Modules</a>
+      <span></span>
+    </div>
+
+  </main>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

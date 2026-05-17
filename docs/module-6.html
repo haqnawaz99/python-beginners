@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 6: Functions — Python for Beginners</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">🐍 Python for Beginners</a>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar" id="sidebar"><ul class="sidebar-nav"><li><a href="index.html" class="">🏠 Home</a></li><li><a href="module-0.html" class="">⚙️ M0: Setup</a></li><li><a href="module-1.html" class="">📝 M1: Strings</a></li><li><a href="module-2.html" class="">📦 M2: Variables</a></li><li><a href="module-3.html" class="">🔢 M3: Data Types</a></li><li><a href="module-4.html" class="">➕ M4: Operators</a></li><li><a href="module-5.html" class="">🔀 M5: Control Flow</a></li><li><a href="module-6.html" class="active">🔧 M6: Functions</a></li><li><a href="module-7.html" class="">📋 M7: Lists</a></li><li><a href="module-8.html" class="">🛡️ M8: Error Handling</a></li><li><a href="module-9.html" class="">💾 M9: File I/O</a></li><li><a href="module-10.html" class="">🚀 M10: Projects</a></li></ul></aside>
+  <main class="main-content">
+
+    <div class="module-header">
+      <span class="module-icon">🔧</span>
+      <div>
+        <p class="module-label">Module 6</p>
+        <h1>Functions</h1>
+      </div>
+    </div>
+
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="lessons">📚 Lessons</button>
+      <button class="tab-btn" data-tab="notes">📋 Teacher Notes</button>
+      <button class="tab-btn" data-tab="practice">✏️ Practice Sheet</button>
+      <button class="tab-btn" data-tab="assessment">📊 Assessment</button>
+    </div>
+
+    <div class="tab-panes">
+
+      <div id="tab-lessons" class="tab-pane active">
+        
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 6_1_basic_functions.py</span>
+        <span class="badge badge-lesson">Lesson</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 6 - Lesson 1: Basic Functions
+# ================================================
+# Learn: def, calling a function, why functions matter
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;Functions — Reusable Blocks of Code&quot;)
+print(&quot;=&quot; * 50)
+
+# ------------------------------------------------
+# What is a Function?
+# ------------------------------------------------
+# A function is a block of code with a name.
+# You define it once, then call it as many times as you want.
+# Functions help avoid repeating the same code.
+#
+# Think of it like a recipe:
+# You write the recipe once.
+# You can cook that dish any number of times.
+
+# ------------------------------------------------
+# How to define a function
+# ------------------------------------------------
+# def function_name():
+#     code goes here (indented)
+#
+# def  = keyword that starts a function
+# ()   = brackets (empty for now — we add inputs later)
+# :    = colon at the end of the def line
+# code = indented 4 spaces inside the function
+
+# ------------------------------------------------
+# 1. Simple function with no parameters
+# ------------------------------------------------
+
+def say_salam():
+    print(&quot;Assalamu Alaikum wa Rahmatullahi wa Barakatuh&quot;)
+
+def say_bismillah():
+    print(&quot;Bismillahir Rahmanir Raheem&quot;)
+
+def show_daily_reminder():
+    print(&quot;Remember: 5 prayers, recite Quran, do dhikr.&quot;)
+
+# Calling (running) the functions:
+say_salam()
+say_bismillah()
+show_daily_reminder()
+
+# ------------------------------------------------
+# 2. Calling a function multiple times
+# ------------------------------------------------
+print()
+
+def print_separator():
+    print(&quot;-&quot; * 40)
+
+print_separator()
+print(&quot;Lesson: Introduction to Functions&quot;)
+print_separator()
+print(&quot;Teacher: Maulana Ahmed&quot;)
+print_separator()
+
+# ------------------------------------------------
+# 3. Functions make code cleaner
+# ------------------------------------------------
+print()
+
+# WITHOUT a function — repetitive code:
+print(&quot;Assalamu Alaikum!&quot;)
+print(&quot;Welcome to Python class.&quot;)
+print(&quot;Today we learn functions.&quot;)
+print()
+print(&quot;Assalamu Alaikum!&quot;)
+print(&quot;Welcome to Python class.&quot;)
+print(&quot;Today we learn functions.&quot;)
+
+print()
+
+# WITH a function — clean and reusable:
+def welcome_message():
+    print(&quot;Assalamu Alaikum!&quot;)
+    print(&quot;Welcome to Python class.&quot;)
+    print(&quot;Today we learn functions.&quot;)
+
+welcome_message()
+print()
+welcome_message()
+
+# ------------------------------------------------
+# 4. Function that does a calculation
+# ------------------------------------------------
+print()
+
+def show_prayer_count():
+    prayers_per_day = 5
+    days_per_week = 7
+    total = prayers_per_day * days_per_week
+    print(f&quot;In one week, a Muslim prays {total} times.&quot;)
+
+def show_quran_facts():
+    print(f&quot;The Quran has 114 Surahs.&quot;)
+    print(f&quot;The Quran has 30 Paras.&quot;)
+    print(f&quot;The Quran has 6236 Ayaat.&quot;)
+
+show_prayer_count()
+print()
+show_quran_facts()
+
+# ------------------------------------------------
+# 5. Order matters — define before calling
+# ------------------------------------------------
+print()
+
+# WRONG: calling before defining causes NameError
+# greet()              # NameError!
+# def greet():
+#     print(&quot;Hello&quot;)
+
+# CORRECT: always define first, then call
+def greet():
+    print(&quot;Hello from the function!&quot;)
+
+greet()
+
+print()
+print(&quot;Functions make your code organised and reusable. Ma sha Allah!&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 6_2_parameters.py</span>
+        <span class="badge badge-lesson">Lesson</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 6 - Lesson 2: Function Parameters
+# ================================================
+# Learn: Passing data into functions using parameters
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;Function Parameters — Passing Data In&quot;)
+print(&quot;=&quot; * 50)
+
+# ------------------------------------------------
+# What is a Parameter?
+# ------------------------------------------------
+# A parameter is a variable inside the function brackets.
+# When you call the function you pass in a value (argument).
+# The function uses that value in its code.
+# This makes functions flexible — different input, different output.
+
+# ------------------------------------------------
+# 1. One parameter
+# ------------------------------------------------
+
+def greet_student(name):
+    print(f&quot;Assalamu Alaikum, {name}!&quot;)
+
+greet_student(&quot;Ahmed&quot;)
+greet_student(&quot;Fatima&quot;)
+greet_student(&quot;Abdullah&quot;)
+
+print()
+
+def show_prayer(prayer_name):
+    print(f&quot;It is time for {prayer_name} prayer. Please stop and pray.&quot;)
+
+show_prayer(&quot;Fajr&quot;)
+show_prayer(&quot;Dhuhr&quot;)
+show_prayer(&quot;Maghrib&quot;)
+
+# ------------------------------------------------
+# 2. Multiple parameters
+# ------------------------------------------------
+print()
+
+def introduce_student(name, city, school):
+    print(f&quot;Name  : {name}&quot;)
+    print(f&quot;City  : {city}&quot;)
+    print(f&quot;School: {school}&quot;)
+    print()
+
+introduce_student(&quot;Ahmed Ali&quot;, &quot;Lahore&quot;, &quot;Jamia Islamia&quot;)
+introduce_student(&quot;Fatima Khan&quot;, &quot;Karachi&quot;, &quot;Al-Huda Institute&quot;)
+
+# ------------------------------------------------
+# 3. Parameters with calculations
+# ------------------------------------------------
+print()
+
+def calculate_bill(price, quantity):
+    total = price * quantity
+    print(f&quot;Price : {price} rupees&quot;)
+    print(f&quot;Qty   : {quantity}&quot;)
+    print(f&quot;Total : {total} rupees&quot;)
+
+calculate_bill(150, 5)
+print()
+calculate_bill(850, 3)
+
+print()
+
+def show_attendance(total, absent):
+    present = total - absent
+    percentage = present / total * 100
+    print(f&quot;Total    : {total}&quot;)
+    print(f&quot;Present  : {present}&quot;)
+    print(f&quot;Absent   : {absent}&quot;)
+    print(f&quot;Rate     : {percentage:.1f}%&quot;)
+
+show_attendance(35, 3)
+
+# ------------------------------------------------
+# 4. Parameters with if statements inside
+# ------------------------------------------------
+print()
+
+def check_grade(name, marks):
+    if marks &gt;= 90:
+        grade = &quot;A+&quot;
+    elif marks &gt;= 80:
+        grade = &quot;A&quot;
+    elif marks &gt;= 70:
+        grade = &quot;B&quot;
+    elif marks &gt;= 50:
+        grade = &quot;Pass&quot;
+    else:
+        grade = &quot;Fail&quot;
+    print(f&quot;{name} scored {marks} — Grade: {grade}&quot;)
+
+check_grade(&quot;Ahmed&quot;, 92)
+check_grade(&quot;Fatima&quot;, 78)
+check_grade(&quot;Hassan&quot;, 45)
+
+# ------------------------------------------------
+# 5. Using parameters with input()
+# ------------------------------------------------
+print()
+
+def personal_greeting(name, subject):
+    print(f&quot;Bismillah {name}! Today we study {subject}.&quot;)
+    print(f&quot;May Allah make {subject} easy for you. Ameen.&quot;)
+
+student = input(&quot;Enter student name: &quot;)
+topic = input(&quot;Enter today&#x27;s subject: &quot;)
+personal_greeting(student, topic)
+
+print()
+print(&quot;Parameters make functions flexible and powerful. Excellent!&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 6_3_return_values.py</span>
+        <span class="badge badge-lesson">Lesson</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 6 - Lesson 3: Return Values
+# ================================================
+# Learn: return, using the result of a function,
+#        the difference between print and return
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;Return Values — Getting Data Back from Functions&quot;)
+print(&quot;=&quot; * 50)
+
+# ------------------------------------------------
+# What is return?
+# ------------------------------------------------
+# So far our functions only PRINT things.
+# return sends a value BACK to wherever the function was called.
+# The calling code can store that value in a variable.
+# This makes functions truly useful in larger programs.
+
+# print vs return:
+# print  — shows something on screen, returns nothing useful
+# return — sends a value back, can be stored and used later
+
+# ------------------------------------------------
+# 1. Basic return
+# ------------------------------------------------
+
+def get_greeting(name):
+    return &quot;Assalamu Alaikum, &quot; + name + &quot;!&quot;
+
+message = get_greeting(&quot;Ahmed&quot;)
+print(message)                          # store and use later
+print(get_greeting(&quot;Fatima&quot;))           # use directly
+
+print()
+
+# ------------------------------------------------
+# 2. Returning a calculated number
+# ------------------------------------------------
+
+def calculate_total(price, quantity):
+    return price * quantity
+
+bill = calculate_total(150, 5)
+print(f&quot;Your bill is {bill} rupees&quot;)
+
+# Using the returned value in another calculation
+total = calculate_total(200, 3)
+tax = total * 0.10
+grand_total = total + tax
+print(f&quot;Subtotal : {total}&quot;)
+print(f&quot;Tax (10%): {tax}&quot;)
+print(f&quot;Total    : {grand_total}&quot;)
+
+print()
+
+# ------------------------------------------------
+# 3. Return with if-else
+# ------------------------------------------------
+
+def get_grade(marks):
+    if marks &gt;= 90:
+        return &quot;A+&quot;
+    elif marks &gt;= 80:
+        return &quot;A&quot;
+    elif marks &gt;= 70:
+        return &quot;B&quot;
+    elif marks &gt;= 50:
+        return &quot;Pass&quot;
+    else:
+        return &quot;Fail&quot;
+
+marks = int(input(&quot;Enter marks: &quot;))
+grade = get_grade(marks)
+print(f&quot;Your grade is: {grade}&quot;)
+
+print()
+
+# ------------------------------------------------
+# 4. Returning True or False
+# ------------------------------------------------
+
+def is_passing(marks):
+    return marks &gt;= 50
+
+def is_adult(age):
+    return age &gt;= 18
+
+def is_eligible_for_hifz(age, surahs):
+    return age &gt;= 8 and surahs &gt;= 3
+
+print(is_passing(75))               # True
+print(is_passing(35))               # False
+
+age = int(input(&quot;Enter age: &quot;))
+print(f&quot;Is adult: {is_adult(age)}&quot;)
+
+print()
+
+# ------------------------------------------------
+# 5. Using returned values together
+# ------------------------------------------------
+
+def calculate_average(marks_list):
+    total = 0
+    for m in marks_list:
+        total += m
+    return total / len(marks_list)
+
+def get_result(average):
+    if average &gt;= 80:
+        return &quot;Excellent&quot;
+    elif average &gt;= 60:
+        return &quot;Good&quot;
+    elif average &gt;= 50:
+        return &quot;Pass&quot;
+    else:
+        return &quot;Fail&quot;
+
+student_marks = [85, 78, 92, 70, 88]
+avg = calculate_average(student_marks)
+result = get_result(avg)
+print(f&quot;Average : {avg:.1f}&quot;)
+print(f&quot;Result  : {result}&quot;)
+
+print()
+
+# ------------------------------------------------
+# 6. Functions calling other functions
+# ------------------------------------------------
+
+def get_full_name(first, last):
+    return first + &quot; &quot; + last
+
+def generate_id_card(first, last, city):
+    name = get_full_name(first, last)       # calls another function
+    print(&quot;=&quot; * 30)
+    print(&quot;STUDENT ID CARD&quot;)
+    print(&quot;=&quot; * 30)
+    print(f&quot;Name : {name}&quot;)
+    print(f&quot;City : {city}&quot;)
+    print(&quot;=&quot; * 30)
+
+generate_id_card(&quot;Ahmed&quot;, &quot;Ali&quot;, &quot;Lahore&quot;)
+
+print()
+print(&quot;return makes functions truly powerful. Well done!&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 6_4_default_parameters.py</span>
+        <span class="badge badge-lesson">Lesson</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 6 - Lesson 4: Default Parameters
+# ================================================
+# Learn: Setting default values for parameters
+#        so the function works even without arguments
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;Default Parameters&quot;)
+print(&quot;=&quot; * 50)
+
+# ------------------------------------------------
+# What are Default Parameters?
+# ------------------------------------------------
+# A default parameter has a pre-set value.
+# If the caller does not pass a value, the default is used.
+# If the caller does pass a value, it overrides the default.
+# This makes functions more flexible.
+
+# ------------------------------------------------
+# 1. Simple default parameter
+# ------------------------------------------------
+
+def greet(name, greeting=&quot;Assalamu Alaikum&quot;):
+    print(f&quot;{greeting}, {name}!&quot;)
+
+greet(&quot;Ahmed&quot;)                          # uses default greeting
+greet(&quot;Fatima&quot;)                         # uses default greeting
+greet(&quot;Hassan&quot;, &quot;Good morning&quot;)         # overrides with custom greeting
+
+print()
+
+# ------------------------------------------------
+# 2. Default language/title
+# ------------------------------------------------
+
+def introduce(name, title=&quot;Student&quot;, city=&quot;Pakistan&quot;):
+    print(f&quot;{title} {name} is from {city}.&quot;)
+
+introduce(&quot;Ahmed&quot;)                          # all defaults
+introduce(&quot;Maulana Tariq&quot;, &quot;Scholar&quot;)       # override title only
+introduce(&quot;Dr. Fatima&quot;, &quot;Teacher&quot;, &quot;Lahore&quot;) # override all
+
+print()
+
+# ------------------------------------------------
+# 3. Default in calculation
+# ------------------------------------------------
+
+def calculate_zakat(savings, rate=2.5):
+    zakat = savings * rate / 100
+    return zakat
+
+# Using default rate of 2.5%
+zakat1 = calculate_zakat(100000)
+print(f&quot;Zakat on 100,000 (2.5%): {zakat1}&quot;)
+
+# Overriding the rate
+zakat2 = calculate_zakat(100000, 5)
+print(f&quot;Zakat on 100,000 (5%): {zakat2}&quot;)
+
+print()
+
+# ------------------------------------------------
+# 4. Default in grading
+# ------------------------------------------------
+
+def check_result(marks, passing_marks=50):
+    if marks &gt;= passing_marks:
+        return &quot;Pass&quot;
+    else:
+        return &quot;Fail&quot;
+
+print(check_result(75))           # uses default passing = 50
+print(check_result(75, 80))       # harder requirement — Fail
+print(check_result(40))           # Fail with default
+print(check_result(40, 35))       # Pass with lower requirement
+
+print()
+
+# ------------------------------------------------
+# 5. Default parameters with multiple arguments
+# ------------------------------------------------
+
+def student_report(name, marks, subject=&quot;General&quot;, passing=50):
+    result = &quot;Pass&quot; if marks &gt;= passing else &quot;Fail&quot;
+    print(f&quot;Subject : {subject}&quot;)
+    print(f&quot;Student : {name}&quot;)
+    print(f&quot;Marks   : {marks}&quot;)
+    print(f&quot;Result  : {result}&quot;)
+    print()
+
+student_report(&quot;Ahmed&quot;, 85, &quot;Quran&quot;)
+student_report(&quot;Fatima&quot;, 92, &quot;Hadith&quot;, 80)
+student_report(&quot;Hassan&quot;, 45)            # all defaults for subject and passing
+
+# ------------------------------------------------
+# 6. Important rule: defaults go AFTER non-defaults
+# ------------------------------------------------
+
+# WRONG — default parameter before non-default:
+# def greet(greeting=&quot;Hello&quot;, name):   # SyntaxError!
+
+# CORRECT — non-default first, default last:
+def greet_properly(name, greeting=&quot;Assalamu Alaikum&quot;):
+    print(f&quot;{greeting}, {name}!&quot;)
+
+greet_properly(&quot;Ahmed&quot;)
+greet_properly(&quot;Fatima&quot;, &quot;Welcome back&quot;)
+
+print()
+print(&quot;Default parameters add flexibility to your functions. Excellent!&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 6_5_islamic_applications.py</span>
+        <span class="badge badge-app">Applications</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 6 - Lesson 5: Function Applications
+# ================================================
+# Real programs built using functions
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;Functions — Real Applications&quot;)
+print(&quot;=&quot; * 50)
+
+# ------------------------------------------------
+# Application 1: Student Report Card System
+# ------------------------------------------------
+
+def get_grade(marks):
+    if marks &gt;= 90:
+        return &quot;A+&quot;
+    elif marks &gt;= 80:
+        return &quot;A&quot;
+    elif marks &gt;= 70:
+        return &quot;B&quot;
+    elif marks &gt;= 60:
+        return &quot;C&quot;
+    elif marks &gt;= 50:
+        return &quot;D&quot;
+    else:
+        return &quot;Fail&quot;
+
+def calculate_average(marks_list):
+    return sum(marks_list) / len(marks_list)
+
+def print_report_card(name, subjects, marks_list):
+    print(&quot;=&quot; * 40)
+    print(&quot;       STUDENT REPORT CARD&quot;)
+    print(&quot;=&quot; * 40)
+    print(f&quot;Student: {name}&quot;)
+    print(&quot;-&quot; * 40)
+    for i in range(len(subjects)):
+        grade = get_grade(marks_list[i])
+        print(f&quot;{subjects[i]:&lt;12}: {marks_list[i]:&gt;3}  ({grade})&quot;)
+    print(&quot;-&quot; * 40)
+    avg = calculate_average(marks_list)
+    overall = get_grade(avg)
+    print(f&quot;Average    : {avg:.1f}%&quot;)
+    print(f&quot;Overall    : {overall}&quot;)
+    print(&quot;=&quot; * 40)
+
+print(&quot;\n--- Application 1: Report Card ---&quot;)
+name = input(&quot;Student name: &quot;)
+subjects = [&quot;Quran&quot;, &quot;Hadith&quot;, &quot;Fiqh&quot;, &quot;Arabic&quot;, &quot;Seerah&quot;]
+marks_list = []
+for subject in subjects:
+    m = int(input(f&quot;{subject} marks: &quot;))
+    marks_list.append(m)
+
+print_report_card(name, subjects, marks_list)
+
+# ------------------------------------------------
+# Application 2: Bill Calculator
+# ------------------------------------------------
+
+def calculate_bill(item, price_per_kg, quantity):
+    subtotal = price_per_kg * quantity
+    return subtotal
+
+def print_receipt(items, prices, quantities):
+    print(&quot;\n&quot; + &quot;=&quot; * 35)
+    print(&quot;         SHOP RECEIPT&quot;)
+    print(&quot;=&quot; * 35)
+    grand_total = 0
+    for i in range(len(items)):
+        subtotal = calculate_bill(items[i], prices[i], quantities[i])
+        grand_total += subtotal
+        print(f&quot;{items[i]:&lt;12}: {quantities[i]} kg x {prices[i]} = {subtotal}&quot;)
+    print(&quot;-&quot; * 35)
+    print(f&quot;{&#x27;TOTAL&#x27;:&lt;20}: {grand_total} rupees&quot;)
+    print(&quot;=&quot; * 35)
+    print(&quot;Jazakallah Khair!&quot;)
+
+print(&quot;\n--- Application 2: Shop Receipt ---&quot;)
+num_items = int(input(&quot;How many items? &quot;))
+items, prices, quantities = [], [], []
+for i in range(num_items):
+    item = input(f&quot;Item {i+1} name: &quot;)
+    price = int(input(f&quot;Price per kg: &quot;))
+    qty = float(input(f&quot;Quantity (kg): &quot;))
+    items.append(item)
+    prices.append(price)
+    quantities.append(qty)
+
+print_receipt(items, prices, quantities)
+
+# ------------------------------------------------
+# Application 3: Simple Quiz System
+# ------------------------------------------------
+
+def ask_question(question, correct_answer):
+    answer = input(f&quot;{question} &quot;).strip().lower()
+    if answer == correct_answer.lower():
+        print(&quot;Correct! Ma sha Allah.&quot;)
+        return 1
+    else:
+        print(f&quot;Wrong. Answer: {correct_answer}&quot;)
+        return 0
+
+def run_quiz(questions, answers, topic=&quot;Islamic Knowledge&quot;):
+    print(f&quot;\n=== {topic} Quiz ===&quot;)
+    score = 0
+    for i in range(len(questions)):
+        print(f&quot;\nQ{i+1}:&quot;, end=&quot; &quot;)
+        score += ask_question(questions[i], answers[i])
+    return score
+
+def show_quiz_result(score, total):
+    percentage = score / total * 100
+    print(f&quot;\nFinal Score: {score}/{total} ({percentage:.0f}%)&quot;)
+    if score == total:
+        print(&quot;Perfect! Alhamdulillah!&quot;)
+    elif percentage &gt;= 60:
+        print(&quot;Good effort! Keep learning.&quot;)
+    else:
+        print(&quot;Keep studying — you will improve!&quot;)
+
+print(&quot;\n--- Application 3: Quiz ---&quot;)
+questions = [
+    &quot;How many Surahs in the Quran?&quot;,
+    &quot;How many daily prayers?&quot;,
+    &quot;Which month was the Quran revealed?&quot;
+]
+answers = [&quot;114&quot;, &quot;5&quot;, &quot;Ramadan&quot;]
+
+score = run_quiz(questions, answers)
+show_quiz_result(score, len(questions))
+
+print()
+print(&quot;Functions let you build complete programs. Excellent work!&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 6_6_quiz.py</span>
+        <span class="badge badge-quiz">Quiz</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 6 - Quiz: Functions
+# ================================================
+# Covers: def, parameters, return, default params,
+#         functions calling functions
+# Difficulty: Easy / Medium / Complex
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;MODULE 6 QUIZ - Functions&quot;)
+print(&quot;=&quot; * 50)
+print()
+
+# ------------------------------------------------
+# EASY
+# ------------------------------------------------
+print(&quot;--- EASY ---&quot;)
+print()
+
+# Q1. Define a function called say_bismillah() that
+#     prints &quot;Bismillahir Rahmanir Raheem&quot;.
+#     Call it 3 times.
+
+
+# Q2. Define a function called greet(name) that
+#     prints &quot;Assalamu Alaikum, &lt;name&gt;!&quot;
+#     Call it with 3 different names.
+
+
+# Q3. Define a function called double(number) that
+#     returns the number multiplied by 2.
+#     Call it with 5 and print the result.
+
+
+# Q4. Define a function called is_even(number) that
+#     returns True if the number is even, False otherwise.
+#     Test it with 4 and 7.
+
+
+# Q5. Define a function greet(name, greeting=&quot;Salam&quot;)
+#     with a default greeting.
+#     Call it once with only a name, once with both arguments.
+
+
+# ------------------------------------------------
+# MEDIUM
+# ------------------------------------------------
+print()
+print(&quot;--- MEDIUM ---&quot;)
+print()
+
+# Q6. Define a function calculate_total(price, quantity)
+#     that returns price * quantity.
+#     Ask the user for price and quantity using input(),
+#     call the function, and print the result with an f-string.
+
+
+# Q7. Define a function get_grade(marks) that returns:
+#       A+ for 90+, A for 80+, B for 70+, Pass for 50+, Fail otherwise.
+#     Ask the user for marks and print their grade.
+
+
+# Q8. Define a function check_eligible(age, surahs_memorized)
+#     that returns True if age &gt;= 8 AND surahs_memorized &gt;= 5.
+#     Test it with two different inputs.
+
+
+# Q9. Define two functions:
+#     - get_full_name(first, last) — returns &quot;First Last&quot;
+#     - print_id_card(first, last, city) — prints a formatted
+#       ID card using get_full_name() inside it.
+#     Call print_id_card with your own details.
+
+
+# ------------------------------------------------
+# COMPLEX
+# ------------------------------------------------
+print()
+print(&quot;--- COMPLEX ---&quot;)
+print()
+
+# Q10. Build a marks summary system using functions:
+#      - get_average(marks_list) — returns the average
+#      - get_grade(average) — returns A+/A/B/Pass/Fail
+#      - print_summary(name, marks_list) — prints name,
+#        each mark, average, and grade
+#      Ask for a student name and 5 marks, then call print_summary.
+
+
+# Q11. Define a function calculate_zakat(savings, rate=2.5)
+#      that returns the zakat amount.
+#      Define a second function print_zakat_report(name, savings)
+#      that calls calculate_zakat() and prints a neat report.
+#      Include: name, savings, zakat due, whether they owe zakat
+#      (savings must be &gt;= 50000 to owe zakat).
+
+
+# Q12. Build a number guessing game using functions:
+#      - check_guess(guess, secret) — returns &quot;correct&quot;,
+#        &quot;too high&quot;, or &quot;too low&quot;
+#      - play_game(secret, max_attempts) — runs the game loop,
+#        gives the user max_attempts tries, prints result
+#      Call play_game(7, 3) to run the game.
+
+
+print()
+print(&quot;Quiz done! Check 6_7_quiz_solution.py for answers.&quot;)
+</code></pre>
+    </div>
+
+    <div class="code-file">
+      <div class="code-file-header">
+        <span class="file-name">📄 6_7_quiz_solution.py</span>
+        <span class="badge badge-solution">Quiz Solution</span>
+      </div>
+      <pre><code class="language-python"># ================================================
+# Module 6 - Quiz Solutions
+# ================================================
+
+print(&quot;=&quot; * 50)
+print(&quot;MODULE 6 QUIZ - SOLUTIONS&quot;)
+print(&quot;=&quot; * 50)
+print()
+
+# ------------------------------------------------
+# EASY
+# ------------------------------------------------
+print(&quot;--- EASY ---&quot;)
+print()
+
+# Q1.
+def say_bismillah():
+    print(&quot;Bismillahir Rahmanir Raheem&quot;)
+
+say_bismillah()
+say_bismillah()
+say_bismillah()
+
+# Q2.
+def greet(name):
+    print(f&quot;Assalamu Alaikum, {name}!&quot;)
+
+greet(&quot;Ahmed&quot;)
+greet(&quot;Fatima&quot;)
+greet(&quot;Abdullah&quot;)
+
+# Q3.
+def double(number):
+    return number * 2
+
+print(double(5))       # 10
+
+# Q4.
+def is_even(number):
+    return number % 2 == 0
+
+print(is_even(4))      # True
+print(is_even(7))      # False
+
+# Q5.
+def greet_default(name, greeting=&quot;Salam&quot;):
+    print(f&quot;{greeting}, {name}!&quot;)
+
+greet_default(&quot;Ahmed&quot;)                  # uses default
+greet_default(&quot;Fatima&quot;, &quot;Good morning&quot;) # overrides
+
+# ------------------------------------------------
+# MEDIUM
+# ------------------------------------------------
+print()
+print(&quot;--- MEDIUM ---&quot;)
+print()
+
+# Q6.
+def calculate_total(price, quantity):
+    return price * quantity
+
+price = int(input(&quot;Price per item: &quot;))
+quantity = int(input(&quot;Quantity: &quot;))
+total = calculate_total(price, quantity)
+print(f&quot;Total bill: {total} rupees&quot;)
+
+# Q7.
+def get_grade(marks):
+    if marks &gt;= 90:
+        return &quot;A+&quot;
+    elif marks &gt;= 80:
+        return &quot;A&quot;
+    elif marks &gt;= 70:
+        return &quot;B&quot;
+    elif marks &gt;= 50:
+        return &quot;Pass&quot;
+    else:
+        return &quot;Fail&quot;
+
+marks = int(input(&quot;Enter marks: &quot;))
+print(f&quot;Grade: {get_grade(marks)}&quot;)
+
+# Q8.
+def check_eligible(age, surahs_memorized):
+    return age &gt;= 8 and surahs_memorized &gt;= 5
+
+print(check_eligible(10, 6))    # True
+print(check_eligible(7, 8))     # False — age too young
+print(check_eligible(12, 3))    # False — not enough surahs
+
+# Q9.
+def get_full_name(first, last):
+    return first + &quot; &quot; + last
+
+def print_id_card(first, last, city):
+    name = get_full_name(first, last)
+    print(&quot;=&quot; * 30)
+    print(&quot;     STUDENT ID CARD&quot;)
+    print(&quot;=&quot; * 30)
+    print(f&quot;Name : {name}&quot;)
+    print(f&quot;City : {city}&quot;)
+    print(&quot;=&quot; * 30)
+
+print_id_card(&quot;Ahmed&quot;, &quot;Ali&quot;, &quot;Lahore&quot;)
+
+# ------------------------------------------------
+# COMPLEX
+# ------------------------------------------------
+print()
+print(&quot;--- COMPLEX ---&quot;)
+print()
+
+# Q10.
+def get_average(marks_list):
+    return sum(marks_list) / len(marks_list)
+
+def get_grade_avg(average):
+    if average &gt;= 90:
+        return &quot;A+&quot;
+    elif average &gt;= 80:
+        return &quot;A&quot;
+    elif average &gt;= 70:
+        return &quot;B&quot;
+    elif average &gt;= 50:
+        return &quot;Pass&quot;
+    else:
+        return &quot;Fail&quot;
+
+def print_summary(name, marks_list):
+    subjects = [&quot;Quran&quot;, &quot;Hadith&quot;, &quot;Fiqh&quot;, &quot;Arabic&quot;, &quot;Seerah&quot;]
+    print(f&quot;\nStudent: {name}&quot;)
+    print(&quot;-&quot; * 30)
+    for i in range(len(marks_list)):
+        print(f&quot;{subjects[i]:&lt;10}: {marks_list[i]}&quot;)
+    avg = get_average(marks_list)
+    print(&quot;-&quot; * 30)
+    print(f&quot;Average : {avg:.1f}&quot;)
+    print(f&quot;Grade   : {get_grade_avg(avg)}&quot;)
+
+name = input(&quot;Student name: &quot;)
+marks_list = []
+for i in range(5):
+    m = int(input(f&quot;Mark {i+1}: &quot;))
+    marks_list.append(m)
+print_summary(name, marks_list)
+
+# Q11.
+def calculate_zakat(savings, rate=2.5):
+    return savings * rate / 100
+
+def print_zakat_report(name, savings):
+    owes = savings &gt;= 50000
+    zakat = calculate_zakat(savings) if owes else 0
+    print(f&quot;\nName       : {name}&quot;)
+    print(f&quot;Savings    : {savings} rupees&quot;)
+    print(f&quot;Owes Zakat : {owes}&quot;)
+    if owes:
+        print(f&quot;Zakat Due  : {zakat} rupees&quot;)
+    else:
+        print(&quot;Savings below nisab — no zakat due.&quot;)
+
+name = input(&quot;Your name: &quot;)
+savings = int(input(&quot;Total savings (rupees): &quot;))
+print_zakat_report(name, savings)
+
+# Q12.
+def check_guess(guess, secret):
+    if guess == secret:
+        return &quot;correct&quot;
+    elif guess &gt; secret:
+        return &quot;too high&quot;
+    else:
+        return &quot;too low&quot;
+
+def play_game(secret, max_attempts):
+    print(f&quot;\nGuess the number! You have {max_attempts} attempts.&quot;)
+    for attempt in range(1, max_attempts + 1):
+        guess = int(input(f&quot;Attempt {attempt}: &quot;))
+        result = check_guess(guess, secret)
+        if result == &quot;correct&quot;:
+            print(f&quot;Correct! You got it in {attempt} attempt(s)!&quot;)
+            return
+        else:
+            print(f&quot;Hint: {result}&quot;)
+    print(f&quot;Game over! The number was {secret}.&quot;)
+
+play_game(7, 3)
+
+print()
+print(&quot;End of solutions.&quot;)
+</code></pre>
+    </div>
+      </div>
+
+      <div id="tab-notes" class="tab-pane">
+        <div class="markdown-body" id="md-notes"></div>
+        <script type="application/json" id="src-notes">"# Module 6: Functions \u2014 Teacher Notes\n\n## Duration\n2 classes\n\n---\n\n## Learning Objectives\n\nBy the end of this module, students will be able to:\n\n1. Define a function using the `def` keyword\n2. Call a function correctly\n3. Pass information into functions using parameters and arguments\n4. Get information back from functions using `return`\n5. Use default parameter values for optional arguments\n\n---\n\n## Lesson Flow\n\n### Class 1\n\n| File | Topic |\n|------|-------|\n| `6_1_basic_functions.py` | What is a function? Why use it? (reusability). Define a function and call it. |\n| `6_2_parameters.py` | Passing information into a function using parameters |\n\n### Class 2\n\n| File | Topic |\n|------|-------|\n| `6_3_return_values.py` | Getting information out of a function using `return` |\n| `6_4_default_parameters.py` | Optional arguments with default values |\n| `6_5_applications.py` | Real-world application examples |\n| Quiz | End-of-module assessment |\n\n---\n\n## Key Concept\n\n> **A function is a reusable block of code \u2014 write once, run many times.**\n\nUse this analogy for students:\n\n> \"Ek recipe ki tarah hai \u2014 aap ek baar likhte hain, phir baar baar pakate hain. Aapko har baar recipe dobara likhne ki zaroorat nahi.\"\n> *(It is like a recipe \u2014 you write it once, then cook it many times. You don't need to rewrite the recipe each time.)*\n\n---\n\n## Parameter vs Argument \u2014 Important Distinction\n\n| Term | Where | Example |\n|------|-------|---------|\n| **Parameter** | In the function **definition** | `def greet(name):` \u2014 here `name` is a parameter |\n| **Argument** | In the function **call** | `greet(\"Ahmed\")` \u2014 here `\"Ahmed\"` is an argument |\n\nExplain simply: parameter is the placeholder, argument is the actual value.\n\n---\n\n## Urdu Teaching Tips\n\n- **\"Function matlab machine \u2014 andar daalo, kuch karo, bahar nikalo\"**\n  *(Function means machine \u2014 put something in, do something, take something out)*\n\n- **\"def matlab define karo \u2014 naam do is machine ko\"**\n  *(def means define \u2014 give this machine a name)*\n\n- Write on the board: `INPUT \u2192 [FUNCTION] \u2192 OUTPUT`\n\n---\n\n## Common Mistakes to Watch For\n\n| Mistake | Example | Fix |\n|---------|---------|-----|\n| Calling function before defining it | `greet()` written before `def greet():` | Always define first |\n| Forgetting `return` keyword | `def add(a,b): a + b` | `return a + b` |\n| Not storing return value | `add(3, 4)` | `result = add(3, 4)` |\n| Confusing `def` name with variable name | Using `add` as both function and variable | Use different names |\n| Missing colon after `def` line | `def greet(name)` | `def greet(name):` |\n\n---\n\n## Important: Show the Validation Pattern\n\nDemonstrate how `get_integer_in_range()` works \u2014 this is a pattern students will use in ALL future projects:\n\n```python\ndef get_integer_in_range(prompt, minimum, maximum):\n    while True:\n        try:\n            value = int(input(prompt))\n            if minimum <= value <= maximum:\n                return value\n            else:\n                print(f\"Meherbani karke {minimum} aur {maximum} ke darmiyan number daalein.\")\n        except ValueError:\n            print(\"Sirf number daalein, haroof nahi.\")\n```\n\nTell students: \"Yeh function aap ke saath Module 9 tak aur capstone projects mein bhi rahega.\"\n*(This function will stay with you through Module 9 and capstone projects too.)*\n\n---\n\n## Files in This Module\n\n| File | Description |\n|------|-------------|\n| `6_1_basic_functions.py` | Define and call simple functions |\n| `6_2_parameters.py` | Functions with parameters |\n| `6_3_return_values.py` | Return values from functions |\n| `6_4_default_parameters.py` | Default parameter values |\n| `6_5_applications.py` | Applied examples |\n| `6_6_quiz.py` | Quiz code |\n| `6_7_solutions.py` | Quiz solutions |\n"</script>
+      </div>
+
+      <div id="tab-practice" class="tab-pane">
+        <div class="markdown-body print-friendly" id="md-practice"></div>
+        <script type="application/json" id="src-practice">"# Module 6: Functions \u2014 Practice Sheet\n\n**Naam / Name:** ___________________________  \n**Tareeq / Date:** ___________________________  \n**Class:** ___________________________\n\n---\n\n## Q1 \u2014 Easy\n\nWhich keyword is used to **define** a function in Python?\n\n**Answer:** ___________________________\n\n---\n\n## Q2 \u2014 Easy\n\nWhat is wrong with this code?\n\n```python\ndef my_function\n    print(\"Hello!\")\n```\n\n**Answer:** ___________________________\n\n---\n\n## Q3 \u2014 Easy\n\nWrite a function called `bismillah_greeting` that takes a `name` parameter and **prints**:\n\n```\nBismillah, Ahmed!\n```\n\n(Replace Ahmed with whatever name is passed)\n\n```python\n# Write your function here:\n\n\n\n\n```\n\n---\n\n## Q4 \u2014 Easy\n\nWhat does the `return` keyword do inside a function?\n\n**Answer:** ___________________________\n\n---\n\n## Q5 \u2014 Medium\n\nWrite a function called `add` that takes two parameters `a` and `b` and **returns** their sum.\n\n```python\n# Write your function here:\n\n\n\n\n```\n\n---\n\n## Q6 \u2014 Medium\n\nWhat is a **default parameter**? Write one example of a function that uses a default parameter.\n\n**Answer:** ___________________________\n\n```python\n# Example:\n\n\n\n\n```\n\n---\n\n## Q7 \u2014 Medium\n\nCall the function `add(10, 20)` from Q5 and **print** the result.\n\n```python\n# Write your code here:\n\n\n```\n\n**What will the output be?** ___________________________\n\n---\n\n## Q8 \u2014 Medium\n\nWrite a function called `check_result` that:\n- Takes one parameter: `marks`\n- Returns `\"Pass\"` if marks are 50 or above\n- Returns `\"Fail\"` if marks are below 50\n\n```python\n# Write your function here:\n\n\n\n\n```\n\n---\n\n## Q9 \u2014 Complex\n\nWhat happens if you **define** a function but **never call** it?\n\n**Answer:** ___________________________\n\n---\n\n## Challenge \u2014 Zakat Calculator\n\n> *\"Zakat is obligatory on savings that reach the nisab. The rate is 2.5%.\"*\n\nWrite a function called `calculate_zakat` that:\n- Takes one parameter: `amount` (savings in rupees)\n- Returns **2.5% of the amount**\n\nThen test it with savings of **100,000 rupees** and print the result clearly.\n\n```python\n# Write your function here:\n\n\n\n\n# Test it:\n\n\n```\n\n**Expected output:**\n\n```\n100000 rupees ki zakat: 2500.0 rupees\n```\n\n---\n\n## Answers (Teacher Section)\n\n| Q | Answer |\n|---|--------|\n| Q1 | `def` |\n| Q2 | Missing parentheses `()` and colon `:` after the function name \u2014 correct: `def my_function():` |\n| Q3 | `def bismillah_greeting(name): print(f\"Bismillah, {name}!\")` |\n| Q4 | It sends a value back to wherever the function was called from |\n| Q5 | `def add(a, b): return a + b` |\n| Q6 | A value used when no argument is provided \u2014 e.g., `def greet(name, msg=\"Salaam\"):` |\n| Q7 | `print(add(10, 20))` \u2192 output: `30` |\n| Q8 | `def check_result(marks): return \"Pass\" if marks >= 50 else \"Fail\"` |\n| Q9 | Nothing happens \u2014 the code inside is never executed |\n| Challenge | `def calculate_zakat(amount): return amount * 0.025` \u2192 `2500.0` |\n"</script>
+        <button class="print-btn no-print" onclick="window.print()">🖨️ Print Practice Sheet</button>
+      </div>
+
+      <div id="tab-assessment" class="tab-pane">
+        <div class="markdown-body" id="md-assessment"></div>
+        <script type="application/json" id="src-assessment">"# Module 6: Functions \u2014 Assessment\n\n## Pass Criteria\n\nA student passes this module if they can:\n\n- [ ] Define a function using `def`\n- [ ] Call a function correctly (with parentheses)\n- [ ] Pass parameters to a function and use them inside\n- [ ] Return a value from a function using `return`\n- [ ] Use a default parameter value in a function definition\n\n---\n\n## Oral Questions\n\nAsk these questions to check understanding during or after the lesson:\n\n1. Which keyword is used to define a function in Python?\n2. What is the difference between **defining** a function and **calling** a function?\n3. What does the `return` keyword do?\n4. What is the difference between a **parameter** and an **argument**?\n5. If a function has a default parameter, do you have to provide that argument when calling it?\n\n---\n\n## Quiz Marking\n\n| Section | Marks |\n|---------|-------|\n| Easy questions | 5 |\n| Medium questions | 6 |\n| Complex questions | 6 |\n| **Total** | **17** |\n\n---\n\n## Grade Scale\n\n| Marks | Grade | Remarks |\n|-------|-------|---------|\n| 15 \u2013 17 | A | Mashallah \u2014 Excellent |\n| 12 \u2013 14 | B | Very Good |\n| 9 \u2013 11 | C | Good \u2014 Review mistakes |\n| 6 \u2013 8 | D | Needs Revision |\n| 0 \u2013 5 | F | Repeat module before moving on |\n\n---\n\n## Practical Assessment\n\nAsk each student (or pair) to complete the following task:\n\n### Task\n\nWrite a function called `greet` that:\n- Takes two parameters: `name` and `greeting`\n- Has a **default value** of `\"Assalamu Alaikum\"` for `greeting`\n- **Returns** the string: `\"Assalamu Alaikum, Ahmed!\"`  \n  (using whatever `name` and `greeting` are passed)\n\nThen **call the function 3 times** with three different names and print the result each time.\n\n### Expected Output (example)\n\n```\nAssalamu Alaikum, Ahmed!\nAssalamu Alaikum, Fatima!\nAssalamu Alaikum, Usman!\n```\n\n### Sample Solution\n\n```python\ndef greet(name, greeting=\"Assalamu Alaikum\"):\n    return f\"{greeting}, {name}!\"\n\nprint(greet(\"Ahmed\"))\nprint(greet(\"Fatima\"))\nprint(greet(\"Usman\"))\n```\n\n---\n\n## Teacher Observation Checklist\n\nUse this during the practical task:\n\n| Student Name | Defined function? | Used parameters? | Used return? | Default parameter? | Pass/Fail |\n|--------------|:-----------------:|:----------------:|:------------:|:------------------:|:---------:|\n|              | \u2610 | \u2610 | \u2610 | \u2610 | |\n|              | \u2610 | \u2610 | \u2610 | \u2610 | |\n|              | \u2610 | \u2610 | \u2610 | \u2610 | |\n|              | \u2610 | \u2610 | \u2610 | \u2610 | |\n|              | \u2610 | \u2610 | \u2610 | \u2610 | |\n"</script>
+      </div>
+
+    </div>
+
+    <div class="module-nav">
+      <a href="module-5.html" class="nav-btn">← Module 5</a>
+      <a href="index.html" class="nav-btn nav-home">🏠 All Modules</a>
+      <a href="module-7.html" class="nav-btn">Module 7 →</a>
+    </div>
+
+  </main>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
