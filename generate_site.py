@@ -98,22 +98,52 @@ def generate_module_page(num: int, title: str, folder: str, icon: str, _desc: st
     # Collect and sort Python files
     py_files = sorted(module_dir.glob("*.py"))
 
-    # Build lessons tab
-    lessons_parts = []
-    for py_file in py_files:
+    # Build VS Code-style file explorer for lessons tab
+    file_items_html  = []
+    code_panels_html = []
+
+    for idx, py_file in enumerate(py_files):
         code = read_file(py_file)
         label, badge_cls = classify_file(py_file.name)
-        escaped = html_mod.escape(code)
-        lessons_parts.append(f"""
-    <div class="code-file">
-      <div class="code-file-header">
-        <span class="file-name">📄 {html_mod.escape(py_file.name)}</span>
-        <span class="badge {badge_cls}">{label}</span>
-      </div>
-      <pre><code class="language-python">{escaped}</code></pre>
-    </div>""")
+        escaped  = html_mod.escape(code)
+        esc_name = html_mod.escape(py_file.name)
+        active   = "active" if idx == 0 else ""
+        panel_id = f"code-panel-{num}-{idx}"
 
-    lessons_html = "\n".join(lessons_parts) if lessons_parts else "<p>No lesson files found.</p>"
+        file_items_html.append(
+            f'<div class="file-item {active}" data-target="{panel_id}"'
+            f' data-filename="{esc_name}" data-label="{label}" data-badge-class="{badge_cls}">'
+            f'<span class="file-item-name">{esc_name}</span>'
+            f'<span class="badge {badge_cls}">{label}</span></div>'
+        )
+        code_panels_html.append(
+            f'<div id="{panel_id}" class="code-panel {active}">'
+            f'<pre><code class="language-python">{escaped}</code></pre></div>'
+        )
+
+    if py_files:
+        first_label, first_badge = classify_file(py_files[0].name)
+        first_name = html_mod.escape(py_files[0].name)
+        n_files    = len(py_files)
+        lessons_html = (
+            f'<div class="lessons-layout">'
+            f'<div class="file-list-panel">'
+            f'<div class="file-list-header">Files &mdash; Module {num}</div>'
+            + "".join(file_items_html) +
+            f'<div class="file-count">{n_files} file{"s" if n_files != 1 else ""}</div>'
+            f'</div>'
+            f'<div class="code-viewer-panel">'
+            f'<div class="code-viewer-header">'
+            f'<span class="viewer-filename" id="viewer-filename">{first_name}</span>'
+            f'<div class="viewer-actions">'
+            f'<span class="badge {first_badge}" id="viewer-badge">{first_label}</span>'
+            f'<button class="copy-btn" id="copy-btn">Copy</button>'
+            f'</div></div>'
+            f'<div class="code-panels">' + "".join(code_panels_html) + '</div>'
+            f'</div></div>'
+        )
+    else:
+        lessons_html = "<p>No lesson files found.</p>"
 
     # Read markdown content — encode as JSON for safe embedding
     notes_json      = json.dumps(read_file(module_dir / "TEACHER_NOTES.md"))

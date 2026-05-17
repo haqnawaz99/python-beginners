@@ -174,34 +174,15 @@ img { max-width: 100%; }
 .tab-pane { display: none; }
 .tab-pane.active { display: block; }
 
-/* ── Code Files ── */
-.code-file {
-  margin-bottom: 1.75rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow);
-}
-.code-file-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #2b3a2b;
-  padding: 0.6rem 1rem;
-}
-.file-name {
-  color: #a8d8a8;
-  font-family: "Cascadia Code", "Fira Code", "Consolas", monospace;
-  font-size: 0.85rem;
-  font-weight: 600;
-}
+/* ── Badges ── */
 .badge {
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  padding: 0.2rem 0.6rem;
+  padding: 0.18rem 0.55rem;
   border-radius: 2rem;
+  white-space: nowrap;
 }
 .badge-lesson    { background: #1a5276; color: #aed6f1; }
 .badge-quiz      { background: #6e2f8a; color: #d7bde2; }
@@ -209,17 +190,124 @@ img { max-width: 100%; }
 .badge-app       { background: #784212; color: #f0d9b5; }
 .badge-starter   { background: #7d6608; color: #f9e79f; }
 
-.code-file pre {
-  margin: 0;
-  max-height: 480px;
-  overflow-y: auto;
+/* ── VS Code-style Lessons Explorer ── */
+.lessons-layout {
+  display: flex;
+  border: 1px solid #21262d;
+  border-radius: var(--radius);
+  overflow: hidden;
+  height: calc(100vh - 260px);
+  min-height: 520px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
-.code-file pre code {
+
+/* Left: file list */
+.file-list-panel {
+  width: 230px;
+  flex-shrink: 0;
+  background: #161b22;
+  overflow-y: auto;
+  border-right: 1px solid #21262d;
+  display: flex;
+  flex-direction: column;
+}
+.file-list-header {
+  padding: 0.65rem 1rem;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #6e7681;
+  border-bottom: 1px solid #21262d;
+  flex-shrink: 0;
+  background: #0d1117;
+}
+.file-item {
+  padding: 0.55rem 0.75rem;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+  transition: background 0.12s;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  border-bottom: 1px solid #21262d;
+}
+.file-item:hover    { background: #1c2128; }
+.file-item.active   { background: #1c2128; border-left-color: var(--green-mid); }
+.file-item-name {
   font-family: "Cascadia Code", "Fira Code", "Consolas", monospace;
-  font-size: 0.82rem;
-  line-height: 1.55;
-  padding: 1rem 1.25rem !important;
+  font-size: 0.76rem;
+  color: #c9d1d9;
+  word-break: break-all;
+  line-height: 1.35;
+}
+.file-item.active .file-item-name { color: #7ee787; }
+
+/* Right: code viewer */
+.code-viewer-panel {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: #0d1117;
+}
+.code-viewer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  background: #161b22;
+  border-bottom: 1px solid #21262d;
+  flex-shrink: 0;
+}
+.viewer-filename {
+  font-family: "Cascadia Code", "Fira Code", "Consolas", monospace;
+  font-size: 0.85rem;
+  color: #58a6ff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.viewer-actions { display: flex; gap: 0.5rem; align-items: center; flex-shrink: 0; }
+.copy-btn {
+  background: #21262d;
+  border: 1px solid #30363d;
+  color: #c9d1d9;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: background 0.12s;
+  white-space: nowrap;
+}
+.copy-btn:hover       { background: #30363d; }
+.copy-btn.copied      { background: #145e38; border-color: var(--green-mid); color: #7ee787; }
+
+.code-panels { flex: 1; overflow: hidden; position: relative; }
+.code-panel  { display: none; height: 100%; overflow-y: auto; }
+.code-panel.active { display: block; }
+.code-panel pre {
+  margin: 0;
+  min-height: 100%;
+  background: #0d1117 !important;
+}
+.code-panel pre code {
+  font-family: "Cascadia Code", "Fira Code", "Consolas", monospace;
+  font-size: 0.85rem;
+  line-height: 1.65;
+  padding: 1.25rem 1.5rem !important;
   display: block;
+  background: #0d1117 !important;
+}
+
+/* File count indicator */
+.file-count {
+  padding: 0.5rem 1rem;
+  font-size: 0.72rem;
+  color: #6e7681;
+  border-top: 1px solid #21262d;
+  margin-top: auto;
+  text-align: center;
 }
 
 /* ── Markdown Content ── */
@@ -437,6 +525,22 @@ img { max-width: 100%; }
   .markdown-body { padding: 1.25rem; }
   .index-hero { padding: 2rem 1.25rem; }
   .index-hero h1 { font-size: 1.5rem; }
+
+  /* Stack file explorer on mobile */
+  .lessons-layout {
+    flex-direction: column;
+    height: auto;
+    min-height: 0;
+  }
+  .file-list-panel {
+    width: 100%;
+    max-height: 200px;
+    border-right: none;
+    border-bottom: 1px solid #21262d;
+  }
+  .file-item { flex-direction: row; align-items: center; justify-content: space-between; }
+  .code-viewer-panel { min-height: 400px; }
+  .code-panels { overflow-y: auto; max-height: 400px; }
 }
 
 /* ── Print Styles ── */
