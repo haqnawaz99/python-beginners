@@ -5,16 +5,56 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
-  // ── Syntax highlighting ──────────────────────────────────
-  if (window.hljs) {
-    hljs.highlightAll();
+  // ── Home notice: Not now / × both dismiss and persist (localStorage) ──
+  var NOTICE_KEY = 'pb-course-notice-dismissed';
+  var noticeEl = document.getElementById('site-notice');
+  var closeBtn = document.getElementById('siteNoticeClose');
+  var notNowBtn = document.getElementById('siteNoticeNotNow');
+  function dismissSiteNotice() {
+    if (!noticeEl) return;
+    noticeEl.classList.add('site-notice--dismissed');
+    localStorage.setItem(NOTICE_KEY, '1');
+  }
+  if (noticeEl) {
+    if (localStorage.getItem(NOTICE_KEY) === '1') {
+      dismissSiteNotice();
+    }
+    [closeBtn, notNowBtn].forEach(function (btn) {
+      if (btn) btn.addEventListener('click', dismissSiteNotice);
+    });
   }
 
-  // ── Markdown rendering ───────────────────────────────────
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ── Scroll reveal (index steps + module cards) ─────────────────
+  var revealEls = document.querySelectorAll('.reveal-on-scroll');
+  revealEls.forEach(function (el, i) {
+    el.style.setProperty('--reveal-delay', Math.min(i * 50, 400) + 'ms');
+    if (reduceMotion) {
+      el.classList.add('is-revealed');
+    }
+  });
+  if (!reduceMotion && revealEls.length && 'IntersectionObserver' in window) {
+    var revealObs = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.12 });
+    revealEls.forEach(function (el) {
+      revealObs.observe(el);
+    });
+  } else if (!reduceMotion && revealEls.length) {
+    revealEls.forEach(function (el) { el.classList.add('is-revealed'); });
+  }
+
+  // ── Markdown rendering + syntax highlight (order matters) ──
   if (window.marked) {
     marked.setOptions({ breaks: true, gfm: true });
 
-    [['src-notes', 'md-notes'], ['src-practice', 'md-practice'], ['src-assessment', 'md-assessment']]
+    [['src-notes', 'md-notes'], ['src-practice', 'md-practice'], ['src-assessment', 'md-assessment'], ['src-setup', 'md-setup']]
       .forEach(function ([srcId, targetId]) {
         var src    = document.getElementById(srcId);
         var target = document.getElementById(targetId);
@@ -30,12 +70,20 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   }
 
+  if (window.hljs) {
+    hljs.highlightAll();
+  }
+
   // ── Tab switching ────────────────────────────────────────
   document.querySelectorAll('.tab-btn').forEach(function (btn) {
     btn.addEventListener('click', function () {
-      document.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.remove('active'); });
+      document.querySelectorAll('.tab-btn').forEach(function (b) {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
       document.querySelectorAll('.tab-pane').forEach(function (p) { p.classList.remove('active'); });
       btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
       var pane = document.getElementById('tab-' + btn.dataset.tab);
       if (pane) pane.classList.add('active');
     });
@@ -74,23 +122,30 @@ document.addEventListener('DOMContentLoaded', function () {
       var code = activePanel.querySelector('code');
       if (!code) return;
 
+      function setCopyLabel(text) {
+        var label = copyBtn.querySelector('.copy-label');
+        if (label) label.textContent = text;
+        else copyBtn.childNodes.forEach(function (n) {
+          if (n.nodeType === 3) n.textContent = text;
+        });
+      }
+
       navigator.clipboard.writeText(code.textContent).then(function () {
-        copyBtn.textContent = 'Copied!';
+        setCopyLabel('Copied!');
         copyBtn.classList.add('copied');
         setTimeout(function () {
-          copyBtn.textContent = 'Copy';
+          setCopyLabel('Copy');
           copyBtn.classList.remove('copied');
         }, 2000);
       }).catch(function () {
-        // Fallback for older browsers
         var ta = document.createElement('textarea');
         ta.value = code.textContent;
         document.body.appendChild(ta);
         ta.select();
         document.execCommand('copy');
         document.body.removeChild(ta);
-        copyBtn.textContent = 'Copied!';
-        setTimeout(function () { copyBtn.textContent = 'Copy'; }, 2000);
+        setCopyLabel('Copied!');
+        setTimeout(function () { setCopyLabel('Copy'); }, 2000);
       });
     });
   }

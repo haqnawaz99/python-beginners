@@ -4,126 +4,165 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Course Overview — Python for Beginners</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&family=Outfit:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
 </head>
-<body>
-<header class="site-header">
-  <div class="header-inner">
-    <a href="index.html" class="site-logo">🐍 Python for Beginners</a>
-    <button class="menu-toggle" id="menuToggle">☰</button>
-  </div>
-</header>
+<body class="page-home">
+<button type="button" class="menu-toggle-floating" id="menuToggle" aria-label="Open navigation menu"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
 <div class="layout">
-  <aside class="sidebar" id="sidebar"><ul class="sidebar-nav"><li><a href="index.html" class="active">🏠 Home</a></li><li><a href="module-0.html" class="">⚙️ M0: Setup</a></li><li><a href="module-1.html" class="">📝 M1: Strings</a></li><li><a href="module-2.html" class="">📦 M2: Variables</a></li><li><a href="module-3.html" class="">🔢 M3: Data Types</a></li><li><a href="module-4.html" class="">➕ M4: Operators</a></li><li><a href="module-5.html" class="">🔀 M5: Control Flow</a></li><li><a href="module-6.html" class="">🔧 M6: Functions</a></li><li><a href="module-7.html" class="">📋 M7: Lists</a></li><li><a href="module-8.html" class="">🛡️ M8: Error Handling</a></li><li><a href="module-9.html" class="">💾 M9: File I/O</a></li><li><a href="module-10.html" class="">🚀 M10: Projects</a></li></ul></aside>
+  <aside class="sidebar" id="sidebar"><div class="home-sidebar-tip" id="site-notice" role="note"><div class="home-sidebar-tip__head"><span class="home-sidebar-tip__label">New here?</span><div class="home-sidebar-tip__actions"><button type="button" class="home-sidebar-tip__not-now" id="siteNoticeNotNow">Not now</button><button type="button" class="home-sidebar-tip__close" id="siteNoticeClose" aria-label="Dismiss"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button></div></div><p class="home-sidebar-tip__text">Very new to Python? Start with the <a href="setup-guide.html">Setup guide</a>.</p></div><div class="sidebar-scroll"><ul class="sidebar-nav"><li><a href="index.html" class="active"><i class="fa-solid fa-house" aria-hidden="true"></i> Home</a></li><li><a href="setup-guide.html" class=""><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i> Setup guide</a></li><li><a href="module-0.html" class=""><i class="fa-solid fa-gear" aria-hidden="true"></i> M0: Setup</a></li><li><a href="module-1.html" class=""><i class="fa-solid fa-font" aria-hidden="true"></i> M1: Strings</a></li><li><a href="module-2.html" class=""><i class="fa-solid fa-box" aria-hidden="true"></i> M2: Variables</a></li><li><a href="module-3.html" class=""><i class="fa-solid fa-calculator" aria-hidden="true"></i> M3: Data Types</a></li><li><a href="module-4.html" class=""><i class="fa-solid fa-plus" aria-hidden="true"></i> M4: Operators</a></li><li><a href="module-5.html" class=""><i class="fa-solid fa-code-branch" aria-hidden="true"></i> M5: Control Flow</a></li><li><a href="module-6.html" class=""><i class="fa-solid fa-wrench" aria-hidden="true"></i> M6: Functions</a></li><li><a href="module-7.html" class=""><i class="fa-solid fa-list" aria-hidden="true"></i> M7: Lists</a></li><li><a href="module-8.html" class=""><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> M8: Error Handling</a></li><li><a href="module-9.html" class=""><i class="fa-solid fa-floppy-disk" aria-hidden="true"></i> M9: File I/O</a></li><li><a href="module-10.html" class=""><i class="fa-solid fa-rocket" aria-hidden="true"></i> M10: Projects</a></li></ul></div><div class="sidebar-bottom-hint" role="note"><i class="fa-solid fa-seedling" aria-hidden="true"></i><div class="sidebar-bottom-hint__body"><span class="sidebar-bottom-hint__label">New to Python?</span><p class="sidebar-bottom-hint__text">Start with the <a href="setup-guide.html">Setup guide</a>, then open <a href="module-0.html">Module 0</a>.</p></div></div></aside>
   <main class="main-content">
 
-    <div class="index-hero">
-      <h1>🐍 Python for Beginners</h1>
-      <p>A complete beginner course for Pakistani school and Madrasa students, ages 10–16.<br>
-         Videos in Urdu · Code in English · Zero prior knowledge required.</p>
-      <div class="hero-meta">
-        <span class="hero-badge">📚 11 Modules</span>
-        <span class="hero-badge">🕐 ~23 Classes</span>
-        <span class="hero-badge">🚀 3 Real Projects</span>
-        <span class="hero-badge">🇵🇰 Pakistani Context</span>
+    <div class="index-hero-wrap">
+      <div class="hero-backdrop" aria-hidden="true"></div>
+      <div class="index-hero glass-hero">
+        <p class="hero-eyebrow reveal-hero"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> Free course · Ages 10–16</p>
+        <h1 class="reveal-hero"><i class="fa-brands fa-python" aria-hidden="true"></i> <span>Python for Beginners</span></h1>
+        <p class="hero-lead reveal-hero">A structured path from first <code>print</code> to real projects — for Pakistani school and Madrasa students.<br>
+           Videos in Urdu · Code in English · No prior experience needed.</p>
+        <div class="hero-meta reveal-hero">
+          <span class="hero-badge"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> 11 modules</span>
+          <span class="hero-badge"><i class="fa-solid fa-clock" aria-hidden="true"></i> ~23 classes</span>
+          <span class="hero-badge"><i class="fa-solid fa-rocket" aria-hidden="true"></i> 3 capstones</span>
+        </div>
+        <p class="hero-context-line reveal-hero"><i class="fa-solid fa-earth-asia" aria-hidden="true"></i><span>Examples &amp; pacing for Pakistani schools &amp; madrasas</span></p>
+        <a class="hero-cta reveal-hero" href="#how-it-works">How to use this site <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a>
       </div>
     </div>
 
-    <div class="modules-grid">
+    <section class="steps-section" id="how-it-works" aria-labelledby="steps-heading">
+      <div class="section-head">
+        <h2 id="steps-heading" class="section-title reveal-on-scroll">Learn in four steps</h2>
+        <p class="section-lead reveal-on-scroll">Follow this flow on every module page — the tabs match the numbers below.</p>
+      </div>
+      <ol class="steps-track">
+        <li class="step-card reveal-on-scroll">
+          <span class="step-ring"><span class="step-num">1</span></span>
+          <h3>Open <strong>Lessons</strong></h3>
+          <p>Select a <code>.py</code> file on the left; the full source appears on the right. Copy snippets with one click.</p>
+        </li>
+        <li class="step-card reveal-on-scroll">
+          <span class="step-ring"><span class="step-num">2</span></span>
+          <h3>Read <strong>Teacher Notes</strong></h3>
+          <p>Objectives, pacing, and classroom tips for that module — ideal before you teach or revise.</p>
+        </li>
+        <li class="step-card reveal-on-scroll">
+          <span class="step-ring"><span class="step-num">3</span></span>
+          <h3>Do the <strong>Practice Sheet</strong></h3>
+          <p>Offline-friendly exercises. Print the sheet if you need paper practice.</p>
+        </li>
+        <li class="step-card reveal-on-scroll">
+          <span class="step-ring"><span class="step-num">4</span></span>
+          <h3>Check <strong>Assessment</strong></h3>
+          <p>Rubrics and checklists so students (and teachers) know what “done” looks like.</p>
+        </li>
+      </ol>
+    </section>
+
+    <div class="modules-section-head reveal-on-scroll">
+      <h2 class="modules-heading" id="modules">All modules</h2>
+      <p>Open any card — order is 0 → 10, ending with full projects.</p>
+    </div>
+
+    <div class="modules-grid" id="module-cards">
       
-    <a href="module-0.html" class="module-card">
+    <a href="module-0.html" class="module-card reveal-on-scroll">
       <span class="card-num">Module 0</span>
-      <span class="card-icon">⚙️</span>
+      <span class="card-icon"><i class="fa-solid fa-gear" aria-hidden="true"></i></span>
       <span class="card-title">Setup</span>
       <span class="card-desc">Install Python &amp; VS Code, write your first program, understand errors</span>
-      <span class="card-files">📄 6 files &nbsp;·&nbsp; 🕐 1 class</span>
+      <span class="card-files"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> 6 files &nbsp;·&nbsp; <i class="fa-solid fa-clock" aria-hidden="true"></i> 1 class</span>
     </a>
 
-    <a href="module-1.html" class="module-card">
+    <a href="module-1.html" class="module-card reveal-on-scroll">
       <span class="card-num">Module 1</span>
-      <span class="card-icon">📝</span>
+      <span class="card-icon"><i class="fa-solid fa-font" aria-hidden="true"></i></span>
       <span class="card-title">Strings</span>
       <span class="card-desc">String concatenation, input(), len() — talking to the user</span>
-      <span class="card-files">📄 6 files &nbsp;·&nbsp; 🕐 2 classes</span>
+      <span class="card-files"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> 6 files &nbsp;·&nbsp; <i class="fa-solid fa-clock" aria-hidden="true"></i> 2 classes</span>
     </a>
 
-    <a href="module-2.html" class="module-card">
+    <a href="module-2.html" class="module-card reveal-on-scroll">
       <span class="card-num">Module 2</span>
-      <span class="card-icon">📦</span>
+      <span class="card-icon"><i class="fa-solid fa-box" aria-hidden="true"></i></span>
       <span class="card-title">Variables</span>
       <span class="card-desc">Storing information in variables, naming rules, string methods</span>
-      <span class="card-files">📄 9 files &nbsp;·&nbsp; 🕐 2 classes</span>
+      <span class="card-files"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> 9 files &nbsp;·&nbsp; <i class="fa-solid fa-clock" aria-hidden="true"></i> 2 classes</span>
     </a>
 
-    <a href="module-3.html" class="module-card">
+    <a href="module-3.html" class="module-card reveal-on-scroll">
       <span class="card-num">Module 3</span>
-      <span class="card-icon">🔢</span>
+      <span class="card-icon"><i class="fa-solid fa-calculator" aria-hidden="true"></i></span>
       <span class="card-title">Data Types</span>
       <span class="card-desc">int, float, str, bool — type conversion, f-strings</span>
-      <span class="card-files">📄 6 files &nbsp;·&nbsp; 🕐 2 classes</span>
+      <span class="card-files"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> 6 files &nbsp;·&nbsp; <i class="fa-solid fa-clock" aria-hidden="true"></i> 2 classes</span>
     </a>
 
-    <a href="module-4.html" class="module-card">
+    <a href="module-4.html" class="module-card reveal-on-scroll">
       <span class="card-num">Module 4</span>
-      <span class="card-icon">➕</span>
+      <span class="card-icon"><i class="fa-solid fa-plus" aria-hidden="true"></i></span>
       <span class="card-title">Operators</span>
       <span class="card-desc">Math, BODMAS, comparison and logical operators</span>
-      <span class="card-files">📄 6 files &nbsp;·&nbsp; 🕐 2 classes</span>
+      <span class="card-files"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> 6 files &nbsp;·&nbsp; <i class="fa-solid fa-clock" aria-hidden="true"></i> 2 classes</span>
     </a>
 
-    <a href="module-5.html" class="module-card">
+    <a href="module-5.html" class="module-card reveal-on-scroll">
       <span class="card-num">Module 5</span>
-      <span class="card-icon">🔀</span>
+      <span class="card-icon"><i class="fa-solid fa-code-branch" aria-hidden="true"></i></span>
       <span class="card-title">Control Flow</span>
       <span class="card-desc">if/elif/else, while loops, for loops, range()</span>
-      <span class="card-files">📄 6 files &nbsp;·&nbsp; 🕐 3 classes</span>
+      <span class="card-files"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> 6 files &nbsp;·&nbsp; <i class="fa-solid fa-clock" aria-hidden="true"></i> 3 classes</span>
     </a>
 
-    <a href="module-6.html" class="module-card">
+    <a href="module-6.html" class="module-card reveal-on-scroll">
       <span class="card-num">Module 6</span>
-      <span class="card-icon">🔧</span>
+      <span class="card-icon"><i class="fa-solid fa-wrench" aria-hidden="true"></i></span>
       <span class="card-title">Functions</span>
       <span class="card-desc">def, parameters, return values, default values</span>
-      <span class="card-files">📄 7 files &nbsp;·&nbsp; 🕐 2 classes</span>
+      <span class="card-files"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> 7 files &nbsp;·&nbsp; <i class="fa-solid fa-clock" aria-hidden="true"></i> 2 classes</span>
     </a>
 
-    <a href="module-7.html" class="module-card">
+    <a href="module-7.html" class="module-card reveal-on-scroll">
       <span class="card-num">Module 7</span>
-      <span class="card-icon">📋</span>
+      <span class="card-icon"><i class="fa-solid fa-list" aria-hidden="true"></i></span>
       <span class="card-title">Lists</span>
       <span class="card-desc">Lists, tuples, dictionaries — storing collections of data</span>
-      <span class="card-files">📄 6 files &nbsp;·&nbsp; 🕐 2 classes</span>
+      <span class="card-files"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> 6 files &nbsp;·&nbsp; <i class="fa-solid fa-clock" aria-hidden="true"></i> 2 classes</span>
     </a>
 
-    <a href="module-8.html" class="module-card">
+    <a href="module-8.html" class="module-card reveal-on-scroll">
       <span class="card-num">Module 8</span>
-      <span class="card-icon">🛡️</span>
+      <span class="card-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
       <span class="card-title">Error Handling</span>
       <span class="card-desc">try/except, input validation, reusable helper functions</span>
-      <span class="card-files">📄 5 files &nbsp;·&nbsp; 🕐 2 classes</span>
+      <span class="card-files"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> 5 files &nbsp;·&nbsp; <i class="fa-solid fa-clock" aria-hidden="true"></i> 2 classes</span>
     </a>
 
-    <a href="module-9.html" class="module-card">
+    <a href="module-9.html" class="module-card reveal-on-scroll">
       <span class="card-num">Module 9</span>
-      <span class="card-icon">💾</span>
+      <span class="card-icon"><i class="fa-solid fa-floppy-disk" aria-hidden="true"></i></span>
       <span class="card-title">File I/O</span>
       <span class="card-desc">Read and write files — saving data between runs</span>
-      <span class="card-files">📄 5 files &nbsp;·&nbsp; 🕐 2 classes</span>
+      <span class="card-files"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> 5 files &nbsp;·&nbsp; <i class="fa-solid fa-clock" aria-hidden="true"></i> 2 classes</span>
     </a>
 
-    <a href="module-10.html" class="module-card">
+    <a href="module-10.html" class="module-card reveal-on-scroll">
       <span class="card-num">Module 10</span>
-      <span class="card-icon">🚀</span>
+      <span class="card-icon"><i class="fa-solid fa-rocket" aria-hidden="true"></i></span>
       <span class="card-title">Projects</span>
       <span class="card-desc">3 capstone projects: Report Card, Prayer Reminder, Quiz Game</span>
-      <span class="card-files">📄 6 files &nbsp;·&nbsp; 🕐 3 classes</span>
+      <span class="card-files"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> 6 files &nbsp;·&nbsp; <i class="fa-solid fa-clock" aria-hidden="true"></i> 3 classes</span>
     </a>
     </div>
 
     <footer class="index-footer">
-      <p>Taught by <strong>Haq Nawaz</strong> · haq.nawaz@ili.digital ·
-         <a href="https://github.com/haqnawaz99/python-beginners" target="_blank">GitHub Repo</a></p>
+      <p class="index-footer-line">Taught by
+         <a href="https://haqnawaz.org" class="footer-site" rel="noopener noreferrer" target="_blank">haqnawaz</a>
+         · haq.nawaz@ili.digital</p>
       <p style="margin-top:0.4rem; font-size:0.8rem; opacity:0.7;">
         Bismillah. May this course benefit every student who learns from it. Ameen.
       </p>

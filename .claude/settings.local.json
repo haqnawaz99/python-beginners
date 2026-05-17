@@ -6,7 +6,8 @@
       "Bash(mkdir -p \"d:\\\\Haq Nawaz\\\\Teaching\\\\ISDP\\\\2026\\\\python\\\\docs\\\\assets\\\\css\")",
       "Bash(mkdir -p \"d:\\\\Haq Nawaz\\\\Teaching\\\\ISDP\\\\2026\\\\python\\\\docs\\\\assets\\\\js\")",
       "Bash(python generate_site.py)",
-      "Bash(python -c ' *)"
+      "Bash(python -c ' *)",
+      "Bash(git push *)"
     ]
   }
 }
