@@ -17,11 +17,11 @@ Ask these during the practical assessment or as a class check. Accept answers in
 
 | # | Question | Expected Answer |
 |---|----------|-----------------|
-| 1 | `"w"` aur `"a"` mode mein kya farq hai? | `"w"` purana data delete karta hai, `"a"` end mein add karta hai |
-| 2 | `with open()` kya karta hai? | File kholta hai, kaam ke baad automatically band karta hai |
-| 3 | Agar file exist nahi kare aur aap read karein toh kya error aata hai? | `FileNotFoundError` |
-| 4 | `read()` aur `readlines()` mein kya farq hai? | `read()` poora file ek string mein, `readlines()` list of lines deta hai |
-| 5 | Hamesha `with` use kyun karna chahiye? | File automatically close hoti hai, resource leak nahi hota |
+| 1 | What is the difference between `"w"` and `"a"` mode? | `"w"` deletes existing data, `"a"` adds to the end |
+| 2 | What does `with open()` do? | Opens the file, and automatically closes it when done |
+| 3 | What error occurs if you try to read a file that does not exist? | `FileNotFoundError` |
+| 4 | What is the difference between `read()` and `readlines()`? | `read()` returns the whole file as one string, `readlines()` returns a list of lines |
+| 5 | Why should you always use `with`? | The file is closed automatically — no resource leak |
 
 ---
 
@@ -39,12 +39,12 @@ Ask these during the practical assessment or as a class check. Accept answers in
 
 ## Grade Scale
 
-| Marks | Grade | Urdu Feedback |
+| Marks | Grade | Feedback |
 |-------|-------|---------------|
-| 15 – 17 | Excellent | Mashallah! Bahut achi tarah samjha |
-| 11 – 14 | Good | Wah! Acha kaam kiya |
-| 7 – 10 | Pass | Theek hai, thodi aur practice karo |
-| 0 – 6 | Needs more work | Koi baat nahi, dobara karte hain |
+| 15 – 17 | Excellent | Masha'Allah! Very well understood |
+| 11 – 14 | Good | Great work! |
+| 7 – 10 | Pass | Good — practise a little more |
+| 0 – 6 | Needs more work | No problem — let's go through it again |
 
 ---
 
@@ -66,7 +66,7 @@ Naam darj karein (done likhein jab khatam ho): Sara
 Naam darj karein (done likhein jab khatam ho): Bilal
 Naam darj karein (done likhein jab khatam ho): done
 
---- Saare Students ---
+--- All Students ---
 1. Ali
 2. Sara
 3. Bilal

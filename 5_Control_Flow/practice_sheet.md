@@ -1,20 +1,20 @@
 # Module 5 — Control Flow: Practice Sheet
 
-**Naam (Name): ___________________________**
-**Taareekh (Date): ________________________**
+**Name: ___________________________**
+**Date: ________________________**
 **Class: _________________________________**
 
 ---
 
 Bismillah ir-Rahman ir-Raheem
 
-Control Flow ka yeh practice sheet Module 5 ke liye hai. Loops aur conditions — programming ka dil!
+This practice sheet is for Module 5 — Control Flow. Loops and conditions — the heart of programming!
 
 ---
 
-## Section A — Concepts (Tasawwuraat)
+## Section A — Concepts
 
-**Q1.** `elif` ka matlab kya hai? Apni zaban mein likhein.
+**Q1.** What does `elif` mean? Write in your own words.
 
 ```
 _____________________________________________
@@ -23,17 +23,17 @@ _____________________________________________
 
 ---
 
-**Q2.** Neeche wale code mein indentation ki galti hai. Theek karo.
+**Q2.** The code below has an indentation error. Fix it.
 
 ```python
-# Galat code:
+# Wrong code:
 marks = 75
 if marks >= 50:
 print("Pass ho gaye!")
 print("Mubarak ho!")
 ```
 
-**Sahi code:**
+**Correct code:**
 
 ```python
 marks = 75
@@ -44,7 +44,7 @@ if marks >= 50:
 
 ---
 
-**Q3.** Yeh code kya print karega?
+**Q3.** What will this code print?
 
 ```python
 for i in range(3):
@@ -63,7 +63,7 @@ ___
 
 ## Section B — if / elif / else
 
-**Q4.** Ek if/elif/else likhein jo check kare ke koi number positive hai, negative hai, ya zero.
+**Q4.** Write an if/elif/else that checks whether a number is positive, negative, or zero.
 
 ```python
 number = int(input("Koi number likhein: "))
@@ -78,7 +78,7 @@ else:
 
 ---
 
-**Q5.** Hassan ka grade kya hoga agar uske marks 73 hain? Neeche ke chart mein dekho:
+**Q5.** What grade will Hassan get if his marks are 73? Use the chart below:
 
 | Marks | Grade |
 |-------|-------|
@@ -89,13 +89,13 @@ else:
 | 50–59 | D |
 | Below 50 | Fail |
 
-**Hassan ka grade: _______________**
+**Hassan's grade: _______________**
 
 ---
 
 ## Section C — while Loops
 
-**Q6.** Loop se jaldi baahir nikalne ke liye kaunsa keyword use karte hain?
+**Q6.** Which keyword do you use to exit a loop immediately?
 
 ```
 a) stop
@@ -104,20 +104,20 @@ c) break
 d) end
 ```
 
-**Jawab: _______________**
+**Answer: _______________**
 
 ---
 
-**Q7.** Yeh code kya galat hai?
+**Q7.** What is wrong with this code?
 
 ```python
 while True:
     print("Assalamu Alaikum!")
 ```
 
-**Galti: _______________________________________________**
+**Mistake: _______________________________________________**
 
-**Theek karo:**
+**Fix it:**
 
 ```python
 ginti = 3
@@ -128,7 +128,7 @@ while ginti > 0:
 
 ---
 
-**Q8.** 5 se 1 tak countdown karne ke liye while loop likhein:
+**Q8.** Write a while loop that counts down from 5 to 1:
 
 **Expected output:**
 ```
@@ -141,7 +141,7 @@ Allah Hafiz!
 ```
 
 ```python
-# Yahan apna code likhein:
+# Write your code here:
 ginti = ___
 
 while ___________________________________________:
@@ -155,7 +155,7 @@ print("Allah Hafiz!")
 
 ## Section D — for Loops
 
-**Q9.** 1 se 5 tak numbers print karne ke liye for loop likhein:
+**Q9.** Write a for loop that prints the numbers 1 to 5:
 
 ```python
 for i in ___________________________________________:
@@ -164,7 +164,7 @@ for i in ___________________________________________:
 
 ---
 
-**Q10.** Neeche wala Grade Checker complete karo. Marks ke mutabiq grade print karo:
+**Q10.** Complete the Grade Checker below. Print the grade based on marks:
 
 ```python
 marks = int(input("Marks likhein: "))
@@ -187,7 +187,7 @@ else:
 
 ## Section E — Mixed Practice
 
-**Q11.** Islamabad mein Zainab ke school ki class mein 5 talibaat hain. Unke naam hain: Ahmed, Fatima, Hassan, Zainab, Ibrahim. Ek for loop likhein jo har naam ke saath "Assalamu Alaikum" print kare.
+**Q11.** In Islamabad, Zainab's school class has 5 students. Their names are: Ahmed, Fatima, Hassan, Zainab, Ibrahim. Write a for loop that prints "Assalamu Alaikum" with each name.
 
 ```python
 talibaat = ["Ahmed", "Fatima", "Hassan", "Zainab", "Ibrahim"]
@@ -209,22 +209,22 @@ Assalamu Alaikum, Ibrahim!
 
 ## Challenge — Number Guessing Game
 
-Ahmed ne ek secret number socha: **7**. Tumhara program user ko guess karne dega jab tak woh sahi number na de.
+Ahmed thought of a secret number: **7**. Your program will let the user keep guessing until they get it right.
 
-`while True` aur `break` use karke yeh game banao:
+Use `while True` and `break` to build this game:
 
 **Requirements:**
-- Computer ka number 7 hai (hard-code karo)
-- User guess karta hai
-- Agar guess sahi hai: "Masha'Allah! Sahi jawab!" print karo aur loop tod do
-- Agar guess kam hai: "Aur bada socho" print karo
-- Agar guess zyada hai: "Thoda kam socho" print karo
+- The computer's number is 7 (hard-coded)
+- User guesses
+- If correct: print "Masha'Allah! Sahi jawab!" and break out of the loop
+- If guess is too low: print "Think bigger"
+- If guess is too high: print "Think smaller"
 
 ```python
 secret = 7
 
 print("=== Number Guessing Game ===")
-print("Main ne 1-10 ke beech ek number socha hai. Guess karo!")
+print("I have thought of a number between 1 and 10. Guess it!")
 
 while True:
     guess = int(input("Tumhara guess: "))
@@ -240,17 +240,17 @@ while True:
 
 ---
 
-## Answer Key (Sirf Teacher ke liye)
+## Answer Key (Teacher Only)
 
-| Sawaal | Jawab |
+| Question | Answer |
 |--------|-------|
-| Q1 | "warna agar" — ek aur condition check karo agar pehli poori nahin hui |
-| Q2 | `print(...)` statements ko 4 spaces indent karo |
-| Q3 | `0`, `1`, `2` (teen alag lines mein) |
+| Q1 | "else if" — check another condition if the first one was not met |
+| Q2 | Indent the `print(...)` statements with 4 spaces |
+| Q3 | `0`, `1`, `2` (on three separate lines) |
 | Q4 | `if number > 0:` / `elif number < 0:` / `else:` |
 | Q5 | B (73 is between 70–79) |
 | Q6 | `c) break` |
-| Q7 | `break` nahin hai — infinite loop. Fix: counter add karo |
+| Q7 | No `break` — infinite loop. Fix: add a counter |
 | Q8 | `ginti = 5`, `while ginti > 0:`, `ginti -= 1` |
 | Q9 | `for i in range(1, 6):` |
 | Q10 | `>= 80`, `>= 70`, `>= 60`, `>= 50` |

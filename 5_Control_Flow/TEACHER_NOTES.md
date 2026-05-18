@@ -5,10 +5,10 @@
 | Item | Detail |
 |------|--------|
 | Module | 5 — Control Flow |
-| Duration | 3 classes (yeh module bara hai) |
+| Duration | 3 classes (this is a large module) |
 | Level | Beginner to Intermediate |
 | Age Group | 10–16 years |
-| Language | Urdu (with English terms) |
+| Language | English (with Urdu delivery) |
 
 ---
 
@@ -63,34 +63,34 @@ By the end of this module, students will be able to:
 > **This is the #1 thing to teach in this module. Python uses indentation as structure — not just style.**
 
 ```python
-# SAHI (Correct):
+# CORRECT:
 marks = 85
 if marks >= 50:
-    print("Pass ho gaye!")    # 4 spaces andar
+    print("Pass ho gaye!")    # 4 spaces in
     print("Mubarak ho!")      # same level
 
-# GALAT (Wrong — IndentationError):
+# WRONG (IndentationError):
 marks = 85
 if marks >= 50:
-print("Pass ho gaye!")        # ERROR! indent nahin hai
+print("Pass ho gaye!")        # ERROR! no indent
 ```
 
-**Whiteboard demonstration:** Draw a box around indented code. "Yeh sab ek group hai. Agar indent nahin, toh Python nahin samjhega."
+**Whiteboard demonstration:** Draw a box around indented code. "All of this is one group. Without the indent, Python will not understand."
 
 ### 2. The Colon After if / elif / else / while / for
 
 ```python
-if marks >= 50:        # colon zaroori hai ← yahan
+if marks >= 50:        # colon required ← here
     print("Pass")
 
-while count > 0:       # yahan bhi ← colon
+while count > 0:       # here too ← colon
     count -= 1
 
-for i in range(5):     # yahan bhi ← colon
+for i in range(5):     # here too ← colon
     print(i)
 ```
 
-Tell students: "Jab bhi Python se kaho 'shuru karo', aakhir mein colon lagao."
+Tell students: "Whenever you tell Python to start a block, put a colon at the end."
 
 ### 3. if / elif / else Structure
 
@@ -116,17 +116,17 @@ else:
 ### 4. while Loop — Must Have an Exit
 
 ```python
-# KHATARNAAK — Infinite loop!
+# DANGEROUS — Infinite loop!
 count = 5
 while count > 0:
     print(count)
-    # count update nahin hua — loop kabhi khatam nahin hoga!
+    # count was never updated — the loop will never end!
 
-# SAHI:
+# CORRECT:
 count = 5
 while count > 0:
     print(count)
-    count -= 1          # har baar count kam karo
+    count -= 1          # decrease count each time
 print("Khatam!")
 ```
 
@@ -149,7 +149,7 @@ while True:
         print("Calculator...")
     elif choice == "3":
         print("Allah Hafiz!")
-        break           # Loop se baahir
+        break           # Exit the loop
     else:
         print("Galat choice — dobara likhein.")
 ```
@@ -193,24 +193,24 @@ for naam in talibaan:
 
 ---
 
-## Urdu Teaching Tips
+## Teaching Tips
 
-| Keyword | Urdu Explanation |
+| Keyword | Explanation |
 |---------|-----------------|
-| `if` | "agar" — agar yeh sach hai toh |
-| `elif` | "warna agar" — agar pehli shart poori nahin, toh yeh check karo |
-| `else` | "baaki sab" — agar koi shart poori nahin hui |
-| `while` | "jab tak" — jab tak yeh sach hai, karte raho |
-| `for` | "har ek ke liye" — is list ya range ki har value ke liye |
-| `break` | "ruk jao" — loop se baahir nikal jao |
-| `range()` | "girohband" — numbers ki ek qataar |
+| `if` | "if" — if this is true, then do this |
+| `elif` | "else if" — if the first condition is not met, check this one |
+| `else` | "otherwise" — if none of the conditions were true |
+| `while` | "while" — keep doing this as long as it is true |
+| `for` | "for each" — for each value in this list or range |
+| `break` | "stop" — exit the loop immediately |
+| `range()` | "sequence" — a series of numbers |
 
 ---
 
 ## Classroom Activity Ideas
 
 **Activity 1 — Human Robot:**
-Teacher calls out: "Agar tumhara naam A se shuru hota hai, khade ho jao. Warna baitho." Students act as if/else.
+Teacher calls out: "If your name starts with A, stand up. Otherwise sit down." Students act as if/else.
 
 **Activity 2 — Countdown Together:**
 Whole class counts down from 10 together (like a while loop). Stop at 0 (like the condition).

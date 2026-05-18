@@ -61,23 +61,19 @@ print(names[1])   # Fatima
 print(names[-1])  # Usman   ← last item (negative index)
 ```
 
-> Tell students: "Python 0 se shuru karta hai, 1 se nahi. Jaise computer ka zihn alag hota hai!"
-> *(Python starts from 0, not 1. It is like a computer thinks differently!)*
+> Tell students: "Python starts from 0, not 1. A computer thinks differently from us!"
 
 Show on the whiteboard: draw boxes with numbers 0, 1, 2 under each item.
 
 ---
 
-## Urdu Teaching Tips
+## Teaching Tips
 
-- **"List matlab fehrist — jaise shopping list ya class ki hazri list"**
-  *(List means a list — like a shopping list or a class attendance list)*
+- **"A list is a sequence — like a shopping list or a class attendance list"**
 
-- **"Dictionary matlab koi cheez dhundna — key se value milti hai, jaise asli dictionary mein word dhundna"**
-  *(Dictionary means finding something — key gives you the value, like looking up a word in a real dictionary)*
+- **"A dictionary means looking something up — the key gives you the value, just like looking up a word in a real dictionary"**
 
-- **"Tuple matlab pakka — change nahi ho sakta. Jaise taareekh-e-wiladat — badal nahi sakti!"**
-  *(Tuple means fixed — cannot be changed. Like a date of birth — it cannot change!)*
+- **"A tuple is fixed — it cannot be changed. Like a date of birth — it can never change!"**
 
 ---
 

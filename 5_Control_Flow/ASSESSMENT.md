@@ -18,13 +18,13 @@ Ask these questions one-on-one or to the class.
 
 | Question | Expected Answer |
 |----------|----------------|
-| `elif` ka matlab kya hai? | "warna agar" — else if — ek aur condition check karo |
-| Agar `if` ke baad colon (`:`  ) bhool jao toh kya hoga? | `SyntaxError` — program run nahin hoga |
-| `while` loop kaise rokein? | Counter update karo, ya `break` use karo |
-| `range(5)` mein kaunse numbers hain? | 0, 1, 2, 3, 4 |
-| `range(1, 6)` mein kaunse numbers hain? | 1, 2, 3, 4, 5 |
-| Indentation kyun zaroori hai Python mein? | Python indentation se pata karta hai ke kaunsa code kis block mein hai |
-| `break` kab use karte hain? | Jab loop se pehle baahir nikalna ho |
+| What does `elif` mean? | "else if" — check another condition if the first was not met |
+| What happens if you forget the colon (`:`) after `if`? | `SyntaxError` — the program will not run |
+| How do you stop a `while` loop? | Update the counter, or use `break` |
+| What numbers are in `range(5)`? | 0, 1, 2, 3, 4 |
+| What numbers are in `range(1, 6)`? | 1, 2, 3, 4, 5 |
+| Why is indentation important in Python? | Python uses indentation to know which code belongs to which block |
+| When do you use `break`? | When you want to exit the loop before the condition becomes False |
 
 ---
 
@@ -42,11 +42,11 @@ Ask these questions one-on-one or to the class.
 
 | Marks | Grade | Message |
 |-------|-------|---------|
-| 15–17 | A+ | Masha'Allah! Bohat zabardast! |
-| 12–14 | A | Bohat achha! Loops aur conditions mein strong ho. |
-| 9–11 | B | Theek hai — thodi aur practice karo. |
-| 6–8 | C | Dobara review karo — teacher se madad lo. |
-| 0–5 | Needs Support | Module 5 dobara parho. Pehle Module 3 aur 4 confirm karo. |
+| 15–17 | A+ | Masha'Allah! Outstanding! |
+| 12–14 | A | Very good! You are strong with loops and conditions. |
+| 9–11 | B | Good — practise a little more. |
+| 6–8 | C | Review again — ask the teacher for help. |
+| 0–5 | Needs Support | Re-read Module 5. First confirm Modules 3 and 4. |
 
 ---
 
@@ -159,13 +159,13 @@ print(f"Average marks: {average:.1f}")
 ## Remediation
 
 **Cannot write correct indentation:**
-Use a ruler or finger on the screen. "Yeh sab 4 spaces andar hai — ek group hai." Demonstrate IndentationError deliberately then fix it together.
+Use a ruler or finger on the screen. "All of this is 4 spaces in — it is one group." Demonstrate IndentationError deliberately then fix it together.
 
 **while loop runs forever:**
-Show the infinite loop deliberately (print "Hello" forever) then Ctrl+C to stop. Explain: "Counter ko update karna bhool gaye. Har baar loop chalte waqt count kam karo."
+Show the infinite loop deliberately (print "Hello" forever) then Ctrl+C to stop. Explain: "We forgot to update the counter. Decrease the count each time the loop runs."
 
 **Forgets colon:**
-Make a rhyme: "if, elif, else, while, for — in ke baad colon zaroori, yaad rakho har bor."
+Make a rhyme: "if, elif, else, while, for — every one of these needs a colon, remember it always."
 
 **Off-by-one error in range:**
 - `range(5)` → 0 to 4

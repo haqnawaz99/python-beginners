@@ -8,7 +8,6 @@
 | Duration | 2 classes |
 | Level | Beginner |
 | Age Group | 10–16 years |
-| Language | Urdu (with English terms) |
 
 ---
 
@@ -50,27 +49,27 @@ By the end of this module, students will be able to:
 
 ```python
 # Pakistani classroom example
-total_marks  = 450 + 90       # + jama
-remaining    = 500 - 450      # - minus
-rakat_total  = 5 * 17         # * zarb (multiplication)
-avg          = 450 / 5        # / taqseem (division — gives decimal)
-full_sections = 35 // 6       # // poora hissa (integer division)
-extra_students = 35 % 6       # % baaqi (remainder)
-power_of      = 2 ** 10       # ** ghunaah (exponent/power)
+total_marks  = 450 + 90       # + addition
+remaining    = 500 - 450      # - subtraction
+rakat_total  = 5 * 17         # * multiplication
+avg          = 450 / 5        # / division (gives decimal)
+full_sections = 35 // 6       # // integer division (whole part only)
+extra_students = 35 % 6       # % remainder
+power_of      = 2 ** 10       # ** exponent/power
 ```
 
 ### Integer Division `//` vs Regular Division `/`
 
 This is the operator students confuse most. Use a real example:
 
-> "Islami school mein 35 talibaan hain. Hum unhe 6-6 ke groups mein baantna chahte hain. Kitne poore groups banenge?"
+> "An Islamic school has 35 students. We want to divide them into groups of 6. How many complete groups can we make?"
 
 ```python
 talibaan = 35
 group_size = 6
 
-poore_groups = talibaan // group_size   # 5 — sirf poora hissa
-baaqi = talibaan % group_size           # 5 — jo baaqi rahe
+poore_groups = talibaan // group_size   # 5 — whole part only
+baaqi = talibaan % group_size           # 5 — what remains
 
 print(f"Poore groups: {poore_groups}")
 print(f"Baaqi talibaan: {baaqi}")
@@ -81,12 +80,12 @@ print(f"Baaqi talibaan: {baaqi}")
 Students should understand `%` is not just maths — it has practical uses:
 
 ```python
-# Kya number even hai?
+# Is the number even?
 number = 14
 if number % 2 == 0:
     print("Even number hai")
 
-# Har teesri cheez highlight karo (e.g., every 3rd student)
+# Highlight every 3rd item (e.g., every 3rd student)
 student_number = 9
 if student_number % 3 == 0:
     print("Yeh student leader hai!")
@@ -97,13 +96,13 @@ if student_number % 3 == 0:
 Write BOTH on the board in large text:
 
 ```
-=    →   Assign karna (dena)       naam = "Ahmed"
-==   →   Compare karna (dekhna)    naam == "Ahmed"  → True ya False
+=    →   Assign (give a value)     naam = "Ahmed"
+==   →   Compare (check equality)  naam == "Ahmed"  → True or False
 ```
 
 Common student error:
 ```python
-# WRONG — yeh code kaam nahin karega
+# WRONG — this code will not work
 if umar = 15:
     print("Sahi hai")
 
@@ -115,15 +114,15 @@ if umar == 15:
 ### BODMAS in Python
 
 ```python
-# Yeh do cheezein alag results deti hain:
-result1 = 2 + 3 * 4      # 14 — pehle * hoti hai
-result2 = (2 + 3) * 4    # 20 — brackets pehle
+# These two give different results:
+result1 = 2 + 3 * 4      # 14 — * is calculated first
+result2 = (2 + 3) * 4    # 20 — brackets first
 
 # Pakistani context:
-# Ahmed ne 3 packets khareed, har packet mein 5 toffees.
-# Fatima ne 4 alag toffees deen.
-# Total: 3 * 5 + 4 = 19  (brackets ki zaroorat nahin)
-# Lekin agar hum pehle Ahmad aur Fatima ki total lein phir multiply karein:
+# Ahmed bought 3 packets, each with 5 toffees.
+# Fatima gave 4 separate toffees.
+# Total: 3 * 5 + 4 = 19  (no brackets needed)
+# But if we take Ahmed and Fatima's combined count first, then multiply:
 # (3 + 4) * 5 = 35
 ```
 
@@ -140,17 +139,17 @@ result2 = (2 + 3) * 4    # 20 — brackets pehle
 
 ---
 
-## Urdu Teaching Tips
+## Teaching Tips
 
 Write these on the board during lessons:
 
-- **`//`** — "double slash matlab sirf poora number chahiye — decimal cut ho jaata hai"
-- **`%`** — "percent sign matlab baaqi kya bachta hai (remainder) — jaise 17 divide by 5, baaqi 2"
-- **`==`** — "do equal matlab برابر ہے کیا? — sawal poochh raha hoon, dena nahin"
-- **`**`** — "do star matlab power ya ghunaah — 2 ki power 3 = 2 \*\* 3 = 8"
-- **`and`** — "aur — dono shart poori honi chahiyen"
-- **`or`** — "ya — koi bhi ek shart poori ho"
-- **`not`** — "nahi — ulta kar do"
+- **`//`** — "double slash means we only want the whole number — the decimal is cut off"
+- **`%`** — "percent sign means what is left over (remainder) — like 17 divided by 5, remainder 2"
+- **`==`** — "double equals means: is it equal? — I am asking a question, not giving a value"
+- **`**`** — "double star means power — 2 to the power of 3 = 2 \*\* 3 = 8"
+- **`and`** — "and — both conditions must be true"
+- **`or`** — "or — at least one condition must be true"
+- **`not`** — "not — reverses the result"
 
 ---
 
@@ -158,13 +157,13 @@ Write these on the board during lessons:
 
 **Activity 1 — Operator Matching:**
 Write operators on one side and descriptions on the other. Students match:
-- `+` → Jama
-- `%` → Baaqi
-- `//` → Poora hissa
-- `**` → Taaqat / Power
+- `+` → Addition
+- `%` → Remainder
+- `//` → Whole part (integer division)
+- `**` → Power / Exponent
 
 **Activity 2 — Madrasa Problem:**
-> "Madrasa mein 100 talibaan hain. Ek class mein 12 talibaan hain. Kitni classes banegi aur kitne talibaan baahir rahenge?"
+> "A madrasa has 100 students. Each class holds 12 students. How many complete classes can be formed and how many students will be left over?"
 
 ```python
 talibaan = 100

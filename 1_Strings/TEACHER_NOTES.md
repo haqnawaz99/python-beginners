@@ -37,9 +37,9 @@ This will matter in Module 3 when we learn int().
 - Trying to add a number to a string: `"Age: " + 15` → TypeError
 - input() result not stored: `input("Name: ")` without `name =`
 
-## Tips for Urdu Delivery
-- "String matlab text — jaise SMS mein type karte hain"
-- "Plus ka matlab yahan jodo — jaise words ko saath likhna"
+## Tips for Delivery
+- "A string is text — like what you type in an SMS"
+- "Plus here means join together — like writing words side by side"
 - Show name concatenation: `"Muhammad" + " " + "Ahmed"` — students love seeing their own names
 
 ## Files in This Module

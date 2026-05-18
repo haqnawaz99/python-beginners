@@ -63,22 +63,22 @@ data = f.read()
 f.close()
 ```
 
-> **Tell students:** `with open() as f:` matlab — file kholo, kaam karo, phir automatically band ho jaati hai. Yeh best practice hai.
+> **Tell students:** `with open() as f:` means — open the file, do your work, then it closes automatically. This is best practice.
 
 ### File Modes
 
-| Mode | Meaning | Urdu |
-|------|---------|------|
-| `"r"` | Read only | Sirf parhna |
-| `"w"` | Write (overwrites!) | Likhna — purana data mitata hai |
-| `"a"` | Append (adds to end) | Aakhir mein add karna |
+| Mode | Meaning |
+|------|---------|
+| `"r"` | Read only |
+| `"w"` | Write (overwrites!) |
+| `"a"` | Append (adds to end) |
 
 ### Reading Methods
 
 ```python
 with open("data.txt", "r") as f:
-    content = f.read()        # Poora file ek string mein
-    lines = f.readlines()     # Har line ek list item mein
+    content = f.read()        # Entire file as one string
+    lines = f.readlines()     # Each line as a list item
 ```
 
 ---
@@ -116,7 +116,7 @@ except FileNotFoundError:
     print("File nahi mili! Pehle data save karein.")
 ```
 
-Tell students: jab file exist nahi karti aur aap `"r"` mode use karte hain, Python `FileNotFoundError` deta hai. Hamesha handle karo.
+Tell students: when a file does not exist and you use `"r"` mode, Python raises a `FileNotFoundError`. Always handle it.
 
 ---
 
@@ -130,12 +130,12 @@ Tell students: jab file exist nahi karti aur aap `"r"` mode use karte hain, Pyth
 
 ---
 
-## Urdu Teaching Tips
+## Teaching Tips
 
-- **File kya hai?** "File matlab dastaawez — computer pe sacha hua data. Jaise aap ek copy mein notes likhte hain, waise Python file mein data save karta hai."
-- **`with open()` samjhaein:** "with open() matlab — file kholo, apna kaam karo, phir file band karo. Python yeh kaam khud karta hai."
-- **`"w"` mode alert:** "'w' mode alert: purana data mit jaata hai! Agar sirf add karna ho, 'a' use karo."
-- **Analogy:** "Mode waise hai jaise copy kholne ka tarika — sirf parhne ke liye kholna alag hai, likhne ke liye kholna alag hai."
+- **What is a file?** "A file is a document — data saved on the computer. Just as you write notes in a notebook, Python saves data in a file."
+- **Explain `with open()`:** "with open() means — open the file, do your work, then close the file. Python handles the closing automatically."
+- **`"w"` mode warning:** "'w' mode deletes existing data! If you only want to add to the file, use 'a'."
+- **Analogy:** "The mode is like how you open a notebook — opening it just to read is different from opening it to write."
 
 ---
 

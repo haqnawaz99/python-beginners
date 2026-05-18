@@ -18,15 +18,15 @@ Ask these questions individually or to the class. Students should answer quickly
 
 | Question | Expected Answer |
 |----------|----------------|
-| `17 % 5` kya hai? | `2` (remainder when 17 is divided by 5) |
-| `==` aur `=` mein kya farq hai? | `=` assign karta hai, `==` compare karta hai |
-| `2 ** 3` kya hai? | `8` |
-| `10 // 3` kya dega? | `3` (sirf poora hissa) |
-| `10 / 3` kya dega? | `3.333...` (decimal) |
-| `True and False` kya hai? | `False` |
-| `True or False` kya hai? | `True` |
-| `not True` kya hai? | `False` |
-| BODMAS mein kya pehle calculate hota hai? | Brackets, phir power, phir * aur /, phir + aur - |
+| What is `17 % 5`? | `2` (remainder when 17 is divided by 5) |
+| What is the difference between `==` and `=`? | `=` assigns a value, `==` compares two values |
+| What is `2 ** 3`? | `8` |
+| What does `10 // 3` give? | `3` (whole part only) |
+| What does `10 / 3` give? | `3.333...` (decimal) |
+| What is `True and False`? | `False` |
+| What is `True or False`? | `True` |
+| What is `not True`? | `False` |
+| In BODMAS, what is calculated first? | Brackets, then powers, then * and /, then + and - |
 
 ---
 
@@ -44,11 +44,11 @@ Ask these questions individually or to the class. Students should answer quickly
 
 | Marks | Grade | Message |
 |-------|-------|---------|
-| 15–17 | A+ | Masha'Allah! Kamaal kar diya! |
-| 12–14 | A | Bohat achha — thoda aur practice karo. |
-| 9–11 | B | Achha — operators dobara review karo. |
-| 6–8 | C | Teacher se madad lo aur practice karo. |
-| 0–5 | Needs Support | Module dobara parho — teacher se milein. |
+| 15–17 | A+ | Masha'Allah! Outstanding work! |
+| 12–14 | A | Very good — practise a little more. |
+| 9–11 | B | Good — review the operators again. |
+| 6–8 | C | Ask the teacher for help and keep practising. |
+| 0–5 | Needs Support | Re-read the module — see the teacher. |
 
 ---
 
@@ -120,11 +120,11 @@ Ask students to **add a bonus feature**: check if the first number is greater th
 
 ```python
 if pehla > doosra:
-    print(f"{pehla} bada hai {doosra} se.")
+    print(f"{pehla} is greater than {doosra}.")
 elif pehla == doosra:
-    print(f"Dono numbers baraabar hain!")
+    print(f"Both numbers are equal!")
 else:
-    print(f"{doosra} bada hai {pehla} se.")
+    print(f"{doosra} is greater than {pehla}.")
 ```
 
 ---
@@ -132,15 +132,15 @@ else:
 ## Remediation
 
 **Cannot distinguish `//` from `/`:**
-Use the madrasa example: "35 talibaan, 6 per group. Kitne poore groups?" Answer is `35 // 6 = 5`, not `5.83...`.
+Use the madrasa example: "35 students, 6 per group. How many complete groups?" Answer is `35 // 6 = 5`, not `5.83...`.
 
 **Confuses `=` with `==`:**
-Explain: "`=` deta hai (assignment), `==` poochta hai (question)." Write on board:
-- `naam = "Ahmed"` → Ahmed ko naam diya
-- `naam == "Ahmed"` → Kya naam Ahmed hai? True ya False?
+Explain: "`=` gives a value (assignment), `==` asks a question (comparison)." Write on board:
+- `naam = "Ahmed"` → Ahmed is assigned to naam
+- `naam == "Ahmed"` → Is naam equal to Ahmed? True or False?
 
 **Cannot use `and`/`or`:**
-Use this real-world example: "Scholarship ke liye: marks >= 80 AND attendance >= 75. Dono zaroori hain."
+Use this real-world example: "For the scholarship: marks >= 80 AND attendance >= 75. Both are required."
 
 ---
 

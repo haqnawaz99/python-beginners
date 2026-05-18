@@ -1,36 +1,36 @@
 # Module 4 — Operators: Practice Sheet
 
-**Naam (Name): ___________________________**
-**Taareekh (Date): ________________________**
+**Name: ___________________________**
+**Date: ________________________**
 **Class: _________________________________**
 
 ---
 
 Bismillah ir-Rahman ir-Raheem
 
-Operators ka yeh practice sheet dhyan se complete karo. Har sawaal mein socho pehle, phir likho.
+Complete this operators practice sheet carefully. Think before you write, then write.
 
 ---
 
-## Section A — Hisaab (Calculations)
+## Section A — Calculations
 
-**Q1.** `15 % 4` kya hai?
+**Q1.** What is `15 % 4`?
 
-Socho: 15 ko 4 se divide karo. Baaqi kya bachega?
+Think: divide 15 by 4. What is the remainder?
 
-**Jawab: _______________**
+**Answer: _______________**
 
 ---
 
-**Q2.** `2 ** 8` kya hai? (2 ki power 8)
+**Q2.** What is `2 ** 8`? (2 to the power of 8)
 
-**Jawab: _______________**
+**Answer: _______________**
 
 Hint: 2, 4, 8, 16, 32, 64, 128, ___
 
 ---
 
-**Q3.** `10 // 3` kya dega?
+**Q3.** What does `10 // 3` give?
 
 Circle the correct answer:
 
@@ -41,44 +41,44 @@ c) 4
 d) 1
 ```
 
-**Jawab: _______________**
+**Answer: _______________**
 
 ---
 
-**Q4.** Kya `5 == 5.0` True hai ya False?
+**Q4.** Is `5 == 5.0` True or False?
 
 ```
 a) True
 b) False
 ```
 
-**Jawab: _______________**
+**Answer: _______________**
 
-**Kyun? (Explain karo): _______________________________________**
-
----
-
-**Q5.** `not True` kya evaluate hoga?
-
-**Jawab: _______________**
+**Why? (Explain): _______________________________________**
 
 ---
 
-## Section B — Code Likhna
+**Q5.** What does `not True` evaluate to?
 
-**Q6.** Ek condition likhein jo check kare ke ek number 1 aur 100 ke beech mein hai (`and` use karo):
+**Answer: _______________**
+
+---
+
+## Section B — Writing Code
+
+**Q6.** Write a condition that checks whether a number is between 1 and 100 (use `and`):
 
 ```python
 number = 55
 
-# Yahan apni condition likhein:
+# Write your condition here:
 if ___________________________________________:
     print("Number sahi range mein hai!")
 ```
 
 ---
 
-**Q7.** Neeche wale code mein galti hai. Galti dhoondho aur theek karo.
+**Q7.** There is a mistake in the code below. Find it and fix it.
 
 ```python
 umar = 15
@@ -86,9 +86,9 @@ if umar = 18:
     print("Vote de sakte ho!")
 ```
 
-**Galti: _______________________________________________**
+**Mistake: _______________________________________________**
 
-**Sahi code:**
+**Correct code:**
 
 ```python
 umar = 15
@@ -98,24 +98,24 @@ if ___________________________________________:
 
 ---
 
-**Q8.** BODMAS ke mutabiq `2 + 3 * 4` ka result kya hoga?
+**Q8.** Following BODMAS, what is the result of `2 + 3 * 4`?
 
 Show your working:
 
 ```
-Step 1 (pehle * karo): 3 * 4 = ___
-Step 2 (phir + karo):  2 + ___ = ___
+Step 1 (multiply first): 3 * 4 = ___
+Step 2 (then add):       2 + ___ = ___
 ```
 
-**Jawab: _______________**
+**Answer: _______________**
 
 ---
 
-**Q9.** Hassan school mein hai. Woh pass hoga agar:
-- Marks 50 ya zyada hon **AUR**
-- Attendance 75 ya zyada ho
+**Q9.** Hassan is at school. He will pass if:
+- Marks are 50 or above **AND**
+- Attendance is 75 or above
 
-Yeh condition code mein likhein:
+Write this condition in code:
 
 ```python
 marks = int(input("Marks likhein: "))
@@ -131,14 +131,14 @@ else:
 
 ## Section C — Even/Odd Challenge
 
-**Q10.** Ahmed ne ek number socha. Woh jaanna chahta hai ke yeh number even hai ya odd. `%` operator use karke yeh check karo.
+**Q10.** Ahmed thought of a number. He wants to know if it is even or odd. Check this using the `%` operator.
 
-**Reminder:** Even numbers ka remainder zero hota hai jab 2 se divide karo.
+**Reminder:** Even numbers have a remainder of zero when divided by 2.
 
 ```python
 number = int(input("Koi number likhein: "))
 
-# % use karke check karo:
+# Check using %:
 if ___________________________________________:
     print(f"{number} even number hai.")
 else:
@@ -149,7 +149,7 @@ else:
 
 ## Section D — Mixed Problems
 
-**Q11.** Neeche wale expressions ke answers likhein:
+**Q11.** Write the answers to the expressions below:
 
 | Expression | Answer |
 |-----------|--------|
@@ -164,14 +164,14 @@ else:
 
 ---
 
-## Challenge — Mushkil Sawaal
+## Challenge — Difficult Question
 
-Karachi mein Fatima ke school mein 127 talibaat hain. School mein buses hain jo 12 talibaat le ja sakti hain.
+In Karachi, Fatima's school has 127 female students. The school has buses that can carry 12 students each.
 
-Yeh program likhein jo calculate kare:
-1. Kitni poori buses chahiyen?
-2. Kitni talibaat baaqi rahengi (extra)?
-3. Kya extra bus ki zaroorat hogi? (agar koi bhi baaqi hain toh haan)
+Write a program that calculates:
+1. How many complete buses are needed?
+2. How many students will be left over (extra)?
+3. Is an extra bus needed? (yes if there are any students left over)
 
 ```python
 talibaat = 127
@@ -191,17 +191,17 @@ else:
 
 ---
 
-## Answer Key (Sirf Teacher ke liye)
+## Answer Key (Teacher Only)
 
-| Sawaal | Jawab |
+| Question | Answer |
 |--------|-------|
 | Q1 | `3` (15 = 4×3 + 3) |
 | Q2 | `256` |
 | Q3 | `b) 3` |
-| Q4 | `True` — Python int aur float compare kar sakta hai |
+| Q4 | `True` — Python can compare int and float |
 | Q5 | `False` |
-| Q6 | `if 1 <= number <= 100:` ya `if number >= 1 and number <= 100:` |
-| Q7 | `=` ko `==` se replace karo: `if umar == 18:` |
+| Q6 | `if 1 <= number <= 100:` or `if number >= 1 and number <= 100:` |
+| Q7 | Replace `=` with `==`: `if umar == 18:` |
 | Q8 | Step 1: 12, Step 2: 14 |
 | Q9 | `if marks >= 50 and attendance >= 75:` |
 | Q10 | `if number % 2 == 0:` |

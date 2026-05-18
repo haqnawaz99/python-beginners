@@ -27,9 +27,9 @@ By end of class, students can:
 - Mixing single and double quotes on same string
 - Not saving the file before running (Ctrl+S first!)
 
-## Tips for Urdu Delivery
-- Say: "print() matlab computer ko bolna — yeh line screen pe dikhao"
-- Show errors deliberately — "galti se darna nahin, error message helper hai"
+## Tips for Delivery
+- Say: "print() tells the computer to show this line on the screen"
+- Show errors deliberately — "don't be afraid of mistakes, the error message is your helper"
 - Let students type the first program themselves — muscle memory matters
 
 ## Files in This Module

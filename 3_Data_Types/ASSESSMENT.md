@@ -17,13 +17,13 @@ Ask these questions one-on-one or to the class. Look for confident, correct answ
 
 | Question | Expected Answer |
 |----------|----------------|
-| `type(5)` kya return karega? | `<class 'int'>` |
-| `type(3.14)` kya return karega? | `<class 'float'>` |
-| `int("25")` ka result kya hoga? | `25` (as integer) |
-| `int("Ahmed")` kya hoga? | Error — ValueError |
-| Agar name = "Hassan" ho, toh f-string kaise likhein? | `f"Mera naam {name} hai"` |
-| `input()` hamesha konsa type return karta hai? | String (`str`) |
-| Math karne ke liye input ko kaise convert karein? | `int(input(...))` |
+| What will `type(5)` return? | `<class 'int'>` |
+| What will `type(3.14)` return? | `<class 'float'>` |
+| What is the result of `int("25")`? | `25` (as integer) |
+| What happens with `int("Ahmed")`? | Error — ValueError |
+| If name = "Hassan", how do you write an f-string? | `f"Mera naam {name} hai"` |
+| What type does `input()` always return? | String (`str`) |
+| How do you convert input to do math? | `int(input(...))` |
 
 ---
 
@@ -41,11 +41,11 @@ Ask these questions one-on-one or to the class. Look for confident, correct answ
 
 | Marks | Grade | Message |
 |-------|-------|---------|
-| 15–17 | A+ | Masha'Allah! Bohat acha kiya! |
-| 12–14 | A | Bohat achha! Thodi aur mehnat karo. |
-| 9–11 | B | Theek hai — practice jari rakho. |
-| 6–8 | C | Dobara review karo aur teacher se poocho. |
-| 0–5 | Needs Support | Teacher se milein — extra help chahiye. |
+| 15–17 | A+ | Masha'Allah! Excellent work! |
+| 12–14 | A | Very good! Keep working hard. |
+| 9–11 | B | Good — keep practising. |
+| 6–8 | C | Review again and ask your teacher. |
+| 0–5 | Needs Support | See the teacher — extra help needed. |
 
 ---
 
@@ -104,7 +104,7 @@ If a student struggles, focus on these specific areas:
 Show them: `print(type(42))` and `print(type("Ahmed"))` side by side.
 
 **Forgets `int()` with `input()`:**
-Ask: "Agar Ahmed ne 5 type kiya, toh kya Python ko pata hai yeh number hai?" Answer: No — it sees `"5"` (a string). So we wrap it: `int(input(...))`.
+Ask: "If Ahmed types 5, does Python know it is a number?" Answer: No — it sees `"5"` (a string). So we wrap it: `int(input(...))`.
 
 **f-string problems:**
 Check: Is the `f` before the opening quote? Are curly braces `{}` used (not round brackets)?

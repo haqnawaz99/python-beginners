@@ -1,40 +1,40 @@
 # Module 9 — File I/O: Practice Sheet
 
-**Naam / Name:** _______________________  
-**Taareekh / Date:** _______________________  
+**Name:** _______________________  
+**Date:** _______________________  
 **Class:** _______________________
 
 ---
 
-> **Yaad rakhein:** File modes — `"r"` (read), `"w"` (write, overwrites!), `"a"` (append)  
+> **Remember:** File modes — `"r"` (read), `"w"` (write, overwrites!), `"a"` (append)  
 > **Remember:** Always use `with open(...) as f:` — it closes the file automatically.
 
 ---
 
 ## Section A — Short Questions
 
-**Q1.** File ko sirf parhne (reading only) ke liye kaunsa mode use hota hai?
+**Q1.** Which mode is used to open a file for reading only?
 
 ```
-Jawab: _______________________
+Answer: _______________________
 ```
 
 ---
 
-**Q2.** `"w"` aur `"a"` mode mein kya farq hai? Urdu ya English mein likho.
+**Q2.** What is the difference between `"w"` and `"a"` mode? Write in English.
 
 ```
-Jawab:
+Answer:
 _______________________________________________
 _______________________________________________
 ```
 
 ---
 
-**Q3.** Yeh code likho: ek file `"salam.txt"` banao aur usme `"Assalamu Alaikum"` likho.
+**Q3.** Write the code to create a file `"salam.txt"` and write `"Assalamu Alaikum"` into it.
 
 ```python
-# Yahan apna code likho:
+# Write your code here:
 
 
 
@@ -43,10 +43,10 @@ _______________________________________________
 
 ---
 
-**Q4.** Yeh code likho: `"salam.txt"` file paro aur uska content print karo.
+**Q4.** Write the code to read `"salam.txt"` and print its contents.
 
 ```python
-# Yahan apna code likho:
+# Write your code here:
 
 
 
@@ -55,29 +55,29 @@ _______________________________________________
 
 ---
 
-**Q5.** `with open()` use kyun karna chahiye sirf `open()` ki jagah? Ek wajah batao.
+**Q5.** Give one reason why you should use `with open()` instead of just `open()`.
 
 ```
-Jawab:
+Answer:
 _______________________________________________
 ```
 
 ---
 
-**Q6.** Kya error aata hai agar aap aisi file read karne ki koshish karo jo exist nahi karti?
+**Q6.** What error occurs if you try to read a file that does not exist?
 
 ```
-Jawab: _______________________
+Answer: _______________________
 ```
 
 ---
 
 ## Section B — Code Writing
 
-**Q7.** Yeh code likho: ek existing file `"dua.txt"` ke end mein `"JazakAllah Khair"` add karo (purana content na mithe).
+**Q7.** Write code to add `"JazakAllah Khair"` to the end of an existing file `"dua.txt"` without deleting the old content.
 
 ```python
-# Yahan apna code likho:
+# Write your code here:
 
 
 
@@ -86,23 +86,23 @@ Jawab: _______________________
 
 ---
 
-**Q8.** Neeche wala code galat hai. Galtiyan dhundo aur theek karo:
+**Q8.** The code below has mistakes. Find them and fix them:
 
 ```python
-# GALAT CODE:
+# WRONG CODE:
 f = open("data.txt")
 data = f.read()
 print(data)
 ```
 
-**Galtiyan (mistakes):**
+**Mistakes:**
 1. _______________________________________________
 2. _______________________________________________
 
-**Theek kiya hua code:**
+**Fixed code:**
 
 ```python
-# THEEK CODE:
+# CORRECT CODE:
 
 
 
@@ -111,11 +111,11 @@ print(data)
 
 ---
 
-**Q9.** Yeh code likho: teen Pakistani shehar (cities) ki list bana ke file mein save karo — har shehar ek alag line mein.
+**Q9.** Write code to save a list of three Pakistani cities to a file — one city per line.
 
 ```python
 # Hint: cities = ["Karachi", "Lahore", "Islamabad"]
-# Yahan apna code likho:
+# Write your code here:
 
 
 
@@ -126,25 +126,25 @@ print(data)
 
 ## Section C — Challenge Question
 
-**Challenge:** Ek **persistent naam collector** banao.
+**Challenge:** Build a **persistent name collector**.
 
-Program ke rules:
-- Har baar run hone par, user se ek naam maango
-- Woh naam file `"names.txt"` mein **add** karo (purane naam na mitten)
-- Phir file ke **saare naam** numbered list mein print karo
+Program rules:
+- Each time it runs, ask the user for a name
+- Add that name to the file `"names.txt"` (do not delete old names)
+- Then print all names from the file as a numbered list
 
-**Expected output (2nd run ke baad):**
+**Expected output (after 2nd run):**
 
 ```
 Apna naam darj karein: Fatima
 
---- Ab tak ke saare naam ---
+--- All names so far ---
 1. Ali
 2. Fatima
 ```
 
 ```python
-# Yahan apna code likho:
+# Write your code here:
 
 
 
@@ -153,22 +153,22 @@ Apna naam darj karein: Fatima
 
 ---
 
-## Mutaliq Maloomat (Quick Reference)
+## Quick Reference
 
 ```python
-# File likhna (naya banao)
+# Write to a new file
 with open("file.txt", "w") as f:
     f.write("Bismillah\n")
 
-# File parhna
+# Read a file
 with open("file.txt", "r") as f:
     content = f.read()
 
-# File mein add karna
+# Append to a file
 with open("file.txt", "a") as f:
     f.write("Naya data\n")
 
-# Error handle karna
+# Handle missing file error
 try:
     with open("file.txt", "r") as f:
         print(f.read())

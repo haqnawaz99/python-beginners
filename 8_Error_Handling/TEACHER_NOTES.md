@@ -71,33 +71,32 @@ User types "abc" → int("abc") → except catches it → friendly message ✓
 
 ```python
 try:
-    # koshish karo (attempt this)
+    # attempt this
     number = int(input("Number daalein: "))
 except ValueError:
-    # agar galti ho to (if this specific error happens)
+    # if this specific error happens
     print("Sirf number chahiye!")
 else:
-    # agar koi galti nahi (if NO error occurred)
+    # if NO error occurred
     print(f"Aap ne daala: {number}")
 finally:
-    # hamesha chalta hai (always runs — error or not)
+    # always runs — error or not
     print("Program khatam.")
 ```
 
 ---
 
-## Urdu Teaching Tips
+## Teaching Tips
 
-- **"try matlab koshish karo"** *(try means attempt)*
+- **"try means attempt — try running this code"**
 
-- **"except matlab agar galti ho to"** *(except means if there is a mistake)*
+- **"except means if an error happens — catch it here"**
 
-- **"Program crash karna door hai — user ko message dikhao"**
-  *(Crashing the program is far away — show the user a message)*
+- **"Instead of crashing the program — show the user a helpful message"**
 
-- **"else matlab sab theek tha"** *(else means everything was fine)*
+- **"else means everything went fine — no error occurred"**
 
-- **"finally matlab hamesha — galti ho ya na ho"** *(finally means always — error or not)*
+- **"finally means always — it runs whether there was an error or not"**
 
 ---
 
@@ -116,9 +115,7 @@ finally:
 
 Emphasise to students:
 
-> "Yeh module Module 9 (File I/O) ke liye aur aap ke tamam bade projects ke liye zaroori hai. Agar user ne galat input diya aur program crash ho gaya — project fail. Is liye hum ab se yeh pattern seekhte hain."
-
-*(This module is essential for Module 9 (File I/O) and all your big projects. If a user enters wrong input and the program crashes — the project fails. That is why we learn this pattern now.)*
+> "This module is essential for Module 9 (File I/O) and all your big projects. If a user enters wrong input and the program crashes — the project fails. That is why we learn this pattern now."
 
 ---
 
@@ -127,7 +124,6 @@ Emphasise to students:
 ```python
 def get_integer_in_range(prompt, minimum, maximum):
     """
-    User se integer input leta hai, validate karta hai aur return karta hai.
     Gets an integer from the user, validates it, and returns it.
     """
     while True:
@@ -145,8 +141,7 @@ marks = get_integer_in_range("Marks daalein (0-100): ", 0, 100)
 print(f"Marks: {marks}")
 ```
 
-Tell students: "Yeh ek complete, professional validation function hai. Aap ise har jagah use kar sakte hain."
-*(This is a complete, professional validation function. You can use it everywhere.)*
+Tell students: "This is a complete, professional validation function. You can use it everywhere."
 
 ---
 

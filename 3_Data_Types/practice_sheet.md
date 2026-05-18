@@ -1,20 +1,20 @@
 # Module 3 — Data Types: Practice Sheet
 
-**Naam (Name): ___________________________**
-**Taareekh (Date): ________________________**
+**Name: ___________________________**
+**Date: ________________________**
 **Class: _________________________________**
 
 ---
 
 Bismillah ir-Rahman ir-Raheem
 
-Yeh practice sheet Module 3 ke liye hai. Har sawaal ko dhyan se parho aur jawab likhein.
+This practice sheet is for Module 3. Read each question carefully and write your answers.
 
 ---
 
-## Section A — Short Answer (Mukhtasar Jawabaat)
+## Section A — Short Answer
 
-**Q1.** `type(3.14)` kya return karega? Circle the correct answer.
+**Q1.** What will `type(3.14)` return? Circle the correct answer.
 
 ```
 a) <class 'int'>
@@ -23,35 +23,35 @@ c) <class 'str'>
 d) <class 'bool'>
 ```
 
-**Jawab: _______________**
+**Answer: _______________**
 
 ---
 
-**Q2.** Neeche wala code galat hai. Galti dhoondho aur theek karo.
+**Q2.** The code below has an error. Find the mistake and fix it.
 
 ```python
-# Galat code:
+# Wrong code:
 age = int("Ahmed")
 print(age)
 ```
 
-**Galti kya hai?**
+**What is the mistake?**
 
 ```
 _____________________________________________
 _____________________________________________
 ```
 
-**Theek code likhein:**
+**Write the correct code:**
 
 ```python
-# Sahi code:
+# Correct code:
 age = ___________________________________
 ```
 
 ---
 
-**Q3.** Agar `name = "Ahmed"` ho, toh neeche wali f-string ka output kya hoga?
+**Q3.** If `name = "Ahmed"`, what will the output of the f-string below be?
 
 ```python
 print(f"Assalamu Alaikum {name}")
@@ -61,16 +61,16 @@ print(f"Assalamu Alaikum {name}")
 
 ---
 
-**Q4.** User se umar poochho aur use integer ke tor par store karo. Code likhein:
+**Q4.** Ask the user for their age and store it as an integer. Write the code:
 
 ```python
-# Yahan apna code likhein:
+# Write your code here:
 umar = ___________________________________
 ```
 
 ---
 
-**Q5.** Neeche wala calculation kya result dega?
+**Q5.** What result will the calculation below give?
 
 ```python
 result = int("25") + int("10")
@@ -81,19 +81,19 @@ print(result)
 
 ---
 
-**Q6.** `99` ko string mein convert karo `str()` use karke:
+**Q6.** Convert `99` to a string using `str()`:
 
 ```python
 number = 99
 text = ___________________________________
-print(type(text))  # <class 'str'> aana chahiye
+print(type(text))  # should show <class 'str'>
 ```
 
 ---
 
-## Section B — Writing Code (Code Likhna)
+## Section B — Writing Code
 
-**Q7.** Ek f-string likhein jo yeh print kare:
+**Q7.** Write an f-string that prints:
 > **Ahmed is 15 years old**
 
 ```python
@@ -105,7 +105,7 @@ print(  ________________________________  )
 
 ---
 
-**Q8.** Samjhao — `int(input())` kyun use karte hain jab user se number lena ho? (Apni zaban mein likhein)
+**Q8.** Explain — why do we use `int(input())` when we want a number from the user? (Write in your own words.)
 
 ```
 _____________________________________________
@@ -115,20 +115,20 @@ _____________________________________________
 
 ---
 
-## Section C — Fix the Bug (Galti Theek Karo)
+## Section C — Fix the Bug
 
-**Q9.** Neeche ke code mein kya galat hai? Theek karo.
+**Q9.** What is wrong with the code below? Fix it.
 
 ```python
-# Galat:
+# Wrong:
 naam = "Fatima"
 city = "Lahore"
 print("Main {naam} hoon aur {city} mein rehti hoon.")
 ```
 
-**Galti: _______________________________________________**
+**Mistake: _______________________________________________**
 
-**Sahi code:**
+**Correct code:**
 
 ```python
 print(  ________________________________  )
@@ -136,7 +136,7 @@ print(  ________________________________  )
 
 ---
 
-**Q10.** Yeh code crash karta hai. Kyun? Aur kaise theek karein?
+**Q10.** This code crashes. Why? And how do you fix it?
 
 ```python
 saal = input("Paidaishi saal likhein: ")
@@ -144,13 +144,13 @@ umar = 2026 - saal
 print(umar)
 ```
 
-**Kyun crash hota hai:**
+**Why it crashes:**
 
 ```
 _____________________________________________
 ```
 
-**Theek code:**
+**Fixed code:**
 
 ```python
 saal = ___________________________________
@@ -160,19 +160,19 @@ print(f"Aap ki umar hai: {umar}")
 
 ---
 
-## Challenge — Mushkil Sawaal
+## Challenge — Difficult Question
 
-Ahmed, Hassan, aur Zainab ne ek program banana chaha jo do numbers user se le aur unka total print kare. Pura program likhein:
+Ahmed, Hassan, and Zainab want to write a program that takes two numbers from the user and prints their total. Write the complete program:
 
 **Requirements:**
-- User se pehla number lo (integer)
-- User se doosra number lo (integer)
-- Dono numbers add karo
-- Result f-string se print karo
+- Get the first number from the user (integer)
+- Get the second number from the user (integer)
+- Add both numbers
+- Print the result using an f-string
 - Example output: `Ahmed ki calculation: 25 + 10 = 35`
 
 ```python
-# Apna program yahan likhein:
+# Write your program here:
 
 
 
@@ -181,18 +181,18 @@ Ahmed, Hassan, aur Zainab ne ek program banana chaha jo do numbers user se le au
 
 ---
 
-## Answer Key (Sirf Teacher ke liye)
+## Answer Key (Teacher Only)
 
-| Sawaal | Jawab |
+| Question | Answer |
 |--------|-------|
 | Q1 | `b) <class 'float'>` |
-| Q2 | `int("Ahmed")` galat hai — sirf numeric strings convert ho sakti hain. `age = int("15")` ya `age = int(input(...))` |
+| Q2 | `int("Ahmed")` is wrong — only numeric strings can be converted. `age = int("15")` or `age = int(input(...))` |
 | Q3 | `Assalamu Alaikum Ahmed` |
 | Q4 | `umar = int(input("Apni umar likhein: "))` |
 | Q5 | `35` |
 | Q6 | `text = str(99)` |
 | Q7 | `print(f"{naam} is {umar} years old")` |
-| Q8 | Kyunki `input()` hamesha string return karta hai, math ke liye `int()` mein convert karna zaroori hai |
-| Q9 | `f` prefix missing hai. Sahi: `print(f"Main {naam} hoon aur {city} mein rehti hoon.")` |
-| Q10 | `saal` string hai, integer se subtract nahin ho sakta. `saal = int(input(...))` |
+| Q8 | Because `input()` always returns a string; to do math you must convert it with `int()` |
+| Q9 | `f` prefix is missing. Correct: `print(f"Main {naam} hoon aur {city} mein rehti hoon.")` |
+| Q10 | `saal` is a string, cannot subtract from an integer. `saal = int(input(...))` |
 | Challenge | `n1 = int(input(...))`, `n2 = int(input(...))`, `print(f"... {n1} + {n2} = {n1+n2}")` |

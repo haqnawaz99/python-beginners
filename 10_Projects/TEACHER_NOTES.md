@@ -88,12 +88,12 @@ The most complex project. Consider a **group activity** option for this class.
 Follow this sequence for each project:
 
 ```
-1. Show the SOLUTION running       → "Yeh hamara target hai"
-2. Open the STARTER file           → "Yahan se shuru karte hain"
-3. Explain what is missing         → "Yeh functions khaali hain"
+1. Show the SOLUTION running       → "This is our target"
+2. Open the STARTER file           → "This is where we begin"
+3. Explain what is missing         → "These functions are empty"
 4. Students fill in the blanks     → Guided practice
-5. Run and test together           → "Chalaate hain, dekhte hain"
-6. Try bad inputs                  → "Kya hoga agar galat likhein?"
+5. Run and test together           → "Let's run it and see"
+6. Try bad inputs                  → "What happens if we enter something wrong?"
 ```
 
 ---
@@ -108,12 +108,12 @@ Follow this sequence for each project:
 
 ---
 
-## Urdu Teaching Tips
+## Teaching Tips
 
-- **Opening motivation:** "Yeh sab cheezein jo humne seekhi hain — variables, loops, functions, files — ab sab milaate hain. Ek real software banaate hain!"
-- **On starter files:** "Kuch cheezein maine already likh di hain. Aap ko sirf khaali jagah bharna hai — jaise imtihan mein fill in the blanks."
-- **On testing with bad input:** "Agar user galat data daale, program toot jaana nahi chahiye. Isliye hum pehle check karte hain."
-- **On real-world relevance:** "Yeh programs ASLI data save karte hain. Jab aap chalaaenge, real .txt files banenge aapke computer pe."
+- **Opening motivation:** "Everything we have learnt — variables, loops, functions, files — we now put it all together. We are building real software!"
+- **On starter files:** "I have already written some parts. You only need to fill in the blank spaces — like fill-in-the-blanks in an exam."
+- **On testing with bad input:** "If a user enters wrong data, the program must not break. That is why we check first."
+- **On real-world relevance:** "These programs save REAL data. When you run them, actual .txt files will be created on your computer."
 
 ---
 

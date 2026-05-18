@@ -43,8 +43,7 @@ By the end of this module, students will be able to:
 
 Use this analogy for students:
 
-> "Ek recipe ki tarah hai — aap ek baar likhte hain, phir baar baar pakate hain. Aapko har baar recipe dobara likhne ki zaroorat nahi."
-> *(It is like a recipe — you write it once, then cook it many times. You don't need to rewrite the recipe each time.)*
+> "It is like a recipe — you write it once, then cook it many times. You don't need to rewrite the recipe each time."
 
 ---
 
@@ -59,13 +58,11 @@ Explain simply: parameter is the placeholder, argument is the actual value.
 
 ---
 
-## Urdu Teaching Tips
+## Teaching Tips
 
-- **"Function matlab machine — andar daalo, kuch karo, bahar nikalo"**
-  *(Function means machine — put something in, do something, take something out)*
+- **"A function is like a machine — put something in, do something, take something out"**
 
-- **"def matlab define karo — naam do is machine ko"**
-  *(def means define — give this machine a name)*
+- **"def means define — give this machine a name"**
 
 - Write on the board: `INPUT → [FUNCTION] → OUTPUT`
 
@@ -100,8 +97,7 @@ def get_integer_in_range(prompt, minimum, maximum):
             print("Sirf number daalein, haroof nahi.")
 ```
 
-Tell students: "Yeh function aap ke saath Module 9 tak aur capstone projects mein bhi rahega."
-*(This function will stay with you through Module 9 and capstone projects too.)*
+Tell students: "This function will stay with you through Module 9 and the capstone projects too."
 
 ---
 

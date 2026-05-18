@@ -38,11 +38,11 @@ Show: `name = "Ahmed"` then `name = "Fatima"` — the box now holds a new value.
 - Forgetting `.strip()` when input has accidental spaces
 - Case matters: `Name` and `name` are different variables
 
-## Tips for Urdu Delivery
-- "Variable matlab dabba jisme value rakhte hain"
-- "Naam dete hain dabbe ko, jaise `age = 15`"
-- `.upper()` — "Sab capital ho jaata hai"
-- `.title()` — "Har lafz ka pehla harf bada ho jaata hai"
+## Tips for Delivery
+- "A variable is a box where you store a value"
+- "You give the box a name, like `age = 15`"
+- `.upper()` — "Everything becomes uppercase"
+- `.title()` — "The first letter of every word becomes uppercase"
 
 ## Files in This Module
 - 2_1_variables_intro.py through 2_9_quiz_solution.py

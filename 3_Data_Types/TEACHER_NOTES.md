@@ -8,7 +8,7 @@
 | Duration | 2 classes |
 | Level | Beginner |
 | Age Group | 10–16 years |
-| Language | Urdu (with English terms) |
+| Language | English (with Urdu delivery) |
 
 ---
 
@@ -30,7 +30,7 @@ By the end of this module, students will be able to:
 
 | Time | Activity | File |
 |------|----------|------|
-| 0–10 min | Revise variables — ask students: "Ahmed ne ek variable banaya `naam = 'Ahmed'`. Yeh kya hai?" | Revision |
+| 0–10 min | Revise variables — ask students: "Ahmed made a variable `naam = 'Ahmed'`. What is this?" | Revision |
 | 10–30 min | Introduce int, float, str, bool with real examples | `3_1_data_types.py` |
 | 30–55 min | Type conversion — int(), float(), str() with examples | `3_2_type_conversion.py` |
 
@@ -61,15 +61,15 @@ agli_saal = umar + 1  # Works!
 print(f"Agli saal aap ki umar hogi: {agli_saal}")
 ```
 
-Explain clearly: `input()` hamesha **string** return karta hai, chahe user number type kare. Math karne ke liye pehle `int()` mein convert karna padta hai.
+Explain clearly: `input()` always returns a **string**, even if the user types a number. To do math, you must first convert it with `int()`.
 
 ### The Four Types
 
 ```python
-naam    = "Ahmed"      # str   — text / matn
-umar    = 15           # int   — poora number
+naam    = "Ahmed"      # str   — text
+umar    = 15           # int   — whole number
 qad     = 5.7          # float — decimal number
-Muslim  = True         # bool  — haan ya na (True/False)
+Muslim  = True         # bool  — yes or no (True/False)
 ```
 
 ---
@@ -85,15 +85,15 @@ Muslim  = True         # bool  — haan ya na (True/False)
 
 ---
 
-## Urdu Teaching Tips
+## Teaching Tips
 
-Use these Urdu explanations on the whiteboard:
+Use these explanations on the whiteboard:
 
-- **int** — "int matlab poora number — jaise 5, 100, -3. Decimal nahin hota."
-- **float** — "float matlab decimal wala number — jaise 5.7, 3.14, 99.9."
-- **str** — "str matlab text — jo bhi quotes mein likha ho woh string hai."
-- **bool** — "bool matlab sirf do jawab — ya True (haan) ya False (na)."
-- **f-string** — "f-string matlab fill-in-the-blank — curly brackets mein variable ka naam likhein aur Python khud woh value daal deta hai."
+- **int** — "int means a whole number — like 5, 100, -3. No decimal point."
+- **float** — "float means a number with a decimal point — like 5.7, 3.14, 99.9."
+- **str** — "str means text — anything written inside quotes is a string."
+- **bool** — "bool means only two answers — either True (yes) or False (no)."
+- **f-string** — "f-string means fill-in-the-blank — write the variable name inside curly brackets and Python puts in the value automatically."
 
 ---
 
@@ -109,7 +109,7 @@ Write values on the board. Students call out the data type.
 **Activity 2 — Fix the Bug:**
 Show broken code. Students find and fix the problem.
 ```python
-# Fix karo:
+# Fix this:
 marks = input("Marks likhein: ")
 total = marks + 50
 print(total)
