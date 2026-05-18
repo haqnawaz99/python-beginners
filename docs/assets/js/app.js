@@ -5,25 +5,6 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
-  // ── Home notice: Not now / × both dismiss and persist (localStorage) ──
-  var NOTICE_KEY = 'pb-course-notice-dismissed';
-  var noticeEl = document.getElementById('site-notice');
-  var closeBtn = document.getElementById('siteNoticeClose');
-  var notNowBtn = document.getElementById('siteNoticeNotNow');
-  function dismissSiteNotice() {
-    if (!noticeEl) return;
-    noticeEl.classList.add('site-notice--dismissed');
-    localStorage.setItem(NOTICE_KEY, '1');
-  }
-  if (noticeEl) {
-    if (localStorage.getItem(NOTICE_KEY) === '1') {
-      dismissSiteNotice();
-    }
-    [closeBtn, notNowBtn].forEach(function (btn) {
-      if (btn) btn.addEventListener('click', dismissSiteNotice);
-    });
-  }
-
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // ── Scroll reveal (index steps + module cards) ─────────────────
