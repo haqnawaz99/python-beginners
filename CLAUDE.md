@@ -233,7 +233,7 @@ Students should run programs from within their module folder.
 - [ ] Add YouTube video links to each module's `TEACHER_NOTES.md` once recorded
 
 ### Notebooks & Session Tasks (in progress — follow established pattern)
-- [x] Module 1 — `1_strings_notebook.ipynb`
+- [x] Module 1 — `1_strings_notebook.ipynb` + `session_tasks.md`
 - [x] Module 2 — `2_variables_notebook.ipynb` + `session_tasks.md`
 - [ ] Module 3 — `3_data_types_notebook.ipynb` + `session_tasks.md`
 - [ ] Module 4 — `4_operators_notebook.ipynb` + `session_tasks.md`
@@ -243,7 +243,7 @@ Students should run programs from within their module folder.
 - [ ] Module 8 — `8_error_handling_notebook.ipynb` + `session_tasks.md`
 - [ ] Module 9 — `9_file_io_notebook.ipynb` + `session_tasks.md`
 - [ ] Module 10 — `10_projects_notebook.ipynb` + `session_tasks.md`
-- [ ] Add `session_tasks.md` to Module 1 (currently missing)
+- [x] `session_tasks.md` added to Module 1
 
 ### Short Term
 - [ ] Add a `STUDENT_GUIDE.md` — one-page guide written directly for students (not teachers)
