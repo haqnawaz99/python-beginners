@@ -64,8 +64,16 @@ N_ModuleName/
 ├── N_Z_quiz_solution.py      ← teacher reference
 ├── TEACHER_NOTES.md          ← duration, flow, Urdu tips, common mistakes
 ├── ASSESSMENT.md             ← rubric, oral questions, pass criteria
-└── practice_sheet.md         ← printable offline exercises
+├── practice_sheet.md         ← printable offline exercises
+├── N_notebook.ipynb          ← interactive Jupyter notebook (all concepts, runnable)
+└── session_tasks.md          ← after-session student tasks (graded, 3 difficulty tiers)
 ```
+
+### Notebook Design Rules
+- Every concept section has: explanation markdown → runnable example cells → Try It Yourself cells
+- Each Try It Yourself task gets its **own** markdown cell + its **own** blank code cell (never one cell for multiple tasks)
+- No plain string variable assignments in Module 1 notebook — `name = input(...)` is fine, `name = "Ahmed"` belongs in Module 2+
+- Final Practice section has **at least 3 programs**, each with its own markdown + code cell, covering all module concepts combined
 
 Module 10 additionally contains:
 - `10_X_*_starter.py` — give to students (TODOs to fill in)
@@ -210,6 +218,10 @@ Students should run programs from within their module folder.
 - [x] `README.md` — course map and usage guide
 - [x] `SETUP.md` — Python + VS Code install guide for students
 - [x] Git repo initialized and pushed to GitHub
+- [x] GitHub Pages website (`docs/` folder) with pages for all 11 modules
+- [x] `1_strings_notebook.ipynb` — interactive Jupyter notebook for Module 1
+- [x] `2_variables_notebook.ipynb` — interactive Jupyter notebook for Module 2
+- [x] `session_tasks.md` for Module 2 — 7 graded after-session student tasks + bonus
 
 ---
 
@@ -219,6 +231,19 @@ Students should run programs from within their module folder.
 - [ ] Review each module file personally and test all code runs without errors
 - [ ] Record YouTube videos module by module (start with Module 0)
 - [ ] Add YouTube video links to each module's `TEACHER_NOTES.md` once recorded
+
+### Notebooks & Session Tasks (in progress — follow established pattern)
+- [x] Module 1 — `1_strings_notebook.ipynb`
+- [x] Module 2 — `2_variables_notebook.ipynb` + `session_tasks.md`
+- [ ] Module 3 — `3_data_types_notebook.ipynb` + `session_tasks.md`
+- [ ] Module 4 — `4_operators_notebook.ipynb` + `session_tasks.md`
+- [ ] Module 5 — `5_control_flow_notebook.ipynb` + `session_tasks.md`
+- [ ] Module 6 — `6_functions_notebook.ipynb` + `session_tasks.md`
+- [ ] Module 7 — `7_lists_notebook.ipynb` + `session_tasks.md`
+- [ ] Module 8 — `8_error_handling_notebook.ipynb` + `session_tasks.md`
+- [ ] Module 9 — `9_file_io_notebook.ipynb` + `session_tasks.md`
+- [ ] Module 10 — `10_projects_notebook.ipynb` + `session_tasks.md`
+- [ ] Add `session_tasks.md` to Module 1 (currently missing)
 
 ### Short Term
 - [ ] Add a `STUDENT_GUIDE.md` — one-page guide written directly for students (not teachers)
