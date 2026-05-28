@@ -235,7 +235,7 @@ Students should run programs from within their module folder.
 ### Notebooks & Session Tasks (in progress — follow established pattern)
 - [x] Module 1 — `1_strings_notebook.ipynb` + `session_tasks.md`
 - [x] Module 2 — `2_variables_notebook.ipynb` + `session_tasks.md`
-- [ ] Module 3 — `3_data_types_notebook.ipynb` + `session_tasks.md`
+- [x] Module 3 — `3_data_types_notebook.ipynb` + `session_tasks.md`
 - [ ] Module 4 — `4_operators_notebook.ipynb` + `session_tasks.md`
 - [ ] Module 5 — `5_control_flow_notebook.ipynb` + `session_tasks.md`
 - [ ] Module 6 — `6_functions_notebook.ipynb` + `session_tasks.md`
