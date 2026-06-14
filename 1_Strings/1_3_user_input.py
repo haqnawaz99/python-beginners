@@ -14,31 +14,18 @@
 # ------------------------------------------------
 # Basic input() usage
 # ------------------------------------------------
+# input("...") can be placed directly inside print(), joined with +.
+# Python asks the question, waits for the answer, and uses it right there.
 
-# Step 1: Ask the user something
-# Step 2: Store what they type in a variable
-# Step 3: Use it in print()
-
-name = input("Please enter your name: ")
-print("Assalamu Alaikum, " + name)
+print("Assalamu Alaikum, " + input("Please enter your name: "))
 
 # ------------------------------------------------
 # More examples
 # ------------------------------------------------
 
-city = input("Which city are you from? ")
-print("Ma sha Allah, " + city + " is a wonderful city!")
+print("Ma sha Allah, " + input("Which city are you from? ") + " is a wonderful city!")
 
-subject = input("What is your favorite subject? ")
-print("Great choice! " + subject + " is very important.")
-
-# ------------------------------------------------
-# Using input() directly inside print()
-# ------------------------------------------------
-# You can skip the variable and use input() straight in print().
-# This is shorter but less flexible.
-
-print("Wa Alaikum Assalam, " + input("Who are you replying to? "))
+print("Great choice! " + input("What is your favorite subject? ") + " is very important.")
 
 # ------------------------------------------------
 # input() always gives back a STRING
@@ -46,18 +33,29 @@ print("Wa Alaikum Assalam, " + input("Who are you replying to? "))
 # Even if the user types a number, it comes back as text.
 # We will learn how to handle this in Module 3 (Data Types).
 
-age = input("How old are you? ")
-print("You are " + age + " years old. May Allah bless you!")
+print("You are " + input("How old are you? ") + " years old. May Allah bless you!")
 
 # ------------------------------------------------
 # Islamic & Pakistani Context Examples
 # ------------------------------------------------
 
-school = input("What is the name of your school or madrasa? ")
-print("May Allah give barakah to " + school + "!")
+print("May Allah give barakah to " + input("What is the name of your school or madrasa? ") + "!")
 
-prophet_name = input("Name your favorite Prophet (peace be upon them): ")
-print("Peace and blessings be upon Prophet " + prophet_name)
+print("Peace and blessings be upon Prophet " + input("Name your favorite Prophet (peace be upon them): "))
+
+# ------------------------------------------------
+# Asking multiple questions
+# ------------------------------------------------
+# You can call input() as many times as you need - each call asks one question.
+#
+# A small preview: to COMBINE the answers to two different questions into
+# one sentence, we need a way to give each answer a name so we can use it
+# again later. That "naming" idea is called a variable - the full lesson
+# is in Module 2. For now, here is a small preview:
+
+first = input("Enter your first name: ")
+last = input("Enter your last name: ")
+print("Assalamu Alaikum, " + first + " " + last + "!")
 
 print()
 print("Well done! You can now interact with the user.")

@@ -77,5 +77,47 @@ print("There are " + str(5) + " prayers")
 # OR - use a comma in print() instead (easier for beginners):
 print("There are", 5, "prayers")
 
+# ------------------------------------------------
+# Quotes Inside a String
+# ------------------------------------------------
+# What if the text itself contains a quotation mark?
+
+# Trick 1: use the other type of quote
+print("Ahmed's book")
+print('She said "Bismillah"')
+
+# Trick 2: use the backslash escape character \
+print('Ahmed\'s book')
+print("She said \"Bismillah\"")
+
+# ------------------------------------------------
+# Special Characters: \n and \t
+# ------------------------------------------------
+# \n moves to a new line
+# \t adds a tab space (like pressing the Tab key)
+
+print("Lahore\nKarachi\nIslamabad")
+
+print("Name:\tAhmed")
+print("City:\tLahore")
+
+print("Surah:\tAl-Fatiha\nVerses:\t7")
+
+# ------------------------------------------------
+# Drawing Patterns with print()
+# ------------------------------------------------
+# We can use symbols like * and spaces to draw simple pictures.
+# Each print() is one row.
+
+print("  *")
+print(" * *")
+print("*****")
+
+print()
+
+print("*****")
+print("*   *")
+print("*****")
+
 print()
 print("Great work! You can now join strings together.")

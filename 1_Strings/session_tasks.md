@@ -131,6 +131,43 @@ Block 5 (if city = Lahore): ________
 
 ---
 
+## Task 8 — Star Pattern ⭐⭐
+
+Using `print()` statements (one per row), draw the **first letter of your name**
+using stars (`*`) and spaces — just like you practised in the notebook.
+
+**Example for the letter M:**
+```
+*   *
+** **
+* * *
+*   *
+*   *
+```
+
+Count your spaces carefully so the shape lines up correctly.
+
+---
+
+## Task 9 — EID Box ⭐⭐
+
+Using `print()`, `*`, and `\t`, draw a box with the word `EID` centred inside it:
+
+```
+**********
+*  EID   *
+**********
+```
+
+Then, on the next two lines, print an arrow pointing right and an arrow
+pointing left, separated by a `\t` tab:
+
+```
+----->	<-----
+```
+
+---
+
 ## Bonus Challenge ⭐⭐⭐
 
 Build a **"Three Friends"** introduction program:
@@ -162,8 +199,10 @@ Hassan has 6 letters.
 | Task 5 | 2     |
 | Task 6 | 3     |
 | Task 7 | 3     |
+| Task 8 | 2     |
+| Task 9 | 2     |
 | Bonus  | 3     |
-| **Total** | **18** |
+| **Total** | **22** |
 
 ---
 

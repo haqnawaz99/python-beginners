@@ -41,7 +41,7 @@ By the end of the course, students can:
 | Module | Folder | Key Concepts | Classes |
 |--------|--------|-------------|---------|
 | 0 | `0_Setup` | Python install, VS Code, print(), comments, reading errors | 1 |
-| 1 | `1_Strings` | String concatenation, input(), len() | 2 |
+| 1 | `1_Strings` | String concatenation, escape characters (`\'` `\"` `\n` `\t`), ASCII-art pattern printing, input(), len() | 2 |
 | 2 | `2_Variables` | Variables, naming rules, string methods (upper/lower/title/strip) | 2 |
 | 3 | `3_Data_Types` | int/float/str/bool, type(), int()/float()/str(), f-strings | 2 |
 | 4 | `4_Operators` | Math operators, BODMAS, comparison, logical (and/or/not) | 2 |
@@ -72,8 +72,9 @@ N_ModuleName/
 ### Notebook Design Rules
 - Every concept section has: explanation markdown → runnable example cells → Try It Yourself cells
 - Each Try It Yourself task gets its **own** markdown cell + its **own** blank code cell (never one cell for multiple tasks)
-- No plain string variable assignments in Module 1 notebook — `name = input(...)` is fine, `name = "Ahmed"` belongs in Module 2+
+- Module 1 notebook avoids `x = input(...)` as the default — `input()` is used inline inside `print()`. Cells that must combine/reuse two answers (e.g. first+last name) are kept as flagged "preview" exceptions with a note pointing to Module 2 for variables
 - Final Practice section has **at least 3 programs**, each with its own markdown + code cell, covering all module concepts combined
+- Module 1 Section 2 also covers escape characters (`\'`, `\"`, `\n`, `\t`) and simple ASCII-art pattern printing (`*` shapes) — mirrored in `1_1_string_concatenation.py` and `session_tasks.md` (Tasks 8-9)
 
 Module 10 additionally contains:
 - `10_X_*_starter.py` — give to students (TODOs to fill in)
@@ -249,6 +250,7 @@ Students should run programs from within their module folder.
 - [ ] Add a `STUDENT_GUIDE.md` — one-page guide written directly for students (not teachers)
 - [ ] Create a `resources/` folder with a Pakistan-themed cheat sheet (one-pager: variables, loops, functions quick reference)
 - [ ] Test all 3 capstone projects end-to-end on a fresh machine
+- [ ] Generate printable PDF of `1_strings_notebook.ipynb` (blocked: `nbconvert --to webpdf` needs Chromium download, no internet access in dev environment; `nbconvert --to pdf` via xelatex fails on first run with MiKTeX — needs non-interactive package install). Revisit with internet access or a working LaTeX/Chromium setup
 
 ### Future Enhancements
 - [ ] Add Module 11 — OOP basics (classes, objects) — currently out of scope
