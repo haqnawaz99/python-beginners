@@ -80,6 +80,15 @@ Module 10 additionally contains:
 - `10_X_*_starter.py` — give to students (TODOs to fill in)
 - `10_X_*_solution.py` — full working solution
 
+### Notebook Export Pipeline (PDF/DOCX)
+- Direct PDF export (`nbconvert --to pdf` / `--to webpdf`) is NOT used — LaTeX's default fonts can't render Urdu/Arabic script or emoji (shows as blank glyphs), and `--to webpdf` needs a Chromium download that may not be available offline
+- Use the DOCX pipeline instead, which preserves Urdu/Arabic/emoji correctly:
+  1. `python -m nbconvert --to markdown <notebook>.ipynb`
+  2. `pandoc <notebook>.md -o <notebook>.docx`
+  3. Delete the intermediate `.md` file (and any `_files/` image folder) — keep only the `.docx`
+- Requires `pypandoc_binary` installed (`pip install pypandoc_binary`) and its bundled `pandoc.exe` on PATH (`site-packages/pypandoc/files/`)
+- Teachers can open the `.docx` in Word/LibreOffice and use "Save As PDF" for a print-ready PDF with correct Urdu/Arabic/emoji rendering
+
 ---
 
 ## 3. Design Decisions
@@ -250,7 +259,7 @@ Students should run programs from within their module folder.
 - [ ] Add a `STUDENT_GUIDE.md` — one-page guide written directly for students (not teachers)
 - [ ] Create a `resources/` folder with a Pakistan-themed cheat sheet (one-pager: variables, loops, functions quick reference)
 - [ ] Test all 3 capstone projects end-to-end on a fresh machine
-- [ ] Generate printable PDF of `1_strings_notebook.ipynb` (blocked: `nbconvert --to webpdf` needs Chromium download, no internet access in dev environment; `nbconvert --to pdf` via xelatex fails on first run with MiKTeX — needs non-interactive package install). Revisit with internet access or a working LaTeX/Chromium setup
+- [ ] Generate printable exports for each module notebook using the DOCX pipeline (see "Notebook Export Pipeline" below). LaTeX/PDF export (`nbconvert --to pdf`/`--to webpdf`) does not render Urdu/Arabic text or emoji correctly (missing glyphs in default fonts, no internet for Chromium) — DOCX is the working approach
 
 ### Future Enhancements
 - [ ] Add Module 11 — OOP basics (classes, objects) — currently out of scope
