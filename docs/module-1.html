@@ -171,6 +171,48 @@ print(&quot;There are &quot; + str(5) + &quot; prayers&quot;)
 # OR - use a comma in print() instead (easier for beginners):
 print(&quot;There are&quot;, 5, &quot;prayers&quot;)
 
+# ------------------------------------------------
+# Quotes Inside a String
+# ------------------------------------------------
+# What if the text itself contains a quotation mark?
+
+# Trick 1: use the other type of quote
+print(&quot;Ahmed&#x27;s book&quot;)
+print(&#x27;She said &quot;Bismillah&quot;&#x27;)
+
+# Trick 2: use the backslash escape character \
+print(&#x27;Ahmed\&#x27;s book&#x27;)
+print(&quot;She said \&quot;Bismillah\&quot;&quot;)
+
+# ------------------------------------------------
+# Special Characters: \n and \t
+# ------------------------------------------------
+# \n moves to a new line
+# \t adds a tab space (like pressing the Tab key)
+
+print(&quot;Lahore\nKarachi\nIslamabad&quot;)
+
+print(&quot;Name:\tAhmed&quot;)
+print(&quot;City:\tLahore&quot;)
+
+print(&quot;Surah:\tAl-Fatiha\nVerses:\t7&quot;)
+
+# ------------------------------------------------
+# Drawing Patterns with print()
+# ------------------------------------------------
+# We can use symbols like * and spaces to draw simple pictures.
+# Each print() is one row.
+
+print(&quot;  *&quot;)
+print(&quot; * *&quot;)
+print(&quot;*****&quot;)
+
+print()
+
+print(&quot;*****&quot;)
+print(&quot;*   *&quot;)
+print(&quot;*****&quot;)
+
 print()
 print(&quot;Great work! You can now join strings together.&quot;)
 </code></pre></div><div id="code-panel-1-2" class="code-panel "><pre><code class="language-python"># ================================================
@@ -234,31 +276,18 @@ print(&quot;Excellent! Python speaks Urdu and Arabic too. Alhamdulillah!&quot;)
 # ------------------------------------------------
 # Basic input() usage
 # ------------------------------------------------
+# input(&quot;...&quot;) can be placed directly inside print(), joined with +.
+# Python asks the question, waits for the answer, and uses it right there.
 
-# Step 1: Ask the user something
-# Step 2: Store what they type in a variable
-# Step 3: Use it in print()
-
-name = input(&quot;Please enter your name: &quot;)
-print(&quot;Assalamu Alaikum, &quot; + name)
+print(&quot;Assalamu Alaikum, &quot; + input(&quot;Please enter your name: &quot;))
 
 # ------------------------------------------------
 # More examples
 # ------------------------------------------------
 
-city = input(&quot;Which city are you from? &quot;)
-print(&quot;Ma sha Allah, &quot; + city + &quot; is a wonderful city!&quot;)
+print(&quot;Ma sha Allah, &quot; + input(&quot;Which city are you from? &quot;) + &quot; is a wonderful city!&quot;)
 
-subject = input(&quot;What is your favorite subject? &quot;)
-print(&quot;Great choice! &quot; + subject + &quot; is very important.&quot;)
-
-# ------------------------------------------------
-# Using input() directly inside print()
-# ------------------------------------------------
-# You can skip the variable and use input() straight in print().
-# This is shorter but less flexible.
-
-print(&quot;Wa Alaikum Assalam, &quot; + input(&quot;Who are you replying to? &quot;))
+print(&quot;Great choice! &quot; + input(&quot;What is your favorite subject? &quot;) + &quot; is very important.&quot;)
 
 # ------------------------------------------------
 # input() always gives back a STRING
@@ -266,18 +295,29 @@ print(&quot;Wa Alaikum Assalam, &quot; + input(&quot;Who are you replying to? &q
 # Even if the user types a number, it comes back as text.
 # We will learn how to handle this in Module 3 (Data Types).
 
-age = input(&quot;How old are you? &quot;)
-print(&quot;You are &quot; + age + &quot; years old. May Allah bless you!&quot;)
+print(&quot;You are &quot; + input(&quot;How old are you? &quot;) + &quot; years old. May Allah bless you!&quot;)
 
 # ------------------------------------------------
 # Islamic &amp; Pakistani Context Examples
 # ------------------------------------------------
 
-school = input(&quot;What is the name of your school or madrasa? &quot;)
-print(&quot;May Allah give barakah to &quot; + school + &quot;!&quot;)
+print(&quot;May Allah give barakah to &quot; + input(&quot;What is the name of your school or madrasa? &quot;) + &quot;!&quot;)
 
-prophet_name = input(&quot;Name your favorite Prophet (peace be upon them): &quot;)
-print(&quot;Peace and blessings be upon Prophet &quot; + prophet_name)
+print(&quot;Peace and blessings be upon Prophet &quot; + input(&quot;Name your favorite Prophet (peace be upon them): &quot;))
+
+# ------------------------------------------------
+# Asking multiple questions
+# ------------------------------------------------
+# You can call input() as many times as you need - each call asks one question.
+#
+# A small preview: to COMBINE the answers to two different questions into
+# one sentence, we need a way to give each answer a name so we can use it
+# again later. That &quot;naming&quot; idea is called a variable - the full lesson
+# is in Module 2. For now, here is a small preview:
+
+first = input(&quot;Enter your first name: &quot;)
+last = input(&quot;Enter your last name: &quot;)
+print(&quot;Assalamu Alaikum, &quot; + first + &quot; &quot; + last + &quot;!&quot;)
 
 print()
 print(&quot;Well done! You can now interact with the user.&quot;)
