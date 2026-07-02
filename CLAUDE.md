@@ -259,7 +259,12 @@ Students should run programs from within their module folder.
 - [ ] Add a `STUDENT_GUIDE.md` — one-page guide written directly for students (not teachers)
 - [ ] Create a `resources/` folder with a Pakistan-themed cheat sheet (one-pager: variables, loops, functions quick reference)
 - [ ] Test all 3 capstone projects end-to-end on a fresh machine
-- [ ] Generate printable exports for each module notebook using the DOCX pipeline (see "Notebook Export Pipeline" below). LaTeX/PDF export (`nbconvert --to pdf`/`--to webpdf`) does not render Urdu/Arabic text or emoji correctly (missing glyphs in default fonts, no internet for Chromium) — DOCX is the working approach
+- Generate printable exports for each module notebook using the DOCX pipeline (see "Notebook Export Pipeline" above):
+  - [x] Module 1 — `1_strings_notebook.docx` generated and committed
+  - [ ] Module 2 — pending
+  - [ ] Module 3 — pending
+  - [ ] Module 4 — pending
+  - [ ] Modules 5–10 — pending
 
 ### Future Enhancements
 - [ ] Add Module 11 — OOP basics (classes, objects) — currently out of scope
